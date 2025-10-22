@@ -20,7 +20,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-fade-in leading-tight">
           Every Great Dream Begins With<br />
-          <span className="text-primary-glow">a Strong Foundation</span>
+          <span className="text-accent">a Strong Foundation</span>
         </h1>
         
         <h3 className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up opacity-90 font-light">
