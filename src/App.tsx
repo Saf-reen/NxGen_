@@ -13,6 +13,7 @@ import CourseDetail from "./pages/CourseDetail";
 import Notes from "./pages/Notes";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import WhyChooseUs from "./pages/WhyChooseUs";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/courses/:id" element={<CourseDetail />} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

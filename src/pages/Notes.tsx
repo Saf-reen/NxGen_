@@ -86,9 +86,6 @@ const Notes = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-accent text-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6 animate-scale-in">
-            <FileText className="w-10 h-10" />
-          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
             NOTES AND STUDY MATERIALS
           </h1>
@@ -130,7 +127,7 @@ const Notes = () => {
       </section>
 
       {/* Materials Grid */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div
             ref={ref}

@@ -8,11 +8,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold">
-                EA
-              </div>
-              <span className="font-bold text-lg">Education Academy</span>
+            <div className="flex items-center gap-2">
+              <img src="/Logo.png" alt="Logo" className="h-10 w-20 mx-auto mb-4"/>
             </div>
             <p className="text-accent-foreground/80 text-sm">
               Empowering students to achieve their dreams through quality education and comprehensive learning resources.
@@ -52,15 +49,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>123 Education Street, Learning City, 12345</span>
+                <span>First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 97013 14138</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@educationacademy.com</span>
+                <span>ravirangari@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -69,7 +66,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex gap-3">
-              <a
+              {/* <a
                 href="#"
                 className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 aria-label="Facebook"
@@ -82,16 +79,16 @@ export const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.instagram.com/nxgentechacademy/"
                 className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/nxgen-tech-academy-academy-849b5338b/"
                 className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 aria-label="LinkedIn"
               >

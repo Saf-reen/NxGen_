@@ -155,7 +155,7 @@ const Courses = () => {
       </section>
 
       {/* Courses Grid */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div
             ref={ref}

@@ -57,13 +57,13 @@ const Contact = () => {
               {
                 icon: Phone,
                 title: "Call Us",
-                info: "+1 (555) 123-4567",
+                info: "+91 97013 14138",
                 subinfo: "Mon-Sat, 9AM-8PM",
               },
               {
                 icon: Mail,
                 title: "Email Us",
-                info: "info@educationacademy.com",
+                info: "ravirangari@gmail.com",
                 subinfo: "24/7 Support",
               },
               {
@@ -91,7 +91,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div
@@ -209,7 +209,7 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
                 <p className="text-xl font-semibold mb-2">Our Location</p>
-                <p className="text-muted-foreground">123 Education Street, Learning City, 12345</p>
+                <p className="text-muted-foreground">First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049</p>
               </div>
             </div>
           </div>

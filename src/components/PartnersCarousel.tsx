@@ -13,7 +13,7 @@ export const PartnersCarousel = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-20 bg-secondary/90">
       <div className="container mx-auto px-4">
         <div
           ref={ref}

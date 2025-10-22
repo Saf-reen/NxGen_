@@ -26,7 +26,7 @@ export const WhyChooseUs = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section id="why-choose-us" className="py-20 bg-secondary">
+    <section id="why-choose-us" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div
           ref={ref}

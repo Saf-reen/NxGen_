@@ -74,7 +74,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
@@ -157,7 +157,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-accent text-white">
+      <section className="py-20 bg-gradient-to-r from-primary/60 to-secondary/60 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
