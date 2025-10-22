@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Fixed Background Image with Parallax Effect */}
+      {/* Fixed Background Image with Parallax Effect - stays in place while content scrolls */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="fixed inset-0 bg-cover bg-center -z-10"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&h=1080&fit=crop')",
+          backgroundAttachment: "fixed",
         }}
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
