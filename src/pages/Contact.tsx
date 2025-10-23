@@ -58,7 +58,7 @@ const Contact = () => {
               {
                 icon: Mail,
                 title: "Email Us",
-                info: "ravirangari@gmail.com",
+                info: "nxgentechacademy@gmail.com",
                 subinfo: "24/7 Support",
               },
               {
