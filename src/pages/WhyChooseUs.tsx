@@ -1,6 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { PageHero } from "@/components/PageHero";
 import {
   BookOpen,
   Users,
@@ -82,38 +83,25 @@ const WhyChooseUs = () => {
   const { ref: statsRef, isVisible: isStatsVisible } = useScrollAnimation(0.1);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&h=1080&fit=crop')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-hero" />
-        
-        <div 
-          ref={heroRef}
-          className={`relative z-10 container mx-auto px-4 text-center transition-all duration-700 ${
-            isHeroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Why Choose NxGen?
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-            Empowering learners with real-world skills for a digital future
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">Book a Free Demo</Link>
-          </Button>
-        </div>
-      </section>
-
+        <PageHero
+              title="Why Choose NxGen?"
+              description="Empowering learners with real-world skills for a digital future"
+              imageUrl="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&h=1080&fit=crop"
+            />
       {/* Key Highlights Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-muted relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5" />
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Students <span className="gradient-text">Choose Us</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Join a community of learners and achieve your career goals with our industry-leading programs
+            </p>
+          </div>
           <div
             ref={highlightsRef}
             className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${
@@ -123,13 +111,13 @@ const WhyChooseUs = () => {
             {highlights.map((highlight, index) => (
               <div
                 key={highlight.title}
-                className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all group hover:-translate-y-1"
+                className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group hover:-translate-y-2"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <highlight.icon className="w-6 h-6 text-primary" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <highlight.icon className="w-8 h-8 text-primary group-hover:rotate-12 transition-transform" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{highlight.title}</h3>
                 <p className="text-muted-foreground">{highlight.description}</p>
               </div>
             ))}
@@ -138,11 +126,17 @@ const WhyChooseUs = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            What Our Students Say
-          </h2>
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--primary)_0%,_transparent_35%)] opacity-10" />
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Student Success <span className="gradient-text">Stories</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear from our graduates who have transformed their careers through our programs
+            </p>
+          </div>
           <div
             ref={testimonialsRef}
             className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 ${
@@ -152,23 +146,111 @@ const WhyChooseUs = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="bg-muted rounded-xl p-6 relative"
+                className="bg-card rounded-xl p-8 shadow-lg relative group hover:-translate-y-2 transition-all duration-300"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
+                {/* Quote Icon Background */}
+                <div className="absolute top-4 right-4 text-primary/10">
+                  <svg className="w-12 h-12 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
                 </div>
-                <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                <div className="relative">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-20 h-20 rounded-full object-cover ring-4 ring-primary/10"
+                      />
+                      <div className="absolute -bottom-2 -right-2 bg-primary rounded-full p-1.5">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">"{testimonial.quote}"</p>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Image */}
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop" 
+                  alt="Students Learning"
+                  className="w-full object-cover"
+                />
+              </div>
+              {/* Floating Stats Card */}
+              <div className="absolute -bottom-6 -right-6 bg-card rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Trophy className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Success Rate</p>
+                    <p className="text-xl font-bold">95%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column - Content */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6">
+                What Makes Us <span className="gradient-text">Different</span>
+              </h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Industry-Aligned Learning",
+                    description: "Our curriculum is designed with input from industry leaders to ensure you learn what matters.",
+                    progress: 95
+                  },
+                  {
+                    title: "Practical Experience",
+                    description: "Work on real projects using the latest tools and technologies used in the industry.",
+                    progress: 90
+                  },
+                  {
+                    title: "Career Support",
+                    description: "Get personalized career guidance, interview preparation, and job placement assistance.",
+                    progress: 85
+                  }
+                ].map((item, index) => (
+                  <div key={item.title} className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <h3 className="font-semibold">{item.title}</h3>
+                      <span className="text-sm text-muted-foreground">{item.progress}%</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <div className="h-2 rounded-full bg-muted-foreground/20">
+                      <div 
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000"
+                        style={{ 
+                          width: `${item.progress}%`,
+                          transitionDelay: `${index * 200}ms`
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

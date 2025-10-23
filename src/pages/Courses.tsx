@@ -3,111 +3,137 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { GraduationCap, Stethoscope, Calculator, BookOpen, Clock, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/PageHero";
 
 const categories = [
   { id: "all", name: "All Courses" },
-  { id: "engineering", name: "Engineering" },
-  { id: "medical", name: "Medical" },
-  { id: "foundation", name: "Foundation" },
-  { id: "board", name: "Board Exam" },
+  { id: "web", name: "Web Development" },
+  { id: "mobile", name: "Mobile Development" },
+  { id: "backend", name: "Backend Development" },
+  { id: "data", name: "Data Analytics" },
+  { id: "sap", name: "SAP Development" },
 ];
 
 const courses = [
   {
     id: 1,
-    title: "JEE Advanced Preparation",
-    category: "engineering",
-    description: "Comprehensive coaching for JEE Advanced with expert faculty and proven methods.",
-    duration: "2 Years",
+    title: "Frontend Web Development",
+    category: "web",
+    description: "Master HTML, CSS, JavaScript, React and modern frontend development techniques.",
+    duration: "6 Months",
     students: "250+ Students",
     rating: "4.9",
     icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop",
     color: "from-blue-500 to-cyan-500",
   },
   {
     id: 2,
-    title: "JEE Mains Intensive",
-    category: "engineering",
-    description: "Focused preparation for JEE Mains with regular mock tests and doubt sessions.",
-    duration: "1 Year",
+    title: "UI/UX Design",
+    category: "web",
+    description: "Learn user interface design, user experience principles, and design tools like Figma.",
+    duration: "4 Months",
     students: "400+ Students",
     rating: "4.8",
     icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1509869175650-a1d97972541a?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
     color: "from-blue-500 to-indigo-500",
   },
   {
     id: 3,
-    title: "NEET Complete Package",
-    category: "medical",
-    description: "Complete NEET preparation covering Physics, Chemistry, and Biology with experts.",
-    duration: "2 Years",
+    title: "Flutter Mobile Development",
+    category: "mobile",
+    description: "Build cross-platform mobile apps with Flutter and Dart programming language.",
+    duration: "6 Months",
     students: "300+ Students",
     rating: "4.9",
     icon: Stethoscope,
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
     color: "from-green-500 to-emerald-500",
   },
   {
     id: 4,
-    title: "NEET Short Term",
-    category: "medical",
-    description: "Intensive 6-month crash course for NEET aspirants with revision focus.",
+    title: "iOS App Development",
+    category: "mobile",
+    description: "Create native iOS applications using Swift and SwiftUI framework.",
     duration: "6 Months",
     students: "200+ Students",
     rating: "4.7",
     icon: Stethoscope,
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=600&h=400&fit=crop",
     color: "from-green-500 to-teal-500",
   },
   {
     id: 5,
-    title: "Foundation for Class 8-10",
-    category: "foundation",
-    description: "Build strong fundamentals in Math, Science with engaging learning methods.",
-    duration: "1 Year",
+    title: "Node.js Backend Development",
+    category: "backend",
+    description: "Build scalable server-side applications with Node.js, Express, and MongoDB.",
+    duration: "5 Months",
     students: "500+ Students",
     rating: "4.8",
     icon: Calculator,
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
     color: "from-purple-500 to-pink-500",
   },
   {
     id: 6,
-    title: "Class 11th Science",
-    category: "board",
-    description: "Complete coverage of 11th standard syllabus with board exam focus.",
-    duration: "1 Year",
+    title: "Python Django Development",
+    category: "backend",
+    description: "Master backend development with Python Django framework and PostgreSQL.",
+    duration: "5 Months",
     students: "450+ Students",
     rating: "4.8",
     icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop",
     color: "from-orange-500 to-red-500",
   },
   {
     id: 7,
-    title: "Class 12th Science",
-    category: "board",
-    description: "Comprehensive 12th board preparation with entrance exam integration.",
-    duration: "1 Year",
+    title: "Data Analytics with Python",
+    category: "data",
+    description: "Master data analysis using Python, Pandas, NumPy, and data visualization tools.",
+    duration: "4 Months",
     students: "400+ Students",
     rating: "4.9",
     icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     color: "from-orange-500 to-amber-500",
   },
   {
     id: 8,
-    title: "MHT-CET Preparation",
-    category: "engineering",
-    description: "Specialized coaching for Maharashtra CET with state board integration.",
-    duration: "1 Year",
+    title: "Business Intelligence & SQL",
+    category: "data",
+    description: "Learn SQL, Power BI, and advanced data analysis techniques for business insights.",
+    duration: "3 Months",
+    students: "300+ Students",
+    rating: "4.8",
+    icon: BookOpen,
+    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=400&fit=crop",
+    color: "from-orange-500 to-yellow-500",
+  },
+  {
+    id: 9,
+    title: "SAP ABAP Development",
+    category: "sap",
+    description: "Master SAP ABAP programming and enterprise system development.",
+    duration: "6 Months",
     students: "350+ Students",
     rating: "4.8",
     icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
     color: "from-blue-500 to-purple-500",
+  },
+  {
+    id: 10,
+    title: "SAP HANA Development",
+    category: "sap",
+    description: "Learn SAP HANA development, modeling, and implementation techniques.",
+    duration: "5 Months",
+    students: "250+ Students",
+    rating: "4.7",
+    icon: GraduationCap,
+    image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=600&h=400&fit=crop",
+    color: "from-purple-500 to-blue-500",
   },
 ];
 
@@ -124,17 +150,11 @@ const Courses = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            Our Courses
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-slide-up">
-            Choose from our comprehensive range of courses designed to help you achieve your academic goals
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Courses"
+        description="Choose from our comprehensive range of courses designed to help you achieve your academic goals"
+        imageUrl="https://images.unsplash.com/photo-1509869175650-a1d97972541a?w=1200&h=800&fit=crop"
+      />
 
       {/* Category Filter */}
       <section className="py-8 bg-background border-b">

@@ -1,5 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Target, Eye, Award, Users } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
 
 const About = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation(0.2);
@@ -9,24 +10,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <div
-            ref={titleRef}
-            className={`transition-all duration-700 ${
-              titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              ABOUT US
-            </h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
-              Empowering minds, shaping futures - Your partner in educational excellence
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="About Us"
+        description="Empowering minds, shaping futures - Your partner in educational excellence"
+        imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop"
+      />
 
       {/* Story Section */}
       <section className="py-20 bg-background">

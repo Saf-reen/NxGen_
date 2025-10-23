@@ -9,7 +9,7 @@ export const Footer = () => {
           {/* About Section */}
           <div>
             <div className="flex items-center gap-2">
-              <img src="/Logo.png" alt="Logo" className="h-10 w-20 mx-auto mb-4"/>
+              <img src="/Logo.png" alt="Logo" className="h-10 w-30 mx-auto mb-4"/>
             </div>
             <p className="text-accent-foreground/80 text-sm">
               Empowering students to achieve their dreams through quality education and comprehensive learning resources.
@@ -99,7 +99,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-accent-foreground/20 mt-8 pt-8 text-center text-sm text-accent-foreground/70">
-          <p>&copy; {new Date().getFullYear()} Education Academy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NxGen Tech Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

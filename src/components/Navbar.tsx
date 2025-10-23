@@ -20,15 +20,15 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    // { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { 
       name: "Courses", 
       path: "/courses",
-
     },
+    { name: "Mentors", path: "/mentors" },
     { name: "Why Choose Us", path: "/why-choose-us" },
-    { name: "Notes & Materials", path: "/notes" },
+    // { name: "Notes & Materials", path: "/notes" },
     { name: "Contact", path: "/contact" },
   ];
 

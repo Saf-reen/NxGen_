@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Preloader } from "./components/Preloader";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
@@ -14,6 +15,7 @@ import Notes from "./pages/Notes";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import WhyChooseUs from "./pages/WhyChooseUs";
+import Mentors from "./pages/Mentors";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,7 @@ const App = () => (
       <Sonner />
       <Preloader />
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,6 +34,7 @@ const App = () => (
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/mentors" element={<Mentors />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="*" element={<NotFound />} />

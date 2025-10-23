@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+import { PageHero } from "@/components/PageHero";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,17 +38,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            GET CONNECTED WITH US
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-slide-up">
-            Stay in touch & grow your network. We're here to help you succeed.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="GET CONNECTED WITH US"
+        description="Stay in touch & grow your network. We're here to help you succeed."
+        imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=800&fit=crop"
+      />
 
       {/* Contact Info Cards */}
       <section className="py-12 bg-background">
@@ -69,8 +64,8 @@ const Contact = () => {
               {
                 icon: MapPin,
                 title: "Visit Us",
-                info: "123 Education Street",
-                subinfo: "Learning City, 12345",
+                info: "First Floor, 1-121/63 Survey No.63 Part",
+                subinfo: "Hotel Sitara Grand Backside, Miyapur, Telangana 500049",
               },
             ].map((contact, index) => (
               <div
@@ -201,15 +196,28 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section (Optional) */}
+      {/* Map Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-muted rounded-2xl overflow-hidden shadow-lg h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <p className="text-xl font-semibold mb-2">Our Location</p>
-                <p className="text-muted-foreground">First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049</p>
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg">
+              {/* Title */}
+              <div className="p-6 text-center">
+                <h3 className="text-4xl font-bold mb-2">Our Location</h3>
+                <p className="text-muted-foreground">
+                  First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049
+                </p>
+              </div>
+              {/* Map */}
+              <div className="aspect-[16/9] w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.280746844092!2d78.3542804!3d17.4941067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9398a74e6225%3A0x9ab33bfbaff07f32!2sSria%20Infotech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1761212331672!5m2!1sen!2sin"
+                  className="w-full h-full border-0"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Our Location"
+                />
               </div>
             </div>
           </div>
