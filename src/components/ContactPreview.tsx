@@ -26,7 +26,7 @@ export const ContactPreview = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
           {[
             { icon: Phone, title: "Call Us", info: "+91 97013 14138" },
-            { icon: Mail, title: "Email Us", info: "ravirangari@gmail.com" },
+            { icon: Mail, title: "Email Us", info: "nxgentechacademy@gmail.com" },
             { icon: MapPin, title: "Visit Us", info: "First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049" },
           ].map((contact, index) => (
             <div
