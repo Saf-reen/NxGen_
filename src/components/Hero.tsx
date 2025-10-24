@@ -54,7 +54,7 @@ export const Hero = () => {
           href={`https://wa.me/918501049836?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
           target="_blank"
           rel="noreferrer noopener"
-          className="fixed right-4 bottom-4 z-50 bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:h-16 hover:w-16 hover:shadow-2xl"
+          className="fixed right-6 bottom-28 z-10 bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:h-16 hover:w-16 hover:shadow-2xl"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
             <path d="M21 12.08C21 6.54 16.52 2 11 2S1 6.54 1 12.08c0 2 .65 3.86 1.76 5.39L1 22l4.9-1.28C7.7 21.13 9.31 21.5 11 21.5c5.52 0 10-4.54 10-9.42z" fill="currentColor"/>
