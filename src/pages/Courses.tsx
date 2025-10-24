@@ -7,134 +7,35 @@ import { PageHero } from "@/components/PageHero";
 
 const categories = [
   { id: "all", name: "All Courses" },
-  { id: "web", name: "Web Development" },
-  { id: "mobile", name: "Mobile Development" },
-  { id: "backend", name: "Backend Development" },
-  { id: "data", name: "Data Analytics" },
-  { id: "sap", name: "SAP Development" },
+  { id: "java", name: "Java Full Stack" },
+  { id: "mern", name: "MERN Full Stack" },
+  { id: "ai", name: "AI & Data Science" },
+  { id: "python", name: "Python Full Stack" },
+  { id: "powerbi", name: "Power BI" },
+  { id: "testing", name: "Testing tools" },
+  { id: "cyber", name: "Cyber Security" },
 ];
 
 const courses = [
-  {
-    id: 1,
-    title: "Frontend Web Development",
-    category: "web",
-    description: "Master HTML, CSS, JavaScript, React and modern frontend development techniques.",
-    duration: "6 Months",
-    students: "250+ Students",
-    rating: "4.9",
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    id: 2,
-    title: "UI/UX Design",
-    category: "web",
-    description: "Learn user interface design, user experience principles, and design tools like Figma.",
-    duration: "4 Months",
-    students: "400+ Students",
-    rating: "4.8",
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-    color: "from-blue-500 to-indigo-500",
-  },
-  {
-    id: 3,
-    title: "Flutter Mobile Development",
-    category: "mobile",
-    description: "Build cross-platform mobile apps with Flutter and Dart programming language.",
-    duration: "6 Months",
-    students: "300+ Students",
-    rating: "4.9",
-    icon: Stethoscope,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    id: 4,
-    title: "iOS App Development",
-    category: "mobile",
-    description: "Create native iOS applications using Swift and SwiftUI framework.",
-    duration: "6 Months",
-    students: "200+ Students",
-    rating: "4.7",
-    icon: Stethoscope,
-    image: "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=600&h=400&fit=crop",
-    color: "from-green-500 to-teal-500",
-  },
-  {
-    id: 5,
-    title: "Node.js Backend Development",
-    category: "backend",
-    description: "Build scalable server-side applications with Node.js, Express, and MongoDB.",
-    duration: "5 Months",
-    students: "500+ Students",
-    rating: "4.8",
-    icon: Calculator,
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    id: 6,
-    title: "Python Django Development",
-    category: "backend",
-    description: "Master backend development with Python Django framework and PostgreSQL.",
-    duration: "5 Months",
-    students: "450+ Students",
-    rating: "4.8",
-    icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop",
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    id: 7,
-    title: "Data Analytics with Python",
-    category: "data",
-    description: "Master data analysis using Python, Pandas, NumPy, and data visualization tools.",
-    duration: "4 Months",
-    students: "400+ Students",
-    rating: "4.9",
-    icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    color: "from-orange-500 to-amber-500",
-  },
-  {
-    id: 8,
-    title: "Business Intelligence & SQL",
-    category: "data",
-    description: "Learn SQL, Power BI, and advanced data analysis techniques for business insights.",
-    duration: "3 Months",
-    students: "300+ Students",
-    rating: "4.8",
-    icon: BookOpen,
-    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=400&fit=crop",
-    color: "from-orange-500 to-yellow-500",
-  },
-  {
-    id: 9,
-    title: "SAP ABAP Development",
-    category: "sap",
-    description: "Master SAP ABAP programming and enterprise system development.",
-    duration: "6 Months",
-    students: "350+ Students",
-    rating: "4.8",
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    color: "from-blue-500 to-purple-500",
-  },
-  {
-    id: 10,
-    title: "SAP HANA Development",
-    category: "sap",
-    description: "Learn SAP HANA development, modeling, and implementation techniques.",
-    duration: "5 Months",
-    students: "250+ Students",
-    rating: "4.7",
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=600&h=400&fit=crop",
-    color: "from-purple-500 to-blue-500",
-  },
+  { id: 1, title: "Java Full stack", category: "java", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" , description: "Java Full Stack with Spring Boot, React and real projects.", duration: "16 Weeks", students: "250+ Students", rating: "4.9", icon: GraduationCap, color: "from-blue-500 to-cyan-500" },
+  { id: 2, title: "Python Fullstack", category: "python", image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop", description: "Python Full Stack with Django and React.", duration: "16 Weeks", students: "200+ Students", rating: "4.8", icon: BookOpen, color: "from-green-500 to-emerald-500" },
+  { id: 3, title: "MERN Full Stack", category: "mern", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop", description: "MERN stack (Mongo, Express, React, Node) with projects.", duration: "16 Weeks", students: "300+ Students", rating: "4.8", icon: GraduationCap, color: "from-indigo-500 to-purple-500" },
+  { id: 4, title: "UI Development", category: "mern", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Front-end UI Development with modern frameworks.", duration: "12 Weeks", students: "180+ Students", rating: "4.6", icon: BookOpen, color: "from-pink-500 to-rose-500" },
+  { id: 5, title: "React JS", category: "mern", image: "https://images.unsplash.com/photo-1526378721823-6c45d9e9f9d8?w=600&h=400&fit=crop", description: "React.js fundamentals and advanced patterns.", duration: "8 Weeks", students: "350+ Students", rating: "4.7", icon: GraduationCap, color: "from-sky-500 to-blue-500" },
+  { id: 6, title: "UI/UX Designing", category: "python", image: "https://images.unsplash.com/photo-1534152731935-25c6b2f3f91b?w=600&h=400&fit=crop", description: "Design principles, Figma and prototyping.", duration: "10 Weeks", students: "220+ Students", rating: "4.6", icon: GraduationCap, color: "from-emerald-500 to-teal-500" },
+  { id: 7, title: "Node JS", category: "mern", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop", description: "Backend development with Node.js and Express.", duration: "12 Weeks", students: "280+ Students", rating: "4.7", icon: Calculator, color: "from-purple-500 to-pink-500" },
+  { id: 8, title: "Web Designing", category: "mern", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Website design, layouts and responsive patterns.", duration: "8 Weeks", students: "240+ Students", rating: "4.5", icon: GraduationCap, color: "from-orange-500 to-yellow-500" },
+  { id: 9, title: "PHP with MySQL", category: "mern", image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop", description: "PHP and MySQL full-stack development.", duration: "10 Weeks", students: "150+ Students", rating: "4.3", icon: BookOpen, color: "from-cyan-500 to-blue-500" },
+  { id: 10, title: "Digital Marketing", category: "ai", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "SEO, Ads and Social Media marketing.", duration: "6 Weeks", students: "400+ Students", rating: "4.4", icon: GraduationCap, color: "from-amber-500 to-orange-500" },
+  { id: 11, title: "Python", category: "python", image: "https://images.unsplash.com/photo-1545235617-9465f9d2b0b9?w=600&h=400&fit=crop", description: "Core Python programming and applications.", duration: "8 Weeks", students: "500+ Students", rating: "4.9", icon: BookOpen, color: "from-green-500 to-lime-500" },
+  { id: 12, title: "UI Designing", category: "python", image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop", description: "UI design basics and tools.", duration: "8 Weeks", students: "190+ Students", rating: "4.2", icon: GraduationCap, color: "from-pink-500 to-fuchsia-500" },
+  { id: 13, title: "Django", category: "python", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Django web framework for Python.", duration: "12 Weeks", students: "210+ Students", rating: "4.6", icon: BookOpen, color: "from-indigo-500 to-violet-500" },
+  { id: 14, title: "Graphic Design Training", category: "ai", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Graphic design fundamentals and tools.", duration: "10 Weeks", students: "170+ Students", rating: "4.3", icon: GraduationCap, color: "from-rose-500 to-pink-500" },
+  { id: 15, title: "SEO", category: "ai", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Search engine optimisation techniques.", duration: "6 Weeks", students: "300+ Students", rating: "4.4", icon: GraduationCap, color: "from-amber-500 to-yellow-500" },
+  { id: 16, title: "Google AdWords", category: "ai", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", description: "Paid advertising with Google Ads.", duration: "6 Weeks", students: "250+ Students", rating: "4.1", icon: GraduationCap, color: "from-green-500 to-teal-500" },
+  { id: 17, title: "Power BI", category: "powerbi", image: "https://images.unsplash.com/photo-1503602642458-232111445657?w=600&h=400&fit=crop", description: "Power BI and business intelligence.", duration: "12 Weeks", students: "120+ Students", rating: "4.7", icon: GraduationCap, color: "from-orange-500 to-red-500" },
+  { id: 18, title: "Software Testing Tools", category: "testing", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop", description: "Manual and automation testing with popular tools.", duration: "14 Weeks", students: "100+ Students", rating: "4.6", icon: Stethoscope, color: "from-indigo-500 to-blue-500" },
+  { id: 19, title: "Cyber Security", category: "cyber", image: "https://images.unsplash.com/photo-1508385082359-f5a2b56d3e47?w=600&h=400&fit=crop", description: "Cybersecurity fundamentals and ethical hacking labs.", duration: "16 Weeks", students: "90+ Students", rating: "4.8", icon: Calculator, color: "from-red-500 to-orange-500" },
 ];
 
 const Courses = () => {
@@ -143,10 +44,10 @@ const Courses = () => {
   const [selectedCategory, setSelectedCategory] = useState(categoryParam);
   const { ref, isVisible } = useScrollAnimation(0.2);
 
-  const filteredCourses =
-    selectedCategory === "all"
-      ? courses
-      : courses.filter((course) => course.category === selectedCategory);
+    const filteredCourses =
+      selectedCategory === "all"
+        ? courses
+        : courses.filter((course) => course.category === selectedCategory);
 
   return (
     <div className="min-h-screen pt-20">
@@ -183,9 +84,14 @@ const Courses = () => {
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            {filteredCourses.map((course, index) => (
-              <CourseCard key={course.id} course={course} index={index} />
-            ))}
+              {filteredCourses.map((course, index) => (
+                <CourseCard
+                  key={course.id}
+                  course={course}
+                  index={index}
+                  total={filteredCourses.length}
+                />
+              ))}
           </div>
 
           {filteredCourses.length === 0 && (
@@ -199,9 +105,24 @@ const Courses = () => {
   );
 };
 
-const CourseCard = ({ course, index }: { course: typeof courses[0]; index: number }) => {
+const CourseCard = ({
+  course,
+  index,
+  total,
+}: {
+  course: typeof courses[0];
+  index: number;
+  total: number;
+}) => {
   const { ref, isVisible } = useScrollAnimation(0.2);
   const Icon = course.icon;
+
+  // If the grid shows 3 columns on large screens and there is only 1 item in the last row,
+  // make the last item span 2 columns so it doesn't leave two empty slots. This keeps layout
+  // visually balanced. Adjusts only on large screens (lg breakpoint).
+  const remainder = total % 3;
+  const isLast = index === total - 1;
+  const spanClass = isLast && remainder === 1 ? "lg:col-span-1" : "";
 
   return (
     <Link
@@ -209,7 +130,7 @@ const CourseCard = ({ course, index }: { course: typeof courses[0]; index: numbe
       ref={ref}
       className={`group block transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      } ${spanClass}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="bg-card rounded-xl overflow-hidden shadow-md hover-lift h-full flex flex-col">

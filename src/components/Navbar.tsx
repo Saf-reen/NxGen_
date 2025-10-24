@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Logo } from "./Logo";
@@ -40,7 +40,14 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           
-          <Link to="/" className="transition-transform duration-300 hover:scale-105">
+          <Link 
+            to="/"
+            className="transition-transform duration-300 hover:scale-105 cursor-pointer border-none bg-transparent"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'http://localhost:8000/';
+            }}
+          >
             <img src="/Logo.png" alt="Logo" className="h-10 w-30"/>
           </Link>
 
