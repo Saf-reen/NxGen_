@@ -56,7 +56,7 @@ export const Hero = () => {
                     Apply Now
                   </Button>
 
-                  <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-accent">
+                  <Button variant="outline-primary" size="lg" className=" hover:bg-white hover:text-accent">
                     Download Brochure
                   </Button>
                 </div>
