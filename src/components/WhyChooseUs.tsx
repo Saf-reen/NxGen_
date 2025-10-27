@@ -38,7 +38,7 @@ export const WhyChooseUs = () => {
             <span className="gradient-text">WHY CHOOSE US?</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Here, at Education Academy, we strive so that you succeed...
+            Here, at Education Academy, we strive so that you succeed..!
           </p>
         </div>
 

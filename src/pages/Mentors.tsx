@@ -1,18 +1,8 @@
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
 import { Button } from "@/components/ui/button";
-
-// Define mentor categories matching our courses
-const mentorCategories = [
-  { id: "all", name: "All Mentors" },
-  { id: "web", name: "Web Development" },
-  { id: "mobile", name: "Mobile Development" },
-  { id: "backend", name: "Backend Development" },
-  { id: "data", name: "Data Analytics" },
-  { id: "sap", name: "SAP Development" },
-];
+import { categories, instructors } from "@/data";
 
 // Define mentors data
 const mentors = [
@@ -113,11 +103,11 @@ const Mentors = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   const filteredMentors = selectedCategory === "all"
-    ? mentors
-    : mentors.filter(mentor => mentor.category === selectedCategory);
+    ? instructors
+    : instructors.filter(instructor => instructor.category === selectedCategory);
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <PageHero
         title="Learn from Industry Experts"
@@ -129,7 +119,7 @@ const Mentors = () => {
       <section className="py-8 bg-background border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center">
-            {mentorCategories.map((category) => (
+            {categories.map((category) => (
               <Button
                 key={category.id}
                 variant={selectedCategory === category.id ? "default" : "outline"}
@@ -185,7 +175,9 @@ const Mentors = () => {
   );
 };
 
-const MentorCard = ({ mentor, index }: { mentor: typeof mentors[0]; index: number }) => {
+import { Instructor } from "@/data/types";
+
+const MentorCard = ({ mentor, index }: { mentor: Instructor; index: number }) => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
@@ -208,7 +200,7 @@ const MentorCard = ({ mentor, index }: { mentor: typeof mentors[0]; index: numbe
         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
           <h3 className="text-xl font-bold mb-1 text-white">{mentor.name}</h3>
           <p className="text-white/80">{mentor.role}</p>
-          <p className="text-sm text-primary/90 mt-1">{mentor.company}</p>
+          <p className="text-sm text-primary/90 mt-1">{mentor.designation} • {mentor.experience}</p>
         </div>
 
         {/* Hover Overlay for Description */}
@@ -225,7 +217,7 @@ const MentorCard = ({ mentor, index }: { mentor: typeof mentors[0]; index: numbe
       <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
         <h3 className="text-xl font-bold mb-1 text-white">{mentor.name}</h3>
         <p className="text-white/80">{mentor.role}</p>
-        <p className="text-sm text-primary/90 mt-1">{mentor.company}</p>
+        <p className="text-sm text-primary/90 mt-1">{mentor.designation} • {mentor.experience}</p>
       </div>
     </div>
   );

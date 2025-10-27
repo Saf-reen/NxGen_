@@ -1,54 +1,69 @@
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import LeadForm from "./LeadForm";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Fixed Background Image with Parallax Effect - stays in place while content scrolls */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center -z-10"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&h=1080&fit=crop')",
-          backgroundAttachment: "fixed",
-        }}
-      />
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero" />
+    <>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Fixed Background Image with Parallax Effect - stays in place while content scrolls */}
+        <div
+          className="fixed inset-0 bg-cover bg-center bg-fixed -z-10"
+          style={{
+            backgroundImage: "url('/hero-bg.png')",
+          }}
+        />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-fade-in leading-tight">
-            Become Industry-Ready in SAP, Data<br />
-            <span className="text-accent">& Full-Stack in 8–16 Weeks</span>
-        </h1>
-        
-        <h3 className="text-lg md:text-xl lg:text-2xl mb-6 max-w-3xl mx-auto animate-slide-up opacity-90 font-light text-center">
-            Live mentorship • Real client projects • Placement support<br className="hidden md:block" />
-            Transform your career with industry-aligned tech education.
-        </h3>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-hero" />
 
-        {/* Lead capture form (short) */}
-        {/* <div className="mt-6 mb-8 flex justify-center">
-          <LeadForm />
-        </div> */}
+        {/* intentionally leave the hero image area empty of text; content appears below */}
+        <div className="relative z-10" />
+      </section>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
-          <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">Apply Now</Link>
-          </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-accent">
-              Download Brochure
-            </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-accent" asChild>
-              <Link to="/contact">Talk to an Advisor</Link>
-            </Button>
-        </div>
+      {/* New content section placed after the hero image
+          - Left: main heading
+          - Right: paragraph + buttons
+          - Uses bg-muted and responsive flex layout */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="w-full md:w-1/2">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                Become Industry-Ready in SAP, Data
+                <br />
+                <span className="text-accent">& Full-Stack in 8–16 Weeks</span>
+              </h1>
+            </div>
 
-        
-        {/* WhatsApp quick chat button */}
+            <div className="w-full md:w-1/2 p-6 rounded-lg">
+              <div className="bg-muted p-6 rounded-lg">
+                <p className="text-lg text-muted-foreground mb-6">
+                  Live mentorship • Real client projects • Placement support.
+                  Transform your career with industry-aligned tech education.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    onClick={() =>
+                      window.open(
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfCORZn1qWHl6NuhIfGkGfAkxhVzF3paBVMSSqndMferNEK_Q/viewform?usp=header',
+                        '_blank'
+                      )
+                    }
+                  >
+                    Apply Now
+                  </Button>
+
+                  <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-accent">
+                    Download Brochure
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* WhatsApp quick chat button */}
         <a
           aria-label="Chat on WhatsApp"
           href={`https://wa.me/918501049836?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
@@ -61,9 +76,9 @@ export const Hero = () => {
             <path d="M17.5 14.5c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.7-.2-1 .2-.2.4-.9 1.3-1.1 1.5-.2.2-.4.2-.8.1-.4-.1-1.6-.6-3-1.9-1.1-1.1-1.8-2.5-2-3-.2-.5 0-.7.2-.9.2-.2.4-.4.6-.6.2-.2.3-.3.5-.5.2-.2.3-.3.5-.5.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6 0-.2-.8-1.8-1.1-2.3-.3-.5-.6-.4-.9-.4-.3 0-.7 0-1.1 0-.4 0-1 .1-1.5.5-.5.4-1.6 1.6-1.6 3.9 0 2.4 1.6 4.8 1.8 5.1.2.3 2.8 4.4 6.8 6 4 .1 4.6-2 4.7-2.2.1-.2.9-1.6 1-2 .1-.4.1-.7 0-.9-.2-.3-.6-.5-1-.7z" fill="#fff"/>
           </svg>
         </a>
-
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 };
 

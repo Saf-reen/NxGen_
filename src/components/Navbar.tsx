@@ -2,22 +2,30 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-
+  // Set scroll state to toggle navbar background
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // initialize state on mount
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    // Ensure navbar starts transparent on every route change
+    // Reset scroll state on route change to ensure consistency
     setIsScrolled(false);
   }, [location]);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path || (path === '/' && location.pathname === '');
 
   const navLinks = [
     // { name: "Home", path: "/" },
@@ -34,7 +42,9 @@ export const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background text-primary shadow-sm" : "bg-transparent text-white"
+      }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -60,13 +70,15 @@ export const Navbar = () => {
                   className={`px-4 py-2 rounded-lg transition-all duration-300 relative ${
                     isActive(link.path)
                       ? "text-secondary font-semibold"
-                      : "text-primary hover:text-primary/80 hover:bg-muted"
+                      : isScrolled
+                        ? "text-primary hover:text-primary/90"
+                        : "text-white hover:text-white/90"
                   }`}
                 >
                   {link.name}
-                  {!isScrolled && (
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-                  )}
+                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
+                    isActive(link.path) ? "w-full" : ""
+                  }`} />
                 </Link>
               </div>
             ))}
@@ -82,7 +94,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg transition-colors text-primary hover:text-primary/80 hover:bg-muted"
+            className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,13 +103,19 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in bg-background/95 backdrop-blur-lg">
+          <div className={`lg:hidden py-4 border-t border-border animate-fade-in ${
+            isScrolled ? 'bg-background/95' : 'bg-black/20'
+          } backdrop-blur-lg`}>
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
                   to={link.path}
-                  className={`block px-4 py-3 hover:bg-muted transition-colors ${
-                    isActive(link.path) ? "text-secondary font-semibold" : "text-primary hover:text-primary/80"
+                  className={`block px-4 py-3 transition-colors relative ${
+                    isActive(link.path) 
+                      ? "text-secondary font-semibold" 
+                      : isScrolled
+                        ? "text-primary hover:text-primary/90"
+                        : "text-white hover:text-white/90"
                   }`}
                 >
                   {link.name}

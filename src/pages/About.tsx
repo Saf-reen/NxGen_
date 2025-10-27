@@ -9,7 +9,7 @@ const About = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation(0.2);
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen ">
       <PageHero
         title="About Us"
         description="Empowering minds, shaping futures - Your partner in educational excellence"

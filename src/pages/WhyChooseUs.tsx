@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
   const { ref: statsRef, isVisible: isStatsVisible } = useScrollAnimation(0.1);
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
         <PageHero
               title="Why Choose NxGen?"
