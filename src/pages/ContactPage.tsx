@@ -86,9 +86,19 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
+      {/* Contact Form (now with image background + overlay) */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Background image + overlay */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop"
+            alt="Students learning background"
+            className="w-full h-full object-cover brightness-75"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-2xl mx-auto">
             <div
               ref={ref}
@@ -96,10 +106,10 @@ const ContactPage = () => {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Send Us a <span className="gradient-text">Message</span>
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground text-white">
                 Fill out the form below and we'll get back to you as soon as possible
               </p>
             </div>

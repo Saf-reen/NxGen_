@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
 type Testimonial = {
@@ -122,6 +123,13 @@ export const TestimonialsCarousel: React.FC<CarouselProps> = ({
           <ChevronRight className="w-5 h-5" />
           <span className="sr-only">Next testimonials</span>
         </Button>
+      </div>
+
+      {/* Become a student link (aligned under arrows) */}
+      <div className="flex justify-end mt-2">
+        <Link to="#" className="text-sm text-primary hover:underline">
+          Become a Student
+        </Link>
       </div>
     </div>
   );

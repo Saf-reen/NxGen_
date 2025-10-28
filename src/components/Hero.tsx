@@ -25,7 +25,7 @@ export const Hero = () => {
           - Left: main heading
           - Right: paragraph + buttons
           - Uses bg-muted and responsive flex layout */}
-      <section className="py-8 bg-muted -z-20">
+      <section className="py-8 bg-background -z-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <motion.div className="w-full md:w-1/2" initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
@@ -37,7 +37,7 @@ export const Hero = () => {
             </motion.div>
 
             <motion.div className="w-full md:w-1/2 p-6 rounded-lg" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.15 }}>
-              <div className="bg-muted p-6 rounded-lg">
+              <div className="bg-background p-6 rounded-lg">
                 <p className="text-lg text-muted-foreground mb-6">
                   Live mentorship • Real client projects • Placement support.
                   Transform your career with industry-aligned tech education.
@@ -67,7 +67,7 @@ export const Hero = () => {
           {/* WhatsApp quick chat button */}
         <a
           aria-label="Chat on WhatsApp"
-          href={`https://wa.me/918501049836?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
+          href={`https://wa.me/916309782855?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
           target="_blank"
           rel="noreferrer noopener"
           className="fixed right-6 bottom-28 z-10 bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:h-16 hover:w-16 hover:shadow-2xl"

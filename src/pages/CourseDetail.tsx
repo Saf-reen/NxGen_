@@ -124,7 +124,7 @@ const CourseDetail = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       <Preloader isLoading={isLoading} threshold={800} />
       <SEO
         title={course.metaTitle}
@@ -135,7 +135,7 @@ const CourseDetail = () => {
         schemaData={generateCourseSchema(course)}
       />
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden">
         <img
           src={course.image}
           loading="lazy"

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { FileText, Download, BookOpen, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { categories, noteCategories, studyMaterials } from "@/data";
+import { categories, studyMaterials } from "@/data";
 import { PageHero } from "@/components/PageHero";
 
 const Notes = () => {
