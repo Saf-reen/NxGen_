@@ -4,6 +4,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { FileText, Download, BookOpen, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { categories, noteCategories, studyMaterials } from "@/data";
+import { PageHero } from "@/components/PageHero";
 
 const Notes = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -21,16 +22,11 @@ const Notes = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            NOTES AND STUDY MATERIALS
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-slide-up">
-            Download comprehensive study materials and notes prepared by expert educators
-          </p>
-        </div>
-      </section>
+      <PageHero
+              title="NOTES AND STUDY MATERIALS"
+              description="Download comprehensive study materials and notes prepared by expert educators"
+              imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop"
+            />
 
       {/* Search and Filter */}
       <section className="py-8 bg-background border-b">

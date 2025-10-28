@@ -54,7 +54,7 @@ const ContactPage = () => {
                 icon: Phone,
                 title: "Call Us",
                 info: "+91 97013 14138",
-                subinfo: "Mon-Sat, 9AM-8PM",
+                subinfo: "Mon-Fri, 9AM-6PM",
               },
               {
                 icon: Mail,
@@ -209,14 +209,14 @@ const ContactPage = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-card rounded-2xl overflow-hidden shadow-lg">
-              {/* Title */}
+            {/* Title */}
               <div className="p-6 text-center">
                 <h3 className="text-4xl font-bold mb-2">Our Location</h3>
                 <p className="text-muted-foreground">
                   First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049
                 </p>
               </div>
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg">
               {/* Map */}
               <div className="aspect-[16/9] w-full">
                 <iframe

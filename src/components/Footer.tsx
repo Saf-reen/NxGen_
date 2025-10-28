@@ -20,11 +20,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li>
+              {/* <li>
                 <Link to="/" className="hover:text-primary transition-colors">
                   Home
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/about" className="hover:text-primary transition-colors">
                   About Us
@@ -35,11 +35,21 @@ export const Footer = () => {
                   Courses
                 </Link>
               </li>
-              <li>
+               <li>
+                <Link to="/mentors" className="hover:text-primary transition-colors">
+                  Mentors
+                </Link>
+              </li>
+               <li>
+                <Link to="/why-choose-us" className="hover:text-primary transition-colors">
+                  Why Choose Us
+                </Link>
+              </li>
+              {/* <li>
                 <Link to="/notes" className="hover:text-primary transition-colors">
                   Notes & Materials
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

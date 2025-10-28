@@ -1,16 +1,54 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useRef, useEffect, useState } from "react";
 
 const partners = [
-  { name: "University Partner 1", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=100&fit=crop" },
-  { name: "University Partner 2", logo: "https://images.unsplash.com/photo-1562774053-701939374585?w=200&h=100&fit=crop" },
-  { name: "University Partner 3", logo: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=200&h=100&fit=crop" },
-  { name: "University Partner 4", logo: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&h=100&fit=crop" },
-  { name: "University Partner 5", logo: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=200&h=100&fit=crop" },
-  { name: "University Partner 6", logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=100&fit=crop" },
+  { name: "HTML", logo: "./HTML.jpg" },
+  { name: "CSS", logo: "./CSS.jpg" },
+  { name: "JS", logo: "./JS.jpg" },
+  { name: "FLUTTER", logo: "./FLUTTER.jpg" },
+  { name: "POWER BI", logo: "./POWERBI.jpg" },
+  { name: "SAP", logo: "./SAP.jpg" },
+  { name: "AI", logo: "./AI.jpg" },
+  { name: "REACT", logo: "./REACT.jpg" },
+  { name: "PYTHON", logo: "./PYTHON.jpg" },
 ];
 
 export const PartnersCarousel = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const singleRef = useRef<HTMLDivElement | null>(null);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const single = singleRef.current;
+    const container = containerRef.current;
+    if (!single || !container) return;
+
+    const distance = single.scrollWidth; // width of one set
+    if (distance <= 0) return;
+
+    // speed in px/s
+    const speed = 60;
+    const duration = distance / speed;
+
+    // expose variables to CSS for the animation
+    container.style.setProperty("--scrollDistance", `${distance}px`);
+    container.style.setProperty("--duration", `${duration}s`);
+    // trigger the animation class
+    // delay to ensure CSS vars are applied
+    requestAnimationFrame(() => setReady(true));
+
+    const onResize = () => {
+      // recompute on resize
+      container.style.removeProperty("--scrollDistance");
+      container.style.removeProperty("--duration");
+      setReady(false);
+      // debounce re-measure
+      requestAnimationFrame(() => setReady(true));
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <section className="py-20 bg-secondary/70">
@@ -22,53 +60,64 @@ export const PartnersCarousel = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Our <span className="gradient-text">Educational Tie-Ups</span>
+            Our <span className="gradient-text">Technology Stack</span>
           </h2>
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            Collaborating for Excellence in Education
+            Empowering Learners with Industry-Leading Tools
           </p>
         </div>
 
-        {/* Carousel Container */}
+        {/* Carousel Container - seamless infinite loop by duplicating contents */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
-            {/* Duplicate partners for seamless loop */}
-            {[...partners, ...partners].map((partner, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-48 mx-4"
-              >
-                <div className="bg-card rounded-lg p-6 shadow-md hover-lift">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="w-full h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  />
+          <div
+            ref={containerRef}
+            className={`flex ${ready ? "animate-scroll" : ""}`}
+          >
+            <div ref={singleRef} className="flex">
+              {partners.map((partner, index) => (
+                <div key={`a-${index}`} className="flex-shrink-0 w-48 mx-4">
+                  <div className="bg-card rounded-lg p-6 shadow-md hover-lift">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* duplicate set immediately after for seamless looping */}
+            <div aria-hidden className="flex">
+              {partners.map((partner, index) => (
+                <div key={`b-${index}`} className="flex-shrink-0 w-48 mx-4">
+                  <div className="bg-card rounded-lg p-6 shadow-md hover-lift">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       <style>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(var(--scrollDistance) * -1)); }
         }
-
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll var(--duration) linear infinite;
         }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
+        .animate-scroll:hover { animation-play-state: paused; }
       `}</style>
     </section>
   );
 };
+
+// --- helper hooks/state below ---
+// (No additional globals needed)

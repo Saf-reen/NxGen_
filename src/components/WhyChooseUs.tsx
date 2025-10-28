@@ -1,5 +1,6 @@
 import { BookOpen, Video, FileText } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from 'framer-motion';
 
 const features = [
   {
@@ -26,13 +27,14 @@ export const WhyChooseUs = () => {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section id="why-choose-us" className="py-20 bg-muted">
+    <motion.section id="why-choose-us" className="py-20 bg-muted" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
       <div className="container mx-auto px-4">
-        <div
+        <motion.div
           ref={ref}
-          className={`text-center mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">WHY CHOOSE US?</span>
@@ -40,7 +42,7 @@ export const WhyChooseUs = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Here, at Education Academy, we strive so that you succeed..!
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
@@ -48,7 +50,7 @@ export const WhyChooseUs = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

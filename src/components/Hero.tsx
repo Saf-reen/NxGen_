@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 export const Hero = () => {
   return (
@@ -24,18 +25,18 @@ export const Hero = () => {
           - Left: main heading
           - Right: paragraph + buttons
           - Uses bg-muted and responsive flex layout */}
-      <section className="py-16 bg-muted">
+      <section className="py-8 bg-muted -z-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-full md:w-1/2">
+            <motion.div className="w-full md:w-1/2" initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Become Industry-Ready in SAP, Data
                 <br />
                 <span className="text-accent">& Full-Stack in 8–16 Weeks</span>
               </h1>
-            </div>
+            </motion.div>
 
-            <div className="w-full md:w-1/2 p-6 rounded-lg">
+            <motion.div className="w-full md:w-1/2 p-6 rounded-lg" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.15 }}>
               <div className="bg-muted p-6 rounded-lg">
                 <p className="text-lg text-muted-foreground mb-6">
                   Live mentorship • Real client projects • Placement support.
@@ -61,7 +62,7 @@ export const Hero = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
           {/* WhatsApp quick chat button */}
         <a

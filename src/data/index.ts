@@ -4,7 +4,7 @@ import { Category, Course, Instructor, StudyMaterial } from "./types";
 // Top-level categories (groups). The UI will show these categories and courses will be grouped into them.
 export const categories: Category[] = [
   { id: "all", name: "All Categories" },
-  { id: "java-fullstack", name: "Java Full Stack" },
+  { id: "fullstack", name: "Full Stack" },
   { id: "ai-data-science", name: "AI Data Science" },
   { id: "python-ai-dsa", name: "Python Full stack AI integration & DSA" },
   { id: "powerbi", name: "Power BI full stack" },
@@ -14,10 +14,17 @@ export const categories: Category[] = [
 
 // Mapping from the existing course.category values to the new top-level category ids
 const courseCategoryToGroup: Record<string, string> = {
-  java: "java-fullstack",
-  web: "java-fullstack",      // Web Dev with Java focus
-  spring: "java-fullstack",
-  microservices: "java-fullstack",
+  fullstack: "fullstack",
+  web: "fullstack",      // Web Dev with fullstack focus
+  spring: "fullstack",
+  microservices: "fullstack",
+
+  // Common JS / frontend / backend labels often used by instructors
+  reactjs: "fullstack",
+  nodejs: "fullstack",
+  mern: "fullstack",
+  uiux: "fullstack",
+  php: "fullstack",
 
   python: "python-ai-dsa",
   django: "python-ai-dsa",
@@ -535,7 +542,7 @@ export const instructors: Instructor[] = [
     id: 1,
     name: "Dr. Rajesh Kumar",
     role: "Lead Java Architect",
-    category: "java",
+    category: "fullstack",
     company: "Oracle",
     designation: "Principal Java Developer",
     experience: "15+ years",
@@ -546,7 +553,7 @@ export const instructors: Instructor[] = [
     id: 2,
     name: "Sarah Wilson",
     role: "Python Full Stack Expert",
-    category: "python",
+    category: "python-ai-dsa",
     company: "Google",
     designation: "Senior Software Engineer",
     experience: "10+ years",
@@ -557,7 +564,7 @@ export const instructors: Instructor[] = [
     id: 3,
     name: "Mohammed Ali",
     role: "MERN Stack Lead",
-    category: "mern",
+    category: "fullstack",
     company: "Meta",
     designation: "Technical Architect",
     experience: "12+ years",
@@ -568,7 +575,7 @@ export const instructors: Instructor[] = [
     id: 4,
     name: "Emily Chen",
     role: "UI/UX Design Lead",
-    category: "uiux",
+    category: "fullstack",
     company: "Apple",
     designation: "Senior UX Designer",
     experience: "8+ years",
@@ -579,7 +586,7 @@ export const instructors: Instructor[] = [
     id: 5,
     name: "David Rodriguez",
     role: "React Expert",
-    category: "reactjs",
+    category: "fullstack",
     company: "Amazon",
     designation: "Senior Frontend Engineer",
     experience: "9+ years",
@@ -590,7 +597,7 @@ export const instructors: Instructor[] = [
     id: 6,
     name: "Jessica Thompson",
     role: "Node.js Expert",
-    category: "nodejs",
+    category: "fullstack",
     company: "Microsoft",
     designation: "Lead Backend Developer",
     experience: "11+ years",
@@ -601,7 +608,7 @@ export const instructors: Instructor[] = [
     id: 7,
     name: "Michael Zhang",
     role: "Web Design Specialist",
-    category: "web",
+    category: "fullstack",
     company: "Adobe",
     designation: "Creative Director",
     experience: "13+ years",
@@ -612,7 +619,7 @@ export const instructors: Instructor[] = [
     id: 8,
     name: "Lisa Patel",
     role: "PHP & MySQL Expert",
-    category: "php",
+    category: "fullstack",
     company: "LinkedIn",
     designation: "Technical Lead",
     experience: "10+ years",
@@ -623,7 +630,7 @@ export const instructors: Instructor[] = [
     id: 9,
     name: "John Anderson",
     role: "Digital Marketing Strategist",
-    category: "digital",
+    category: "fullstack",
     company: "HubSpot",
     designation: "Marketing Director",
     experience: "14+ years",
@@ -634,7 +641,7 @@ export const instructors: Instructor[] = [
     id: 10,
     name: "Anna Martinez",
     role: "Django Framework Expert",
-    category: "django",
+    category: "python-ai-dsa",
     company: "Instagram",
     designation: "Senior Backend Engineer",
     experience: "9+ years",
@@ -645,7 +652,7 @@ export const instructors: Instructor[] = [
     id: 11,
     name: "Robert Kim",
     role: "SEO Specialist",
-    category: "seo",
+    category: "fullstack",
     company: "Moz",
     designation: "SEO Strategy Lead",
     experience: "12+ years",
@@ -656,7 +663,7 @@ export const instructors: Instructor[] = [
     id: 12,
     name: "Sophie Williams",
     role: "Google Ads Specialist",
-    category: "google",
+    category: "fullstack",
     company: "Google",
     designation: "Digital Advertising Manager",
     experience: "8+ years",
@@ -669,7 +676,7 @@ export const courses = {
   1: {
     id: 1,
     title: "Java Full Stack Development",
-    category: "java",
+    category: "fullstack",
     description: "Master Java Full Stack Development with Spring Boot, React, and Cloud technologies.",
     metaTitle: "Java Full Stack Development Course | NxGen Tech Academy",
     metaDescription: "Become a certified Java Full Stack Developer. Learn Spring Boot, React, and Cloud technologies with hands-on projects and placement support.",
@@ -873,9 +880,18 @@ export const courses = {
 
 // Helper functions
 export const getInstructorsByCategory = (category: string) => {
-  return category === "all" 
-    ? instructors 
-    : instructors.filter(instructor => instructor.category === category);
+  if (category === "all") return instructors;
+
+  // Map each instructor's category to the top-level group using the same
+  // courseCategoryToGroup used for courses. This allows the mentors filter
+  // to show instructors whose internal category (like 'reactjs' or 'nodejs')
+  // maps to a top-level category such as 'fullstack'. If an instructor's
+  // category isn't present in the mapping, the comparison will fall back to
+  // direct equality (rare) and the instructor won't appear under that group.
+  return instructors.filter((instructor) => {
+    const mapped = courseCategoryToGroup[instructor.category] ?? instructor.category;
+    return mapped === category;
+  });
 };
 
 export const getCoursesByCategory = (category: string) => {

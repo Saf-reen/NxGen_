@@ -2,6 +2,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { PageHero } from "@/components/PageHero";
+import { AnimatedCarousel } from "@/components/AnimatedCarousel";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import {
   BookOpen,
   Users,
@@ -66,7 +68,13 @@ const testimonials = [
     role: "UX Designer",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
     quote: "The project-based learning approach gave me a portfolio that impressed employers. Highly recommended!"
-  }
+  },
+  {
+    name: "Sarah Johnson",
+    role: "Software Developer",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    quote: "Thanks to NxGen, I landed my first tech job in just 3 months! The practical approach and mentor support made all the difference."
+  },
 ];
 
 const stats = [
@@ -139,45 +147,11 @@ const WhyChooseUs = () => {
           </div>
           <div
             ref={testimonialsRef}
-            className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-700 ${
+            className={`transition-all duration-700 ${
               isTestimonialsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.name}
-                className="bg-card rounded-xl p-8 shadow-lg relative group hover:-translate-y-2 transition-all duration-300"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                {/* Quote Icon Background */}
-                <div className="absolute top-4 right-4 text-primary/10">
-                  <svg className="w-12 h-12 transform group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="relative">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover ring-4 ring-primary/10"
-                      />
-                      <div className="absolute -bottom-2 -right-2 bg-primary rounded-full p-1.5">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">"{testimonial.quote}"</p>
-                </div>
-              </div>
-            ))}
+            <TestimonialsCarousel testimonials={testimonials} />
           </div>
         </div>
       </section>

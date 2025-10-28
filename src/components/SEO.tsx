@@ -12,7 +12,7 @@ interface SEOProps {
 export const SEO = ({
   title,
   description,
-  image = '/og-image.jpg',
+  image = '/favicon.ico',
   schemaData,
   type = 'website',
   path = '',
