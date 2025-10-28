@@ -53,8 +53,8 @@ const ContactPage = () => {
               {
                 icon: Phone,
                 title: "Call Us",
-                info: "+91 97013 14138",
-                subinfo: "Mon-Fri, 9AM-6PM",
+                info: "+91 63097 82855",
+                subinfo: "Mon-Fri, 10AM-6PM",
               },
               {
                 icon: Mail,
