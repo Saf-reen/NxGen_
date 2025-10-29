@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { Preloader } from "@/components/Preloader";
 import { categories, getCoursesByCategory } from "@/data";
 import type { Course } from "@/data/types";
+import { SEO } from '@/components/SEO';
 
 const Courses = () => {
   const [searchParams] = useSearchParams();
@@ -36,6 +37,11 @@ const Courses = () => {
   return (
     <div className="min-h-screen">
       <Preloader isLoading={isLoading} threshold={800} />
+      <SEO
+        title="Courses – NxGen Tech Academy"
+        description="Explore our professional courses in Full Stack, Python, Data Science, Power BI, Testing, and Cybersecurity. Practical, project-based training with placement support."
+        keywords={categories.map(c => c.name).join(', ')}
+      />
       <PageHero
         title="Our Courses"
         description="Choose from our comprehensive range of courses designed to help you achieve your academic goals"

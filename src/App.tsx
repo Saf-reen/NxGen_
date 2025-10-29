@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import { Preloader } from "./components/Preloader";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -16,6 +17,7 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import Mentors from "./pages/Mentors";
+import { categories } from './data';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,11 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <div className="min-h-screen  text-black">
+        <Helmet>
+          <title>NxGen Tech Academy - Training & Courses</title>
+          <meta name="description" content="NxGen Tech Academy - Industry-aligned training in Full Stack, Python, Data Science, Power BI, Testing, and Cybersecurity." />
+          <meta name="keywords" content={categories.map(c => c.name).join(', ')} />
+        </Helmet>
         <Toaster />
         <Sonner />
         <Preloader />

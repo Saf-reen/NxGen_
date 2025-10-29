@@ -130,6 +130,7 @@ const CourseDetail = () => {
         title={course.metaTitle}
         description={course.metaDescription}
         image={course.image}
+        keywords={(Array.isArray(course.features) ? course.features.join(', ') : '')}
         type="course"
         path={`/courses/${id}`}
         schemaData={generateCourseSchema(course)}

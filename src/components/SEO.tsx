@@ -1,8 +1,9 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
   description: string;
+  keywords?: string;
   image?: string;
   schemaData?: object;
   type?: string;
@@ -12,6 +13,7 @@ interface SEOProps {
 export const SEO = ({
   title,
   description,
+  keywords = '',
   image = '/favicon.ico',
   schemaData,
   type = 'website',
@@ -19,13 +21,14 @@ export const SEO = ({
 }: SEOProps) => {
   const siteUrl = 'https://nxgentechacademy.com';
   const fullUrl = `${siteUrl}${path}`;
-  const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+  const fullImage = image?.toString().startsWith('http') ? image : `${siteUrl}${image}`;
 
   return (
     <Helmet>
       {/* Basic metadata */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
@@ -43,9 +46,7 @@ export const SEO = ({
 
       {/* Schema.org */}
       {schemaData && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
       )}
 
       {/* Canonical URL */}
