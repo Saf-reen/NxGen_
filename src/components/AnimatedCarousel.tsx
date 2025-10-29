@@ -25,17 +25,35 @@ export const AnimatedCarousel: React.FC<{
   useEffect(() => {
     if (!emblaApi) return;
     const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    // attach listener
     emblaApi.on('select', onSelect);
     onSelect();
-    return () => emblaApi.off('select', onSelect);
+    // cleanup listener safely
+    return () => {
+      try {
+        emblaApi.off('select', onSelect as any);
+      } catch (e) {
+        // ignore cleanup errors
+      }
+    };
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi || !autoplay) return;
-    const play = () => emblaApi.scrollNext();
+
+    const play = () => {
+      try {
+        emblaApi.scrollNext();
+      } catch {}
+    };
+
     autoplayRef.current = window.setInterval(play, interval);
+
     return () => {
-      if (autoplayRef.current) window.clearInterval(autoplayRef.current);
+      if (autoplayRef.current) {
+        window.clearInterval(autoplayRef.current);
+        autoplayRef.current = null;
+      }
     };
   }, [emblaApi, autoplay, interval]);
 

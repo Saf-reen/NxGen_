@@ -5,12 +5,13 @@ const partners = [
   { name: "HTML", logo: "./HTML.jpg" },
   { name: "CSS", logo: "./CSS.jpg" },
   { name: "JS", logo: "./JS.jpg" },
-  { name: "FLUTTER", logo: "./FLUTTER.jpg" },
-  { name: "POWER BI", logo: "./POWERBI.jpg" },
-  { name: "SAP", logo: "./SAP.jpg" },
+  { name: "FLUTTER", logo: "./FLUTTER.webp" },
+  { name: "POWER BI", logo: "./POWERBI.png" },
+  { name: "SAP", logo: "./SAP.png" },
   { name: "AI", logo: "./AI.jpg" },
-  { name: "REACT", logo: "./REACT.jpg" },
+  { name: "REACT", logo: "./REACT.png" },
   { name: "PYTHON", logo: "./PYTHON.jpg" },
+  { name: "JAVA", logo: "./JAVA.jpg" },
 ];
 
 export const PartnersCarousel = () => {

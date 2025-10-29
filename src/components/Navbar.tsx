@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { TrainingModelMenu } from "./TrainingModelMenu";
+import { trainingModelRoutes } from "@/data/training-model";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +32,7 @@ export const Navbar = () => {
   const navLinks = [
     // { name: "Home", path: "/" },
     { name: "About", path: "/about" },
+    { name: "Training Model", type: "dropdown" },
     { 
       name: "Courses", 
       path: "/courses",
@@ -64,23 +67,31 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
-                <Link
-                  to={link.path}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 relative ${
-                    isActive(link.path)
-                      ? "text-secondary font-semibold"
-                      : isScrolled
-                        ? "text-primary hover:text-primary/90"
-                        : "text-white hover:text-white/90"
-                  }`}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
-                    isActive(link.path) ? "w-full" : ""
-                  }`} />
-                </Link>
-              </div>
+              link.type === "dropdown" ? (
+                  <div key={link.name} className={`${
+                    isScrolled ? "text-primary" : "text-white"
+                  }`}>
+                    <TrainingModelMenu />
+                  </div>
+              ) : (
+                <div key={link.name} className="relative group">
+                  <Link
+                    to={link.path}
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 relative ${
+                      isActive(link.path)
+                        ? "text-secondary font-semibold"
+                        : isScrolled
+                          ? "text-primary hover:text-primary/90"
+                          : "text-white hover:text-white/90"
+                    }`}
+                  >
+                    {link.name}
+                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
+                      isActive(link.path) ? "w-full" : ""
+                    }`} />
+                  </Link>
+                </div>
+              )
             ))}
           </div>
 
@@ -107,20 +118,38 @@ export const Navbar = () => {
             isScrolled ? 'bg-background/95' : 'bg-black/20'
           } backdrop-blur-lg`}>
             {navLinks.map((link) => (
-              <div key={link.name}>
-                <Link
-                  to={link.path}
-                  className={`block px-4 py-3 transition-colors relative ${
-                    isActive(link.path) 
-                      ? "text-secondary font-semibold" 
-                      : isScrolled
-                        ? "text-primary hover:text-primary/90"
-                        : "text-white hover:text-white/90"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </div>
+              link.type === "dropdown" ? (
+                <div key={link.name} className="px-4 py-2">
+                  <span className="text-lg font-medium mb-2 block">Training Model</span>
+                  <div className="space-y-2">
+                    {trainingModelRoutes.map((route) => (
+                      <Link
+                        key={route.href}
+                        to={route.href}
+                            className="flex items-center gap-2 px-2 py-1.5 text-sm rounded text-secondary hover:bg-accent/50 transition-colors"
+                      >
+                        <route.icon className="w-4 h-4" />
+                        {route.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div key={link.name}>
+                  <Link
+                    to={link.path}
+                    className={`block px-4 py-3 transition-colors relative ${
+                      isActive(link.path) 
+                        ? "text-secondary font-semibold" 
+                        : isScrolled
+                          ? "text-primary hover:text-primary/90"
+                          : "text-white hover:text-white/90"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </div>
+              )
             ))}
             <div className="px-4 pt-4">
               <Button variant="hero" size="lg" className="w-full" asChild>

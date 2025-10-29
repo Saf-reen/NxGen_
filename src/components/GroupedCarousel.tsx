@@ -51,15 +51,29 @@ export const GroupedCarousel: React.FC<CarouselProps> = ({
     const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
     emblaApi.on('select', onSelect);
     onSelect();
-    return () => emblaApi.off('select', onSelect);
+    return () => {
+      try {
+        emblaApi.off('select', onSelect as any);
+      } catch {}
+    };
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi || !autoplay) return;
-    const play = () => emblaApi.scrollNext();
+
+    const play = () => {
+      try {
+        emblaApi.scrollNext();
+      } catch {}
+    };
+
     autoplayRef.current = window.setInterval(play, interval);
+
     return () => {
-      if (autoplayRef.current) window.clearInterval(autoplayRef.current);
+      if (autoplayRef.current) {
+        window.clearInterval(autoplayRef.current);
+        autoplayRef.current = null;
+      }
     };
   }, [emblaApi, autoplay, interval]);
 

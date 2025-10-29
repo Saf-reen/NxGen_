@@ -10,6 +10,7 @@ export const categories: Category[] = [
   { id: "powerbi", name: "Power BI full stack" },
   { id: "testing", name: "Testing tools" },
   { id: "cybersecurity", name: "Cybersecurity" },
+  { id: "sap", name: "SAP" }
 ];
 
 // Mapping from the existing course.category values to the new top-level category ids

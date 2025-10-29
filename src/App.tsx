@@ -18,6 +18,14 @@ import NotFound from "./pages/NotFound";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import Mentors from "./pages/Mentors";
 import { categories } from './data';
+import TrainingPage from './pages/training/index';
+import ClassroomTraining from './pages/training/ClassroomTraining';
+import OnlineTraining from './pages/training/OnlineTraining';
+import WeekendTraining from './pages/training/WeekendTraining';
+import CorporateTraining from './pages/training/CorporateTraining';
+import Internships from './pages/training/Internships';
+import TrainersProfile from './pages/training/TrainersProfile';
+import CourseSchedule from './pages/training/CourseSchedule';
 
 const queryClient = new QueryClient();
 
@@ -46,6 +54,14 @@ const App = () => (
               <Route path="mentors" element={<Mentors />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="why-choose-us" element={<WhyChooseUs />} />
+              <Route path="training/classroom" element={<ClassroomTraining />} />
+              <Route path="training/online" element={<OnlineTraining />} />
+              <Route path="training" element={<TrainingPage />} />
+              <Route path="training/weekend" element={<WeekendTraining />} />
+              <Route path="training/corporate" element={<CorporateTraining />} />
+              <Route path="training/internships" element={<Internships />} />
+              <Route path="training/trainers" element={<TrainersProfile />} />
+              <Route path="training/schedule" element={<CourseSchedule />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
