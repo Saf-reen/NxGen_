@@ -4,13 +4,15 @@ import { Category, Course, Instructor, StudyMaterial } from "./types";
 // Top-level categories (groups). The UI will show these categories and courses will be grouped into them.
 export const categories: Category[] = [
   { id: "all", name: "All Categories" },
-  { id: "fullstack", name: "Full Stack" },
-  { id: "ai-data-science", name: "AI Data Science" },
-  { id: "python-ai-dsa", name: "Python Full stack AI integration & DSA" },
-  { id: "powerbi", name: "Power BI full stack" },
-  { id: "testing", name: "Testing tools" },
-  { id: "cybersecurity", name: "Cybersecurity" },
-  { id: "sap", name: "SAP" }
+  { id: "python", name: "Python" },
+  { id: "aiml", name: "AI & ML" },
+  // { id: "fullstack", name: "Full Stack" },
+  // { id: "ai-data-science", name: "AI Data Science" },
+  // { id: "python-ai-dsa", name: "Python Full stack AI integration & DSA" },
+  // { id: "powerbi", name: "Power BI full stack" },
+  // { id: "testing", name: "Testing tools" },
+  // { id: "cybersecurity", name: "Cybersecurity" },
+  // { id: "sap", name: "SAP" }
 ];
 
 // Mapping from the existing course.category values to the new top-level category ids
@@ -676,253 +678,108 @@ export const instructors: Instructor[] = [
 export const courses = {
   1: {
     id: 1,
-    title: "Java Full Stack Development",
-    category: "fullstack",
-    description: "Master Java Full Stack Development with Spring Boot, React, and Cloud technologies.",
-    metaTitle: "Java Full Stack Development Course | NxGen Tech Academy",
-    metaDescription: "Become a certified Java Full Stack Developer. Learn Spring Boot, React, and Cloud technologies with hands-on projects and placement support.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
-    duration: "16 Weeks",
-    students: "250+ Students",
+    title: "AI/ML",
+    category: "aiml",
+    description: "Comprehensive AI/ML training program with hands-on projects and placement assistance",
+    metaTitle: "AI/ML Course | NxGen Tech Academy",
+    metaDescription: "Master AI/ML with hands-on training, real-time projects, and 100% placement support",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+    duration: "45 Days",
+    students: "200+ Students",
     rating: "4.9",
-    price: "₹45,000",
-    startDate: "2025-11-15",
-    color: "from-blue-500 to-cyan-500",
-    icon: Code,
-    instructor: {
-      name: "Dr. Rajesh Kumar",
-      image: "/instructors/rajesh.jpg",
-      designation: "Principal Java Developer",
-      experience: "15+ years"
-    },
-    features: ["Java", "Spring Boot", "React", "Cloud", "Microservices"],
-    syllabus: [
-      {
-        module: "Core Java",
-        topics: ["OOP Concepts", "Spring Boot", "Microservices", "React Integration"]
-      }
-    ],
+    price: "₹30,000",
+    color: "from-red-600 to-red-500",
+    icon: Brain,
+    features: {
+      duration: "45 Days Comprehensive Training Program",
+      projects: "Work on 2 Real-Time Industry Projects",
+      certification: "Course Completion Certificates Provided",
+      placement: "100% Placement Assistance",
+      skillDevelopment: "Hands-on Training with Practical Implementation",
+      mentorship: "Guided by Experienced Industry Professionals",
+      careerSupport: "Resume Building, Mock Interviews & Job Referrals"
+    }
   },
   2: {
     id: 2,
-    title: "Python Full Stack Development",
-    category: "python",
-    description: "Master Python Full Stack Development with Django, Flask, and modern web frameworks.",
-    metaTitle: "Python Full Stack Development Course | NxGen Tech Academy",
-    metaDescription: "Learn Python Full Stack Development with Django and modern frameworks.",
+    title: "PYTHON & AI/ML",
+    category: "aiml",
+    description: "Combined Python and AI/ML program with comprehensive training",
+    metaTitle: "Python & AI/ML Course | NxGen Tech Academy",
+    metaDescription: "Master Python and AI/ML with hands-on training and placement support",
     image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=600&fit=crop",
-    duration: "16 Weeks",
+    duration: "45 Days",
     students: "180+ Students",
-    rating: "4.7",
-    price: "₹42,000",
-    startDate: "2025-12-15",
-    color: "from-green-500 to-emerald-500",
-    icon: Terminal,
-    instructor: {
-      name: "Sarah Wilson",
-      image: "/instructors/sarah.jpg",
-      designation: "Senior Software Engineer",
-      experience: "10+ years"
-    },
-    features: ["Python", "Django", "Flask", "FastAPI", "AI Integration"],
-    syllabus: [
-      {
-        module: "Python Core",
-        topics: ["Python Advanced", "Django", "REST APIs", "Database Design"]
-      }
-    ],
+    rating: "4.8",
+    price: "₹50,000",
+    color: "from-yellow-500 to-yellow-400",
+    icon: Brain,
+    features: {
+      duration: "45 Days Comprehensive Training Program",
+      projects: "Work on 2 Real-Time Industry Projects",
+      certification: "Course Completion Certificates Provided",
+      placement: "100% Placement Assistance",
+      skillDevelopment: "Hands-on Training with Practical Implementation",
+      mentorship: "Guided by Experienced Industry Professionals",
+      careerSupport: "Resume Building, Mock Interviews & Job Referrals"
+    }
   },
   3: {
     id: 3,
-    title: "Machine Learning and Deep Learning",
-    category: "data",
-    description: "Master machine learning algorithms and deep neural networks",
-    metaTitle: "Machine Learning & Deep Learning Course | NxGen Tech Academy",
-    metaDescription: "Master machine learning algorithms, neural networks, and deep learning with Python and TensorFlow.",
+    title: "AI/ML & INTERNSHIP",
+    category: "aiml",
+    description: "Advanced AI/ML program with internship opportunity",
+    metaTitle: "AI/ML with Internship | NxGen Tech Academy",
+    metaDescription: "Get certified in AI/ML with internship experience and placement support",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
-    duration: "14 Weeks",
-    students: "200+ Students",
-    rating: "4.8",
-    price: "₹40,000",
-    startDate: "2025-12-01",
-    color: "from-green-500 to-teal-500",
-    icon: Database,
-    instructor: {
-      name: "Dr. Sarah Wilson",
-      image: "/instructors/sarah.jpg",
-      designation: "Technical Architect",
-      experience: "12+ years"
-    },
-    features: ["Python", "Machine Learning", "Deep Learning", "TensorFlow", "Data Analysis"],
-    syllabus: [
-      {
-          module: "Machine Learning & Deep Learning",
-          topics: ["Neural Networks", "Deep Learning", "Natural Language Processing", "Computer Vision"]
-      }
-    ],
+    duration: "45 Days",
+    students: "150+ Students",
+    rating: "4.9",
+    price: "₹75,000",
+    color: "from-green-600 to-green-500",
+    icon: Brain,
+    features: {
+      duration: "45 Days Comprehensive Training Program",
+      projects: "Work on 2 Real-Time Industry Projects",
+      certification: "Internship & Course Completion Certificates Provided",
+      placement: "100% Placement Assistance",
+      skillDevelopment: "Hands-on Training with Practical Implementation",
+      mentorship: "Guided by Experienced Industry Professionals",
+      careerSupport: "Resume Building, Mock Interviews & Job Referrals"
+    }
   },
   4: {
     id: 4,
-    title: "Power BI Analytics",
-    category: "powerbi",
-    description: "Master data analysis and visualization with Power BI and DAX",
-    metaTitle: "Power BI Analytics Course | NxGen Tech Academy",
-    metaDescription: "Learn data visualization, DAX formulas, and business intelligence with Power BI",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop",
-    duration: "12 Weeks",
-    students: "150+ Students",
+    title: "PYTHON, AI/ML & INTERNSHIP",
+    category: "aiml",
+    description: "Complete package with Python, AI/ML training and internship",
+    metaTitle: "Python, AI/ML & Internship | NxGen Tech Academy",
+    metaDescription: "Complete Python and AI/ML program with internship and placement support",
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=600&fit=crop",
+    duration: "45 Days",
+    students: "120+ Students",
     rating: "4.9",
-    price: "₹35,000",
-    startDate: "2025-11-20",
-    color: "from-purple-500 to-pink-500",
-    icon: Monitor,
-    instructor: {
-      name: "James Anderson",
-      image: "/instructors/james.jpg",
-      designation: "BI Solutions Architect",
-      experience: "10+ years"
-    },
-     features: ["Power BI", "DAX", "Data Modeling", "ETL", "Business Analytics"],
-    syllabus: [
-      {
-        module: "Power BI Mastery",
-        topics: ["Data Modeling", "DAX Functions", "Visualization", "Report Design"]
-      }
-    ],
-  },
-  5: {
-    id: 5,
-    title: "Software Testing & QA",
-    category: "testing",
-    description: "Master software testing methodologies, automation, and quality assurance practices.",
-    metaTitle: "Software Testing & QA Course | NxGen Tech Academy",
-    metaDescription: "Learn comprehensive software testing techniques, tools, and automation frameworks.",
-    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=1200&h=600&fit=crop",
-    duration: "10 Weeks",
-    students: "160+ Students",
-    rating: "4.8",
-    price: "₹38,000",
-    startDate: "2025-11-25",
-    color: "from-blue-500 to-cyan-500",
-    icon: Code,
-    instructor: {
-      name: "Michelle Zhang",
-      image: "/instructors/michelle.jpg",
-      designation: "Lead QA Engineer",
-      experience: "11+ years"
-    },
-     features: ["Selenium", "JUnit", "TestNG", "API Testing", "Performance Testing"],
-    syllabus: [
-      {
-        module: "Testing & Automation",
-        topics: ["Test Strategy", "Automation Frameworks", "CI/CD Integration", "Performance Testing"]
-      }
-    ],
-  },
-  6: {
-    id: 6,
-    title: "Cybersecurity Professional",
-    category: "security",
-    description: "Master cybersecurity fundamentals, ethical hacking, and network security.",
-    metaTitle: "Cybersecurity Professional Course | NxGen Tech Academy",
-    metaDescription: "Learn ethical hacking, network security, and cybersecurity best practices.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop",
-    duration: "14 Weeks",
-    students: "130+ Students",
-    rating: "4.9",
-    price: "₹40,000",
-    startDate: "2025-12-05",
-    color: "from-pink-500 to-purple-500",
-    icon: Monitor,
-    instructor: {
-      name: "Alex Thompson",
-      image: "/instructors/alex.jpg",
-      designation: "Security Architect",
-      experience: "13+ years"
-    },
-     features: ["Network Security", "Ethical Hacking", "Penetration Testing", "Security Analysis", "Digital Forensics"],
-    syllabus: [
-      {
-        module: "Cybersecurity Essentials",
-        topics: ["Network Security", "Ethical Hacking", "Incident Response", "Forensics Analysis"]
-      }
-    ],
-  },
-  7: {
-    id: 7,
-    title: "Node.js Backend Development",
-    category: "nodejs",
-    description: "Master Node.js backend development with Express, databases, and microservices.",
-    metaTitle: "Node.js Development Course | NxGen Tech Academy",
-    metaDescription: "Learn professional Node.js backend development.",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1200&h=600&fit=crop",
-    duration: "12 Weeks",
-    students: "140+ Students",
-    rating: "4.8",
-    price: "₹42,000",
-    startDate: "2025-12-10",
-    color: "from-green-500 to-teal-500",
-    icon: Terminal,
-    instructor: {
-      name: "Jessica Thompson",
-      image: "/instructors/jessica.jpg",
-      designation: "Lead Backend Developer",
-      experience: "11+ years"
-    },
-    features: ["Express.js", "MongoDB", "REST APIs", "GraphQL"],
-    syllabus: [
-      {
-        module: "Node.js Advanced",
-        topics: ["API Design", "Database Integration", "Security", "Microservices"]
-      }
-    ],
-  },
+    price: "₹100,000",
+    color: "from-blue-600 to-blue-500",
+    icon: Brain,
+    features: {
+      duration: "45 Days Comprehensive Training Program",
+      projects: "Work on 2 Real-Time Industry Projects",
+      certification: "Internship & Course Completion Certificates Provided",
+      placement: "100% Placement Assistance",
+      skillDevelopment: "Hands-on Training with Practical Implementation",
+      mentorship: "Guided by Experienced Industry Professionals",
+      careerSupport: "Resume Building, Mock Interviews & Job Referrals"
+    }
+  }
 } as const satisfies Record<number, Course>;
 
 // Helper functions
-export const getInstructorsByCategory = (category: string) => {
-  if (category === "all") return instructors;
-
-  // Map each instructor's category to the top-level group using the same
-  // courseCategoryToGroup used for courses. This allows the mentors filter
-  // to show instructors whose internal category (like 'reactjs' or 'nodejs')
-  // maps to a top-level category such as 'fullstack'. If an instructor's
-  // category isn't present in the mapping, the comparison will fall back to
-  // direct equality (rare) and the instructor won't appear under that group.
-  return instructors.filter((instructor) => {
-    const mapped = courseCategoryToGroup[instructor.category] ?? instructor.category;
-    return mapped === category;
-  });
-};
-
 export const getCoursesByCategory = (category: string) => {
   if (category === "all") return Object.values(courses);
-
-  // Filter courses by mapping their existing `category` to the new group id.
-  return Object.values(courses).filter((course) => {
-    const mapped = courseCategoryToGroup[course.category] ?? "other";
-    return mapped === category;
-  });
+  return Object.values(courses).filter((course) => course.category === category);
 };
 
 export const getPreviewCourses = () => {
-  // Get one representative course for each top-level category (exclude 'all')
-  const reps: Course[] = [];
-  for (const cat of categories) {
-    if (cat.id === "all") continue;
-    const found = Object.values(courses).find((course) => {
-      const mapped = courseCategoryToGroup[course.category] ?? "other";
-      return mapped === cat.id;
-    });
-    if (found) reps.push(found);
-  }
-  return reps;
-};
-
-export const getInstructorForCourse = (courseId: number) => {
-  const course = courses[courseId];
-  return instructors.find(instructor => 
-    instructor.category === course?.category && 
-    instructor.name === course?.instructor.name
-  );
+  return Object.values(courses);
 };

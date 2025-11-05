@@ -56,12 +56,8 @@ export const Navbar = () => {
           <Link 
             to="/"
             className="transition-transform duration-300 hover:scale-105 cursor-pointer border-none bg-transparent"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = 'http://localhost:8000/';
-            }}
           >
-            <img src="/Logo.png" alt="Logo" className="h-10 w-30"/>
+            <img src="/Logo.png" alt="Logo" className="h-10 w-30" />
           </Link>
 
           {/* Desktop Navigation */}

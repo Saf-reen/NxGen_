@@ -44,35 +44,15 @@ export interface Course {
   students: string;
   rating: string;
   price: string;
-  startDate: string;
-  instructor: {
-    name: string;
-    image: string;
-    designation: string;
-    experience: string;
-  };
-  outcomes?: ReadonlyArray<string>;
-  tools?: ReadonlyArray<string>;
-  placement?: {
-    avgSalary: string;
-    companies: ReadonlyArray<string>;
-    successRate: string;
-  };
-  fees?: {
-    amount: string;
-    emi: string;
-  };
-  testimonials?: ReadonlyArray<{
-    name: string;
-    company: string;
-    text: string;
-    image: string;
-  }>;
-  features: ReadonlyArray<string>;
-  syllabus: ReadonlyArray<{
-    module: string;
-    topics: ReadonlyArray<string>;
-  }>;
-  color?: string;
+  color: string;
   icon?: any; // This will be a Lucide icon component
+  features: {
+    duration: string;
+    projects: string;
+    certification: string;
+    placement: string;
+    skillDevelopment: string;
+    mentorship: string;
+    careerSupport: string;
+  };
 }
