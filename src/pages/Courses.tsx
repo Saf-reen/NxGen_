@@ -94,8 +94,8 @@ const Courses = () => {
         </div>
       </section>
 
-      {/* Walking character walks along the bottom edge like a taskbar (transparent) */}
-      {/* <div className="fixed left-0 bottom-0 w-screen h-28 z-50 pointer-events-none bg-transparent">
+      {/* Walking character walks along the bottom edge like a taskbar (transparent)
+      <div className="fixed left-0 bottom-0 w-screen h-28 z-50 pointer-events-none bg-transparent">
         <WalkingCharacter />
       </div> */}
     </div>

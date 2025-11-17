@@ -75,7 +75,7 @@ const CourseDetail = () => {
               { icon: Clock, label: "Duration", value: course.features.duration },
               { icon: BookOpen, label: "Projects", value: course.features.projects },
               { icon: Award, label: "Rating", value: `${course.rating} ★` },
-              { icon: Award, label: "Price", value: `₹${course.price}` },
+              { icon: Award, label: "Price", value: `${course.price}` },
             ].map((stat, index) => (
               <div key={index} className="bg-card rounded-lg p-4 shadow-md text-center">
                 <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
@@ -122,7 +122,7 @@ const CourseDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-accent text-white">
+      <section className="py-16 bg-gradient-accent text-black">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Start Your Journey?
@@ -132,12 +132,12 @@ const CourseDetail = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">Enroll Now</Link>
+              <Link to="https://docs.google.com/forms/d/e/1FAIpQLSfCORZn1qWHl6NuhIfGkGfAkxhVzF3paBVMSSqndMferNEK_Q/viewform?usp=header">Enroll Now</Link>
             </Button>
             <Button 
               variant="outline" 
               size="xl"
-              className="bg-white/10 border-white text-white hover:bg-white hover:text-accent"
+              className="bg-white/10 border-green-700 text-green-700 hover:bg-white hover:text-accent"
             >
               Download Brochure
             </Button>

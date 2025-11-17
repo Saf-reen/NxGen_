@@ -127,7 +127,7 @@ export const TestimonialsCarousel: React.FC<CarouselProps> = ({
 
       {/* Become a student link (aligned under arrows) */}
       <div className="flex justify-end mt-2">
-        <Link to="https://docs.google.com/forms/d/e/1FAIpQLSfCORZn1qWHl6NuhIfGkGfAkxhVzF3paBVMSSqndMferNEK_Q/viewform?usp=header" className="text-sm text-primary hover:underline">
+        <Link to="https://forms.gle/nLXYmZAERof9g77V7" className="text-sm text-primary hover:underline">
           Become a Student
         </Link>
       </div>

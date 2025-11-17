@@ -26,6 +26,7 @@ import CorporateTraining from './pages/training/CorporateTraining';
 import Internships from './pages/training/Internships';
 import TrainersProfile from './pages/training/TrainersProfile';
 import CourseSchedule from './pages/training/CourseSchedule';
+// import WalkingCharacter from "@/components/WalkingCharacter";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,10 @@ const App = () => (
           <meta name="description" content="NxGen Tech Academy - Industry-aligned training in Full Stack, Python, Data Science, Power BI, Testing, and Cybersecurity." />
           <meta name="keywords" content={categories.map(c => c.name).join(', ')} />
         </Helmet>
+        {/* Walking character walks along the bottom edge like a taskbar (transparent) */}
+      {/* <div className="fixed left-0 bottom-0 w-screen h-28 z-50 pointer-events-none bg-transparent">
+        <WalkingCharacter />
+      </div> */}
         <Toaster />
         <Sonner />
         <Preloader />
