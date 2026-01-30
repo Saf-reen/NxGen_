@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import GTMPageView from "./GTMPageView";
+import GTMPageView from "./GTMPageView";
 import { Helmet } from 'react-helmet-async';
 import { Preloader } from "./components/Preloader";
 import { Navbar } from "./components/Navbar";
@@ -48,7 +48,7 @@ const App = () => (
         <Sonner />
         <Preloader />
         <BrowserRouter>
-      {/* <GTMPageView /> */}
+      <GTMPageView />
           <ScrollToTop />
           <Navbar />
           <main>
