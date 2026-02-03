@@ -1,115 +1,74 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import { Button } from "./ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="bg-accent text-accent-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-slate-900 text-slate-300">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Section */}
-          <div>
-            <div className="flex items-center gap-2">
-              <img src="/Logo.png" alt="Logo" className="h-10 w-30 mx-auto mb-4"/>
-            </div>
-            <p className="text-accent-foreground/80 text-sm">
-              Empowering students to achieve their dreams through quality education and comprehensive learning resources.
+          <div className="space-y-4">
+            <Link to="/" className="block">
+              <img src="/Logo.png" alt="Aspire IT" className="h-10 w-auto brightness-0 invert" />
+            </Link>
+            <p className="text-sm leading-relaxed opacity-80">
+              Aspire Techsoft is a leading IT training institute offering job-oriented courses with 100% placement assistance. We are dedicated to shaping your career with expert guidance and practical learning.
             </p>
+            <div className="flex gap-4 pt-2">
+              <a href="#" className="hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              {/* <li>
-                <Link to="/" className="hover:text-primary transition-colors">
-                  Home
-                </Link>
-              </li> */}
-              <li>
-                <Link to="/about" className="hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/courses" className="hover:text-primary transition-colors">
-                  Courses
-                </Link>
-              </li>
-               <li>
-                <Link to="/mentors" className="hover:text-primary transition-colors">
-                  Mentors
-                </Link>
-              </li>
-               <li>
-                <Link to="/why-choose-us" className="hover:text-primary transition-colors">
-                  Why Choose Us
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/notes" className="hover:text-primary transition-colors">
-                  Notes & Materials
-                </Link>
-              </li> */}
+            <h3 className="font-bold text-white text-lg mb-6">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+              <li><Link to="/all-courses.php" className="hover:text-secondary transition-colors">All Courses</Link></li>
+              <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
+              <li><Link to="/sas-training-institute-in-pune" className="hover:text-secondary transition-colors">SAS Certification</Link></li>
+              <li><Link to="/why-choose-us" className="hover:text-secondary transition-colors">Success Stories</Link></li>
+            </ul>
+          </div>
+
+          {/* Popular Courses */}
+          <div>
+            <h3 className="font-bold text-white text-lg mb-6">Popular Courses</h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="#" className="hover:text-secondary transition-colors">Data Analytics</Link></li>
+              <li><Link to="#" className="hover:text-secondary transition-colors">Full Stack Java</Link></li>
+              <li><Link to="#" className="hover:text-secondary transition-colors">SAP S/4 HANA</Link></li>
+              <li><Link to="#" className="hover:text-secondary transition-colors">Data Science</Link></li>
+              <li><Link to="#" className="hover:text-secondary transition-colors">Software Testing</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049</span>
+            <h3 className="font-bold text-white text-lg mb-6">Contact Us</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                <span>Office No. 12, 1st Floor, Aspire Towers, Pune, Maharashtra 411001</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+91 63097 82855</span>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
+                <span>+91 9960 935 600</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>nxgentechacademy@gmail.com</span>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
+                <span>info@aspireit.net</span>
               </li>
             </ul>
           </div>
-
-          {/* Social Media */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-            <div className="flex gap-3">
-              {/* <a
-                href="#"
-                className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a> */}
-              <a
-                href="https://www.instagram.com/nxgentechacademy/"
-                className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nxgen-tech-academy-academy-849b5338b/"
-                className="w-10 h-10 bg-accent-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
         </div>
 
-        <div className="border-t border-accent-foreground/20 mt-8 pt-8 text-center text-sm text-accent-foreground/70">
-          <p>&copy; {new Date().getFullYear()} NxGen Tech Academy. All rights reserved.</p>
+        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm opacity-60">
+          <p>&copy; {new Date().getFullYear()} Aspire Techsoft. All rights reserved.</p>
         </div>
       </div>
     </footer>
