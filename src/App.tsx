@@ -23,6 +23,7 @@ import { categories } from './data';
 // New Pages
 import AllCourses from "./pages/AllCourses";
 import SasTraining from "./pages/SasTraining";
+import SapFicoPage from "./pages/SapFicoPage";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
               <Route path="all-courses.php" element={<AllCourses />} />
               <Route path="courses-menu" element={<AllCourses />} />
               <Route path="sas-training-institute-in-pune" element={<SasTraining />} />
+              <Route path="sap-fico-on-s4-hana" element={<SapFicoPage />} />
               <Route path="courses/:id" element={<CourseDetail />} />
               <Route path="mentors" element={<Mentors />} />
               <Route path="contact" element={<ContactPage />} />
