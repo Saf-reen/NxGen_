@@ -23,16 +23,16 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     --primary-glow: 211 75% 45%;
 
-    /* Secondary - Aspire Orange */
-    --secondary: 36 100% 50%;
+    /* Secondary - Green */
+    --secondary: 145 65% 45%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted - Professional Gray */
     --muted: 210 15% 95%;
     --muted-foreground: 210 10% 45%;
 
-    /* Accent - Orange Accent */
-    --accent: 36 100% 50%;
+    /* Accent - Green Accent */
+    --accent: 145 65% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;

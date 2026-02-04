@@ -24,6 +24,7 @@ import { categories } from './data';
 import AllCourses from "./pages/AllCourses";
 import SasTraining from "./pages/SasTraining";
 import SapFicoPage from "./pages/SapFicoPage";
+import Blogs from "./pages/Blogs";
 
 const queryClient = new QueryClient();
 
@@ -50,7 +51,7 @@ const App = () => (
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="courses" element={<Courses />} />
-              <Route path="all-courses.php" element={<AllCourses />} />
+              <Route path="/all-courses" element={<AllCourses />} />
               <Route path="courses-menu" element={<AllCourses />} />
               <Route path="sas-training-institute-in-pune" element={<SasTraining />} />
               <Route path="sap-fico-on-s4-hana" element={<SapFicoPage />} />
@@ -58,6 +59,7 @@ const App = () => (
               <Route path="mentors" element={<Mentors />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="why-choose-us" element={<WhyChooseUs />} />
+              <Route path="blogs" element={<Blogs />} />
               {/* Keep other routes if needed for backward compatibility or remove them */}
               <Route path="*" element={<NotFound />} />
             </Routes>

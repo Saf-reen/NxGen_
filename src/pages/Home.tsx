@@ -31,12 +31,12 @@ const Home = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium text-lg px-8 rounded-md">
-                Explore Courses
+              <Button asChild size="lg" className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium text-lg px-8 rounded-md">
+                <Link to="/all-courses">Explore Courses</Link>
               </Button>
-              <Button size="lg" className="bg-[#F6AD55] hover:bg-[#F6AD55]/90 text-white font-medium text-lg px-8 rounded-md">
+              {/* <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-medium text-lg px-8 rounded-md">
                 SAS Certifications
-              </Button>
+              </Button> */}
             </div>
 
             <div className="pt-8">
@@ -62,7 +62,7 @@ const Home = () => {
           <div className="relative flex justify-center lg:justify-end">
             {/* The image is a lady with laptop. Using a placeholder that looks similar */}
             <img
-              src="https://img.freepik.com/free-photo/young-student-woman-wearing-denim-jacket-eyeglasses-holding-books-looking-front-happy-with-big-smile_141793-27419.jpg"
+              src="/hero-image.jpg"
               alt="Student with Laptop"
               className="max-h-[600px] object-contain relative z-10"
             />

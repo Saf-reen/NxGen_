@@ -7,32 +7,15 @@ const courseCategories = [
   {
     category: "SAP Courses",
     items: [
-      "SAP FICO on S/4 HANA",
-      "SAP MM on S/4 HANA",
-      "SAP PP on S/4 HANA",
-      "SAP SD on S/4 HANA",
-      "SAP PM on S/4 HANA",
-      "SAP Security on S/4 HANA",
-      "SAP BW on HANA",
-      "SAP SuccessFactors EC",
-      "SAP U15 Training",
-      "SAP ABAP on HANA",
-      "SAP BASIS on S/4 HANA",
-      "SAP EWM",
-      "SAP ARIBA",
-      "SAP APO",
-      "SAP Security",
-      "SAP GRC",
-      "SAP ABAP",
-      "SAP BASIS",
-      "SAP HR",
-      "SAP BI",
-      "SAP WM"
+      "SAP Technical & Development Courses",
+      "SAP Specialized / Sub Courses",
+      "SAP Functional Modules",
+      "SAP Administration & HR Modules",
     ]
   },
   {
     category: "Python",
-    items: ["Python Certification Course"]
+    items: ["Python"]
   },
   {
     category: "AI",
@@ -44,12 +27,8 @@ const courseCategories = [
   },
   {
     category: "Data Analytics",
-    items: ["Data Analytics Certification"]
+    items: ["Power BI"]
   },
-  {
-    category: "Power BI",
-    items: ["Power BI Certification"]
-  }
 ];
 
 export const Navbar = () => {
@@ -160,7 +139,7 @@ export const Navbar = () => {
                 placeholder="Search Your Course Here!"
                 className="w-full h-10 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:border-primary"
               />
-              <button className="bg-[#F6AD55] hover:bg-[#F6AD55]/90 text-white w-12 flex items-center justify-center rounded-r-md">
+              <button className="bg-secondary hover:bg-secondary/90 text-white w-12 flex items-center justify-center rounded-r-md">
                 <Search className="w-5 h-5" />
               </button>
             </div>
@@ -169,10 +148,13 @@ export const Navbar = () => {
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
-              <Link to="/all-courses.php">Explore All Courses</Link>
+              <Link to="/all-courses">Explore All Courses</Link>
             </Button>
             <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
-              <Link to="/sas-training-institute-in-pune">SAS Certification</Link>
+              <Link to="/about">About Us</Link>
+            </Button>
+            <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
+              <Link to="/blogs">Blogs</Link>
             </Button>
           </div>
 
@@ -190,7 +172,7 @@ export const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t bg-white mt-4 space-y-3">
             <Button asChild className="w-full bg-[#2B6CB0] text-white">
-              <Link to="/all-courses.php">Explore All Courses</Link>
+              <Link to="/all-courses">Explore All Courses</Link>
             </Button>
             <Button asChild className="w-full bg-[#2B6CB0] text-white">
               <Link to="/sas-training-institute-in-pune">SAS Certification</Link>
