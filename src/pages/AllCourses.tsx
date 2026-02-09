@@ -1,108 +1,39 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { Search, Star, Code, Database, Cloud, Layout, CheckCircle } from "lucide-react";
+import { Search, ArrowLeft } from "lucide-react"; // Import ArrowLeft if needed, though AllCourses is top level
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { coursesData, categoryConfig } from "@/data/categoryCourses";
 
-// Data Definitions matching the screenshot
-const categories = [
-    "SAP Courses",
-    // "Full Stack Development",
-    "Data Analytics",
-    "SAP S/4 HANA",
-    "Python",
-    "Artificial Intelligence",
-    "AI/ML",
-    // "Software Testing",
-    // "SAS Courses"
-];
+// Helper to get all unique parent categories or just use the config keys
+// The Sidebar in AllCourses used "SAP Courses", "Data Analytics" etc.
+// categoryConfig keys are slugs like "sap-technical", "sap-functional".
+// These map to parentCategory: "SAP Courses".
 
-const allCoursesData = [
-    // SAP Courses
-    {
-        id: "sap-abap",
-        title: "SAP-ABAP",
-        category: "SAP Courses",
-        image: "code-icon", // Special case for the icon shown in screenshot
-        rating: 5
-    },
-    {
-        id: "sap-apo",
-        title: "SAP-APO",
-        category: "SAP Courses",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+APO",
-        rating: 5
-    },
-    {
-        id: "sap-basis",
-        title: "SAP-BASIS",
-        category: "SAP Courses",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+S/4+HANA",
-        rating: 5
-    },
-    {
-        id: "sap-grc",
-        title: "SAP-GRC",
-        category: "SAP Courses",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+GRC",
-        rating: 5
-    },
-    {
-        id: "sap-ui",
-        title: "SAP UI",
-        subtitle: "SAP UI5 / FIORI",
-        category: "SAP Courses",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+UI5+/+FIORI",
-        rating: 5
-    },
-    {
-        id: "sap-mm",
-        title: "SAP-MM",
-        subtitle: "SAP S/4 HANA",
-        category: "SAP Courses",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+S/4+HANA",
-        rating: 5
-    },
-    {
-        id: "sap-pm",
-        title: "SAP S4 HANA PM",
-        subtitle: "SAP PLANT MAINTENANCE",
-        category: "SAP S/4 HANA",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+PLANT+MAINTENANCE",
-        rating: 5
-    },
-    {
-        id: "sap-mm",
-        title: "SAP-MM",
-        subtitle: "SAP S/4 HANA",
-        category: "SAP S/4 HANA",
-        image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAP+S/4+HANA",
-        rating: 5
-    },
-
-    // Full Stack (Mock Data)
-    { id: "fs-java", title: "Power BI", category: "Data Analytics", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=Power+BI", rating: 5 },
-    { id: "fs-dotnet", title: "Tableau", category: "Data Analytics", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=Tableau", rating: 5 },
-
-    // Data Science (Mock Data)
-    { id: "ds-python", title: "Data Science with Python", category: "Data Analytics", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=Python", rating: 5 },
-    { id: "ds-python", title: "Data Science with Python", category: "Python", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=Python", rating: 5 },
-    { id: "ds-python", title: "Python", category: "Python", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=Python", rating: 5 },
-
-    // SAS Courses (Mock Data)
-    { id: "sas-clinical", title: "Machine Learning", category: "AI/ML", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAS", rating: 5 },
-    { id: "sas-clinical", title: "Artificial Intelligence", category: "Artificial Intelligence", image: "https://via.placeholder.com/150x100/000000/FFFFFF?text=SAS", rating: 5 },
-];
+// Let's build a list of unique Parent Categories for the sidebar
+const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c => c.parentCategory)));
+// Add "All"
+const categoriesList = ["All Courses", ...parentCategories];
 
 const AllCourses = () => {
-    const [selectedCategory, setSelectedCategory] = useState("SAP Courses");
+    const [selectedCategory, setSelectedCategory] = useState("All Courses");
     const [searchQuery, setSearchQuery] = useState("");
 
-    const filteredCourses = allCoursesData.filter(course =>
-        course.category === selectedCategory &&
-        course.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // Filter Logic
+    const filteredCourses = coursesData.filter(course => {
+        // 1. Search Query
+        const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+        // 2. Category Filter
+        // We need to check if the course's categoryId maps to the selected Parent Category
+        const config = categoryConfig[course.categoryId];
+        const courseParentCategory = config ? config.parentCategory : "Other";
+
+        const matchesCategory = selectedCategory === "All Courses" || courseParentCategory === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+    });
 
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
@@ -113,50 +44,50 @@ const AllCourses = () => {
                 path="/all-courses"
             />
 
-            {/* Hero Section - Blue Banner */}
-            <div className="bg-[#2B6CB0] py-20 relative overflow-hidden">
-                {/* Decorative background elements can be added here if needed */}
+            {/* Hero Section - Matching CategoryPage Style */}
+            <div className="bg-[#000080] py-16 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10">
                     <div className="absolute right-10 top-10 w-32 h-32 rounded-full border-8 border-white"></div>
-                    <div className="absolute left-20 bottom-10 w-24 h-24 bg-white rounded-full"></div>
                 </div>
-
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Course Basket</h1>
+                <div className="container mx-auto px-4 relative z-10">
+                    {/* Optional Back Link if needed, but this is a main page */}
+                    {/* <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+                    </Link> */}
+                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Course Basket</h1>
+                    <p className="text-xl text-blue-100 max-w-2xl">Explore our wide range of industry-leading courses.</p>
                 </div>
             </div>
 
             {/* Main Content Area */}
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-4 py-12">
 
-                {/* Search Bar */}
-                <div className="flex justify-center mb-12">
-                    <div className="relative w-full max-w-2xl">
+                {/* Search Bar - Matching CategoryPage Style */}
+                <div className="flex justify-center mb-10">
+                    <div className="relative w-full max-w-xl">
                         <Input
                             type="text"
-                            placeholder="Search Your Course Here!"
-                            className="w-full pl-6 pr-12 py-6 rounded-full border border-gray-300 shadow-sm text-lg focus:ring-2 focus:ring-[#2B6CB0] focus:border-transparent"
+                            placeholder="Search your course..."
+                            className="w-full pl-6 pr-12 py-6 rounded-full border border-gray-300 shadow-sm text-lg focus:ring-2 focus:ring-[#000080]"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
-                        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-transparent">
-                            <Search className="text-gray-400 w-6 h-6" />
-                        </div>
+                        <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     </div>
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Sidebar - Categories */}
                     <div className="w-full lg:w-1/4 shrink-0">
-                        <h2 className="text-xl font-normal text-gray-700 mb-6 text-center">All Categories</h2>
+                        <h2 className="text-xl font-normal text-gray-700 mb-6 text-center lg:text-left">Categories</h2>
                         <div className="flex flex-col space-y-3">
-                            {categories.map((category) => (
+                            {categoriesList.map((category) => (
                                 <button
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
-                                    className={`py-3 px-4 rounded border text-center transition-all duration-200 ${selectedCategory === category
-                                        ? "bg-[#1a56db] text-white border-[#1a56db]"
-                                        : "bg-white text-[#1a56db] border-[#1a56db] hover:bg-blue-50"
+                                    className={`py-3 px-4 rounded border text-center lg:text-left transition-all duration-200 ${selectedCategory === category
+                                        ? "bg-[#000080] text-white border-[#000080]"
+                                        : "bg-white text-[#000080] border-[#000080] hover:bg-blue-50"
                                         }`}
                                 >
                                     {category}
@@ -165,44 +96,92 @@ const AllCourses = () => {
                         </div>
                     </div>
 
-                    {/* Course List */}
+                    {/* Course List - Matching CategoryPage GRID Interface */}
                     <div className="w-full lg:w-3/4">
-                        {filteredCourses.length > 0 ? (
-                            <div className="grid grid-cols-1 gap-6">
-                                {filteredCourses.map((course) => (
-                                    <Link key={course.id} to="/sap-fico-on-s4-hana" className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex items-center hover:shadow-md transition-shadow">
-                                        {/* Image Section - Left */}
-                                        <div className="w-32 h-24 shrink-0 mr-6 flex items-center justify-center bg-gray-100 rounded overflow-hidden border">
-                                            {course.image === "code-icon" ? (
-                                                <div className="w-full h-full flex items-center justify-center bg-white">
-                                                    <div className="border-2 border-[#1a56db] text-[#1a56db] rounded p-1 font-bold">
-                                                        &lt; / &gt;
-                                                    </div>
-                                                </div>
-                                            ) : (
-                                                <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
-                                            )}
-                                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {(() => {
+                                // 1. Check for Sub-Categories first (e.g. for "SAP Courses")
+                                const subCategories = Object.entries(categoryConfig)
+                                    .filter(([_, config]) => config.parentCategory === selectedCategory)
+                                    .map(([key, config]) => ({ key, ...config }));
 
-                                        {/* Content Section - Right */}
-                                        <div className="flex-grow">
-                                            <h3 className="text-xl font-bold text-[#1a56db] mb-2">
-                                                {course.title}
-                                            </h3>
-                                            <div className="flex space-x-1">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                                                ))}
+                                // If we have multiple sub-categories, show them instead of raw courses
+                                if (subCategories.length > 1) {
+                                    return subCategories.map((subCat) => (
+                                        <div
+                                            key={subCat.key}
+                                            className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                                        >
+                                            <div className="mb-4">
+                                                <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                    {subCat.title}
+                                                </h3>
+                                            </div>
+
+                                            <div className="w-full h-px bg-gray-200 mb-4"></div>
+
+                                            <div className="flex-grow">
+                                                <p className="text-gray-600 text-sm leading-relaxed">
+                                                    {subCat.description}
+                                                </p>
+                                            </div>
+
+                                            <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                                <Link
+                                                    to={`/courses/${subCat.key}`}
+                                                    className="text-[#000080] font-semibold text-sm hover:underline"
+                                                >
+                                                    Explore Category
+                                                </Link>
                                             </div>
                                         </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="text-center py-10">
-                                <p className="text-xl text-gray-500">No Result Found!</p>
-                            </div>
-                        )}
+                                    ));
+                                }
+
+                                // 2. Fallback to showing individual courses
+                                if (filteredCourses.length > 0) {
+                                    return filteredCourses.map((course) => (
+                                        <div
+                                            key={course.id}
+                                            className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                                        >
+                                            <div className="mb-4">
+                                                <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                    {course.title}
+                                                </h3>
+                                            </div>
+
+                                            <div className="w-full h-px bg-gray-200 mb-4"></div>
+
+                                            <div className="flex-grow">
+                                                <p className="text-gray-600 text-sm leading-relaxed">
+                                                    {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
+                                                </p>
+                                            </div>
+
+                                            <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                                <Link
+                                                    to={`/courses/${course.id}`}
+                                                    className="text-[#000080] font-semibold text-sm hover:underline"
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    ));
+                                }
+
+                                // 3. Empty State
+                                return (
+                                    <div className="col-span-full text-center py-10 text-gray-500">
+                                        <p className="text-xl">No courses found matching your criteria.</p>
+                                        <Button asChild variant="link" className="mt-2 text-[#000080]">
+                                            <Link to="/contact">Contact us for custom requirements</Link>
+                                        </Button>
+                                    </div>
+                                );
+                            })()}
+                        </div>
                     </div>
                 </div>
             </div>

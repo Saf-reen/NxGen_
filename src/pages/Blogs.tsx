@@ -78,7 +78,7 @@ const Blogs = () => {
             />
 
             {/* Page Header */}
-            <div className="bg-[#2B6CB0] py-16 relative overflow-hidden">
+            <div className="bg-[#000080] py-16 relative overflow-hidden">
                 <div className="container mx-auto px-4 relative z-10 text-center text-white">
                     <h1 className="text-4xl lg:text-5xl font-bold mb-4">Our Latest Insights</h1>
                     <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
@@ -113,7 +113,7 @@ const Blogs = () => {
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute top-4 left-4">
-                                        <span className="bg-[#2B6CB0] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                        <span className="bg-[#000080] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                                             {post.category}
                                         </span>
                                     </div>
@@ -132,7 +132,7 @@ const Blogs = () => {
                                         </span>
                                     </div>
 
-                                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-[#2B6CB0] transition-colors">
+                                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-[#000080] transition-colors">
                                         {post.title}
                                     </h2>
 
@@ -149,7 +149,7 @@ const Blogs = () => {
                                         </div>
                                         <Link
                                             to="#"
-                                            className="text-[#2B6CB0] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                                            className="text-[#000080] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all"
                                         >
                                             Read More <ArrowRight className="w-4 h-4" />
                                         </Link>
@@ -168,7 +168,7 @@ const Blogs = () => {
                     {/* Pagination Placeholder */}
                     <div className="mt-16 flex justify-center gap-2">
                         <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50" disabled>Previous</Button>
-                        <Button className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white">1</Button>
+                        <Button className="bg-[#000080] hover:bg-[#000080]/90 text-white">1</Button>
                         <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">2</Button>
                         <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">3</Button>
                         <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">Next</Button>
@@ -185,9 +185,9 @@ const Blogs = () => {
                         <input
                             type="email"
                             placeholder="Enter your email address"
-                            className="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#2B6CB0]"
+                            className="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#000080]"
                         />
-                        <Button type="submit" size="lg" className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium">
+                        <Button type="submit" size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium">
                             Subscribe
                         </Button>
                     </form>

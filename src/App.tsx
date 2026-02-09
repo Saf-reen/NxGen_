@@ -13,7 +13,7 @@ import { TopBar } from "./components/TopBar"; // New Import
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
-import CourseDetail from "./pages/CourseDetail";
+import DataAnalyticsCourse from "./pages/DataAnalyticsCourse";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import WhyChooseUs from "./pages/WhyChooseUs";
@@ -22,9 +22,8 @@ import { categories } from './data';
 
 // New Pages
 import AllCourses from "./pages/AllCourses";
-import SasTraining from "./pages/SasTraining";
-import SapFicoPage from "./pages/SapFicoPage";
 import Blogs from "./pages/Blogs";
+import SAPCourse from "./pages/SAPCourse";
 
 const queryClient = new QueryClient();
 
@@ -50,17 +49,30 @@ const App = () => (
             <Routes>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
+
+              {/* Main Course Catalog */}
               <Route path="courses" element={<Courses />} />
               <Route path="/all-courses" element={<AllCourses />} />
               <Route path="courses-menu" element={<AllCourses />} />
-              <Route path="sas-training-institute-in-pune" element={<SasTraining />} />
-              <Route path="sap-fico-on-s4-hana" element={<SapFicoPage />} />
-              <Route path="courses/:id" element={<CourseDetail />} />
+
+              {/* Specific Category Pages */}
+              <Route path="courses/sap-technical" element={<SAPCourse categorySlug="sap-technical" />} />
+              <Route path="courses/sap-specialized" element={<SAPCourse categorySlug="sap-specialized" />} />
+              <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
+              <Route path="courses/sap-admin" element={<SAPCourse categorySlug="sap-admin" />} />
+              <Route path="courses/python" element={<SAPCourse categorySlug="python" />} />
+              <Route path="courses/ai" element={<SAPCourse categorySlug="ai" />} />
+              <Route path="courses/aiml" element={<SAPCourse categorySlug="aiml" />} />
+              <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
+              <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />
+
+              {/* Course Detail */}
+              <Route path="courses/:id" element={<DataAnalyticsCourse />} />
+
               <Route path="mentors" element={<Mentors />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="why-choose-us" element={<WhyChooseUs />} />
               <Route path="blogs" element={<Blogs />} />
-              {/* Keep other routes if needed for backward compatibility or remove them */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

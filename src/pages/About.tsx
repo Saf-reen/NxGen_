@@ -15,7 +15,7 @@ const About = () => {
       />
 
       {/* Page Header / Breadcrumb */}
-      <div className="bg-[#2B6CB0] py-16 relative">
+      <div className="bg-[#000080] py-16 relative">
         <div className="container mx-auto px-4 relative z-10 text-center text-white">
           <h1 className="text-4xl font-bold mb-4">About Us</h1>
           <div className="text-sm opacity-90 font-medium flex justify-center gap-2">
@@ -31,7 +31,7 @@ const About = () => {
       {/* Mission Quote Banner */}
       <div className="bg-gray-100 py-12 border-b">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-serif italic text-[#2B6CB0] font-medium leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-serif italic text-[#000080] font-medium leading-relaxed">
             "Our Mission is to Build Nation Through Education And Beyond Limitation"
           </h2>
         </div>
@@ -44,14 +44,14 @@ const About = () => {
             {/* Text Content */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-[#2B6CB0] mb-4">Welcome to Aspire Techsoft Pvt Ltd</h3>
+                <h3 className="text-2xl font-bold text-[#000080] mb-4">Welcome to Aspire Techsoft Pvt Ltd</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Established in 2011, Aspire Techsoft is a reputed IT training institute in Pune India that strives to make IT education easily accessible to students and professionals.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-[#2B6CB0] mb-4">Who We Are</h3>
+                <h3 className="text-2xl font-bold text-[#000080] mb-4">Who We Are</h3>
                 <div className="space-y-4 text-gray-600 leading-relaxed text-justify">
                   <p>
                     Established in 2011, we are the Information Technology Training division of Aspire Techsoft Academy is a reputed IT training institute in Pune India that strives to make IT education easily accessible to students and professionals. We are ranked among the Best Software Training Institutes in India.
@@ -91,8 +91,8 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#2B6CB0] hover:shadow-md transition-shadow">
-              <h3 className="text-2xl font-bold text-[#2B6CB0] mb-4 flex items-center gap-3">
+            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#000080] hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-3">
                 <span className="p-2 bg-blue-50 rounded-full"><TargetIcon className="w-6 h-6" /></span>
                 Our Mission
               </h3>
@@ -114,7 +114,7 @@ const About = () => {
       </section>
 
       {/* Statistics */}
-      <section className="py-20 bg-[#2B6CB0] text-white">
+      <section className="py-20 bg-[#000080] text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
@@ -141,7 +141,7 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#2B6CB0] mb-4">Aspire Team</h2>
+            <h2 className="text-3xl font-bold text-[#000080] mb-4">Aspire Team</h2>
             <p className="text-gray-500 uppercase tracking-widest text-sm">We truly care about our customers</p>
           </div>
 

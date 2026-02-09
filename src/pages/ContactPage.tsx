@@ -43,7 +43,7 @@ const ContactPage = () => {
       />
 
       {/* Hero Section */}
-      <div className="bg-[#2B6CB0] py-16 relative">
+      <div className="bg-[#000080] py-16 relative">
         <div className="container mx-auto px-4 relative z-10 text-center text-white">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <div className="text-sm opacity-90 font-medium flex justify-center gap-2">
@@ -64,9 +64,9 @@ const ContactPage = () => {
             {/* Contact Information (Left Column) */}
             <div className="space-y-10">
               <div>
-                <h3 className="text-sm font-bold text-[#2B6CB0] uppercase tracking-wider mb-2">We Accelerate Customer Experiences</h3>
+                <h3 className="text-sm font-bold text-[#000080] uppercase tracking-wider mb-2">We Accelerate Customer Experiences</h3>
                 <h2 className="text-4xl font-bold text-gray-800 mb-6">GET IN TOUCH</h2>
-                <div className="w-16 h-1 bg-[#2B6CB0] mb-6"></div>
+                <div className="w-16 h-1 bg-[#000080] mb-6"></div>
                 <p className="text-gray-600 leading-relaxed">
                   Have questions about our courses or want to visit our center? We are here to help you. Reach out to us through any of the following channels.
                 </p>
@@ -76,53 +76,53 @@ const ContactPage = () => {
                 {/* Pune Kothrud */}
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#2B6CB0]" />
+                    <MapPin className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Pune (Kothrud)</h4>
                     <p className="text-gray-600 text-sm mb-2">
                       103, 1st Floor, AspireTechsoft Pvt. Ltd., Himgauri, Above KFC, Kothrud, Pune, Maharashtra 411038
                     </p>
-                    <p className="font-bold text-[#2B6CB0]">+91 9960 935 600</p>
+                    <p className="font-bold text-[#000080]">+91 9960 935 600</p>
                   </div>
                 </div>
 
                 {/* Wakad */}
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#2B6CB0]" />
+                    <MapPin className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Wakad</h4>
                     <p className="text-gray-600 text-sm mb-2">
                       Office 101, Rajgad Building, Ratnadeep lane, Datta mandir road, Wakad. Pimpri Chinchwad
                     </p>
-                    <p className="font-bold text-[#2B6CB0]">+91 9960 935 965</p>
+                    <p className="font-bold text-[#000080]">+91 9960 935 965</p>
                   </div>
                 </div>
 
                 {/* Bangalore */}
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#2B6CB0]" />
+                    <MapPin className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Bangalore</h4>
                     <p className="text-gray-600 text-sm mb-2">
                       Office No - 322, 3 Floor, Raheja Arcade, Koramangala, 5 Block, 80ft Road, Karnataka, Bangalore 560095.
                     </p>
-                    <p className="font-bold text-[#2B6CB0]">+91 6364 012 099</p>
+                    <p className="font-bold text-[#000080]">+91 6364 012 099</p>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-[#2B6CB0]" />
+                    <Mail className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Email Us</h4>
-                    <p className="text-gray-600 hover:text-[#2B6CB0]">info@aspireit.net</p>
+                    <p className="text-gray-600 hover:text-[#000080]">info@aspireit.net</p>
                   </div>
                 </div>
               </div>
@@ -189,7 +189,7 @@ const ContactPage = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white"
+                  className="w-full bg-[#000080] hover:bg-[#000080]/90 text-white"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

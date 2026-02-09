@@ -38,6 +38,28 @@ const SasTraining = () => {
                             </p>
                         </section>
 
+                        {/* What You Will Learn */}
+                        <section className="space-y-6">
+                            <h2 className="text-2xl font-bold text-primary border-b pb-2 border-gray-200">What You Will Learn</h2>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {[
+                                    "Master SAS Base Programming fundamentals",
+                                    "Advanced SAS Macros & SQL for data manipulation",
+                                    "Clinical Data Management (CDM) concepts",
+                                    "CDISC Standards (SDTM, ADaM) implementation",
+                                    "Statistical Analysis & Reporting using SAS",
+                                    "Data Visualization with SAS Visual Analytics"
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                                        <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 text-secondary">
+                                            <CheckCircle className="w-4 h-4" />
+                                        </div>
+                                        <span className="text-gray-700 font-medium">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
                         {/* Course Highlights */}
                         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 flex items-start gap-4">

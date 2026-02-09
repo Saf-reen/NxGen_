@@ -32,7 +32,7 @@ export const Footer = () => {
                   <Phone className="w-4 h-4" />
                   <span>+91 9960935600</span>
                 </div>
-                <Button className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white h-8 text-xs px-4 rounded">
+                <Button className="bg-[#000080] hover:bg-[#000080]/90 text-white h-8 text-xs px-4 rounded">
                   VED-LMS
                 </Button>
               </div>
@@ -67,19 +67,19 @@ export const Footer = () => {
 
                 {/* Social Icons */}
                 <div className="flex gap-3 pt-2">
-                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#2B6CB0] transition-colors text-white">
+                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                     <Twitter className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#2B6CB0] transition-colors text-white">
+                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                     <Facebook className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#2B6CB0] transition-colors text-white">
+                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                     <Youtube className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#2B6CB0] transition-colors text-white">
+                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                     <Instagram className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#2B6CB0] transition-colors text-white">
+                  <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                     <Linkedin className="w-4 h-4" />
                   </a>
                 </div>

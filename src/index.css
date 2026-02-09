@@ -18,10 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 40% 15%;
 
-    /* Primary - Aspire Blue */
-    --primary: 211 100% 35%;
+    /* Primary - Navy Blue (#000080) */
+    --primary: 240 100% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 211 75% 45%;
+    --primary-glow: 240 75% 45%;
 
     /* Secondary - Green */
     --secondary: 145 65% 45%;
@@ -40,14 +40,14 @@ All colors MUST be HSL.
 
     --border: 210 20% 88%;
     --input: 210 20% 88%;
-    --ring: 211 100% 35%;
+    --ring: 240 100% 25%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 85% 30% / 0.25), hsl(210 75% 20% / 0.25));
+    --gradient-hero: linear-gradient(135deg, hsl(240 85% 30% / 0.25), hsl(240 75% 20% / 0.25));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(210 85% 30% /0.10), hsl(145 65% 45% / 0.10));
+    --gradient-accent: linear-gradient(135deg, hsl(240 85% 30% /0.10), hsl(145 65% 45% / 0.10));
 
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(210 40% 15% / 0.08);

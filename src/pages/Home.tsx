@@ -31,7 +31,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button asChild size="lg" className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium text-lg px-8 rounded-md">
+              <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md">
                 <Link to="/all-courses">Explore Courses</Link>
               </Button>
               {/* <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-medium text-lg px-8 rounded-md">
@@ -40,7 +40,7 @@ const Home = () => {
             </div>
 
             <div className="pt-8">
-              <p className="text-lg text-[#2B6CB0]">
+              <p className="text-lg text-[#000080]">
                 <span className="font-bold text-2xl">15 Years</span> in the field of IT Training & Placement Industry
               </p>
               <div className="h-0.5 w-full bg-gray-200 mt-4 max-w-md"></div>

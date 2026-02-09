@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export const TopBar = () => {
     return (
-        <div className="bg-[#0056D2] text-white font-sans">
+        <div className="bg-[#000080] text-white font-sans">
             <div className="container mx-auto px-4">
                 {/* Top Row: Socials, Marquee, Logins */}
                 <div className="flex flex-col lg:flex-row justify-between items-center py-2 gap-4 border-b border-white/10">

@@ -3,37 +3,47 @@ import { Link } from "react-router-dom";
 import { Menu, X, Search, Grid, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 
-const courseCategories = [
-  {
-    category: "SAP Courses",
-    items: [
-      "SAP Technical & Development Courses",
-      "SAP Specialized / Sub Courses",
-      "SAP Functional Modules",
-      "SAP Administration & HR Modules",
-    ]
-  },
-  {
-    category: "Python",
-    items: ["Python"]
-  },
-  {
-    category: "AI",
-    items: ["Artificial Intelligence Course"]
-  },
-  {
-    category: "AIML",
-    items: ["AI & Machine Learning Course"]
-  },
-  {
-    category: "Data Analytics",
-    items: ["Power BI"]
-  },
-];
+import { categoryConfig, coursesData } from "@/data/categoryCourses";
+
+const courseCategories = (() => {
+  // 1. Get unique parent categories ensuring order based on config definition
+  const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c => c.parentCategory)));
+
+  return parentCategories.map(parent => {
+    // 2. Get all sub-categories (config entries) for this parent
+    const subCats = Object.entries(categoryConfig)
+      .filter(([_, config]) => config.parentCategory === parent)
+      .map(([key, config]) => ({ key, ...config }));
+
+    let items = [];
+
+    // 3. Logic: If multiple sub-categories, show them. If single, show its courses.
+    if (subCats.length > 1) {
+      items = subCats.map(sc => ({
+        title: sc.title,
+        desc: sc.description,
+        link: `/courses/${sc.key}`
+      }));
+    } else if (subCats.length === 1) {
+      const subCat = subCats[0];
+      const courses = coursesData.filter(c => c.categoryId === subCat.key);
+      items = courses.map(c => ({
+        title: c.title,
+        desc: c.description || subCat.description,
+        link: `/courses/${c.id}`
+      }));
+    }
+
+    return {
+      category: parent,
+      items
+    };
+  }).filter(c => c.items.length > 0); // content filter
+})();
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("SAP Courses");
+  const [activeCategory, setActiveCategory] = useState(courseCategories[0]?.category || "SAP Courses");
   const [isCourseMenuOpen, setIsCourseMenuOpen] = useState(false);
 
   // Helper to find active items
@@ -54,7 +64,7 @@ export const Navbar = () => {
 
             {/* Course Menu Button */}
             <Button
-              className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6 gap-2 shrink-0"
+              className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6 gap-2 shrink-0"
               onClick={() => setIsCourseMenuOpen(true)}
             >
               <Grid className="w-4 h-4" />
@@ -90,7 +100,7 @@ export const Navbar = () => {
                               className={`
                                      flex items-center justify-between px-6 py-4 rounded-lg cursor-pointer transition-all duration-200 font-medium text-base border
                                      ${activeCategory === cat.category
-                                  ? 'bg-white border-[#F6AD55] text-[#2B6CB0] shadow-md'
+                                  ? 'bg-white border-[#F6AD55] text-[#000080] shadow-md'
                                   : 'border-gray-100 hover:bg-gray-50 text-gray-700 hover:text-gray-900'}
                                    `}
                               onClick={() => setActiveCategory(cat.category)}
@@ -112,17 +122,33 @@ export const Navbar = () => {
                       <div className="w-full lg:w-2/3 bg-gray-50/50 rounded-xl p-6 overflow-y-auto border border-gray-100">
                         <h4 className="font-semibold text-lg text-gray-800 mb-4 pb-2 border-b">{activeCategory}</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {activeItems.map((item, index) => (
-                            <Link
+                          {activeItems.map((item: any, index: number) => (
+                            <div
                               key={index}
-                              to="/sap-fico-on-s4-hana"
-                              onClick={() => setIsCourseMenuOpen(false)}
-                              className="flex items-start p-3 rounded-lg hover:bg-white hover:shadow-sm hover:border-blue-100 border border-transparent transition-all duration-200 group"
+                              className="flex flex-col p-4 rounded-xl bg-white border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
                             >
-                              <span className="text-gray-600 group-hover:text-[#2B6CB0] font-medium leading-relaxed">
-                                {item}
-                              </span>
-                            </Link>
+                              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                              <div className="relative z-10">
+                                <h5 className="font-bold text-gray-800 text-lg group-hover:text-[#000080] transition-colors mb-2">
+                                  {item.title}
+                                </h5>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                                  {item.desc}
+                                </p>
+                                <Button
+                                  asChild
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full justify-between hover:bg-[#000080] hover:text-white border-blue-200 text-[#000080] group/btn"
+                                  onClick={() => setIsCourseMenuOpen(false)}
+                                >
+                                  <Link to={item.link}>
+                                    Know More
+                                    <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                                  </Link>
+                                </Button>
+                              </div>
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -147,13 +173,13 @@ export const Navbar = () => {
 
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
               <Link to="/all-courses">Explore All Courses</Link>
             </Button>
-            <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
               <Link to="/about">About Us</Link>
             </Button>
-            <Button asChild className="bg-[#2B6CB0] hover:bg-[#2B6CB0]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
               <Link to="/blogs">Blogs</Link>
             </Button>
           </div>
@@ -171,10 +197,10 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t bg-white mt-4 space-y-3">
-            <Button asChild className="w-full bg-[#2B6CB0] text-white">
+            <Button asChild className="w-full bg-[#000080] text-white">
               <Link to="/all-courses">Explore All Courses</Link>
             </Button>
-            <Button asChild className="w-full bg-[#2B6CB0] text-white">
+            <Button asChild className="w-full bg-[#000080] text-white">
               <Link to="/sas-training-institute-in-pune">SAS Certification</Link>
             </Button>
           </div>
