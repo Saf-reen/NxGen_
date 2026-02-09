@@ -1,200 +1,552 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
-import { Users, BookOpen, UserCheck, Calendar, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Users, Target, Lightbulb, BookOpen, Briefcase, Award,
+  ArrowRight, CheckCircle, MapPin, Phone, Mail, ChevronDown, ChevronUp,
+  GraduationCap, Globe, Clock, ShieldCheck
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
 const About = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const coreValues = [
+    { icon: <Award className="w-8 h-8 text-[#000080]" />, title: "Excellence", desc: "Delivering consistent academic quality" },
+    { icon: <ShieldCheck className="w-8 h-8 text-[#000080]" />, title: "Integrity", desc: "Upholding ethical and transparent practices" },
+    { icon: <Lightbulb className="w-8 h-8 text-[#000080]" />, title: "Innovation", desc: "Adopting evolving technologies and methods" },
+    { icon: <Users className="w-8 h-8 text-[#000080]" />, title: "Student-Centricity", desc: "Focusing on learner success at every stage" }
+  ];
+
+  const keyStrengths = [
+    "Industry-aligned training programs",
+    "Practical, hands-on learning sessions",
+    "Live and real-time project exposure",
+    "Internship and career experience opportunities",
+    "Resume building and interview readiness",
+    "Complete placement assistance"
+  ];
+
+  const courses = [
+    "Python Programming",
+    "Artificial Intelligence & Machine Learning (AI/ML)",
+    "Data Analytics",
+    "Full Stack Development",
+    "Emerging Technologies Training"
+  ];
+
+  const faqs = [
+    { q: "Is NxGen Tech Academy the best IT training institution in Hyderabad?", a: "Yes. NxGen Tech Academy offers industry-aligned courses, expert mentorship, real-time projects, and strong placement support." },
+    { q: "Do the courses include practical training?", a: "Yes. All programs include hands-on sessions and real-world project experience." },
+    { q: "Is placement support available?", a: "Yes. We provide resume building, interview preparation, internships, and full placement assistance." },
+    { q: "Who can enrol at NxGen Tech Academy?", a: "Students, graduates, and working professionals can join based on course eligibility." }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
-    <div className="min-h-screen font-sans text-gray-700">
+    <div className="min-h-screen font-sans bg-gray-50 overflow-x-hidden">
       <SEO
-        title="About Us - Aspire Techsoft"
-        description="Aspire Techsoft is a reputed IT training institute in Pune offering SAS, SAP, Full Stack, and more."
+        title="About Us - NxGen Tech Academy"
+        description="NxGen Tech Academy is the best IT training institution in Hyderabad, offering career-driven education in Python, AI/ML, Data Analytics, and Full Stack Development."
         type="website"
         path="/about"
+        schemaData={faqSchema}
       />
 
-      {/* Page Header / Breadcrumb */}
-      <div className="bg-[#000080] py-16 relative">
-        <div className="container mx-auto px-4 relative z-10 text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">About Us</h1>
-          <div className="text-sm opacity-90 font-medium flex justify-center gap-2">
-            <Link to="/" className="hover:text-gray-200">Home</Link> / <span>Pages</span> / <span>About Us</span>
-          </div>
-        </div>
-        {/* Decorative background element */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
-          <div className="absolute right-0 top-0 w-64 h-64 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+      {/* Section 1: Banner */}
+      <div className="relative bg-[#000080] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#000080]/90 to-[#000080]/70" />
+
+        <div className="container mx-auto px-4 py-24 relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+          >
+            Best IT Training Institution in Hyderabad
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed"
+          >
+            Delivering career-driven education that builds skills, confidence, and future-ready professionals.
+          </motion.p>
         </div>
       </div>
 
-      {/* Mission Quote Banner */}
-      <div className="bg-gray-100 py-12 border-b">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-serif italic text-[#000080] font-medium leading-relaxed">
-            "Our Mission is to Build Nation Through Education And Beyond Limitation"
-          </h2>
-        </div>
-      </div>
-
-      {/* Main Content: Welcome & Who We Are */}
-      <section className="py-16">
+      {/* Section 2: Who We Are */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Text Content */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-[#000080] mb-4">Welcome to Aspire Techsoft Pvt Ltd</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Established in 2011, Aspire Techsoft is a reputed IT training institute in Pune India that strives to make IT education easily accessible to students and professionals.
-                </p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <motion.div variants={fadeInUp} className="space-y-6">
+              <div className="inline-block px-4 py-1 bg-blue-50 text-[#000080] rounded-full font-semibold text-sm">
+                WHO WE ARE
               </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-[#000080] mb-4">Who We Are</h3>
-                <div className="space-y-4 text-gray-600 leading-relaxed text-justify">
-                  <p>
-                    Established in 2011, we are the Information Technology Training division of Aspire Techsoft Academy is a reputed IT training institute in Pune India that strives to make IT education easily accessible to students and professionals. We are ranked among the Best Software Training Institutes in India.
-                  </p>
-                  <p>
-                    We are SAS Authorized Training Institute in Pune. We specialize in SAS, ERP, SAP, Full –Stack Development, JAVA, .NET, Data Warehousing, Cloud Computing, Informatica, Abinitio, etc. Over 10000+ Retail, and corporate candidates trained. More than 170 corporate clients. ISO certified Training and development center. We offer globally accepted certifications from SAS.
-                  </p>
-                  <p>
-                    Our students master the skills for IT Infrastructure Management, followed by On-Job industry training and stipends. Our training opens doors to exciting careers in technical support, facility management, projects, and marketing management.
-                  </p>
-                  <p>
-                    Our proficiency lies in identifying your talent, understanding your aptitude, analyzing your needs, and nurturing you to reach the zenith of technical excellence. We believe in the innate potential of each individual.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Image/Visuals */}
-            <div className="relative">
-              <div className="bg-white p-2 rounded-lg shadow-xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Journey</h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                NxGen Tech Academy was established with one clear goal. We wanted to make quality technical education practical, accessible, and career-focused. What began as a modest coaching initiative steadily transformed into a trusted IT training academy.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Over time, we have supported thousands of learners in achieving academic growth and professional advancement. With more than 15 years of educational experience, we prioritise personalised attention and modern learning techniques.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                Today, we blend advanced training tools with a student-first approach, maintaining trust and credibility as the best IT training institution in Hyderabad.
+              </p>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Students learning"
-                  className="rounded-lg w-full object-cover h-[500px]"
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="NxGen Team"
+                  className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-[#000080]/10 mix-blend-multiply" />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-secondary p-6 rounded-lg shadow-lg hidden md:block">
-                <div className="text-4xl font-bold text-white mb-1">15+</div>
-                <div className="text-white font-medium">Years of Experience</div>
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border-l-4 border-[#000080] hidden md:block">
+                <p className="text-4xl font-bold text-[#000080]">15+</p>
+                <p className="text-gray-600 font-medium">Years Experience</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision Cards */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#000080] hover:shadow-md transition-shadow">
-              <h3 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-3">
-                <span className="p-2 bg-blue-50 rounded-full"><TargetIcon className="w-6 h-6" /></span>
-                Our Mission
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our Mission is to deliver innovative Software trainings, nurture creativity, and cultivate a passion for knowledge, by ensuring that our learners become leaders and change-makers in their respective fields.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-secondary hover:shadow-md transition-shadow">
-              <h3 className="text-2xl font-bold text-secondary mb-4 flex items-center gap-3">
-                <span className="p-2 bg-green-50 rounded-full"><EyeIcon className="w-6 h-6" /></span>
-                Our Vision
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Inform, educate, and inspire people to reach their professional goals with less stress and more enthusiasm.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="py-20 bg-[#000080] text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-5xl font-bold">2011</div>
-              <div className="text-lg opacity-90 uppercase tracking-wider text-sm">Year Founded</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-bold">28 +</div>
-              <div className="text-lg opacity-90 uppercase tracking-wider text-sm">Employees</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-bold">42 +</div>
-              <div className="text-lg opacity-90 uppercase tracking-wider text-sm">Trainers</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-bold">100K +</div>
-              <div className="text-lg opacity-90 uppercase tracking-wider text-sm">Students</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
+      {/* Section 3: Mission, Vision & Values */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#000080] mb-4">Aspire Team</h2>
-            <p className="text-gray-500 uppercase tracking-widest text-sm">We truly care about our customers</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mission, Vision & Values</h2>
+            <div className="w-20 h-1 bg-[#000080] mx-auto rounded-full" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Founder */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg group">
-              <div className="h-64 bg-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                {/* Placeholder for founder image */}
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=500" alt="Sachin" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-4 left-4 z-20 text-white">
-                  <h4 className="text-xl font-bold">Sachin</h4>
-                  <p className="text-sm opacity-90">CEO | Founder Director</p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-8 mb-16"
+          >
+            <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border-t-4 border-[#000080]">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-blue-50 rounded-full text-[#000080]">
+                  <Target className="w-8 h-8" />
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Sachin has been instrumental in conceptualizing and incubating business ideas and scaling them to a leadership position...
-                </p>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                To offer accessible and high-quality IT education that strengthens knowledge, enhances skills, and builds confidence. We prepare learners to excel professionally and contribute meaningfully to society.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border-t-4 border-[#00abf0]">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-blue-50 rounded-full text-[#00abf0]">
+                  <Globe className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                To emerge as a reliable and innovative learning hub, known for academic excellence, strong student outcomes, and future leadership development.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">Our Core Values</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {coreValues.map((value, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center group border border-gray-100 hover:border-blue-100">
+                  <div className="mb-4 inline-flex p-3 bg-gray-50 rounded-full group-hover:bg-blue-50 transition-colors">
+                    {value.icon}
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h4>
+                  <p className="text-gray-500 text-sm">{value.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 4: What Makes Us Different */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-[#000080]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="order-2 lg:order-1"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                What Makes NxGen Tech Academy Different?
+              </h2>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                NxGen Tech Academy goes beyond traditional classroom learning. We align training with real industry expectations and practical outcomes.
+              </p>
+
+              <div className="space-y-4">
+                {keyStrengths.map((strength, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
+                  >
+                    <CheckCircle className="w-5 h-5 text-[#000080] flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">{strength}</span>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="mt-8 text-gray-500 italic">
+                Employers value professionals trained at the best IT training institution in Hyderabad.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2 relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#000080] to-[#00abf0] rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg" />
+              <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Different Approach"
+                className="relative rounded-2xl shadow-xl w-full object-cover h-[500px]"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Courses We Offer */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Courses We Offer</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Our programs are designed to meet current and emerging industry needs. Each course blends theory, practice, and career support.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {courses.map((course, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#000080] group"
+              >
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#000080] transition-colors">
+                  <BookOpen className="w-6 h-6 text-[#000080] group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{course}</h3>
+                <Link to="/all-courses" className="text-[#000080] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12 bg-blue-50 p-6 rounded-xl max-w-4xl mx-auto">
+            <p className="text-gray-700 font-medium">Every course includes structured learning paths, lab sessions, and mentor guidance to ensure job readiness.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6 & 7: Mentors & Learning Approach - Split View */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16">
+
+            {/* Mentors */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Users className="w-8 h-8 text-[#000080]" />
+                Our Training and Mentors
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Our mentors are experienced professionals who bring real-world insights into the classroom. They play a vital role in shaping learner success.
+              </p>
+
+              <div className="bg-[#f0f4ff] p-6 rounded-xl">
+                <h4 className="font-bold text-[#000080] mb-4">Why Our Mentors Stand Out</h4>
+                <ul className="space-y-3">
+                  {[
+                    "50+ industry-experienced trainers",
+                    "Strong corporate and technical exposure",
+                    "Student-friendly teaching methods",
+                    "Continuous upskilling and industry updates"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="min-w-1.5 min-h-1.5 mt-2 rounded-full bg-[#000080]" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Learning Approach */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ delay: 0.2 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <GraduationCap className="w-8 h-8 text-[#000080]" />
+                Our Learning Approach
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We follow a practical, skill-based learning framework that supports long-term understanding and career growth.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { title: "Concept Clarity", icon: <Lightbulb className="w-5 h-5" /> },
+                  { title: "Practical Implementation", icon: <Briefcase className="w-5 h-5" /> },
+                  { title: "Industry Use Cases", icon: <Globe className="w-5 h-5" /> },
+                  { title: "Job Oriented", icon: <Target className="w-5 h-5" /> },
+                  { title: "100% Placements", icon: <Award className="w-5 h-5" /> },
+                  { title: "Skill-Oriented Training", icon: <BookOpen className="w-5 h-5" /> },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white border border-gray-100 p-4 rounded-lg shadow-sm flex items-center gap-3 hover:border-[#000080] hover:shadow-md transition-all">
+                    <div className="p-2 bg-blue-50 rounded-full text-[#000080]">
+                      {item.icon}
+                    </div>
+                    <span className="font-semibold text-gray-700 text-sm">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: Why Choose Us (Stats) */}
+      <section className="py-20 bg-[#000080] text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose NxGen Tech Academy</h2>
+            <p className="text-blue-100 max-w-2xl mx-auto text-lg">Learners trust us for consistency, outcomes, and long-term support.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">15+</div>
+              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Years Excellence</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">5000+</div>
+              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Students Trained</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">98%</div>
+              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Success Rate</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">50+</div>
+              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Expert Faculty</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 10: FAQs */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <div className="w-20 h-1 bg-[#000080] mx-auto rounded-full" />
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="border border-gray-200 rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition-colors text-left"
+                >
+                  <span className="font-semibold text-gray-900 text-lg">{faq.q}</span>
+                  {openFaq === index ? <ChevronUp className="w-5 h-5 text-[#000080]" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-white px-5 border-t border-gray-200 overflow-hidden"
+                    >
+                      <div className="py-4 text-gray-600 leading-relaxed">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 9: Call to Action */}
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+        {/* Decorative background blobs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#000080] rounded-full filter blur-[100px] opacity-30 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500 rounded-full filter blur-[100px] opacity-20" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                Ready to Start Your IT Journey?
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Take the next step toward a successful IT career by building in-demand skills. Join NxGen Tech Academy and learn from mentors who are invested in your growth.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="bg-[#000080] hover:bg-[#000080]/80 text-white py-6 px-8 text-lg rounded-full shadow-lg hover:shadow-blue-500/20 transition-all">
+                  Get Started Now
+                </Button>
+                <Button variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white hover:text-white py-6 px-8 text-lg rounded-full">
+                  Contact Support
+                </Button>
               </div>
             </div>
 
-            {/* HR Manager */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg group">
-              <div className="h-64 bg-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=500" alt="Pallavi" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-4 left-4 z-20 text-white">
-                  <h4 className="text-xl font-bold">Pallavi</h4>
-                  <p className="text-sm opacity-90">HR Manager</p>
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-6">Contact Us</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-[#000080] rounded-lg">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg">Address</h4>
+                    <p className="text-gray-300">
+                      First Floor, 1-121/63, Survey No. 63 Part,
+                      Hotel Sitara Grand Backside, Miyapur,
+                      Telangana – 500049
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pallavi has extensive experience of 6+ years in the field of Human Resources Management with exposure to Manpower Planning...
-                </p>
-              </div>
-            </div>
 
-            {/* Technical Head */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg group">
-              <div className="h-64 bg-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=500" alt="Shankar" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-4 left-4 z-20 text-white">
-                  <h4 className="text-xl font-bold">Shankar</h4>
-                  <p className="text-sm opacity-90">Technical Head</p>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-[#000080] rounded-lg">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg">Phone</h4>
+                    <p className="text-gray-300">+91 63097 82855</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Shankar has 6 years of experience in Digital Marketing, SAP Basis, Networking, and SAP ABAP as well as business Leadership...
-                </p>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-[#000080] rounded-lg">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg">Email</h4>
+                    <p className="text-gray-300">nxgentechacademy@gmail.com</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,14 +555,5 @@ const About = () => {
     </div>
   );
 };
-
-// Icons components for cleaner JSX
-const TargetIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
-);
-
-const EyeIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
-);
 
 export default About;

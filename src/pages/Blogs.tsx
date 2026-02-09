@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, User, Clock, ChevronRight } from 'lucide-react';
+import { ArrowRight, Calendar, User, Clock, ChevronRight, Eye, Share2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const blogPosts = [
@@ -13,7 +13,10 @@ const blogPosts = [
         author: "Admin",
         category: "SAS",
         image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop",
-        readTime: "5 min read"
+        readTime: "5 min read",
+        views: "2.4k",
+        comments: 12,
+        shares: 45
     },
     {
         id: 2,
@@ -23,7 +26,10 @@ const blogPosts = [
         author: "Admin",
         category: "Career",
         image: "https://images.unsplash.com/photo-1599658880436-e252446958d5?q=80&w=600&auto=format&fit=crop",
-        readTime: "7 min read"
+        readTime: "7 min read",
+        views: "1.8k",
+        comments: 8,
+        shares: 32
     },
     {
         id: 3,
@@ -33,7 +39,10 @@ const blogPosts = [
         author: "Admin",
         category: "Data Analytics",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-        readTime: "6 min read"
+        readTime: "6 min read",
+        views: "3.1k",
+        comments: 24,
+        shares: 89
     },
     {
         id: 4,
@@ -43,7 +52,10 @@ const blogPosts = [
         author: "Admin",
         category: "SAP",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-        readTime: "8 min read"
+        readTime: "8 min read",
+        views: "4.2k",
+        comments: 18,
+        shares: 56
     },
     {
         id: 5,
@@ -53,7 +65,10 @@ const blogPosts = [
         author: "Admin",
         category: "SAP SuccessFactors",
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop",
-        readTime: "4 min read"
+        readTime: "4 min read",
+        views: "1.5k",
+        comments: 6,
+        shares: 21
     },
     {
         id: 6,
@@ -63,7 +78,10 @@ const blogPosts = [
         author: "Admin",
         category: "Cloud Computing",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
-        readTime: "6 min read"
+        readTime: "6 min read",
+        views: "2.8k",
+        comments: 15,
+        shares: 48
     }
 ];
 
@@ -136,11 +154,27 @@ const Blogs = () => {
                                         {post.title}
                                     </h2>
 
-                                    <p className="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
+                                    <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed flex-grow">
                                         {post.excerpt}
                                     </p>
 
-                                    <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                    {/* Stats */}
+                                    <div className="flex items-center gap-6 text-gray-400 text-xs mb-4 pt-4 border-t border-gray-50">
+                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Views">
+                                            <Eye className="w-4 h-4" />
+                                            <span>{post.views}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Comments">
+                                            <MessageCircle className="w-4 h-4" />
+                                            <span>{post.comments}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Shares">
+                                            <Share2 className="w-4 h-4" />
+                                            <span>{post.shares}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2">
                                             <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
                                                 <User className="w-4 h-4" />
