@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Search, ArrowLeft } from "lucide-react"; // Import ArrowLeft if needed, though AllCourses is top level
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,18 @@ const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c 
 const categoriesList = ["All Courses", ...parentCategories];
 
 const AllCourses = () => {
-    const [selectedCategory, setSelectedCategory] = useState("All Courses");
+    const [searchParams] = useSearchParams();
+    const initialCategory = searchParams.get("category") || "All Courses";
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+
+    // Sync state if URL param changes (e.g. navigation from footer)
+    React.useEffect(() => {
+        const categoryParam = searchParams.get("category");
+        if (categoryParam) {
+            setSelectedCategory(categoryParam);
+        }
+        window.scrollTo(0, 0);
+    }, [searchParams]);
     const [searchQuery, setSearchQuery] = useState("");
 
     // Filter Logic

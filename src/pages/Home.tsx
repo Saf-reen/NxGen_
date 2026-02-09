@@ -289,32 +289,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Locations */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
-          <div>
-            <h4 className="font-bold text-xl mb-4 text-secondary">Pune (Kothrud)</h4>
-            <p className="opacity-80 text-sm leading-relaxed mb-4">
-              103, 1st Floor, AspireTechsoft Pvt. Ltd., Himgauri, Above KFC, Kothrud, Pune, Maharashtra 411038
-            </p>
-            <p className="font-bold">+91 9960 935 600</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-xl mb-4 text-secondary">Wakad</h4>
-            <p className="opacity-80 text-sm leading-relaxed mb-4">
-              Office 101, Rajgad Building, Ratnadeep lane, Datta mandir road, Wakad. Pimpri Chinchwad
-            </p>
-            <p className="font-bold">+91 9960 935 965</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-xl mb-4 text-secondary">Bangalore</h4>
-            <p className="opacity-80 text-sm leading-relaxed mb-4">
-              Office No - 322, 3 Floor, Raheja Arcade, Koramangala, 5 Block, 80ft Road, Karnataka, Bangalore 560095.
-            </p>
-            <p className="font-bold">+91 6364 012 099</p>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };
