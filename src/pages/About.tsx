@@ -103,7 +103,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed"
           >
             Delivering career-driven education that builds skills, confidence, and future-ready professionals.
           </motion.p>
@@ -121,7 +121,7 @@ const About = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeInUp} className="space-y-6">
-              <div className="inline-block px-4 py-1 bg-blue-50 text-[#000080] rounded-full font-semibold text-sm">
+              <div className="inline-block px-4 py-1 bg-green-50 text-[#000080] rounded-full font-semibold text-sm">
                 WHO WE ARE
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Journey</h2>
@@ -170,7 +170,7 @@ const About = () => {
           >
             <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border-t-4 border-[#000080]">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-50 rounded-full text-[#000080]">
+                <div className="p-3 bg-green-50 rounded-full text-[#000080]">
                   <Target className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
@@ -180,9 +180,9 @@ const About = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border-t-4 border-[#00abf0]">
+            <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border-t-4 border-[#22c55e]">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-50 rounded-full text-[#00abf0]">
+                <div className="p-3 bg-green-50 rounded-full text-[#22c55e]">
                   <Globe className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
@@ -202,8 +202,8 @@ const About = () => {
             <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">Our Core Values</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {coreValues.map((value, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center group border border-gray-100 hover:border-blue-100">
-                  <div className="mb-4 inline-flex p-3 bg-gray-50 rounded-full group-hover:bg-blue-50 transition-colors">
+                <div key={idx} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center group border border-gray-100 hover:border-green-100">
+                  <div className="mb-4 inline-flex p-3 bg-gray-50 rounded-full group-hover:bg-green-50 transition-colors">
                     {value.icon}
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h4>
@@ -242,7 +242,7 @@ const About = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"
+                    className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-green-50 transition-colors"
                   >
                     <CheckCircle className="w-5 h-5 text-[#000080] flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{strength}</span>
@@ -260,7 +260,7 @@ const About = () => {
               viewport={{ once: true }}
               className="order-1 lg:order-2 relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#000080] to-[#00abf0] rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#000080] to-[#22c55e] rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg" />
               <img
                 src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Different Approach"
@@ -269,10 +269,10 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Section 5: Courses We Offer */}
-      <section className="py-20 bg-[#f8fafc]">
+      < section className="py-20 bg-[#f8fafc]" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Courses We Offer</h2>
@@ -291,7 +291,7 @@ const About = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#000080] group"
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#000080] transition-colors">
+                <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#000080] transition-colors">
                   <BookOpen className="w-6 h-6 text-[#000080] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{course}</h3>
@@ -302,14 +302,14 @@ const About = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12 bg-blue-50 p-6 rounded-xl max-w-4xl mx-auto">
+          <div className="text-center mt-12 bg-green-50 p-6 rounded-xl max-w-4xl mx-auto">
             <p className="text-gray-700 font-medium">Every course includes structured learning paths, lab sessions, and mentor guidance to ensure job readiness.</p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Section 6 & 7: Mentors & Learning Approach - Split View */}
-      <section className="py-20 bg-white">
+      < section className="py-20 bg-white" >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
 
@@ -372,7 +372,7 @@ const About = () => {
                   { title: "Skill-Oriented Training", icon: <BookOpen className="w-5 h-5" /> },
                 ].map((item, i) => (
                   <div key={i} className="bg-white border border-gray-100 p-4 rounded-lg shadow-sm flex items-center gap-3 hover:border-[#000080] hover:shadow-md transition-all">
-                    <div className="p-2 bg-blue-50 rounded-full text-[#000080]">
+                    <div className="p-2 bg-green-50 rounded-full text-[#000080]">
                       {item.icon}
                     </div>
                     <span className="font-semibold text-gray-700 text-sm">{item.title}</span>
@@ -382,15 +382,15 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Section 8: Why Choose Us (Stats) */}
-      <section className="py-20 bg-[#000080] text-white overflow-hidden relative">
+      < section className="py-20 bg-[#000080] text-white overflow-hidden relative" >
         <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose NxGen Tech Academy</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto text-lg">Learners trust us for consistency, outcomes, and long-term support.</p>
+            <p className="text-green-100 max-w-2xl mx-auto text-lg">Learners trust us for consistency, outcomes, and long-term support.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -401,7 +401,7 @@ const About = () => {
               className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">15+</div>
-              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Years Excellence</div>
+              <div className="text-sm md:text-base text-green-200 uppercase tracking-widest font-medium">Years Excellence</div>
             </motion.div>
 
             <motion.div
@@ -412,7 +412,7 @@ const About = () => {
               className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">5000+</div>
-              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Students Trained</div>
+              <div className="text-sm md:text-base text-green-200 uppercase tracking-widest font-medium">Students Trained</div>
             </motion.div>
 
             <motion.div
@@ -423,7 +423,7 @@ const About = () => {
               className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">98%</div>
-              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Success Rate</div>
+              <div className="text-sm md:text-base text-green-200 uppercase tracking-widest font-medium">Success Rate</div>
             </motion.div>
 
             <motion.div
@@ -434,14 +434,14 @@ const About = () => {
               className="text-center space-y-2 p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">50+</div>
-              <div className="text-sm md:text-base text-blue-200 uppercase tracking-widest font-medium">Expert Faculty</div>
+              <div className="text-sm md:text-base text-green-200 uppercase tracking-widest font-medium">Expert Faculty</div>
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Section 10: FAQs */}
-      <section className="py-20 bg-white">
+      < section className="py-20 bg-white" >
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
@@ -484,13 +484,13 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Section 9: Call to Action */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      < section className="py-20 bg-gray-900 text-white relative overflow-hidden" >
         {/* Decorative background blobs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#000080] rounded-full filter blur-[100px] opacity-30 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500 rounded-full filter blur-[100px] opacity-20" />
+        < div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#000080] rounded-full filter blur-[100px] opacity-30 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-green-500 rounded-full filter blur-[100px] opacity-20" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -502,7 +502,7 @@ const About = () => {
                 Take the next step toward a successful IT career by building in-demand skills. Join NxGen Tech Academy and learn from mentors who are invested in your growth.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-[#000080] hover:bg-[#000080]/80 text-white py-6 px-8 text-lg rounded-full shadow-lg hover:shadow-blue-500/20 transition-all">
+                <Button size="lg" className="bg-[#000080] hover:bg-[#000080]/80 text-white py-6 px-8 text-lg rounded-full shadow-lg hover:shadow-green-500/20 transition-all">
                   Get Started Now
                 </Button>
                 <Button variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white hover:text-white py-6 px-8 text-lg rounded-full">
@@ -551,8 +551,8 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
