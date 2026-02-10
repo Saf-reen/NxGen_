@@ -10,10 +10,10 @@ export const TopBar = () => {
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-2">
-                        <a href="https://www.facebook.com/NxGenTechAcademy/" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Facebook className="w-4 h-4" /></a>
-                        <a href="https://www.youtube.com/@NxGenTechAcademy" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Youtube className="w-4 h-4" /></a>
-                        <a href="https://www.instagram.com/nxgentechacademy/" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Instagram className="w-4 h-4" /></a>
-                        <a href="https://www.linkedin.com/in/nxgen-tech-academy/" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Linkedin className="w-4 h-4" /></a>
+                        <a href="https://www.facebook.com/NxGenTechAcademy/" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Facebook className="w-4 h-4" /></a>
+                        <a href="https://www.youtube.com/@NxGenTechAcademy" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Youtube className="w-4 h-4" /></a>
+                        <a href="https://www.instagram.com/nxgentechacademy/" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Instagram className="w-4 h-4" /></a>
+                        <a href="https://www.linkedin.com/in/nxgen-tech-academy/" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Linkedin className="w-4 h-4" /></a>
                     </div>
 
                     {/* Marquee Text */}

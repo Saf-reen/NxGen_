@@ -329,5 +329,221 @@ export const detailedCourses: Record<string, DetailedCourse> = {
             description: "Deliver a complete portfolio-ready project and presentation deck."
         },
         audience: ["All Learners", "Job Seekers"]
+    },
+    "dm-seo": {
+        id: "dm-seo",
+        title: "Search Engine Optimization (SEO)",
+        tagline: "Master on-page, off-page, and technical SEO to rank higher on search engines.",
+        level: "Intermediate",
+        duration: "6 Weeks",
+        lessons: 24,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200",
+        overview: "Learn comprehensive SEO strategies to improve website visibility, drive organic traffic, and rank higher on search engines. This course covers keyword research, on-page optimization, link building, technical SEO, and analytics.",
+        outcomes: [
+            "Conduct effective keyword research and competitor analysis",
+            "Optimize website content and structure for search engines",
+            "Build high-quality backlinks and implement off-page SEO strategies",
+            "Perform technical SEO audits and fix common issues",
+            "Track and analyze SEO performance using Google Analytics and Search Console"
+        ],
+        curriculum: [
+            { module: "Module 1: SEO Fundamentals", topics: ["How search engines work", "SEO vs SEM", "Keyword research basics"] },
+            { module: "Module 2: On-Page SEO", topics: ["Title tags, meta descriptions", "Header tags and content optimization", "Internal linking strategies"] },
+            { module: "Module 3: Off-Page SEO", topics: ["Link building strategies", "Guest posting and outreach", "Social signals"] },
+            { module: "Module 4: Technical SEO", topics: ["Site speed optimization", "Mobile optimization", "XML sitemaps and robots.txt", "Schema markup"] },
+            { module: "Module 5: Local SEO", topics: ["Google My Business", "Local citations", "Reviews management"] },
+            { module: "Module 6: SEO Analytics", topics: ["Google Analytics setup", "Search Console insights", "Rank tracking and reporting"] }
+        ],
+        tools: [
+            { name: "Google Analytics", icon: BarChart },
+            { name: "Search Console", icon: Globe },
+            { name: "SEMrush/Ahrefs", icon: Terminal }
+        ],
+        project: {
+            title: "Complete Website SEO Audit & Strategy",
+            description: "Perform a comprehensive SEO audit of a real website and create an actionable optimization strategy."
+        },
+        audience: ["Marketing Professionals", "Business Owners", "Content Writers", "Entrepreneurs"]
+    },
+    "dm-social-media": {
+        id: "dm-social-media",
+        title: "Social Media Marketing (SMM)",
+        tagline: "Create engaging campaigns across social platforms to build brand awareness.",
+        level: "Beginner",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200",
+        overview: "Master social media marketing across Facebook, Instagram, LinkedIn, Twitter, and other platforms. Learn to create engaging content, run campaigns, build communities, and measure social media ROI.",
+        outcomes: [
+            "Develop comprehensive social media strategies for brands",
+            "Create engaging content tailored to each platform",
+            "Run and optimize paid social media campaigns",
+            "Build and manage online communities",
+            "Analyze social media metrics and improve performance"
+        ],
+        curriculum: [
+            { module: "Module 1: Social Media Fundamentals", topics: ["Platform overview", "Social media strategy", "Audience research"] },
+            { module: "Module 2: Content Creation", topics: ["Content types and formats", "Visual design basics", "Copywriting for social media", "Content calendar planning"] },
+            { module: "Module 3: Facebook & Instagram Marketing", topics: ["Page optimization", "Organic reach strategies", "Instagram Stories and Reels", "Facebook Ads Manager"] },
+            { module: "Module 4: LinkedIn & Twitter Marketing", topics: ["LinkedIn company pages", "Professional networking", "Twitter engagement strategies"] },
+            { module: "Module 5: Community Management", topics: ["Engagement strategies", "Crisis management", "Influencer collaboration"] },
+            { module: "Module 6: Social Media Analytics", topics: ["Platform insights", "ROI measurement", "Reporting and optimization"] }
+        ],
+        tools: [
+            { name: "Meta Business Suite", icon: Globe },
+            { name: "Canva", icon: Code },
+            { name: "Hootsuite", icon: Layers }
+        ],
+        project: {
+            title: "Social Media Campaign Launch",
+            description: "Plan and execute a complete social media campaign across multiple platforms with content calendar and analytics."
+        },
+        audience: ["Marketing Professionals", "Social Media Managers", "Entrepreneurs", "Content Creators"]
+    },
+    "dm-content": {
+        id: "dm-content",
+        title: "Content Marketing & Copywriting",
+        tagline: "Craft compelling content that attracts, engages, and converts your audience.",
+        level: "Intermediate",
+        duration: "5 Weeks",
+        lessons: 18,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200",
+        overview: "Learn to create high-quality content that drives business results. Master content strategy, blog writing, copywriting, storytelling, and content distribution across channels.",
+        outcomes: [
+            "Develop data-driven content marketing strategies",
+            "Write compelling blog posts and articles",
+            "Master persuasive copywriting techniques",
+            "Create content for different stages of the buyer journey",
+            "Measure content performance and ROI"
+        ],
+        curriculum: [
+            { module: "Module 1: Content Strategy", topics: ["Content marketing fundamentals", "Audience personas", "Content pillars and themes"] },
+            { module: "Module 2: Copywriting Essentials", topics: ["Headline formulas", "Persuasive writing techniques", "Call-to-action optimization"] },
+            { module: "Module 3: Blog Writing", topics: ["SEO-friendly blog posts", "Storytelling techniques", "Content structure"] },
+            { module: "Module 4: Content Formats", topics: ["Ebooks and whitepapers", "Case studies", "Infographics", "Video scripts"] },
+            { module: "Module 5: Content Distribution", topics: ["Content promotion strategies", "Email newsletters", "Social media distribution"] },
+            { module: "Module 6: Content Analytics", topics: ["Performance metrics", "A/B testing", "Content optimization"] }
+        ],
+        tools: [
+            { name: "WordPress", icon: Code },
+            { name: "Grammarly", icon: BookOpen },
+            { name: "Google Docs", icon: BookOpen }
+        ],
+        project: {
+            title: "Content Marketing Campaign",
+            description: "Create a complete content marketing campaign including blog posts, social content, and email newsletters."
+        },
+        audience: ["Content Writers", "Marketing Professionals", "Bloggers", "Business Owners"]
+    },
+    "dm-email": {
+        id: "dm-email",
+        title: "Email Marketing & Automation",
+        tagline: "Design effective email campaigns and automation workflows to nurture leads.",
+        level: "Beginner",
+        duration: "4 Weeks",
+        lessons: 16,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200",
+        overview: "Master email marketing from strategy to execution. Learn to build email lists, create engaging campaigns, set up automation workflows, and optimize for conversions.",
+        outcomes: [
+            "Build and segment email lists effectively",
+            "Design high-converting email campaigns",
+            "Create automated email workflows",
+            "Write compelling email copy",
+            "Analyze email metrics and improve performance"
+        ],
+        curriculum: [
+            { module: "Module 1: Email Marketing Basics", topics: ["Email marketing fundamentals", "List building strategies", "Email service providers"] },
+            { module: "Module 2: Email Design", topics: ["Email templates", "Mobile optimization", "Design best practices"] },
+            { module: "Module 3: Copywriting", topics: ["Subject line formulas", "Email body structure", "Call-to-action optimization"] },
+            { module: "Module 4: Automation", topics: ["Welcome sequences", "Drip campaigns", "Behavioral triggers", "Lead nurturing workflows"] },
+            { module: "Module 5: Segmentation", topics: ["List segmentation strategies", "Personalization techniques", "Dynamic content"] },
+            { module: "Module 6: Analytics", topics: ["Open rates and click rates", "A/B testing", "Deliverability optimization"] }
+        ],
+        tools: [
+            { name: "Mailchimp", icon: Globe },
+            { name: "HubSpot", icon: Layers },
+            { name: "ConvertKit", icon: Code }
+        ],
+        project: {
+            title: "Email Automation Workflow",
+            description: "Build a complete automated email sequence for lead nurturing with segmentation and personalization."
+        },
+        audience: ["Marketing Professionals", "Entrepreneurs", "Sales Teams", "E-commerce Managers"]
+    },
+    "dm-ppc": {
+        id: "dm-ppc",
+        title: "PPC & Paid Advertising (Google Ads, Facebook Ads)",
+        tagline: "Plan, execute, and optimize paid advertising campaigns to maximize ROI.",
+        level: "Intermediate",
+        duration: "6 Weeks",
+        lessons: 24,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
+        overview: "Master paid advertising across Google Ads and Facebook Ads platforms. Learn campaign setup, targeting, bidding strategies, ad creation, and optimization techniques to achieve maximum ROI.",
+        outcomes: [
+            "Set up and manage Google Ads campaigns",
+            "Create high-performing Facebook and Instagram ad campaigns",
+            "Implement advanced targeting and bidding strategies",
+            "Design compelling ad creatives and copy",
+            "Analyze campaign performance and optimize for ROI"
+        ],
+        curriculum: [
+            { module: "Module 1: PPC Fundamentals", topics: ["PPC basics and terminology", "Campaign types overview", "Budget planning"] },
+            { module: "Module 2: Google Ads Search", topics: ["Keyword research", "Ad groups structure", "Ad copywriting", "Quality Score optimization"] },
+            { module: "Module 3: Google Display & Video", topics: ["Display network campaigns", "YouTube advertising", "Remarketing strategies"] },
+            { module: "Module 4: Facebook Ads", topics: ["Campaign objectives", "Audience targeting", "Ad formats", "Facebook Pixel setup"] },
+            { module: "Module 5: Instagram & LinkedIn Ads", topics: ["Instagram ad formats", "LinkedIn campaign manager", "B2B advertising strategies"] },
+            { module: "Module 6: Optimization & Analytics", topics: ["Conversion tracking", "A/B testing", "Bid optimization", "ROI analysis"] }
+        ],
+        tools: [
+            { name: "Google Ads", icon: Globe },
+            { name: "Facebook Ads Manager", icon: Globe },
+            { name: "Google Analytics", icon: BarChart }
+        ],
+        project: {
+            title: "Multi-Platform PPC Campaign",
+            description: "Launch and optimize a complete PPC campaign across Google Ads and Facebook Ads with conversion tracking."
+        },
+        audience: ["Marketing Professionals", "Business Owners", "PPC Specialists", "Entrepreneurs"]
+    },
+    "dm-analytics": {
+        id: "dm-analytics",
+        title: "Digital Marketing Analytics (Google Analytics & Tag Manager)",
+        tagline: "Track, measure, and analyze marketing performance using data-driven insights.",
+        level: "Intermediate",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200",
+        overview: "Master digital marketing analytics using Google Analytics 4, Google Tag Manager, and other analytics tools. Learn to track campaigns, measure ROI, and make data-driven marketing decisions.",
+        outcomes: [
+            "Set up and configure Google Analytics 4",
+            "Implement tracking using Google Tag Manager",
+            "Create custom reports and dashboards",
+            "Analyze marketing campaign performance",
+            "Make data-driven optimization decisions"
+        ],
+        curriculum: [
+            { module: "Module 1: Analytics Fundamentals", topics: ["Digital analytics overview", "GA4 setup and configuration", "Data collection basics"] },
+            { module: "Module 2: Google Tag Manager", topics: ["GTM setup", "Tags, triggers, and variables", "Event tracking implementation"] },
+            { module: "Module 3: Traffic Analysis", topics: ["Traffic sources", "User behavior analysis", "Conversion funnel analysis"] },
+            { module: "Module 4: Campaign Tracking", topics: ["UTM parameters", "Campaign attribution", "Multi-channel funnels"] },
+            { module: "Module 5: Custom Reports", topics: ["Custom dimensions and metrics", "Dashboard creation", "Data visualization"] },
+            { module: "Module 6: Advanced Analytics", topics: ["E-commerce tracking", "Goal setup", "Audience segmentation", "Predictive analytics"] }
+        ],
+        tools: [
+            { name: "Google Analytics 4", icon: BarChart },
+            { name: "Google Tag Manager", icon: Code },
+            { name: "Data Studio", icon: PieChart }
+        ],
+        project: {
+            title: "Complete Analytics Implementation",
+            description: "Set up comprehensive tracking for a website including GA4, GTM, conversion tracking, and custom dashboards."
+        },
+        audience: ["Marketing Analysts", "Digital Marketers", "Business Analysts", "Data Analysts"]
     }
 };

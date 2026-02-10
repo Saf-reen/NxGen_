@@ -151,35 +151,39 @@ const AllCourses = () => {
 
                                 // 2. Fallback to showing individual courses
                                 if (filteredCourses.length > 0) {
-                                    return filteredCourses.map((course) => (
-                                        <div
-                                            key={course.id}
-                                            className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
-                                        >
-                                            <div className="mb-4">
-                                                <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                                                    {course.title}
-                                                </h3>
-                                            </div>
+                                    return filteredCourses.map((course) => {
+                                        // Get the category title for this course
+                                        const config = categoryConfig[course.categoryId];
+                                        const categoryTitle = config ? config.title : "Other";
 
-                                            <div className="w-full h-px bg-gray-200 mb-4"></div>
+                                        return (
+                                            <div
+                                                key={course.id}
+                                                className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                                            >
+                                                {/* Category Badge */}
+                                                <div className="mb-3">
+                                                    <span className="inline-block px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full border border-green-200">
+                                                        {categoryTitle}
+                                                    </span>
+                                                </div>
 
-                                            <div className="flex-grow">
-                                                <p className="text-gray-600 text-sm leading-relaxed">
-                                                    {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
-                                                </p>
-                                            </div>
+                                                <div className="mb-4">
+                                                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                        {course.title}
+                                                    </h3>
+                                                </div>
 
-                                            <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                                <Link
-                                                    to={`/courses/${course.id}`}
-                                                    className="text-[#000080] font-semibold text-sm hover:underline"
-                                                >
-                                                    View Details
-                                                </Link>
+                                                <div className="w-full h-px bg-gray-200 mb-4"></div>
+
+                                                <div className="flex-grow">
+                                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                                        {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ));
+                                        );
+                                    });
                                 }
 
                                 // 3. Empty State

@@ -2,21 +2,90 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from "react-icons/fa";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Array of hero images
+  const heroImages = [
+    '/hero-bg.png',
+    '/hero-bg-1.jpeg', // Replace with your second image path
+    '/hero-bg-2.jpeg'  // Replace with your third image path
+  ];
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Fixed Background Image with Parallax Effect - stays in place while content scrolls */}
-        <div
-          className="fixed inset-0 bg-cover bg-center bg-fixed -z-10"
-          style={{
-            backgroundImage: "url('/hero-bg.png')",
-          }}
-        />
+        {/* Carousel Images */}
+        <div className="absolute inset-0 -z-10">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center bg-fixed transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              style={{
+                backgroundImage: `url('${image}')`,
+              }}
+            />
+          ))}
+        </div>
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-hero" />
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                  ? 'bg-white w-8'
+                  : 'bg-white/50 hover:bg-white/75'
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
         {/* intentionally leave the hero image area empty of text; content appears below */}
         <div className="relative z-10" />
@@ -66,15 +135,15 @@ export const Hero = () => {
             </motion.div>
           </div>
           {/* WhatsApp quick chat button */}
-        <a
-          aria-label="Chat on WhatsApp"
-          href={`https://wa.me/916309782855?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fixed right-6 bottom-28 z-10 bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:h-16 hover:w-16 hover:shadow-2xl"
-        >
-          <FaWhatsapp className="w-8 h-8" />
-        </a>
+          <a
+            aria-label="Chat on WhatsApp"
+            href={`https://wa.me/916309782855?text=${encodeURIComponent("Hi, I'm interested in courses at NxGen Tech Academy")}`}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="fixed right-6 bottom-28 z-10 bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:h-16 hover:w-16 hover:shadow-2xl"
+          >
+            <FaWhatsapp className="w-8 h-8" />
+          </a>
         </div>
       </section>
     </>

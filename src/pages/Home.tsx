@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Smartphone, Clock, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Smartphone, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Array of hero images
+  const heroImages = [
+    '/hero-image.jpg',
+    '/hero-bg.png',
+    '/hero-bg-1.jpeg'
+  ];
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div className="min-h-screen font-sans text-gray-800">
       <SEO
@@ -14,15 +43,15 @@ const Home = () => {
         path="/"
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-white text-gray-800 py-16 lg:py-24">
+      {/* Hero Section with Carousel */}
+      <section className="relative bg-white text-gray-800 py-16 lg:py-24 overflow-hidden">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 z-10">
             <div>
               <p className="text-xl md:text-2xl text-gray-600 font-medium mb-2">Upscale Your Career in IT Industry</p>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-black">
-                Certification & Training Programs
+                Certification &amp; Training Programs
               </h1>
             </div>
 
@@ -34,14 +63,11 @@ const Home = () => {
               <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md">
                 <Link to="/all-courses">Explore Courses</Link>
               </Button>
-              {/* <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-medium text-lg px-8 rounded-md">
-                SAS Certifications
-              </Button> */}
             </div>
 
             <div className="pt-8">
               <p className="text-lg text-[#000080]">
-                <span className="font-bold text-2xl">15 Years</span> in the field of IT Training & Placement Industry
+                <span className="font-bold text-2xl">15 Years</span> in the field of IT Training &amp; Placement Industry
               </p>
               <div className="h-0.5 w-full bg-gray-200 mt-4 max-w-md"></div>
             </div>
@@ -49,7 +75,6 @@ const Home = () => {
             <div className="pt-6">
               <p className="text-gray-600 mb-4 font-medium">Professionals hired by</p>
               <div className="flex flex-wrap items-center gap-8 opacity-70 grayscale hover:grayscale-0 transition-all">
-                {/* Logos - Using text placeholders if images strictly not available, but user wants Replica */}
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-6 object-contain" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Cognizant_logo_2022.svg" alt="Cognizant" className="h-6 object-contain" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture" className="h-6 object-contain" />
@@ -58,15 +83,53 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Carousel */}
           <div className="relative flex justify-center lg:justify-end">
-            {/* The image is a lady with laptop. Using a placeholder that looks similar */}
-            <img
-              src="/hero-image.jpg"
-              alt="Student with Laptop"
-              className="max-h-[600px] object-contain relative z-10"
-            />
-            {/* Background elements if needed, keeping it clean white as per screenshot */}
+            {/* Carousel Container */}
+            <div className="relative w-full max-w-[600px] h-[600px]">
+              {/* Images */}
+              {heroImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Hero slide ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                />
+              ))}
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
+                        ? 'bg-[#000080] w-8'
+                        : 'bg-gray-400 w-2 hover:bg-gray-600'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

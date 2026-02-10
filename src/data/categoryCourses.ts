@@ -118,6 +118,19 @@ export const categoryConfig: Record<string, { title: string; description: string
             "Implement security, DevOps, and automation on the platform"
         ]
     },
+    "digital-marketing": {
+        title: "Digital Marketing",
+        description: "Master online marketing strategies to grow brands and drive business results.",
+        parentCategory: "Digital Marketing",
+        outcomes: [
+            "Develop comprehensive digital marketing strategies for businesses",
+            "Master SEO techniques to improve organic search rankings",
+            "Create and manage effective social media marketing campaigns",
+            "Design content marketing strategies that engage and convert",
+            "Execute successful PPC and paid advertising campaigns",
+            "Analyze marketing data to optimize campaign performance"
+        ]
+    },
 };
 
 export const coursesData: CourseData[] = [
@@ -466,5 +479,61 @@ export const coursesData: CourseData[] = [
         image: "code-icon",
         rating: 5,
         price: "₹40,000"
+    },
+
+    // Digital Marketing Courses
+    {
+        id: "dm-seo",
+        title: "Search Engine Optimization (SEO)",
+        description: "Master on-page, off-page, and technical SEO to rank higher on search engines and drive organic traffic.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹20,000"
+    },
+    {
+        id: "dm-social-media",
+        title: "Social Media Marketing (SMM)",
+        description: "Create engaging campaigns across Facebook, Instagram, LinkedIn, and Twitter to build brand awareness and community.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹22,000"
+    },
+    {
+        id: "dm-content",
+        title: "Content Marketing & Copywriting",
+        description: "Craft compelling content strategies, blog posts, and copy that attracts, engages, and converts your target audience.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹18,000"
+    },
+    {
+        id: "dm-email",
+        title: "Email Marketing & Automation",
+        description: "Design effective email campaigns, build automation workflows, and nurture leads to drive conversions.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹15,000"
+    },
+    {
+        id: "dm-ppc",
+        title: "PPC & Paid Advertising (Google Ads, Facebook Ads)",
+        description: "Plan, execute, and optimize paid advertising campaigns to maximize ROI across Google and social platforms.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹25,000"
+    },
+    {
+        id: "dm-analytics",
+        title: "Digital Marketing Analytics (Google Analytics & Tag Manager)",
+        description: "Track, measure, and analyze marketing performance using Google Analytics, Tag Manager, and data-driven insights.",
+        categoryId: "digital-marketing",
+        image: "code-icon",
+        rating: 5,
+        price: "₹20,000"
     },
 ];

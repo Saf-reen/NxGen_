@@ -64,6 +64,7 @@ const App = () => (
               <Route path="courses/ai" element={<SAPCourse categorySlug="ai" />} />
               <Route path="courses/aiml" element={<SAPCourse categorySlug="aiml" />} />
               <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
+              <Route path="courses/digital-marketing" element={<SAPCourse categorySlug="digital-marketing" />} />
               <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />
 
               {/* Course Detail */}
