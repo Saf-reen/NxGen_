@@ -32,8 +32,8 @@ const App = () => (
     <TooltipProvider>
       <div className="min-h-screen text-black bg-white">
         <Helmet>
-          <title>Aspire Techsoft - Best IT Training & Placement Institute in Pune</title>
-          <meta name="description" content="Join Our 100% Job Guarantee Courses. Aspire Techsoft offers best IT training in Pune." />
+          <title>NxGen Tech Academy - Best IT Training & Placement Institute in Pune</title>
+          <meta name="description" content="Join Our 100% Job Guarantee Courses. NxGen Tech Academy offers best IT training in Pune." />
           <meta name="keywords" content={categories.map(c => c.name).join(', ')} />
         </Helmet>
 

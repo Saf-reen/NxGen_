@@ -56,7 +56,7 @@ export const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
-            <img src="/Logo.png" alt="Aspire Techsoft" className="h-12 w-auto object-contain" />
+            <img src="/Logo.png" alt="NxGen Tech Academy" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Nav Controls - Middle Section */}

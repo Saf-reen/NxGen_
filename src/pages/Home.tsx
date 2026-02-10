@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="min-h-screen font-sans text-gray-800">
       <SEO
-        title="Best IT Training & Placement Institute in Pune - Aspire Techsoft"
+        title="Best IT Training & Placement Institute in Pune - NxGen Tech Academy"
         description="Join Our 100% Job Guarantee Courses. Expert instructors, industry-relevant programs, hands-on training."
         type="website"
         path="/"
@@ -78,7 +78,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold mb-4 text-primary">Why Do Professionals Choose Our Institution?</h2>
             <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
             <p className="text-gray-600 leading-relaxed">
-              Professionals choose Aspire Techsoft Institution for their IT education for a multitude of reasons: expert instructors, industry-relevant programs, hands-on training, personalized career support, and a track record of success.
+              Professionals choose NxGen Tech Academy Institution for their IT education for a multitude of reasons: expert instructors, industry-relevant programs, hands-on training, personalized career support, and a track record of success.
             </p>
           </div>
 
@@ -239,9 +239,9 @@ const Home = () => {
           <h2 className="text-3xl font-bold mb-12 text-center text-primary">Testimonials</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Ravi Rautele", text: "I have successfully completed my SAP FICO training from Aspire Techsoft, which gave me a strong understanding of Financial Accounting and Controlling concepts.", course: "SAP FICO" },
+              { name: "Ravi Rautele", text: "I have successfully completed my SAP FICO training from NxGen Tech Academy, which gave me a strong understanding of Financial Accounting and Controlling concepts.", course: "SAP FICO" },
               { name: "Vinod Goud", text: "THIS MONTH I HAVE COMPLETED SAP FICO COURSE. THE TRAINING IS WELL STRUCTURED AND EASY TO UNDERSTAND. COURSE CONTENT PROVIDES HANDS ON PRATICE.", course: "SAP FICO" },
-              { name: "Ritik S. Mourya", text: "I have just completed my FullStack DOT NET training from Aspire Techsoft. The sessions were very helpful and understanding session throughout the training.", course: "FullStack .NET" },
+              { name: "Ritik S. Mourya", text: "I have just completed my FullStack DOT NET training from NxGen Tech Academy. The sessions were very helpful and understanding session throughout the training.", course: "FullStack .NET" },
             ].map((testimonial, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-sm relative">
                 <div className="absolute -top-4 left-8 bg-secondary text-white p-2 rounded-full">

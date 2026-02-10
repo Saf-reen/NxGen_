@@ -24,10 +24,10 @@ export const TopBar = () => {
 
                     {/* Login Buttons */}
                     <div className="flex items-center gap-3 shrink-0">
-                        <a href="https://aspireit.net/vedlms/public" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
+                        <a href="#" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
                             Student Login
                         </a>
-                        <a href="https://aspireit.net/vedlms/public/instructor/login" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
+                        <a href="#" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
                             Instructor Login
                         </a>
                     </div>

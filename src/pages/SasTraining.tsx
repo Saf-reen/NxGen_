@@ -34,7 +34,7 @@ const SasTraining = () => {
                                 SAS (Statistical Analysis System) is a command-driven software package used for statistical analysis and data visualization. It is widely used in Clinical Research, Finance, Banking, and other industries for data management and advanced analytics. Our SAS training in Pune is designed to help you master SAS programming and analytics to kickstart your career.
                             </p>
                             <p className="text-gray-700 leading-relaxed">
-                                Aspire Techsoft offers the best SAS training in Pune with expert trainers who have 10+ years of industry experience. We provide 100% placement assistance, hands-on projects, and certification guidance.
+                                NxGen Tech Academy offers the best SAS training in Pune with expert trainers who have 10+ years of industry experience. We provide 100% placement assistance, hands-on projects, and certification guidance.
                             </p>
                         </section>
 

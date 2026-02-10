@@ -36,8 +36,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen font-sans text-gray-700">
       <SEO
-        title="Contact Us - Aspire Techsoft"
-        description="Get in touch with Aspire Techsoft. Visit our offices in Pune and Bangalore or send us a message."
+        title="Contact Us - NxGen Tech Academy"
+        description="Get in touch with NxGen Tech Academy. Visit our offices in Pune and Bangalore or send us a message."
         type="website"
         path="/contact"
       />
@@ -81,7 +81,7 @@ const ContactPage = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Pune (Kothrud)</h4>
                     <p className="text-gray-600 text-sm mb-2">
-                      103, 1st Floor, AspireTechsoft Pvt. Ltd., Himgauri, Above KFC, Kothrud, Pune, Maharashtra 411038
+                      103, 1st Floor, NxGenTechAcademy Pvt. Ltd., Himgauri, Above KFC, Kothrud, Pune, Maharashtra 411038
                     </p>
                     <p className="font-bold text-[#000080]">+91 9960 935 600</p>
                   </div>
@@ -122,7 +122,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Email Us</h4>
-                    <p className="text-gray-600 hover:text-[#000080]">info@aspireit.net</p>
+                    <p className="text-gray-600 hover:text-[#000080]">info@nxgentechnet.com</p>
                   </div>
                 </div>
               </div>
@@ -203,13 +203,13 @@ const ContactPage = () => {
       {/* Map Section - Focused on Pune Kothrud */}
       <section className="h-[400px] w-full">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.567683908236!2d73.8123283148425!3d18.503254987419163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf33d64391c1%3A0x62952402179831d1!2sAspire%20Techsoft%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1645520845353!5m2!1sen!2sin"
+          src="#"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
-          title="Aspire Techsoft Location"
+          title="NxGen Tech Academy Location"
         ></iframe>
       </section>
     </div>

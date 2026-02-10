@@ -89,8 +89,8 @@ const Blogs = () => {
     return (
         <div className="min-h-screen font-sans bg-gray-50">
             <SEO
-                title="Our Blogs & Insights - Aspire Techsoft"
-                description="Stay updated with the latest trends in IT, SAP, Data Science, and Career Advice from Aspire Techsoft experts."
+                title="Our Blogs & Insights - NxGen Tech Academy"
+                description="Stay updated with the latest trends in IT, SAP, Data Science, and Career Advice from NxGen Tech Academy experts."
                 type="website"
                 path="/blogs"
             />
