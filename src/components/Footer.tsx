@@ -93,19 +93,19 @@ export const Footer = () => {
           <div>
             <h3 className="text-white text-xl mb-6 font-semibold">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
+              <a href="https://x.com/tech_nxgen" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
+              <a href="https://www.facebook.com/NxGenTechAcademy/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
+              <a href="https://www.youtube.com/@NxGenTechAcademy" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
+              <a href="https://www.instagram.com/nxgentechacademy/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
+              <a href="https://www.linkedin.com/in/nxgen-tech-academy/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#000080] transition-colors text-white">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>

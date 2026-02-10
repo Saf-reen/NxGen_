@@ -227,7 +227,7 @@ const Home = () => {
           </div>
           <div className="text-center mt-10">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-              <Link to="/all-courses.php">View All SAP Courses</Link>
+              <Link to="/all-courses">View All SAP Courses</Link>
             </Button>
           </div>
         </div>
