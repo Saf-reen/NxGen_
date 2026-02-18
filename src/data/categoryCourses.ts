@@ -483,57 +483,21 @@ export const coursesData: CourseData[] = [
 
     // Digital Marketing Courses
     {
-        id: "dm-seo",
-        title: "Search Engine Optimization (SEO)",
-        description: "Master on-page, off-page, and technical SEO to rank higher on search engines and drive organic traffic.",
+        id: "dm-job-guarantee",
+        title: "Job Guarantee Digital Marketing Courses",
+        description: "Comprehensive training program designed to get you hired. Master SEO, SMM, PPC, and Content Marketing with 100% placement assistance and career support.",
         categoryId: "digital-marketing",
         image: "code-icon",
         rating: 5,
-        price: "₹20,000"
+        price: "₹35,000"
     },
     {
-        id: "dm-social-media",
-        title: "Social Media Marketing (SMM)",
-        description: "Create engaging campaigns across Facebook, Instagram, LinkedIn, and Twitter to build brand awareness and community.",
-        categoryId: "digital-marketing",
-        image: "code-icon",
-        rating: 5,
-        price: "₹22,000"
-    },
-    {
-        id: "dm-content",
-        title: "Content Marketing & Copywriting",
-        description: "Craft compelling content strategies, blog posts, and copy that attracts, engages, and converts your target audience.",
-        categoryId: "digital-marketing",
-        image: "code-icon",
-        rating: 5,
-        price: "₹18,000"
-    },
-    {
-        id: "dm-email",
-        title: "Email Marketing & Automation",
-        description: "Design effective email campaigns, build automation workflows, and nurture leads to drive conversions.",
-        categoryId: "digital-marketing",
-        image: "code-icon",
-        rating: 5,
-        price: "₹15,000"
-    },
-    {
-        id: "dm-ppc",
-        title: "PPC & Paid Advertising (Google Ads, Facebook Ads)",
-        description: "Plan, execute, and optimize paid advertising campaigns to maximize ROI across Google and social platforms.",
+        id: "dm-online-offline",
+        title: "Online / Offline Digital Marketing Courses",
+        description: "Flexible learning options to suit your schedule. Learn Digital Marketing through live online sessions or immersive classroom training with hands-on projects.",
         categoryId: "digital-marketing",
         image: "code-icon",
         rating: 5,
         price: "₹25,000"
-    },
-    {
-        id: "dm-analytics",
-        title: "Digital Marketing Analytics (Google Analytics & Tag Manager)",
-        description: "Track, measure, and analyze marketing performance using Google Analytics, Tag Manager, and data-driven insights.",
-        categoryId: "digital-marketing",
-        image: "code-icon",
-        rating: 5,
-        price: "₹20,000"
-    },
+    }
 ];

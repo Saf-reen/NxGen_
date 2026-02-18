@@ -3,6 +3,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Smartphone, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import { CourseCarousel } from "@/components/CourseCarousel";
+
+const sapCategories = [
+  { title: "SAP Technical & Development", hours: "Multiple Courses", link: "/courses/sap-technical" },
+  { title: "SAP Functional Modules", hours: "Multiple Courses", link: "/courses/sap-functional" },
+  { title: "SAP Administration & HR", hours: "Multiple Courses", link: "/courses/sap-admin" },
+  { title: "SAP Business Technology Platform (BTP)", hours: "Multiple Courses", link: "/courses/sap-btp" },
+  { title: "SAP Specialized / Sub Courses", hours: "Multiple Courses", link: "/courses/sap-specialized" },
+];
+
+const sapCourses = [
+  { title: "SAP ABAP", duration: "2 Months", link: "#" },
+  { title: "SAP Basis", duration: "2 Months", link: "#" },
+  { title: "SAP S4 HANA FICO", duration: "2 Months", link: "#" },
+  { title: "SAP S4 HANA MM", duration: "2 Months", link: "#" },
+  { title: "SAP SD", duration: "2 Months", link: "#" },
+  { title: "SAP S4 HANA PP", duration: "2 Months", link: "#" },
+  { title: "SAP HR HCM", duration: "2 Months", link: "#" },
+  { title: "SAP Success Factors", duration: "2 Months", link: "#" },
+];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -163,7 +183,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SAS Academy Feature */}
+      {/* SAP Academy Feature */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
@@ -172,14 +192,14 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2 space-y-6">
               <div className="inline-block bg-primary/10 text-primary font-bold px-4 py-1 rounded-full text-sm">Featured Program</div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary">SAS Academy for Clinical Programming</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-primary">SAP Academy for Enterprise Solutions</h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                This SAS training prepares you for a career as a SAS Certified Clinical Trials Programming Professional, combining coursework and hands-on learning in clinical research and data analysis.
+                This SAP training prepares you for a career as an SAP Certified Professional, combining structured coursework and hands-on learning in enterprise resource planning, business processes, and real-time data management across industries.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-gray-700">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Qualification: Graduate & Master’s Background in Life Sciences, IT, Stats.</span>
+                  <span>Qualification: Graduate & Master’s Background in Commerce, Management, IT, Engineering, or related fields.</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-700">
                   <CheckCircle className="w-5 h-5 text-green-500" />
@@ -187,44 +207,18 @@ const Home = () => {
                 </li>
               </ul>
               <Button className="bg-secondary hover:bg-secondary/90 text-white mt-4" asChild>
-                <Link to="/sas-training-institute-in-pune">Explore More <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <Link to="/all-courses">Explore More <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SAS Courses Grid */}
-      <section className="py-20 bg-gray-50">
+      {/* SAP Courses Grid */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">SAP Categories</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "SAP Technical & Development", hours: "Multiple Courses", link: "/courses/sap-technical" },
-              { title: "SAP Functional Modules", hours: "Multiple Courses", link: "/courses/sap-functional" },
-              { title: "SAP Administration & HR", hours: "Multiple Courses", link: "/courses/sap-admin" },
-              { title: "SAP Business Technology Platform (BTP)", hours: "Multiple Courses", link: "/courses/sap-btp" },
-              { title: "SAP Specialized / Sub Courses", hours: "Multiple Courses", link: "/courses/sap-specialized" },
-            ].map((course, i) => (
-              <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-                <div className="h-40 bg-gray-200 flex items-center justify-center relative overflow-hidden">
-                  {/* Placeholder gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-600 opacity-80"></div>
-                  <span className="relative text-white font-bold text-xl px-4 text-center">{course.title}</span>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-500 text-sm mb-4 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                    {course.hours}
-                  </p>
-                  <Link to={course.link} className="text-primary font-bold hover:text-secondary flex items-center gap-2 group-hover:gap-4 transition-all">
-                    Read More <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))
-            }
-          </div>
+          <CourseCarousel items={sapCategories} type="category" />
         </div>
       </section>
 
@@ -236,7 +230,7 @@ const Home = () => {
             {[
               { title: "Data Analytics", hours: "70 Hours", link: "/courses/data-analytics" },
               { title: "Python", hours: "45 Hours", link: "/courses/python" },
-              { title: "Digital Marketing", hours: "60 Hours", link: "/courses/digital-marketing" },
+              { title: "Digital Marketing", hours: "Multiple Courses", link: "/courses/digital-marketing" },
               { title: "AIML", hours: "80 Hours", link: "/courses/aiml" },
             ].map((course, i) => (
               <div key={i} className="bg-white border rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300">
@@ -264,33 +258,7 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">SAP Courses</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "SAP ABAP", duration: "2 Months", link: "#" },
-              { title: "SAP Basis", duration: "2 Months", link: "#" },
-              { title: "SAP S4 HANA FICO", duration: "2 Months", link: "#" },
-              { title: "SAP S4 HANA MM", duration: "2 Months", link: "#" },
-              { title: "SAP SD", duration: "2 Months", link: "#" },
-              { title: "SAP S4 HANA PP", duration: "2 Months", link: "#" },
-              { title: "SAP HR HCM", duration: "2 Months", link: "#" },
-              { title: "SAP Success Factors", duration: "2 Months", link: "#" },
-            ].map((course, i) => (
-              <div key={i} className="bg-white border rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="h-32 bg-gray-100 flex items-center justify-center relative overflow-hidden group-hover:bg-primary/5 transition-colors">
-                  <span className="text-gray-800 font-bold text-lg px-4 text-center group-hover:text-primary">{course.title}</span>
-                </div>
-                <div className="p-5 border-t">
-                  <p className="text-gray-500 text-sm mb-3 flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-secondary" />
-                    {course.duration}
-                  </p>
-                  <Link to={course.link} className="text-primary font-bold text-sm hover:text-secondary flex items-center gap-1">
-                    Read More <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          <CourseCarousel items={sapCourses} type="course" />
           <div className="text-center mt-10">
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
               <Link to="/all-courses">View All SAP Courses</Link>
