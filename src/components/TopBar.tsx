@@ -36,14 +36,12 @@ export const TopBar = () => {
                 {/* Bottom Row: Contact Info */}
                 <div className="flex flex-wrap justify-center items-center gap-4 py-3 text-sm md:text-base font-medium">
                     <div className="flex items-center gap-2 border border-white/30 px-3 py-1 rounded bg-white/5">
-                        <span>Corporate: +91 7620 830 992</span>
+                        <span>Corporate: +91 63097 82855</span>
                     </div>
                     <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-                        <span>Pune - +91 9960935600</span>
+                        <span>Hyderabad - +91 63097 82855</span>
                         <span className="hidden md:inline">|</span>
-                        <span>Bangalore - +91 6364012099</span>
-                        <span className="hidden md:inline">|</span>
-                        <span>Online - +91 7620830992</span>
+                        <span>Online - +91 63097 82855</span>
                     </div>
                 </div>
             </div>

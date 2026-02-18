@@ -122,8 +122,8 @@ const Home = () => {
                     key={index}
                     onClick={() => goToSlide(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                        ? 'bg-[#000080] w-8'
-                        : 'bg-gray-400 w-2 hover:bg-gray-600'
+                      ? 'bg-[#000080] w-8'
+                      : 'bg-gray-400 w-2 hover:bg-gray-600'
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -197,13 +197,14 @@ const Home = () => {
       {/* SAS Courses Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-primary">SAS Categories</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-primary">SAP Categories</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "SAS Data Engineer", hours: "158 Hours", link: "#" },
-              { title: "Clinical Fundamentals", hours: "125 Hours", link: "#" },
-              { title: "SAS AI ML Engineer", hours: "148 Hours", link: "#" },
-              { title: "Visual Business Analyst", hours: "138 Hours", link: "#" },
+              { title: "SAP Technical & Development", hours: "Multiple Courses", link: "/courses/sap-technical" },
+              { title: "SAP Functional Modules", hours: "Multiple Courses", link: "/courses/sap-functional" },
+              { title: "SAP Administration & HR", hours: "Multiple Courses", link: "/courses/sap-admin" },
+              { title: "SAP Business Technology Platform (BTP)", hours: "Multiple Courses", link: "/courses/sap-btp" },
+              { title: "SAP Specialized / Sub Courses", hours: "Multiple Courses", link: "/courses/sap-specialized" },
             ].map((course, i) => (
               <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                 <div className="h-40 bg-gray-200 flex items-center justify-center relative overflow-hidden">
@@ -221,7 +222,8 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
-            ))}
+            ))
+            }
           </div>
         </div>
       </section>
@@ -232,10 +234,10 @@ const Home = () => {
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">Trending Courses</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Data Analytics", hours: "70 Hours", link: "#" },
-              { title: "Clinical Data Management", hours: "75 Hours", link: "#" },
-              { title: "Python", hours: "45 Hours", link: "#" },
-              { title: "Advance Excel", hours: "30 Hours", link: "#" },
+              { title: "Data Analytics", hours: "70 Hours", link: "/courses/data-analytics" },
+              { title: "Python", hours: "45 Hours", link: "/courses/python" },
+              { title: "Digital Marketing", hours: "60 Hours", link: "/courses/digital-marketing" },
+              { title: "AIML", hours: "80 Hours", link: "/courses/aiml" },
             ].map((course, i) => (
               <div key={i} className="bg-white border rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="h-40 bg-gray-100 flex items-center justify-center relative">
@@ -252,7 +254,8 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
-            ))}
+            ))
+            }
           </div>
         </div>
       </section>
