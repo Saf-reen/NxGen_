@@ -79,39 +79,11 @@ const ContactPage = () => {
                     <MapPin className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Pune (Kothrud)</h4>
+                    <h4 className="font-bold text-lg mb-2 text-gray-800">Hyderabad (Miyapur)</h4>
                     <p className="text-gray-600 text-sm mb-2">
-                      103, 1st Floor, NxGenTechAcademy Pvt. Ltd., Himgauri, Above KFC, Kothrud, Pune, Maharashtra 411038
+                      First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049
                     </p>
-                    <p className="font-bold text-[#000080]">+91 9960 935 600</p>
-                  </div>
-                </div>
-
-                {/* Wakad */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#000080]" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Wakad</h4>
-                    <p className="text-gray-600 text-sm mb-2">
-                      Office 101, Rajgad Building, Ratnadeep lane, Datta mandir road, Wakad. Pimpri Chinchwad
-                    </p>
-                    <p className="font-bold text-[#000080]">+91 9960 935 965</p>
-                  </div>
-                </div>
-
-                {/* Bangalore */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#000080]" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Bangalore</h4>
-                    <p className="text-gray-600 text-sm mb-2">
-                      Office No - 322, 3 Floor, Raheja Arcade, Koramangala, 5 Block, 80ft Road, Karnataka, Bangalore 560095.
-                    </p>
-                    <p className="font-bold text-[#000080]">+91 6364 012 099</p>
+                    <p className="font-bold text-[#000080]">+91 9701314138</p>
                   </div>
                 </div>
 
@@ -122,7 +94,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-gray-800">Email Us</h4>
-                    <p className="text-gray-600 hover:text-[#000080]">info@nxgentechnet.com</p>
+                    <p className="text-gray-600 hover:text-[#000080]">nxgentechacademy@gmail.com</p>
                   </div>
                 </div>
               </div>
