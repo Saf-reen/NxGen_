@@ -34,7 +34,7 @@ export const TopBar = () => {
                 </div>
 
                 {/* Bottom Row: Contact Info */}
-                <div className="flex flex-wrap justify-center items-center gap-4 py-3 text-sm md:text-base font-medium">
+                <div className="flex flex-wrap justify-left items-center gap-4 py-3 text-sm md:text-base font-medium">
                     <div className="flex items-center gap-2 border border-white/30 px-3 py-1 rounded bg-white/5">
                         <span>Corporate: +91 9701314138</span>
                     </div>

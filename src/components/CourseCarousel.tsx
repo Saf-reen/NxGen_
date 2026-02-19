@@ -114,7 +114,7 @@ export const CourseCarousel: React.FC<CarouselProps> = ({
                         >
                             {type === 'course' ? (
                                 <div className="bg-white border rounded-xl overflow-hidden group/card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
-                                    <div className="h-32 bg-gray-100 flex items-center justify-center relative overflow-hidden group-hover/card:bg-primary/5 transition-colors">
+                                    <div className="h-32 bg-primary/5 flex items-center justify-center relative overflow-hidden group-hover/card:bg-primary/5 transition-colors">
                                         <span className="text-gray-800 font-bold text-lg px-4 text-center group-hover/card:text-primary">{item.title}</span>
                                     </div>
                                     <div className="p-5 border-t">
@@ -130,7 +130,7 @@ export const CourseCarousel: React.FC<CarouselProps> = ({
                                 </div>
                             ) : (
                                 // Category card style (from lines 209-224 of Home.tsx)
-                                <div className="bg-white rounded-xl shadow-lg overflow-hidden group/card hover:-translate-y-2 transition-transform duration-300 h-full">
+                                <div className="bg-white rounded-xl border border-gray-200 overflow-hidden group/card hover:-translate-y-2 transition-transform duration-300 h-full">
                                     <div className="h-40 bg-gray-200 flex items-center justify-center relative overflow-hidden">
                                         <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-600 opacity-80"></div>
                                         <span className="relative text-white font-bold text-xl px-4 text-center">{item.title}</span>

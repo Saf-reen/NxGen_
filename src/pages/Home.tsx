@@ -64,7 +64,7 @@ const Home = () => {
       />
 
       {/* Hero Section with Carousel */}
-      <section className="relative bg-white text-gray-800 py-16 lg:py-24 overflow-hidden">
+      <section className="relative bg-white text-gray-800 py-2 lg:py-4 overflow-hidden">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 z-10">
@@ -79,15 +79,15 @@ const Home = () => {
               SAP | SAS | Data Engineer | Salesforce | Data Science
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-2">
               <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md">
                 <Link to="/all-courses">Explore Courses</Link>
               </Button>
             </div>
 
-            <div className="pt-8">
+            <div className="pt-2">
               <p className="text-lg text-[#000080]">
-                <span className="font-bold text-2xl">15 Years</span> in the field of IT Training &amp; Placement Industry
+                <span className="font-bold text-2xl">Extensive</span>  experience in the IT Training &amp; Placement Industry
               </p>
               <div className="h-0.5 w-full bg-gray-200 mt-4 max-w-md"></div>
             </div>
@@ -143,7 +143,7 @@ const Home = () => {
                     onClick={() => goToSlide(index)}
                     className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
                       ? 'bg-[#000080] w-8'
-                      : 'bg-gray-400 w-2 hover:bg-gray-600'
+                      : 'bg-primary/50 w-2 hover:bg-primary/50'
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
