@@ -30,7 +30,7 @@ const Home = () => {
   // Array of hero images
   const heroImages = [
     '/hero-image.jpg',
-    '/hero-bg.png',
+    '/hero-bg-2.jpeg',
     '/hero-bg-1.jpeg'
   ];
 
