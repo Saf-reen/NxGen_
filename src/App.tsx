@@ -24,6 +24,9 @@ import { categories } from './data';
 import AllCourses from "./pages/AllCourses";
 import Blogs from "./pages/Blogs";
 import SAPCourse from "./pages/SAPCourse";
+import PythonCourse from "./pages/PythonCourse";
+import AIMLCourse from "./pages/AIMLCourse";
+import AICourse from "./pages/AICourse";
 
 const queryClient = new QueryClient();
 
@@ -60,9 +63,9 @@ const App = () => (
               <Route path="courses/sap-specialized" element={<SAPCourse categorySlug="sap-specialized" />} />
               <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
               <Route path="courses/sap-admin" element={<SAPCourse categorySlug="sap-admin" />} />
-              <Route path="courses/python" element={<SAPCourse categorySlug="python" />} />
-              <Route path="courses/ai" element={<SAPCourse categorySlug="ai" />} />
-              <Route path="courses/aiml" element={<SAPCourse categorySlug="aiml" />} />
+              <Route path="courses/python" element={<PythonCourse />} />
+              <Route path="courses/ai" element={<AICourse />} />
+              <Route path="courses/aiml" element={<AIMLCourse />} />
               <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
               <Route path="courses/digital-marketing" element={<SAPCourse categorySlug="digital-marketing" />} />
               <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />

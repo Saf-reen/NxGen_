@@ -9,58 +9,15 @@ import { categoryConfig, coursesData } from "@/data/categoryCourses";
 import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
 
-const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
-    const config = categorySlug ? categoryConfig[categorySlug] : null;
+const PythonCourse = () => {
+    const categorySlug = "python";
+    const config = categoryConfig[categorySlug];
     const [searchQuery, setSearchQuery] = useState("");
-
-    if (!config) {
-        return <div className="text-center py-20">Category not found</div>;
-    }
 
     const filteredCourses = coursesData.filter(course =>
         course.categoryId === categorySlug &&
         course.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-    // SAP BTP Specific Architecture Data
-    const isBTP = categorySlug === "sap-btp";
-    const btpPillars = [
-        {
-            title: "Application Development",
-            icon: Code,
-            color: "text-blue-600",
-            bg: "bg-blue-50",
-            items: ["SAP Build Apps (Low-Code/No-Code)", "SAP Business Application Studio (Pro-Code)", "Cloud Foundry & Kyma Runtimes", "Mobile Services"]
-        },
-        {
-            title: "Automation",
-            icon: Workflow,
-            color: "text-orange-600",
-            bg: "bg-orange-50",
-            items: ["SAP Build Process Automation", "Workflow Management", "RPA (Robotic Process Automation)", "SAP Task Center"]
-        },
-        {
-            title: "Integration",
-            icon: Blocks,
-            color: "text-green-600",
-            bg: "bg-green-50",
-            items: ["SAP Integration Suite", "Cloud Integration (CPI)", "API Management", "Advanced Event Mesh"]
-        },
-        {
-            title: "Data & Analytics",
-            icon: Database,
-            color: "text-amber-600",
-            bg: "bg-amber-50",
-            items: ["SAP HANA Cloud", "SAP Analytics Cloud (SAC)", "SAP Datasphere", "Master Data Governance"]
-        },
-        {
-            title: "Artificial Intelligence",
-            icon: Brain,
-            color: "text-purple-600",
-            bg: "bg-purple-50",
-            items: ["SAP AI Core", "SAP AI Launchpad", "AI Business Services", "Intelligent Scenarios"]
-        }
-    ];
 
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
@@ -92,46 +49,7 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                     {/* LEFT COLUMN - CONTENT (2/3 width) */}
                     <div className="lg:col-span-2">
 
-                        {/* SAP BTP Specific: Architecture Overview */}
-                        {isBTP && (
-                            <div className="mb-12">
-                                <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                    <Layers className="w-6 h-6" /> The SAP BTP Ecosystem
-                                </h2>
-                                <p className="text-gray-600 mb-8 leading-relaxed">
-                                    SAP Business Technology Platform is the unified environment for innovation.
-                                    Our training covers the entire spectrum of pillars defined in the SAP BTP Architecture.
-                                </p>
-
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    {btpPillars.map((pillar, idx) => (
-                                        <div key={idx} className={`border rounded-xl p-5 ${idx === 4 ? 'md:col-span-2' : ''} hover:shadow-md transition-shadow`}>
-                                            <div className="flex items-center gap-3 mb-3 border-b pb-2">
-                                                <div className={`p-2 rounded-lg ${pillar.bg}`}>
-                                                    <pillar.icon className={`w-5 h-5 ${pillar.color}`} />
-                                                </div>
-                                                <h3 className="font-bold text-gray-800">{pillar.title}</h3>
-                                            </div>
-                                            <ul className="space-y-2">
-                                                {pillar.items.map((item, i) => (
-                                                    <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-                                                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${pillar.color} flex-shrink-0`}></span>
-                                                        {item}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="mt-8 pt-8 border-t">
-                                    <h3 className="text-xl font-bold text-[#000080] mb-4">Available Modules</h3>
-                                </div>
-                            </div>
-                        )}
-
-
-
-                        {/* Search (Only if not BTP, or keep it always? Keeping it always is good UX) */}
+                        {/* Search */}
                         <div className="flex justify-center mb-10">
                             <div className="relative w-full">
                                 <Input
@@ -178,15 +96,12 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                                 ))
                             ) : (
                                 <div className="col-span-full text-center py-10 text-gray-500">
-                                    <p className="text-xl">No courses found in this category.</p>
-                                    <Button asChild variant="link" className="mt-2 text-[#000080]">
-                                        <Link to="/contact">Contact us for custom requirements</Link>
-                                    </Button>
+                                    <p className="text-xl">No courses found.</p>
                                 </div>
                             )}
                         </div>
 
-                        {/* What You Will Learn Section (Moved here) */}
+                        {/* What You Will Learn Section */}
                         {config.outcomes && (
                             <div className="mt-12 mb-12">
                                 <h2 className="text-2xl font-bold text-[#000080] mb-6">What You Will Learn</h2>
@@ -215,7 +130,7 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
 
                             {/* Enrollment Card */}
                             <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in this course?</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in Python?</h3>
                                 <p className="text-sm text-gray-500 mb-6">Fill the form below to get brochure & callback.</p>
 
                                 <form className="space-y-4">
@@ -265,4 +180,4 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
     );
 };
 
-export default SAPCourse;
+export default PythonCourse;

@@ -330,6 +330,462 @@ export const detailedCourses: Record<string, DetailedCourse> = {
         },
         audience: ["All Learners", "Job Seekers"]
     },
+
+    // AIML Courses
+    "aiml-python": {
+        id: "aiml-python",
+        title: "Python for AI & ML",
+        tagline: "Learn Python programming and libraries required for AI & ML development.",
+        level: "Beginner",
+        duration: "4 Weeks",
+        lessons: 20,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200",
+        overview: "Learn Python programming and libraries required for AI & ML development.",
+        outcomes: [
+            "Write clean Python code",
+            "Handle and analyze datasets",
+            "Prepare data for ML models"
+        ],
+        curriculum: [
+            { module: "Module 1: Python Fundamentals", topics: ["Variables, loops, functions", "Lists & dictionaries", "File handling"] },
+            { module: "Module 2: Data Handling", topics: ["NumPy arrays", "Pandas DataFrames", "Data cleaning"] },
+            { module: "Module 3: Data Visualization", topics: ["Matplotlib basics", "Seaborn plots", "EDA techniques"] },
+            { module: "Module 4: Object-Oriented Programming", topics: ["Classes & objects", "Inheritance", "Code structure"] },
+            { module: "Module 5: Project Practice", topics: ["Mini ML project", "Data preprocessing pipeline", "Visualization dashboard"] }
+        ],
+        tools: [
+            { name: "Python", icon: Code },
+            { name: "NumPy", icon: Code },
+            { name: "Pandas", icon: Code },
+            { name: "Matplotlib", icon: BarChart },
+            { name: "Jupyter", icon: Terminal }
+        ],
+        project: {
+            title: "Data Preprocessing Pipeline",
+            description: "Build a complete data preprocessing pipeline for a machine learning dataset."
+        },
+        audience: ["Beginners", "Data Analysts", "Developers"]
+    },
+    "aiml-math": {
+        id: "aiml-math",
+        title: "Mathematics & Statistics for ML",
+        tagline: "Understand the mathematical foundation behind ML algorithms.",
+        level: "Intermediate",
+        duration: "4 Weeks",
+        lessons: 15,
+        projects: 0,
+        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200",
+        overview: "Understand the mathematical foundation behind ML algorithms.",
+        outcomes: [
+            "Understand algorithm logic",
+            "Improve model accuracy",
+            "Apply math in ML"
+        ],
+        curriculum: [
+            { module: "Module 1: Linear Algebra", topics: ["Vectors & matrices", "Matrix multiplication", "Eigenvalues basics"] },
+            { module: "Module 2: Probability", topics: ["Random variables", "Bayes theorem", "Distributions"] },
+            { module: "Module 3: Statistics", topics: ["Mean, variance", "Hypothesis testing", "Correlation"] },
+            { module: "Module 4: Calculus Basics", topics: ["Derivatives", "Gradient descent concept", "Optimization"] },
+            { module: "Module 5: Practical Applications", topics: ["Math behind regression", "Loss functions", "Optimization examples"] }
+        ],
+        tools: [
+            { name: "Python (NumPy)", icon: Code },
+            { name: "SciPy", icon: Code }
+        ],
+        project: {
+            title: "Algorithm Implementation",
+            description: "Implement basic ML algorithms from scratch using mathematical principles."
+        },
+        audience: ["ML Engineers", "Data Scientists", "Researchers"]
+    },
+    "aiml-core-ml": {
+        id: "aiml-core-ml",
+        title: "Core Machine Learning",
+        tagline: "Build predictive models using fundamental ML algorithms.",
+        level: "Intermediate",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200",
+        overview: "Build predictive models using fundamental ML algorithms.",
+        outcomes: [
+            "Train ML models",
+            "Evaluate performance",
+            "Solve prediction problems"
+        ],
+        curriculum: [
+            { module: "Module 1: Supervised Learning", topics: ["Linear Regression", "Logistic Regression", "KNN"] },
+            { module: "Module 2: Classification Models", topics: ["Decision Trees", "Naive Bayes", "SVM basics"] },
+            { module: "Module 3: Unsupervised Learning", topics: ["K-Means clustering", "PCA", "Hierarchical clustering"] },
+            { module: "Module 4: Model Evaluation", topics: ["Accuracy & confusion matrix", "Cross validation", "ROC curve"] },
+            { module: "Module 5: ML Project", topics: ["End-to-end ML workflow", "Model comparison", "Performance improvement"] }
+        ],
+        tools: [
+            { name: "Scikit-learn", icon: Code },
+            { name: "Pandas", icon: Code }
+        ],
+        project: {
+            title: "Predictive Modeling",
+            description: "Build and evaluate predictive models for a real-world dataset."
+        },
+        audience: ["Data Scientists", "ML Engineers", "Developers"]
+    },
+    "aiml-advanced-ml": {
+        id: "aiml-advanced-ml",
+        title: "Advanced Machine Learning",
+        tagline: "Explore complex ML algorithms used in industry.",
+        level: "Advanced",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200",
+        overview: "Explore complex ML algorithms used in industry.",
+        outcomes: [
+            "Handle complex datasets",
+            "Build recommendation systems",
+            "Improve model performance"
+        ],
+        curriculum: [
+            { module: "Module 1: Ensemble Learning", topics: ["Random Forest", "Gradient Boosting", "XGBoost basics"] },
+            { module: "Module 2: Feature Engineering", topics: ["Feature selection", "Encoding techniques", "Dimensionality reduction"] },
+            { module: "Module 3: Time Series Analysis", topics: ["Forecasting basics", "ARIMA model", "Seasonal trends"] },
+            { module: "Module 4: Recommendation Systems", topics: ["Collaborative filtering", "Content-based filtering", "Real-world examples"] },
+            { module: "Module 5: Advanced ML Project", topics: ["Industry-level case study", "Hyperparameter tuning", "Model optimization"] }
+        ],
+        tools: [
+            { name: "XGBoost", icon: Layers },
+            { name: "Scikit-learn", icon: Code }
+        ],
+        project: {
+            title: "Advanced Recommendation System",
+            description: "Build a recommendation system using advanced ML techniques."
+        },
+        audience: ["Senior Data Scientists", "ML Engineers"]
+    },
+    "aiml-deep-learning": {
+        id: "aiml-deep-learning",
+        title: "Deep Learning & Neural Networks",
+        tagline: "Build advanced AI systems using neural networks.",
+        level: "Advanced",
+        duration: "6 Weeks",
+        lessons: 25,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200",
+        overview: "Build advanced AI systems using neural networks.",
+        outcomes: [
+            "Build neural networks",
+            "Work on images & text",
+            "Create deep learning solutions"
+        ],
+        curriculum: [
+            { module: "Module 1: ANN Basics", topics: ["Perceptron", "Activation functions", "Backpropagation"] },
+            { module: "Module 2: CNN", topics: ["Image processing", "Convolution layers", "Image classification"] },
+            { module: "Module 3: RNN & LSTM", topics: ["Sequential data", "Time series prediction", "Language modeling"] },
+            { module: "Module 4: Transfer Learning", topics: ["Pretrained models", "Fine-tuning", "Model reuse"] },
+            { module: "Module 5: Deep Learning Project", topics: ["Image classifier", "NLP deep model", "Deployment basics"] }
+        ],
+        tools: [
+            { name: "TensorFlow", icon: Layers },
+            { name: "Keras", icon: Layers },
+            { name: "PyTorch", icon: Layers }
+        ],
+        project: {
+            title: "Image Classification System",
+            description: "Build a deep learning model for image classification."
+        },
+        audience: ["AI Engineers", "Deep Learning Researchers"]
+    },
+    "aiml-nlp": {
+        id: "aiml-nlp",
+        title: "Natural Language Processing",
+        tagline: "Develop AI systems that understand human language.",
+        level: "Advanced",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=1200",
+        overview: "Develop AI systems that understand human language.",
+        outcomes: [
+            "Build chatbots",
+            "Work with LLMs",
+            "Analyze text data"
+        ],
+        curriculum: [
+            { module: "Module 1: Text Processing", topics: ["Tokenization", "Stopwords removal", "Lemmatization"] },
+            { module: "Module 2: Text Representation", topics: ["TF-IDF", "Word2Vec", "Embeddings"] },
+            { module: "Module 3: NLP Applications", topics: ["Sentiment analysis", "Chatbots", "Spam detection"] },
+            { module: "Module 4: Transformers", topics: ["BERT basics", "GPT overview", "Prompt engineering"] },
+            { module: "Module 5: NLP Project", topics: ["AI chatbot", "Text summarizer", "Language translation"] }
+        ],
+        tools: [
+            { name: "NLTK", icon: Code },
+            { name: "SpaCy", icon: Code },
+            { name: "Hugging Face", icon: Brain }
+        ],
+        project: {
+            title: "AI Chatbot",
+            description: "Develop an AI-powered chatbot using NLP techniques."
+        },
+        audience: ["NLP Engineers", "AI Researchers"]
+    },
+    "aiml-cv": {
+        id: "aiml-cv",
+        title: "Computer Vision & AI Systems",
+        tagline: "Teach machines to understand images and videos.",
+        level: "Advanced",
+        duration: "5 Weeks",
+        lessons: 20,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1535378437327-b714923e7f31?w=1200",
+        overview: "Teach machines to understand images and videos.",
+        outcomes: [
+            "Build AI vision systems",
+            "Develop detection models",
+            "Work on real-time AI"
+        ],
+        curriculum: [
+            { module: "Module 1: Image Processing", topics: ["Pixel manipulation", "Filters", "Image enhancement"] },
+            { module: "Module 2: Object Detection", topics: ["YOLO basics", "Bounding boxes", "Face recognition"] },
+            { module: "Module 3: Video Analytics", topics: ["Frame extraction", "Real-time tracking", "Motion detection"] },
+            { module: "Module 4: AI System Design", topics: ["AI pipelines", "Integration with ML", "Real-time applications"] },
+            { module: "Module 5: Vision Project", topics: ["Face detection system", "Smart surveillance", "AI camera app"] }
+        ],
+        tools: [
+            { name: "OpenCV", icon: Layers },
+            { name: "TensorFlow", icon: Layers },
+            { name: "YOLO", icon: Layers }
+        ],
+        project: {
+            title: "Face Recognition System",
+            description: "Build a real-time face recognition system."
+        },
+        audience: ["Computer Vision Engineers", "AI Developers"]
+    },
+    "aiml-mlops": {
+        id: "aiml-mlops",
+        title: "MLOps & AI Deployment",
+        tagline: "Deploy AI models into production environments.",
+        level: "Advanced",
+        duration: "4 Weeks",
+        lessons: 15,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1667372393119-c85c02088981?w=1200",
+        overview: "Deploy AI models into production environments.",
+        outcomes: [
+            "Deploy ML models",
+            "Build production-ready AI systems",
+            "Understand industry workflow"
+        ],
+        curriculum: [
+            { module: "Module 1: Model Deployment", topics: ["Flask API", "FastAPI basics", "Web integration"] },
+            { module: "Module 2: Cloud Deployment", topics: ["AWS basics", "Azure AI", "Google Cloud"] },
+            { module: "Module 3: Docker & CI/CD", topics: ["Containerization", "Version control", "Model monitoring"] },
+            { module: "Module 4: AI Ethics & Security", topics: ["Bias detection", "Data privacy", "Responsible AI"] },
+            { module: "Module 5: Capstone Project", topics: ["End-to-end AIML project", "Deployment & documentation", "Industry presentation"] }
+        ],
+        tools: [
+            { name: "Flask", icon: Code },
+            { name: "Docker", icon: Layers },
+            { name: "AWS", icon: Globe },
+            { name: "GitHub", icon: Code }
+        ],
+        project: {
+            title: "End-to-End MLOps Pipeline",
+            description: "Build and deploy an end-to-end MLOps pipeline for a machine learning model."
+        },
+        audience: ["MLOps Engineers", "DevOps Engineers", "Data Scientists"]
+    },
+
+    // AI Courses
+    "ai-fundamentals": {
+        id: "ai-fundamentals",
+        title: "Fundamentals of Artificial Intelligence",
+        tagline: "Build a strong conceptual foundation in Artificial Intelligence.",
+        level: "Beginner",
+        duration: "4 Weeks",
+        lessons: 12,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200",
+        overview: "Start your journey into AI by understanding its core concepts, history, and types. Learn how intelligent agents work and how AI solves problems differently from humans.",
+        outcomes: [
+            "Understand core AI concepts and terminology",
+            "Differentiate between Narrow, General, and Super AI",
+            "Design basic intelligent agent architectures",
+            "Analyze problems from an AI perspective"
+        ],
+        curriculum: [
+            { module: "Module 1: Introduction", topics: ["Introduction to AI & History of AI", "Types of AI (Narrow, General, Super AI)"] },
+            { module: "Module 2: Intelligent Agents", topics: ["Intelligent Agents & Agent Architecture", "AI vs Human Intelligence"] },
+            { module: "Module 3: Problem Solving", topics: ["AI Problem Solving Approach"] }
+        ],
+        tools: [
+            { name: "Python", icon: Code },
+            { name: "Jupyter", icon: Terminal }
+        ],
+        project: {
+            title: "Agent Simulation",
+            description: "Design and simulate a simple intelligent agent environment."
+        },
+        audience: ["Beginners", "Students", "Managers"]
+    },
+    "ai-search": {
+        id: "ai-search",
+        title: "Problem Solving & Search Techniques",
+        tagline: "Master the algorithms that power AI decision making.",
+        level: "Intermediate",
+        duration: "4 Weeks",
+        lessons: 15,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200",
+        overview: "Dive deep into state space search algorithms, heuristics, and game playing techniques crucial for solving complex AI problems.",
+        outcomes: [
+            "Implement fundamental search algorithms (BFS, DFS, A*)",
+            "Solve optimization problems using heuristic methods",
+            "Create game-playing AI agents using Minimax",
+            "Model problems using state space representation"
+        ],
+        curriculum: [
+            { module: "Module 1: State Space", topics: ["State Space Representation"] },
+            { module: "Module 2: Uninformed Search", topics: ["Search Algorithms (BFS, DFS)"] },
+            { module: "Module 3: Informed Search", topics: ["Heuristic Methods", "A* Algorithm", "Optimization Techniques"] },
+            { module: "Module 4: Game Playing", topics: ["Game Playing AI (Minimax concept)"] }
+        ],
+        tools: [
+            { name: "Python", icon: Code }
+        ],
+        project: {
+            title: "Maze Solver & Game Bot",
+            description: "Build an AI that solves mazes using A* and plays Tic-Tac-Toe using Minimax."
+        },
+        audience: ["Developers", "CS Students"]
+    },
+    "ai-knowledge": {
+        id: "ai-knowledge",
+        title: "Knowledge Representation & Reasoning",
+        tagline: "Learn how AI systems store knowledge and reason with it.",
+        level: "Intermediate",
+        duration: "4 Weeks",
+        lessons: 14,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200",
+        overview: "Explore how to represent real-world knowledge formally and build systems that can reason, infer, and handle uncertainty.",
+        outcomes: [
+            "Represent knowledge using logic (Propositional & Predicate)",
+            "Build rule-based expert systems",
+            "Apply inference mechanisms to derive new knowledge",
+            "Handle uncertainty using basic Bayesian concepts"
+        ],
+        curriculum: [
+            { module: "Module 1: Logic", topics: ["Propositional & Predicate Logic"] },
+            { module: "Module 2: Expert Systems", topics: ["Rule-Based Systems", "Expert Systems"] },
+            { module: "Module 3: Inference", topics: ["Inference Mechanisms"] },
+            { module: "Module 4: Uncertainty", topics: ["Handling Uncertainty (Bayesian Basics)"] }
+        ],
+        tools: [
+            { name: "Prolog", icon: Code },
+            { name: "Python", icon: Code }
+        ],
+        project: {
+            title: "Expert Diagnostic System",
+            description: "Develop a rule-based expert system for basic medical or technical diagnosis."
+        },
+        audience: ["AI Enthusiasts", "Logic Designers"]
+    },
+    "ai-intel-basics": {
+        id: "ai-intel-basics",
+        title: "Machine Intelligence Basics",
+        tagline: "A foundational overview of machine learning concepts within AI.",
+        level: "Beginner",
+        duration: "3 Weeks",
+        lessons: 10,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200",
+        overview: "Get introduced to machine learning as a subset of AI. Understand the types of learning, pattern recognition, and basic evaluation metrics.",
+        outcomes: [
+            "Understand the role of ML in the broader AI landscape",
+            "Distinguish between supervised and unsupervised learning",
+            "Grasp core concepts like Decision Trees and Pattern Recognition",
+            "Evaluate basic model performance conceptually"
+        ],
+        curriculum: [
+            { module: "Module 1: ML Overview", topics: ["What is Machine Learning in AI"] },
+            { module: "Module 2: Learning Types", topics: ["Supervised vs Unsupervised Learning (Overview)"] },
+            { module: "Module 3: Patterns & Models", topics: ["Pattern Recognition", "Decision Trees Concept"] },
+            { module: "Module 4: Evaluation", topics: ["Basic Model Evaluation Idea"] }
+        ],
+        tools: [
+            { name: "Scikit-learn", icon: Code },
+            { name: "Python", icon: Code }
+        ],
+        project: {
+            title: "Simple Predictor",
+            description: "Implement a basic Decision Tree classifier on a standard dataset."
+        },
+        audience: ["Beginners", "Data Analysts"]
+    },
+    "ai-nlp-vision": {
+        id: "ai-nlp-vision",
+        title: "Natural Language & Vision Systems",
+        tagline: "Introduction to AI's ability to see and speak.",
+        level: "Intermediate",
+        duration: "4 Weeks",
+        lessons: 16,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200",
+        overview: "Learn the basics of how AI understands human language and interprets visual data through Natural Language Processing and Computer Vision.",
+        outcomes: [
+            "Understand the pipeline of NLP and Chatbots",
+            "Grasp the fundamentals of Speech Recognition",
+            "Learn basic Image Processing and Object Detection concepts",
+            "Apply pre-built models for simple text and image tasks"
+        ],
+        curriculum: [
+            { module: "Module 1: NLP Basics", topics: ["Natural Language Understanding Basics", "Chatbot Fundamentals"] },
+            { module: "Module 2: Speech", topics: ["Speech Recognition Basics"] },
+            { module: "Module 3: Computer Vision", topics: ["Image Processing Introduction", "Object Detection Concept"] }
+        ],
+        tools: [
+            { name: "NLTK", icon: Code },
+            { name: "OpenCV", icon: Layers }
+        ],
+        project: {
+            title: "Basic Chatbot or Detector",
+            description: "Build a simple rule-based chatbot or a basic face detector."
+        },
+        audience: ["Developers", "Students"]
+    },
+    "ai-ethics": {
+        id: "ai-ethics",
+        title: "AI Applications, Ethics & Deployment",
+        tagline: "Understanding the impact, responsibility, and lifecycle of AI.",
+        level: "Beginner",
+        duration: "3 Weeks",
+        lessons: 10,
+        projects: 1,
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200",
+        overview: "Study the real-world applications of AI across industries, along with the critical importance of ethics, bias, privacy, and deployment strategies.",
+        outcomes: [
+            "Analyze AI use cases in Healthcare, Finance, and Automation",
+            "Identify ethical pitfalls, bias, and privacy concerns in AI",
+            "Understand the components of AI System Architecture",
+            "Learn the basics of deploying AI solutions responsibly"
+        ],
+        curriculum: [
+            { module: "Module 1: Applications", topics: ["AI in Healthcare, Finance & Automation"] },
+            { module: "Module 2: Architecture", topics: ["AI System Architecture"] },
+            { module: "Module 3: Ethics & Responsibility", topics: ["Responsible AI & Ethics", "Bias & Data Privacy"] },
+            { module: "Module 4: Deployment", topics: ["Introduction to AI Deployment"] }
+        ],
+        tools: [
+            { name: "Case Studies", icon: BookOpen }
+        ],
+        project: {
+            title: "AI Strategy Report",
+            description: "Develop a strategy document for deploying an ethical AI solution in a chosen industry."
+        },
+        audience: ["Managers", "Business Leaders", "All Learners"]
+    },
     "dm-job-guarantee": {
         id: "dm-job-guarantee",
         title: "Job Guarantee Digital Marketing Courses",
@@ -401,5 +857,84 @@ export const detailedCourses: Record<string, DetailedCourse> = {
             description: "Create a digital launch plan for a new brand, including website, social media, and email components."
         },
         audience: ["Students", "Working Professionals", "Entrepreneurs", "Small Business Owners"]
+    },
+    "python-core": {
+        id: "python-core",
+        title: "Core Python Programming",
+        tagline: "Build a strong foundation in Python programming and logic building.",
+        level: "Beginner",
+        duration: "4 Weeks",
+        lessons: 20,
+        projects: 2,
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200",
+        overview: "This course is designed to provide a strong foundation in Python programming. You will learn everything from installation to Object Oriented Programming, enabling you to write logical programs and handle files.",
+        outcomes: [
+            "Strong foundation in Python programming",
+            "Ability to write logical programs",
+            "OOP concepts understanding",
+            "Error handling & debugging",
+            "File operations handling",
+            "Ready for interviews & basic project development"
+        ],
+        curriculum: [
+            { module: "Module 1: Introduction to Python", topics: ["What is Python?", "Features of Python", "Installation & Setup", "Python IDEs (VS Code, PyCharm)", "Writing First Program", "Keywords & Identifiers"] },
+            { module: "Module 2: Variables & Data Types", topics: ["Variables & Naming Rules", "Data Types (int, float, string, bool)", "Type Casting", "Taking User Input", "Operators (Arithmetic, Logical, Comparison)"] },
+            { module: "Module 3: Control Statements", topics: ["if, elif, else", "Nested Conditions", "For Loop", "While Loop", "Break & Continue", "Pass Statement"] },
+            { module: "Module 4: Strings & Collections", topics: ["String Methods", "String Formatting", "Lists & List Methods", "Tuples", "Sets", "Dictionaries & Dictionary Methods"] },
+            { module: "Module 5: Functions", topics: ["Defining Functions", "Parameters & Arguments", "Return Statement", "Default Arguments", "Lambda Functions", "Recursion"] },
+            { module: "Module 6: OOP (Object Oriented Programming)", topics: ["Class & Object", "Constructor (init)", "Instance & Class Variables", "Inheritance", "Polymorphism", "Encapsulation", "Abstraction"] },
+            { module: "Module 7: Exception Handling", topics: ["Types of Errors", "Try & Except", "Finally Block", "Raising Exceptions", "Custom Exceptions"] },
+            { module: "Module 8: File Handling", topics: ["Reading Files", "Writing Files", "Append Mode", "Working with CSV Files"] }
+        ],
+        tools: [
+            { name: "Python", icon: Code },
+            { name: "VS Code", icon: Code },
+            { name: "PyCharm", icon: Code }
+        ],
+        project: {
+            title: "Student Management System",
+            description: "Build a console-based application to manage student records using file handling and OOP concepts."
+        },
+        audience: ["Students", "Beginners", "Non-IT Professionals"]
+    },
+    "python-advanced": {
+        id: "python-advanced",
+        title: "Advanced Python",
+        tagline: "Master advanced concepts, APIs, and database connectivity.",
+        level: "Advanced",
+        duration: "4 Weeks",
+        lessons: 20,
+        projects: 3,
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200",
+        overview: "Take your Python skills to the next level. Learn about decorators, generators, multithreading, database connectivity, and web development with Django/FastAPI.",
+        outcomes: [
+            "Write production-level Python code",
+            "Build REST APIs",
+            "Work with databases",
+            "Create backend applications",
+            "Understand multithreading concepts",
+            "Ready for job as Python Developer"
+        ],
+        curriculum: [
+            { module: "Module 1: Advanced Functions", topics: ["Decorators", "Generators", "Iterators", "*args and **kwargs", "Closures"] },
+            { module: "Module 2: Advanced OOP", topics: ["Method Overloading", "Method Overriding", "Magic Methods", "Multiple Inheritance", "MRO (Method Resolution Order)"] },
+            { module: "Module 3: Modules & Packages", topics: ["Creating Modules", "Creating Packages", "name == \"main\"", "Virtual Environment", "pip & Package Installation"] },
+            { module: "Module 4: Regular Expressions", topics: ["Pattern Matching", "re module", "Email & Mobile Validation"] },
+            { module: "Module 5: Multithreading & Multiprocessing", topics: ["Thread Class", "Creating Threads", "Synchronization", "GIL Concept", "Multiprocessing Basics"] },
+            { module: "Module 6: Database Connectivity", topics: ["MySQL with Python", "SQLite with Python", "CRUD Operations", "Connecting using mysql-connector"] },
+            { module: "Module 7: API & Web Development Introduction", topics: ["REST API Basics", "JSON Handling", "Intro to Django", "Intro to FastAPI", "Creating Simple APIs"] },
+            { module: "Module 8: Real-Time Project", topics: ["Student Management System", "Employee Management System", "REST API Project", "Deployment Basics"] }
+        ],
+        tools: [
+            { name: "Python", icon: Code },
+            { name: "MySQL", icon: Database },
+            { name: "Django", icon: Globe },
+            { name: "FastAPI", icon: Code }
+        ],
+        project: {
+            title: "Employee Management System with API",
+            description: "Develop a backend system for managing employees with database connectivity and expose it via a REST API."
+        },
+        audience: ["Python Developers", "Backend Engineers", "Software Engineers"]
     }
 };

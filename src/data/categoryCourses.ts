@@ -378,16 +378,27 @@ export const coursesData: CourseData[] = [
         price: "₹30,000"
     },
 
-    // Python
+    // Python - CORE & ADVANCED
     { id: "python-core", title: "Core Python Programming", description: "Master Python fundamentals, data structures, and algorithms.", categoryId: "python", image: "https://via.placeholder.com/150", rating: 5, price: "₹15,000" },
     { id: "python-advanced", title: "Advanced Python", description: "Deep dive into decorators, generators, and advanced libraries.", categoryId: "python", image: "https://via.placeholder.com/150", rating: 5, price: "₹20,000" },
 
-    // AI
-    { id: "ai-foundations", title: "AI Foundations", description: "Introduction to Artificial Intelligence concepts and history.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹40,000" },
+    // AI - UPDATED CONTENT
+    { id: "ai-fundamentals", title: "Fundamentals of Artificial Intelligence", description: "Build a strong conceptual foundation in Artificial Intelligence.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹20,000" },
+    { id: "ai-search", title: "Problem Solving & Search Techniques", description: "Master the algorithms that power AI decision making.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹22,000" },
+    { id: "ai-knowledge", title: "Knowledge Representation & Reasoning", description: "Learn how AI systems store knowledge and reason with it.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹25,000" },
+    { id: "ai-intel-basics", title: "Machine Intelligence Basics", description: "A foundational overview of machine learning concepts within AI.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹20,000" },
+    { id: "ai-nlp-vision", title: "Natural Language & Vision Systems", description: "Introduction to AI's ability to see and speak.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹28,000" },
+    { id: "ai-ethics", title: "AI Applications, Ethics & Deployment", description: "Understanding the impact, responsibility, and lifecycle of AI.", categoryId: "ai", image: "https://via.placeholder.com/150", rating: 5, price: "₹18,000" },
 
-    // AIML
-    { id: "aiml-mastery", title: "AI & Machine Learning Mastery", description: "Comprehensive course covering AI, ML, and Deep Learning.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹50,000" },
-    { id: "deep-learning", title: "Deep Learning with TensorFlow", description: "Neural networks, CNNs, RNNs using TensorFlow and Keras.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹45,000" },
+    // AIML - UPDATED CONTENT
+    { id: "aiml-python", title: "Python for AI & ML", description: "Learn Python programming and libraries required for AI & ML development.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹25,000" },
+    { id: "aiml-math", title: "Mathematics & Statistics for ML", description: "Understand the mathematical foundation behind ML algorithms.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹25,000" },
+    { id: "aiml-core-ml", title: "Core Machine Learning", description: "Build predictive models using fundamental ML algorithms.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹30,000" },
+    { id: "aiml-advanced-ml", title: "Advanced Machine Learning", description: "Explore complex ML algorithms used in industry.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹35,000" },
+    { id: "aiml-deep-learning", title: "Deep Learning & Neural Networks", description: "Build advanced AI systems using neural networks.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹40,000" },
+    { id: "aiml-nlp", title: "Natural Language Processing", description: "Develop AI systems that understand human language.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹35,000" },
+    { id: "aiml-cv", title: "Computer Vision & AI Systems", description: "Teach machines to understand images and videos.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹35,000" },
+    { id: "aiml-mlops", title: "MLOps & AI Deployment", description: "Deploy AI models into production environments.", categoryId: "aiml", image: "https://via.placeholder.com/150", rating: 5, price: "₹30,000" },
 
     // Data Analytics & Power BI - UPDATED CONTENT
     {
