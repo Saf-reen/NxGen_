@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Search, Grid, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -45,9 +45,45 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(courseCategories[0]?.category || "SAP Courses");
   const [isCourseMenuOpen, setIsCourseMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const role = localStorage.getItem("role");
+  const isAuthPage = ["/student-login", "/instructor-login", "/register"].includes(location.pathname);
+  const isSpecialAccount = role === "student" || role === "instructor";
 
   // Helper to find active items
   const activeItems = courseCategories.find(c => c.category === activeCategory)?.items || [];
+
+  if (isSpecialAccount || isAuthPage) {
+    return (
+      <nav className="sticky top-0 z-50 bg-white shadow-sm border-b pb-4 pt-4">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center shrink-0">
+              <img src="/Logo.png" alt="NxGen Tech Academy" className="h-12 w-auto object-contain" />
+            </Link>
+
+            {/* Logout Button - Only show if logged in */}
+            {isSpecialAccount && (
+              <Button
+                variant="outline"
+                className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium px-6"
+                onClick={() => {
+                  localStorage.removeItem("username");
+                  localStorage.removeItem("access_token");
+                  localStorage.removeItem("role");
+                  window.location.href = "/";
+                }}
+              >
+                Logout
+              </Button>
+            )}
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b pb-4 pt-4">
@@ -262,6 +298,5 @@ export const Navbar = () => {
         )}
       </div>
     </nav>
-
   );
 };

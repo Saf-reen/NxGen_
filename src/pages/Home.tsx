@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Smartphone, Clock, Star, ChevronLeft, ChevronR
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { CourseCarousel } from "@/components/CourseCarousel";
+import { DemoModal } from "@/components/DemoModal";
 
 const sapCategories = [
   { title: "SAP Technical & Development", hours: "Multiple Courses", link: "/courses/sap-technical" },
@@ -26,6 +27,7 @@ const sapCourses = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   // Array of hero images
   const heroImages = [
@@ -83,7 +85,19 @@ const Home = () => {
               <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md">
                 <Link to="/all-courses">Explore Courses</Link>
               </Button>
+              <Button
+                onClick={() => setIsDemoModalOpen(true)}
+                size="lg"
+                className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 border border-[#000080]/30 font-medium text-lg px-8 rounded-md"
+              >
+                Book a Free Demo Class
+              </Button>
             </div>
+
+            <DemoModal
+              isOpen={isDemoModalOpen}
+              onClose={() => setIsDemoModalOpen(false)}
+            />
 
             <div className="pt-2">
               <p className="text-lg text-[#000080]">

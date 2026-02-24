@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, MapPin, Monitor, Users, BookOpen, Star } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { PageHero } from "@/components/PageHero";
-import CourseEnquiryForm from "@/components/CourseEnquiryForm";
+import DemoSidebarCard from "@/components/DemoSidebarCard";
 
 const SasTraining = () => {
     return (
@@ -131,7 +131,7 @@ const SasTraining = () => {
 
                     {/* Sidebar */}
                     <div className="lg:w-1/3 space-y-8">
-                        <CourseEnquiryForm courseTitle="SAS Training" />
+                        <DemoSidebarCard courseTitle="SAS Training" />
 
                         {/* Related Courses */}
                         <div className="bg-gray-50 p-6 rounded-xl">

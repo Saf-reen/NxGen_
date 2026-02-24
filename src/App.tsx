@@ -41,11 +41,18 @@ const AppContent = () => {
   const authPages = ["/register", "/student-login", "/instructor-login"];
   const isAuthPage = authPages.includes(location.pathname);
 
+  const role = localStorage.getItem("role");
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isStudentOrInstructorLoggedIn = !!role && (role === "student" || role === "instructor");
+
+  // Hide TopBar and Footer for auth pages OR when a student/instructor is logged in and on a dashboard/auth page
+  const hideComponents = isAuthPage || isStudentOrInstructorLoggedIn;
+
   return (
     <>
       <GTMPageView />
       <ScrollToTop />
-      {!isAuthPage && <TopBar />}
+      {!hideComponents && <TopBar />}
       <Navbar />
       <main>
         <Routes>
@@ -77,7 +84,7 @@ const AppContent = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {!isAuthPage && <Footer />}
+      {!hideComponents && <Footer />}
     </>
   );
 };

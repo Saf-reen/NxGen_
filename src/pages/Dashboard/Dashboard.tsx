@@ -1,16 +1,21 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import StudentDashboard from "./StudentDashboard";
+import InstructorDashboard from "./InstructorDashboard";
 
 const Dashboard = () => {
     const navigate = useNavigate();
+    const role = localStorage.getItem("role");
 
     useEffect(() => {
-        const role = localStorage.getItem("role");
         if (!role) {
             navigate("/student-login");
         }
-    }, [navigate]);
+    }, [navigate, role]);
+
+    if (role === "instructor") {
+        return <InstructorDashboard />;
+    }
 
     return <StudentDashboard />;
 };

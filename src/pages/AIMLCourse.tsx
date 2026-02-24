@@ -9,7 +9,7 @@ import { PageHero } from "@/components/PageHero";
 import { categoryConfig, coursesData } from "@/data/categoryCourses";
 import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
-import CourseEnquiryForm from "@/components/CourseEnquiryForm";
+import DemoSidebarCard from "@/components/DemoSidebarCard";
 
 const AIMLCourse = () => {
     const categorySlug = "aiml";
@@ -117,7 +117,7 @@ const AIMLCourse = () => {
 
                         {/* Course Pricing Section */}
                         <div className="mt-12">
-                            <CoursePricing />
+                            <CoursePricing courseTitle={config.title} />
                         </div>
                     </div>
 
@@ -125,13 +125,8 @@ const AIMLCourse = () => {
                     <div className="lg:col-span-1">
                         <div className="sticky top-24 space-y-6">
 
-                            {/* Enrollment Card */}
-                            <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in AIML?</h3>
-                                <p className="text-sm text-gray-500 mb-6">Fill the form below to get brochure & callback.</p>
-
-                                <CourseEnquiryForm courseTitle="AIML" />
-                            </div>
+                            {/* Demo Card */}
+                            <DemoSidebarCard courseTitle="AIML" />
 
                             {/* Course Highlights Card */}
                             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100">

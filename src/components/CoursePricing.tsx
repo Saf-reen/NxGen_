@@ -1,6 +1,23 @@
+import { useState } from "react";
 import { Check, Laptop, Users, Star, GraduationCap, Award, Briefcase } from "lucide-react";
+import { Button } from "./ui/button";
+import { EnrollmentModal } from "./EnrollmentModal";
+import { DemoModal } from "./DemoModal";
 
-export const CoursePricing = () => {
+interface CoursePricingProps {
+    courseTitle?: string;
+}
+
+export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+    const [selectedType, setSelectedType] = useState<"Training" | "Internship" | "Master Course">("Training");
+
+    const handleEnrollClick = (type: "Training" | "Internship" | "Master Course") => {
+        setSelectedType(type);
+        setIsModalOpen(true);
+    };
+
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
@@ -31,7 +48,7 @@ export const CoursePricing = () => {
                             </div>
 
                             {/* Right Section - Details */}
-                            <div className="p-8 md:p-10">
+                            <div className="p-8 md:p-10 flex flex-col">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-gray-900">₹20,000</span>
@@ -40,7 +57,7 @@ export const CoursePricing = () => {
                                     <p className="text-sm text-gray-600">Perfect for beginners building strong theoretical knowledge</p>
                                 </div>
 
-                                <div className="space-y-3 mb-6">
+                                <div className="space-y-3 mb-8 flex-grow">
                                     <div className="flex items-start gap-3">
                                         <Check className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                                         <span className="text-gray-700">Live Interactive Sessions</span>
@@ -57,6 +74,21 @@ export const CoursePricing = () => {
                                         <Check className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                                         <span className="text-gray-700">Offline Option: ₹25,000</span>
                                     </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Button
+                                        onClick={() => setIsDemoModalOpen(true)}
+                                        className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 font-bold h-12 border border-[#000080]/20"
+                                    >
+                                        Schedule Demo
+                                    </Button>
+                                    <Button
+                                        onClick={() => handleEnrollClick("Training")}
+                                        className="bg-gray-800 hover:bg-gray-900 text-white font-bold h-12"
+                                    >
+                                        Enroll Now
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +112,7 @@ export const CoursePricing = () => {
                             </div>
 
                             {/* Right Section - Details */}
-                            <div className="p-8 md:p-10">
+                            <div className="p-8 md:p-10 flex flex-col">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-gray-900">₹30,000</span>
@@ -89,7 +121,7 @@ export const CoursePricing = () => {
                                     <p className="text-sm text-gray-600">For learners who have the basics and need practical exposure</p>
                                 </div>
 
-                                <div className="space-y-3 mb-6">
+                                <div className="space-y-3 mb-8 flex-grow">
                                     <div className="flex items-start gap-3">
                                         <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                                         <span className="text-gray-700">6 Months Duration</span>
@@ -106,6 +138,21 @@ export const CoursePricing = () => {
                                         <Check className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                                         <span className="text-gray-700">Mentor Guidance</span>
                                     </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Button
+                                        onClick={() => setIsDemoModalOpen(true)}
+                                        className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 font-bold h-12 border border-[#000080]/20"
+                                    >
+                                        Schedule Demo
+                                    </Button>
+                                    <Button
+                                        onClick={() => handleEnrollClick("Internship")}
+                                        className="bg-green-700 hover:bg-green-800 text-white font-bold h-12"
+                                    >
+                                        Enroll Now
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +177,7 @@ export const CoursePricing = () => {
                             </div>
 
                             {/* Right Section - Details */}
-                            <div className="p-8 md:p-10">
+                            <div className="p-8 md:p-10 flex flex-col">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-[#000080]">₹35,000</span>
@@ -158,10 +205,25 @@ export const CoursePricing = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
+                                <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-8">
                                     <p className="text-sm text-gray-700">
                                         <strong className="text-[#000080]">💼 Best Value:</strong> Complete career transformation with training, hands-on experience, and guaranteed placement assistance.
                                     </p>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Button
+                                        onClick={() => setIsDemoModalOpen(true)}
+                                        className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 font-bold h-12 border border-[#000080]/20"
+                                    >
+                                        Schedule Demo
+                                    </Button>
+                                    <Button
+                                        onClick={() => handleEnrollClick("Master Course")}
+                                        className="bg-[#000080] hover:bg-[#000080]/90 text-white font-bold h-12"
+                                    >
+                                        Enroll Now
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +231,19 @@ export const CoursePricing = () => {
 
                 </div>
             </div>
+
+            <EnrollmentModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                courseTitle={courseTitle}
+                courseType={selectedType}
+            />
+
+            <DemoModal
+                isOpen={isDemoModalOpen}
+                onClose={() => setIsDemoModalOpen(false)}
+                courseTitle={courseTitle}
+            />
         </section>
     );
 };

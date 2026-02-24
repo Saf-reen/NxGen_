@@ -12,7 +12,7 @@ import { Preloader } from "@/components/Preloader";
 import { courses } from "@/data";
 import { detailedCourses, DetailedCourse } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
-import CourseEnquiryForm from "@/components/CourseEnquiryForm";
+import DemoSidebarCard from "@/components/DemoSidebarCard";
 import { PageHero } from "@/components/PageHero";
 
 const DataAnalyticsCourse = () => {
@@ -214,7 +214,7 @@ const DataAnalyticsCourse = () => {
             </section>
 
             {/* 5. Course Pricing & Modes */}
-            <CoursePricing />
+            <CoursePricing courseTitle={courseData.title} />
 
             {/* 6. Hands-on Project */}
             <section className="bg-gradient-to-br from-[#000080] to-blue-900 rounded-2xl p-8 relative overflow-hidden text-white">
@@ -270,13 +270,8 @@ const DataAnalyticsCourse = () => {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
 
-              {/* Enrollment Card */}
-              <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in this course?</h3>
-                <p className="text-sm text-gray-500 mb-6">Fill the form below to get brochure & callback.</p>
-
-                <CourseEnquiryForm courseTitle={courseData.title} />
-              </div>
+              {/* Demo Card */}
+              <DemoSidebarCard courseTitle={courseData.title} />
 
               {/* Course Highlights Card */}
               <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100">
