@@ -45,8 +45,7 @@ const Courses = () => {
       />
       <PageHero
         title="Our Courses"
-        description="Choose from our comprehensive range of courses designed to help you achieve your academic goals"
-        imageUrl="https://images.unsplash.com/photo-1509869175650-a1d97972541a?w=1200&h=800&fit=crop"
+        description="Choose from our comprehensive range of courses designed to help you achieve your career goals"
       />
 
       {/* Category Filter */}
@@ -72,18 +71,17 @@ const Courses = () => {
         <div className="container mx-auto px-4">
           <div
             ref={ref}
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0"
+              }`}
           >
-              {filteredCourses.map((course, index) => (
-                <CourseCard
-                  key={course.id}
-                  course={course}
-                  index={index}
-                  total={filteredCourses.length}
-                />
-              ))}
+            {filteredCourses.map((course, index) => (
+              <CourseCard
+                key={course.id}
+                course={course}
+                index={index}
+                total={filteredCourses.length}
+              />
+            ))}
           </div>
 
           {filteredCourses.length === 0 && (
@@ -128,9 +126,8 @@ const CourseCard = ({
     <Link
       to={`/courses/${course.id}`}
       ref={ref}
-      className={`group block transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${spanClass}`}
+      className={`group block transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        } ${spanClass}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="flex justify-between bg-card rounded-xl overflow-hidden shadow-md hover-lift h-full">

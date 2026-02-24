@@ -182,6 +182,29 @@ export const Navbar = () => {
             <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
               <Link to="/blogs">Blogs</Link>
             </Button>
+            {localStorage.getItem("username") ? (
+              <>
+                <Button asChild className="bg-secondary hover:bg-secondary/90 text-white font-medium px-6">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium px-6"
+                  onClick={() => {
+                    localStorage.removeItem("username");
+                    localStorage.removeItem("access_token");
+                    localStorage.removeItem("role");
+                    window.location.href = "/";
+                  }}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button asChild variant="outline" className="border-[#000080] text-[#000080] hover:bg-[#000080] hover:text-white font-medium px-6">
+                <Link to="/register">Register</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -196,16 +219,49 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t bg-white mt-4 space-y-3">
+          <div className="lg:hidden py-4 border-t bg-white mt-4 space-y-3 px-4 pb-6">
             <Button asChild className="w-full bg-[#000080] text-white">
-              <Link to="/all-courses">Explore All Courses</Link>
+              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
             </Button>
             <Button asChild className="w-full bg-[#000080] text-white">
-              <Link to="/sas-training-institute-in-pune">SAS Certification</Link>
+              <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
             </Button>
+            {localStorage.getItem("username") ? (
+              <>
+                <Button asChild className="w-full bg-secondary text-white">
+                  <Link to="/dashboard" onClick={() => setIsMobileMenuOpen(false)}>My Dashboard</Link>
+                </Button>
+                <Button
+                  className="w-full bg-red-500 text-white"
+                  onClick={() => {
+                    localStorage.removeItem("username");
+                    localStorage.removeItem("access_token");
+                    localStorage.removeItem("role");
+                    window.location.href = "/";
+                  }}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button asChild variant="outline" className="w-full border-[#000080] text-[#000080]">
+                  <Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>Register Now</Link>
+                </Button>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="ghost" className="text-[#000080] border border-[#000080]">
+                    <Link to="/student-login" onClick={() => setIsMobileMenuOpen(false)}>Student</Link>
+                  </Button>
+                  <Button asChild variant="ghost" className="text-[#000080] border border-[#000080]">
+                    <Link to="/instructor-login" onClick={() => setIsMobileMenuOpen(false)}>Instructor</Link>
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
     </nav>
+
   );
 };

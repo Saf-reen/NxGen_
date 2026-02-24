@@ -16,6 +16,8 @@ const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c 
 // Add "All"
 const categoriesList = ["All Courses", ...parentCategories];
 
+import { PageHero } from "@/components/PageHero";
+
 const AllCourses = () => {
     const [searchParams] = useSearchParams();
     const initialCategory = searchParams.get("category") || "All Courses";
@@ -55,20 +57,10 @@ const AllCourses = () => {
                 path="/all-courses"
             />
 
-            {/* Hero Section - Matching CategoryPage Style */}
-            <div className="bg-[#000080] py-16 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                    <div className="absolute right-10 top-10 w-32 h-32 rounded-full border-8 border-white"></div>
-                </div>
-                <div className="container mx-auto px-4 relative z-10">
-                    {/* Optional Back Link if needed, but this is a main page */}
-                    {/* <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-                    </Link> */}
-                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Course Basket</h1>
-                    <p className="text-xl text-blue-100 max-w-2xl">Explore our wide range of industry-leading courses.</p>
-                </div>
-            </div>
+            <PageHero
+                title="Our Course Basket"
+                description="Explore our wide range of industry-leading courses."
+            />
 
             {/* Main Content Area */}
             <div className="container mx-auto px-4 py-12">

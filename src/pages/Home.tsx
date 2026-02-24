@@ -65,7 +65,7 @@ const Home = () => {
 
       {/* Hero Section with Carousel */}
       <section className="relative bg-white text-gray-800 py-2 lg:py-4 overflow-hidden">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="w-full px-4 md:px-10 lg:px-20 mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 z-10">
             <div>
@@ -224,7 +224,7 @@ const Home = () => {
 
       {/* Trending Courses Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4 md:px-10 lg:px-20 mx-auto">
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">Trending Courses</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -269,15 +269,49 @@ const Home = () => {
 
       {/* Testimonials */}
       <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center text-primary">Testimonials</h2>
+        <div className="w-full px-4 md:px-10 lg:px-20 mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold mb-4 text-primary">Testimonials</h2>
+            <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
+            <p className="text-gray-600">Hear from our successful students who transformed their careers with NxGen Tech Academy.</p>
+          </div>
+
+          {/* Video Testimonials */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold mb-8 text-primary uppercase tracking-wider">Video Success Stories</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+              {[
+                { id: "v1", youtubeId: "coCLAzYcX7Y", title: "SAP FICO Career Transition" },
+                { id: "v2", youtubeId: "dQw4w9WgXcQ", title: "FullStack .NET Journey" },
+                { id: "v3", youtubeId: "dQw4w9WgXcQ", title: "Data Science Success Path" },
+                { id: "v4", youtubeId: "dQw4w9WgXcQ", title: "AI/ML Journey" },
+              ].map((video) => (
+                <div key={video.id} className="bg-white rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  <div className="relative aspect-[9/16] bg-black">
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="p-4 bg-gradient-to-t from-gray-50 to-white">
+                    <h4 className="font-bold text-gray-900 text-sm md:text-base line-clamp-1">{video.title}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <h3 className="text-2xl font-bold mb-8 text-primary">Student Experiences</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "Ravi Rautele", text: "I have successfully completed my SAP FICO training from NxGen Tech Academy, which gave me a strong understanding of Financial Accounting and Controlling concepts.", course: "SAP FICO" },
               { name: "Vinod Goud", text: "THIS MONTH I HAVE COMPLETED SAP FICO COURSE. THE TRAINING IS WELL STRUCTURED AND EASY TO UNDERSTAND. COURSE CONTENT PROVIDES HANDS ON PRATICE.", course: "SAP FICO" },
               { name: "Ritik S. Mourya", text: "I have just completed my FullStack DOT NET training from NxGen Tech Academy. The sessions were very helpful and understanding session throughout the training.", course: "FullStack .NET" },
             ].map((testimonial, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-sm relative">
+              <div key={i} className="bg-white p-8 rounded-xl shadow-sm relative hover:shadow-md transition-all">
                 <div className="absolute -top-4 left-8 bg-secondary text-white p-2 rounded-full">
                   <Star className="w-6 h-6 fill-current" />
                 </div>
@@ -299,7 +333,7 @@ const Home = () => {
 
       {/* Recent Articles */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4 md:px-10 lg:px-20 mx-auto">
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">Recent Articles</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[

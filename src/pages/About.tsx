@@ -8,6 +8,7 @@ import {
   GraduationCap, Globe, Clock, ShieldCheck
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/PageHero';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -85,30 +86,10 @@ const About = () => {
         schemaData={faqSchema}
       />
 
-      {/* Section 1: Banner */}
-      <div className="relative bg-[#000080] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000080]/90 to-[#000080]/70" />
-
-        <div className="container mx-auto px-4 py-24 relative z-10 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-          >
-            Best IT Training Institution in Hyderabad
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed"
-          >
-            Delivering career-driven education that builds skills, confidence, and future-ready professionals.
-          </motion.p>
-        </div>
-      </div>
+      <PageHero
+        title="Best IT Training Institution in Hyderabad"
+        description="Delivering career-driven education that builds skills, confidence, and future-ready professionals."
+      />
 
       {/* Section 2: Who We Are */}
       <section className="py-20 bg-white">

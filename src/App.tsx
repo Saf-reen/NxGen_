@@ -27,8 +27,60 @@ import SAPCourse from "./pages/SAPCourse";
 import PythonCourse from "./pages/PythonCourse";
 import AIMLCourse from "./pages/AIMLCourse";
 import AICourse from "./pages/AICourse";
+import Register from "./pages/Auth/Register";
+import StudentLogin from "./pages/Auth/StudentLogin";
+import InstructorLogin from "./pages/Auth/InstructorLogin";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import CourseViewer from "./pages/Dashboard/CourseViewer";
+import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  const location = useLocation();
+  const authPages = ["/register", "/student-login", "/instructor-login"];
+  const isAuthPage = authPages.includes(location.pathname);
+
+  return (
+    <>
+      <GTMPageView />
+      <ScrollToTop />
+      {!isAuthPage && <TopBar />}
+      <Navbar />
+      <main>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="/all-courses" element={<AllCourses />} />
+          <Route path="courses-menu" element={<AllCourses />} />
+          <Route path="courses/sap-technical" element={<SAPCourse categorySlug="sap-technical" />} />
+          <Route path="courses/sap-specialized" element={<SAPCourse categorySlug="sap-specialized" />} />
+          <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
+          <Route path="courses/sap-admin" element={<SAPCourse categorySlug="sap-admin" />} />
+          <Route path="courses/python" element={<PythonCourse />} />
+          <Route path="courses/ai" element={<AICourse />} />
+          <Route path="courses/aiml" element={<AIMLCourse />} />
+          <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
+          <Route path="courses/digital-marketing" element={<SAPCourse categorySlug="digital-marketing" />} />
+          <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />
+          <Route path="courses/:id" element={<DataAnalyticsCourse />} />
+          <Route path="mentors" element={<Mentors />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="why-choose-us" element={<WhyChooseUs />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="register" element={<Register />} />
+          <Route path="student-login" element={<StudentLogin />} />
+          <Route path="instructor-login" element={<InstructorLogin />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard/course/:id" element={<CourseViewer />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      {!isAuthPage && <Footer />}
+    </>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -44,43 +96,7 @@ const App = () => (
         <Sonner />
         <Preloader />
         <BrowserRouter>
-          <GTMPageView />
-          <ScrollToTop />
-          <TopBar />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-
-              {/* Main Course Catalog */}
-              <Route path="courses" element={<Courses />} />
-              <Route path="/all-courses" element={<AllCourses />} />
-              <Route path="courses-menu" element={<AllCourses />} />
-
-              {/* Specific Category Pages */}
-              <Route path="courses/sap-technical" element={<SAPCourse categorySlug="sap-technical" />} />
-              <Route path="courses/sap-specialized" element={<SAPCourse categorySlug="sap-specialized" />} />
-              <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
-              <Route path="courses/sap-admin" element={<SAPCourse categorySlug="sap-admin" />} />
-              <Route path="courses/python" element={<PythonCourse />} />
-              <Route path="courses/ai" element={<AICourse />} />
-              <Route path="courses/aiml" element={<AIMLCourse />} />
-              <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
-              <Route path="courses/digital-marketing" element={<SAPCourse categorySlug="digital-marketing" />} />
-              <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />
-
-              {/* Course Detail */}
-              <Route path="courses/:id" element={<DataAnalyticsCourse />} />
-
-              <Route path="mentors" element={<Mentors />} />
-              <Route path="contact" element={<ContactPage />} />
-              <Route path="why-choose-us" element={<WhyChooseUs />} />
-              <Route path="blogs" element={<Blogs />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
+          <AppContent />
         </BrowserRouter>
       </div>
     </TooltipProvider>

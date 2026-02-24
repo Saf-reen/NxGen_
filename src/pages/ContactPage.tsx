@@ -6,12 +6,14 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
+import { PageHero } from "@/components/PageHero";
+import axiosInstance from "@/api/axiosInstance";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,11 +28,17 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+
+    try {
+      await axiosInstance.post("/api/leads/contact-us/", formData);
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error: any) {
+      console.error("Contact Form Error:", error);
+      toast.error(error.response?.data?.message || "Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -42,19 +50,14 @@ const ContactPage = () => {
         path="/contact"
       />
 
-      {/* Hero Section */}
-      <div className="bg-[#000080] py-16 relative">
-        <div className="container mx-auto px-4 relative z-10 text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <div className="text-sm opacity-90 font-medium flex justify-center gap-2">
-            <Link to="/" className="hover:text-gray-200">Home</Link> / <span>Contact Us</span>
-          </div>
+      <PageHero
+        title="Contact Us"
+        description="Empowering learners with real-world skills for a digital future"
+      >
+        <div className="text-sm opacity-90 font-medium flex gap-2 text-white">
+          <Link to="/" className="hover:text-gray-200">Home</Link> / <span>Contact Us</span>
         </div>
-        {/* Decorative background circle */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none overflow-hidden">
-          <div className="absolute right-0 top-0 w-64 h-64 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-      </div>
+      </PageHero>
 
       {/* Main Content */}
       <section className="py-20">
@@ -133,12 +136,13 @@ const ContactPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-gray-700">Subject</label>
+                  <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
                   <Input
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    value={formData.phone}
                     onChange={handleChange}
                     required
                     className="bg-white"

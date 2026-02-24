@@ -15,7 +15,7 @@ const Notes = () => {
     const matchesCategory = selectedCategory === "all" || material.subject === selectedCategory;
     const q = searchQuery.trim().toLowerCase();
     const matchesSearch = q === "" || material.title.toLowerCase().includes(q) ||
-                         material.description.toLowerCase().includes(q);
+      material.description.toLowerCase().includes(q);
     return matchesCategory && matchesSearch;
   });
 
@@ -23,10 +23,9 @@ const Notes = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <PageHero
-              title="NOTES AND STUDY MATERIALS"
-              description="Download comprehensive study materials and notes prepared by expert educators"
-              imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop"
-            />
+        title="NOTES AND STUDY MATERIALS"
+        description="Download comprehensive study materials and notes prepared by expert educators"
+      />
 
       {/* Search and Filter */}
       <section className="py-8 bg-background border-b">
@@ -43,7 +42,7 @@ const Notes = () => {
               />
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
               <Button
@@ -64,9 +63,8 @@ const Notes = () => {
         <div className="container mx-auto px-4">
           <div
             ref={ref}
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0"
+              }`}
           >
             {filteredMaterials.map((material, index) => (
               <MaterialCard key={material.id} material={material} index={index} />
@@ -109,9 +107,8 @@ const MaterialCard = ({ material, index }: { material: StudyMaterial; index: num
   return (
     <div
       ref={ref}
-      className={`bg-card rounded-xl p-6 shadow-md hover-lift transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`bg-card rounded-xl p-6 shadow-md hover-lift transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="flex items-start justify-between mb-4">

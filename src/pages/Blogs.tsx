@@ -3,6 +3,7 @@ import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, User, Clock, ChevronRight, Eye, Share2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/PageHero';
 
 const blogPosts = [
     {
@@ -95,24 +96,16 @@ const Blogs = () => {
                 path="/blogs"
             />
 
-            {/* Page Header */}
-            <div className="bg-[#000080] py-16 relative overflow-hidden">
-                <div className="container mx-auto px-4 relative z-10 text-center text-white">
-                    <h1 className="text-4xl lg:text-5xl font-bold mb-4">Our Latest Insights</h1>
-                    <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
-                        Expert articles on Technology, Career Growth, and Industry Trends.
-                    </p>
-                    <div className="text-sm opacity-90 font-medium flex justify-center gap-2 items-center">
-                        <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
-                        <ChevronRight className="w-4 h-4" />
-                        <span>Blogs</span>
-                    </div>
+            <PageHero
+                title="Our Latest Insights"
+                description="Expert articles on Technology, Career Growth, and Industry Trends."
+            >
+                <div className="text-sm opacity-90 font-medium flex gap-2 items-center text-white">
+                    <Link to="/" className="hover:text-gray-200 transition-colors">Home</Link>
+                    <ChevronRight className="w-4 h-4" />
+                    <span>Blogs</span>
                 </div>
-
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
-            </div>
+            </PageHero>
 
             {/* Blog Grid Section */}
             <section className="py-16 lg:py-24">

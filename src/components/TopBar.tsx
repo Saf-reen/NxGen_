@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const TopBar = () => {
     return (
@@ -24,12 +25,12 @@ export const TopBar = () => {
 
                     {/* Login Buttons */}
                     <div className="flex items-center gap-3 shrink-0">
-                        <a href="#" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
+                        <Link to="/student-login" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-[#000080] transition-colors">
                             Student Login
-                        </a>
-                        <a href="#" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-primary transition-colors">
+                        </Link>
+                        <Link to="/instructor-login" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-[#000080] transition-colors">
                             Instructor Login
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

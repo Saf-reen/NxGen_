@@ -93,11 +93,10 @@ const WhyChooseUs = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-        <PageHero
-              title="Why Choose NxGen?"
-              description="Empowering learners with real-world skills for a digital future"
-              imageUrl="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&h=1080&fit=crop"
-            />
+      <PageHero
+        title="Why Choose NxGen?"
+        description="Empowering learners with real-world skills for a digital future"
+      />
       {/* Key Highlights Section */}
       <section className="py-20 bg-muted relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5" />
@@ -112,9 +111,8 @@ const WhyChooseUs = () => {
           </div>
           <div
             ref={highlightsRef}
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${
-              isHighlightsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${isHighlightsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {highlights.map((highlight, index) => (
               <div
@@ -147,9 +145,8 @@ const WhyChooseUs = () => {
           </div>
           <div
             ref={testimonialsRef}
-            className={`transition-all duration-700 ${
-              isTestimonialsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`transition-all duration-700 ${isTestimonialsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <TestimonialsCarousel testimonials={testimonials} />
           </div>
@@ -163,8 +160,8 @@ const WhyChooseUs = () => {
             {/* Left Column - Image */}
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop" 
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
                   alt="Students Learning"
                   className="w-full object-cover"
                 />
@@ -182,7 +179,7 @@ const WhyChooseUs = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Right Column - Content */}
             <div>
               <h2 className="text-3xl font-bold mb-6">
@@ -213,9 +210,9 @@ const WhyChooseUs = () => {
                     </div>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
                     <div className="h-2 rounded-full bg-muted-foreground/20">
-                      <div 
+                      <div
                         className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000"
-                        style={{ 
+                        style={{
                           width: `${item.progress}%`,
                           transitionDelay: `${index * 200}ms`
                         }}
@@ -234,9 +231,8 @@ const WhyChooseUs = () => {
         <div className="container mx-auto px-4">
           <div
             ref={statsRef}
-            className={`grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-700 ${
-              isStatsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-700 ${isStatsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {stats.map((stat, index) => (
               <div

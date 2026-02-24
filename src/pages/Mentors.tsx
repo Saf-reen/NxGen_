@@ -112,7 +112,6 @@ const Mentors = () => {
       <PageHero
         title="Learn from Industry Experts"
         description="Our mentors are skilled professionals with years of real-world experience in leading tech companies."
-        imageUrl="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=800&fit=crop"
       />
 
       {/* Filter Section */}
@@ -138,9 +137,8 @@ const Mentors = () => {
         <div className="container mx-auto px-4">
           <div
             ref={ref}
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             {filteredMentors.map((mentor, index) => (
               <MentorCard key={mentor.id} mentor={mentor} index={index} />
@@ -183,9 +181,8 @@ const MentorCard = ({ mentor, index }: { mentor: Instructor; index: number }) =>
   return (
     <div
       ref={ref}
-      className={`group relative bg-card rounded-xl overflow-hidden shadow-md hover-lift transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`group relative bg-card rounded-xl overflow-hidden shadow-md hover-lift transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Image Container */}
@@ -195,7 +192,7 @@ const MentorCard = ({ mentor, index }: { mentor: Instructor; index: number }) =>
           alt={mentor.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        
+
         {/* Permanent Info Overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
           <h3 className="text-xl font-bold mb-1 text-white">{mentor.name}</h3>

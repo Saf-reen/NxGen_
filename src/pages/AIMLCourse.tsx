@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Search, ArrowLeft, PlayCircle, Code, Award, Users, Brain, Cpu, Network, BarChart, Database, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/PageHero";
 
 import { categoryConfig, coursesData } from "@/data/categoryCourses";
 import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
+import CourseEnquiryForm from "@/components/CourseEnquiryForm";
 
 const AIMLCourse = () => {
     const categorySlug = "aiml";
@@ -28,19 +30,14 @@ const AIMLCourse = () => {
                 path={`/courses/${categorySlug}`}
             />
 
-            {/* Hero Section */}
-            <div className="bg-[#000080] py-16 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                    <div className="absolute right-10 top-10 w-32 h-32 rounded-full border-8 border-white"></div>
-                </div>
-                <div className="container mx-auto px-4 relative z-10">
-                    <Link to="/courses-menu" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to All Courses
-                    </Link>
-                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{config.title}</h1>
-                    <p className="text-xl text-blue-100 max-w-2xl">{config.description}</p>
-                </div>
-            </div>
+            <PageHero
+                title={config.title}
+                description={config.description}
+            >
+                <Link to="/courses-menu" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                    <ArrowLeft className="w-4 h-4 mr-2" /> Back to All Courses
+                </Link>
+            </PageHero>
 
             {/* Main Content Layout */}
             <div className="container mx-auto px-4 py-12">
@@ -133,18 +130,7 @@ const AIMLCourse = () => {
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in AIML?</h3>
                                 <p className="text-sm text-gray-500 mb-6">Fill the form below to get brochure & callback.</p>
 
-                                <form className="space-y-4">
-                                    <Input placeholder="Full Name" className="bg-gray-50 border-gray-200 focus:bg-white" />
-                                    <Input placeholder="Email Address" className="bg-gray-50 border-gray-200 focus:bg-white" />
-                                    <Input placeholder="Phone Number" className="bg-gray-50 border-gray-200 focus:bg-white" />
-
-                                    <Button className="w-full bg-[#000080] hover:bg-[#000080]/90 text-white font-bold h-12 text-lg shadow-lg shadow-blue-900/10">
-                                        Enquire Now
-                                    </Button>
-                                    <p className="text-[10px] text-center text-gray-400">
-                                        By submitting, you agree to our privacy policy.
-                                    </p>
-                                </form>
+                                <CourseEnquiryForm courseTitle="AIML" />
                             </div>
 
                             {/* Course Highlights Card */}
