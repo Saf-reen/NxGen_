@@ -88,7 +88,7 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b pb-4 pt-4">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-2 xl:gap-4">
 
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
@@ -96,11 +96,11 @@ export const Navbar = () => {
           </Link>
 
           {/* Nav Controls - Middle Section */}
-          <div className="flex flex-1 items-center gap-4 w-full lg:w-auto justify-center lg:justify-start lg:pl-8">
+          <div className="flex flex-1 items-center gap-2 xl:gap-4 w-full lg:w-auto justify-center lg:justify-start lg:pl-2 xl:pl-8">
 
             {/* Course Menu Button */}
             <Button
-              className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6 gap-2 shrink-0"
+              className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6 gap-2 shrink-0"
               onClick={() => setIsCourseMenuOpen(true)}
             >
               <Grid className="w-4 h-4" />
@@ -195,7 +195,7 @@ export const Navbar = () => {
             )}
 
             {/* Search Bar */}
-            <div className="flex w-full max-w-xl relative">
+            <div className="flex w-full max-w-xs xl:max-w-xl relative">
               <input
                 type="text"
                 placeholder="Search Your Course Here!"
@@ -209,23 +209,23 @@ export const Navbar = () => {
 
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/all-courses">Explore All Courses</Link>
             </Button>
-            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/about">About Us</Link>
             </Button>
-            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-6">
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/blogs">Blogs</Link>
             </Button>
             {localStorage.getItem("username") ? (
               <>
-                <Button asChild className="bg-secondary hover:bg-secondary/90 text-white font-medium px-6">
+                <Button asChild className="bg-secondary hover:bg-secondary/90 text-white font-medium px-2 xl:px-6">
                   <Link to="/dashboard">Dashboard</Link>
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium px-6"
+                  className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-medium px-2 xl:px-6"
                   onClick={() => {
                     localStorage.removeItem("username");
                     localStorage.removeItem("access_token");
@@ -237,7 +237,7 @@ export const Navbar = () => {
                 </Button>
               </>
             ) : (
-              <Button asChild variant="outline" className="border-[#000080] text-[#000080] hover:bg-[#000080] hover:text-white font-medium px-6">
+              <Button asChild variant="outline" className="border-[#000080] text-[#000080] hover:bg-[#000080] hover:text-white font-medium px-2 xl:px-6">
                 <Link to="/register">Register</Link>
               </Button>
             )}

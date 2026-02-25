@@ -39,7 +39,6 @@ const DemoForm = ({ defaultCourse, onSuccess }: DemoFormProps) => {
         course: defaultCourse || "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({
@@ -67,10 +66,7 @@ const DemoForm = ({ defaultCourse, onSuccess }: DemoFormProps) => {
         try {
             await axiosInstance.post("/api/leads/schedule-demo/", payload);
             toast.success("Demo request submitted successfully!");
-            setIsSubmitted(true);
-            setTimeout(() => {
-                onSuccess?.();
-            }, 3000); // Close modal after 3 seconds
+            onSuccess?.();
         } catch (error: any) {
             console.error("Demo Request Error:", error);
             const errorMsg = error.response?.data?.message || "Something went wrong. Please try again.";
@@ -80,34 +76,8 @@ const DemoForm = ({ defaultCourse, onSuccess }: DemoFormProps) => {
         }
     };
 
-    if (isSubmitted) {
-        return (
-            <div className="flex flex-col items-center justify-center py-12 px-4 text-center animate-in fade-in zoom-in duration-300">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-10 w-10"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={3}
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                <p className="text-gray-600">
-                    Your demo request has been received. Our team will contact you shortly to schedule your session.
-                </p>
-                <div className="mt-8 text-sm text-gray-400">
-                    This window will close automatically...
-                </div>
-            </div>
-        );
-    }
-
     return (
-        <form onSubmit={handleSubmit} className="space-y-5 py-2">
+        <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-4">
                 <div className="space-y-2">
                     <Label htmlFor="demo-full_name" className="text-sm font-semibold text-gray-700">Full Name</Label>

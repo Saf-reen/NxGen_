@@ -10,7 +10,7 @@ export const TopBar = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-center py-2 gap-4 border-b border-white/10">
 
                     {/* Social Icons */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 xl:gap-2">
                         <a href="https://www.facebook.com/NxGenTechAcademy/" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Facebook className="w-4 h-4" /></a>
                         <a href="https://www.youtube.com/@NxGenTechAcademy" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Youtube className="w-4 h-4" /></a>
                         <a href="https://www.instagram.com/nxgentechacademy/" target="_blank" className="w-8 h-8 flex items-center justify-center border border-white/30 rounded hover:bg-white/10 transition-colors"><Instagram className="w-4 h-4" /></a>
@@ -24,7 +24,7 @@ export const TopBar = () => {
                     />
 
                     {/* Login Buttons */}
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center gap-1 xl:gap-3 shrink-0">
                         <Link to="/student-login" className="px-4 py-1.5 border border-white rounded text-sm hover:bg-white hover:text-[#000080] transition-colors">
                             Student Login
                         </Link>
@@ -35,7 +35,7 @@ export const TopBar = () => {
                 </div>
 
                 {/* Bottom Row: Contact Info */}
-                <div className="flex flex-wrap justify-left items-center gap-4 py-3 text-sm md:text-base font-medium">
+                <div className="flex flex-wrap justify-start items-center gap-2 xl:gap-4 py-3 text-sm md:text-base font-medium">
                     <div className="flex items-center gap-2 border border-white/30 px-3 py-1 rounded bg-white/5">
                         <span>Corporate: +91 9701314138</span>
                     </div>

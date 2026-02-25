@@ -17,8 +17,8 @@ interface EnrollmentModalProps {
 export const EnrollmentModal = ({ isOpen, onClose, courseTitle, courseType }: EnrollmentModalProps) => {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden rounded-2xl [&>button]:text-white [&>button]:opacity-100 [&>button]:right-6 [&>button]:top-6 [&>button_svg]:h-6 [&>button_svg]:w-6">
-                <div className="bg-[#000080] p-6 text-white">
+            <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden rounded-2xl [&>button]:text-white [&>button]:opacity-100 [&>button]:right-6 [&>button]:top-6 [&>button_svg]:h-6 [&>button_svg]:w-6">
+                <div className="bg-[#000080] p-2 text-white">
                     <DialogHeader>
                         <DialogTitle className="text-2xl font-bold text-white">Enroll Now</DialogTitle>
                         <DialogDescription className="text-blue-100">
@@ -26,7 +26,7 @@ export const EnrollmentModal = ({ isOpen, onClose, courseTitle, courseType }: En
                         </DialogDescription>
                     </DialogHeader>
                 </div>
-                <div className="p-6">
+                <div className="p-2 sm:p-2">
                     <EnrollmentForm
                         defaultCourse={courseTitle}
                         defaultCourseType={courseType}

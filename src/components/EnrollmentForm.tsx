@@ -100,7 +100,7 @@ const EnrollmentForm = ({ defaultCourse, defaultCourseType, onSuccess }: Enrollm
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 max-h-[80vh] overflow-y-auto px-1 py-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-2">
                     <Label htmlFor="fullName" className="text-sm font-semibold text-gray-700">Full Name</Label>
                     <Input
@@ -128,7 +128,7 @@ const EnrollmentForm = ({ defaultCourse, defaultCourseType, onSuccess }: Enrollm
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-2">
                     <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number</Label>
                     <Input
@@ -163,7 +163,7 @@ const EnrollmentForm = ({ defaultCourse, defaultCourseType, onSuccess }: Enrollm
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-2">
                     <Label className="text-sm font-semibold text-gray-700">Course Type</Label>
                     <Select
@@ -197,7 +197,7 @@ const EnrollmentForm = ({ defaultCourse, defaultCourseType, onSuccess }: Enrollm
 
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-2">
                     <Label htmlFor="graduationYear" className="text-sm font-semibold text-gray-700">Graduation Year</Label>
                     <Input
