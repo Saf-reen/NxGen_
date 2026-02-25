@@ -130,7 +130,7 @@ const SasTraining = () => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:w-1/3 space-y-8">
+                    <div className="lg:w-1/3 space-y-8 sticky top-24 self-start">
                         <DemoSidebarCard courseTitle="SAS Training" />
 
                         {/* Related Courses */}

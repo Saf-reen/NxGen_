@@ -268,7 +268,7 @@ const DataAnalyticsCourse = () => {
 
           {/* RIGHT COLUMN (Sidebar) */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
+            <div className="sticky top-24 space-y-6 self-start">
 
               {/* Demo Card */}
               <DemoSidebarCard courseTitle={courseData.title} />

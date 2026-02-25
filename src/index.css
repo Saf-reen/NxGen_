@@ -82,16 +82,15 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    @apply bg-background text-foreground antialiased;
   }
 
   #root {
-    @apply overflow-x-hidden;
+    @apply min-h-screen flex flex-col;
   }
 
   html {
     scroll-behavior: smooth;
-    @apply overflow-x-hidden;
   }
 }
 

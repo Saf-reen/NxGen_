@@ -159,7 +159,7 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                     </div>
 
                     {/* Master Course Card - Highlighted */}
-                    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-[#000080] relative">
+                    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all">
 
                         <div className="grid md:grid-cols-2 gap-0">
                             {/* Left Section - Image/Visual */}
