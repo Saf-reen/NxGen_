@@ -295,10 +295,10 @@ const Home = () => {
             <h3 className="text-2xl font-bold mb-8 text-primary uppercase tracking-wider">Video Success Stories</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
               {[
-                { id: "v1", youtubeId: "AZEZc7j5jDg", title: "SAP FICO Career Transition" },
-                { id: "v2", youtubeId: "Y019HAHgJvc", title: "FullStack .NET Journey" },
-                { id: "v3", youtubeId: "coCLAzYcX7Y", title: "Data Science Success Path" },
-                { id: "v4", youtubeId: "5iO1QlS0g80", title: "AI/ML Journey" },
+                { id: "v1", youtubeId: "AZEZc7j5jDg" },
+                { id: "v2", youtubeId: "Y019HAHgJvc" },
+                { id: "v3", youtubeId: "coCLAzYcX7Y" },
+                { id: "v4", youtubeId: "5iO1QlS0g80" },
               ].map((video) => (
                 <div key={video.id} className="bg-white rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-500 border border-gray-100">
                   <div className="relative aspect-[9/16] bg-black">
@@ -309,9 +309,6 @@ const Home = () => {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
-                  </div>
-                  <div className="p-4 bg-gradient-to-t from-gray-50 to-white">
-                    <h4 className="font-bold text-gray-900 text-sm md:text-base line-clamp-1">{video.title}</h4>
                   </div>
                 </div>
               ))}
