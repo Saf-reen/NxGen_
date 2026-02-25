@@ -134,7 +134,6 @@ export const categoryConfig: Record<string, { title: string; description: string
 };
 
 export const coursesData: CourseData[] = [
-    // SAP Technical - UPDATED CONTENT
     {
         id: "sap-abap-s4hana",
         title: "SAP ABAP on S/4HANA",
