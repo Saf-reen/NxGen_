@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <div className="min-h-screen font-sans text-gray-800">
       <SEO
-        title="Best IT Training & Placement Institute in Pune - NxGen Tech Academy"
+        title="Best IT Training & Placement Institute in Hyderabad - NxGen Tech Academy"
         description="Join Our 100% Job Guarantee Courses. Expert instructors, industry-relevant programs, hands-on training."
         type="website"
         path="/"
@@ -295,10 +295,10 @@ const Home = () => {
             <h3 className="text-2xl font-bold mb-8 text-primary uppercase tracking-wider">Video Success Stories</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
               {[
-                { id: "v1", youtubeId: "AZEZc7j5jDg" },
-                { id: "v2", youtubeId: "Y019HAHgJvc" },
-                { id: "v3", youtubeId: "coCLAzYcX7Y" },
-                { id: "v4", youtubeId: "5iO1QlS0g80" },
+                { id: "v1", youtubeId: "AZEZc7j5jDg", title: "" },
+                { id: "v2", youtubeId: "Y019HAHgJvc", title: "" },
+                { id: "v3", youtubeId: "coCLAzYcX7Y", title: "" },
+                { id: "v4", youtubeId: "-pkVqNifeOA", title: "" },
               ].map((video) => (
                 <div key={video.id} className="bg-white rounded-2xl overflow-hidden shadow-xl group hover:shadow-2xl transition-all duration-500 border border-gray-100">
                   <div className="relative aspect-[9/16] bg-black">
@@ -318,7 +318,7 @@ const Home = () => {
           <h3 className="text-2xl font-bold mb-8 text-primary">Student Experiences</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Ravi Rautele", text: "I have successfully completed my SAP FICO training from NxGen Tech Academy, which gave me a strong understanding of Financial Accounting and Controlling concepts.", course: "SAP FICO" },
+              { name: "Bhargavi", text: "I have successfully completed my SAP FICO training from NxGen Tech Academy, which gave me a strong understanding of Financial Accounting and Controlling concepts.", course: "SAP FICO" },
               { name: "Vinod Goud", text: "THIS MONTH I HAVE COMPLETED SAP FICO COURSE. THE TRAINING IS WELL STRUCTURED AND EASY TO UNDERSTAND. COURSE CONTENT PROVIDES HANDS ON PRATICE.", course: "SAP FICO" },
               { name: "Ritik S. Mourya", text: "I have just completed my FullStack DOT NET training from NxGen Tech Academy. The sessions were very helpful and understanding session throughout the training.", course: "FullStack .NET" },
             ].map((testimonial, i) => (

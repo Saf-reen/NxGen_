@@ -16,6 +16,7 @@ const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c 
 // Add "All"
 const categoriesList = ["All Courses", ...parentCategories];
 
+
 import { PageHero } from "@/components/PageHero";
 
 const AllCourses = () => {
@@ -34,19 +35,38 @@ const AllCourses = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
     // Filter Logic
+    // const filteredCourses = coursesData.filter(course => {
+
+    //     // 1. Search Query
+    //     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+    //     // 2. Category Filter
+    //     // We need to check if the course's categoryId maps to the selected Parent Category
+    //     const config = categoryConfig[course.categoryId];
+    //     const courseParentCategory = config ? config.parentCategory : "Other";
+
+    //     const matchesCategory = selectedCategory === "All Courses" || courseParentCategory === selectedCategory;
+
+    //     return matchesSearch && matchesCategory;
+    // });
     const filteredCourses = coursesData.filter(course => {
-        // 1. Search Query
-        const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-        // 2. Category Filter
-        // We need to check if the course's categoryId maps to the selected Parent Category
-        const config = categoryConfig[course.categoryId];
-        const courseParentCategory = config ? config.parentCategory : "Other";
+        // Search Query
+        const matchesSearch =
+            course.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-        const matchesCategory = selectedCategory === "All Courses" || courseParentCategory === selectedCategory;
+        // Get Parent Category
+        const parentCategory =
+            categoryConfig[course.categoryId]?.parentCategory || "Other";
+
+        // MAIN CATEGORY FILTER ONLY
+        const matchesCategory =
+            selectedCategory === "All Courses" ||
+            parentCategory === selectedCategory;
 
         return matchesSearch && matchesCategory;
     });
+
 
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
@@ -61,7 +81,6 @@ const AllCourses = () => {
                 title="Our Course Basket"
                 description="Explore our wide range of industry-leading courses."
             />
-
             {/* Main Content Area */}
             <div className="container mx-auto px-4 py-12">
 
@@ -147,7 +166,6 @@ const AllCourses = () => {
                                         // Get the category title for this course
                                         const config = categoryConfig[course.categoryId];
                                         const categoryTitle = config ? config.title : "Other";
-
                                         return (
                                             <div
                                                 key={course.id}

@@ -113,7 +113,22 @@ export const Footer = () => {
 
         </div>
 
-        <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
+        {/* Highlighted Footer Section */}
+        <div className="mt-12 bg-gradient-to-r from-[#000080]/20 via-[#000080]/40 to-[#000080]/20 border border-[#000080]/50 rounded-2xl py-8 px-6 text-center transform hover:scale-[1.01] transition-transform duration-300 shadow-lg">
+          <h2 className="text-xl md:text-xl font-bold tracking-wide text-white mb-2">
+            NXGenTech Academy
+          </h2>
+          <p className="text-[#22c55e] font-medium text-lg md:text-lg mb-3">
+            Industry-Focused Learning & Career Development
+          </p>
+          <p className="text-slate-300 text-sm md:text-lg flex items-center justify-center gap-2">
+            <span className="w-8 h-[1px] bg-slate-500"></span>
+            Founded by Sriainfotech Pvt. Ltd.
+            <span className="w-8 h-[1px] bg-slate-500"></span>
+          </p>
+        </div>
+
+        <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
           <p>&copy; NxGen Tech Academy. All Right Reserved.</p>
           <div className="flex gap-6">
             <Link to="/" className="hover:text-white">Home</Link>

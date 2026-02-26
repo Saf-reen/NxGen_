@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHero } from '@/components/PageHero';
+import sriaLogo from '@/assets/sria-logo.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -60,7 +61,7 @@ const About = () => {
     { q: "Is NxGen Tech Academy the best IT training institution in Hyderabad?", a: "Yes. NxGen Tech Academy offers industry-aligned courses, expert mentorship, real-time projects, and strong placement support." },
     { q: "Do the courses include practical training?", a: "Yes. All programs include hands-on sessions and real-world project experience." },
     { q: "Is placement support available?", a: "Yes. We provide resume building, interview preparation, internships, and full placement assistance." },
-    { q: "Who can enrol at NxGen Tech Academy?", a: "Students, graduates, and working professionals can join based on course eligibility." }
+    { q: "Who can enroll at NxGen Tech Academy?", a: "Students, graduates, and working professionals can join based on course eligibility." }
   ];
 
   const faqSchema = {
@@ -130,6 +131,43 @@ const About = () => {
                 <p className="text-gray-600 font-medium">Years Experience</p>
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 2.5: Brand Introduction */}
+      <section className="pt-0 pb-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="bg-white border-b-4 border-[#000080] p-8 md:p-12 rounded-3xl shadow-xl shadow-[#000080]/5"
+          >
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 border-b border-gray-100 pb-8 mb-8">
+              <div className="bg-white p-4 rounded-2xl shrink-0 border border-gray-100 shadow-sm">
+                <img src={sriaLogo} alt="Sriainfotech Logo" className="w-32 md:w-48 h-auto object-contain" />
+              </div>
+              <div className="text-center md:text-left pt-2">
+                <h3 className="text-3xl font-bold text-[#000080] mb-4 tracking-tight">NXGenTech Academy</h3>
+                <div className="inline-flex items-center gap-3 px-5 py-3 bg-green-50 rounded-xl border border-green-100">
+                  <span className="w-2.5 h-2.5 bg-[#22c55e] rounded-full animate-pulse shrink-0"></span>
+                  <p className="font-semibold text-gray-800 text-base md:text-lg">
+                    A Skill Development Brand Founded by Sriainfotech Pvt. Ltd.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6 text-gray-700">
+              <p className="text-lg leading-relaxed">
+                <strong className="text-gray-900 font-bold">NXGenTech Academy</strong> is a career-oriented IT training institute dedicated to building industry-ready professionals through structured, practical, and performance-driven education.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Founded by <strong className="text-gray-900 font-medium">Sriainfotech Pvt. Ltd.</strong>, NXGenTech Academy was established with a clear vision — to bridge the gap between academic learning and real-world industry requirements. The academy functions as a specialized skill development platform designed to prepare students, graduates, and working professionals for modern technology careers.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -486,7 +524,7 @@ const About = () => {
                 <Button size="lg" className="bg-[#000080] hover:bg-[#000080]/80 text-white py-6 px-8 text-lg rounded-full shadow-lg hover:shadow-green-500/20 transition-all">
                   Get Started Now
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/20 hover:bg-white/10 text-white hover:text-white py-6 px-8 text-lg rounded-full">
+                <Button variant="outline" size="lg" className="border-white/20 bg-white/10 hover:bg-[#000080]/80 text-white hover:text-white py-6 px-8 text-lg rounded-full">
                   Contact Support
                 </Button>
               </div>
