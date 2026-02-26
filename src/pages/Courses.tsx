@@ -6,7 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { Preloader } from "@/components/Preloader";
 import { categories, getCoursesByCategory } from "@/data";
 import type { Course } from "@/data/types";
-import { SEO } from '@/components/SEO';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from "lucide-react";
 import WalkingCharacter from "@/components/WalkingCharacter";
 
@@ -34,17 +34,26 @@ const Courses = () => {
   }, [selectedCategory]);
 
   const filteredCourses = getCoursesByCategory(selectedCategory);
+  const siteUrl = "https://nxgentechacademy.com";
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Best Software Training Institute in Hyderabad | NxGen Tech Academy</title>
+        <meta name="description" content="Looking for the best software training institute in Hyderabad? NxGen Tech Academy offers professional courses in Full Stack, Data Science, and more with placement support." />
+        <link rel="canonical" href={`${siteUrl}/courses`} />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Best Software Training Institute in Hyderabad | NxGen Tech Academy" />
+        <meta property="og:description" content="Top software training institute in Hyderabad. Master industry-demand skills with expert mentors." />
+        <meta property="og:url" content={`${siteUrl}/courses`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <Preloader isLoading={isLoading} threshold={800} />
-      <SEO
-        title="Courses – NxGen Tech Academy"
-        description="Explore our professional courses in Full Stack, Python, Data Science, Power BI, Testing, and Cybersecurity. Practical, project-based training with placement support."
-        keywords={categories.map(c => c.name).join(', ')}
-      />
+
       <PageHero
-        title="Our Courses"
+        title="Software Training Institute in Hyderabad"
         description="Choose from our comprehensive range of courses designed to help you achieve your career goals"
       />
 

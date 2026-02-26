@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Smartphone, Clock, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { Helmet } from 'react-helmet-async';
 import { CourseCarousel } from "@/components/CourseCarousel";
 import { DemoModal } from "@/components/DemoModal";
 
@@ -56,14 +56,22 @@ const Home = () => {
     setCurrentSlide(index);
   };
 
+  const siteUrl = "https://nxgentechacademy.com";
+
   return (
     <div className="min-h-screen font-sans text-gray-800">
-      <SEO
-        title="Best IT Training & Placement Institute in Hyderabad - NxGen Tech Academy"
-        description="Join Our 100% Job Guarantee Courses. Expert instructors, industry-relevant programs, hands-on training."
-        type="website"
-        path="/"
-      />
+      <Helmet>
+        <title>Best IT Training Institute in Hyderabad | NxGen Tech Academy</title>
+        <meta name="description" content="NxGen Tech Academy is the leading IT training institute in Hyderabad, offering professional courses in SAP, Python, Data Science, and more with 100% placement assistance." />
+        <link rel="canonical" href={siteUrl} />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Best IT Training Institute in Hyderabad | NxGen Tech Academy" />
+        <meta property="og:description" content="Join the best IT training institute in Hyderabad for SAP, Python, Data Science, and more. Get 100% placement assistance." />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+      </Helmet>
 
       {/* Hero Section with Carousel */}
       <section className="relative bg-white text-gray-800 py-2 lg:py-4 overflow-hidden">
@@ -73,7 +81,7 @@ const Home = () => {
             <div>
               <p className="text-xl md:text-2xl text-gray-600 font-medium mb-2">Upscale Your Career in IT Industry</p>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-black">
-                Certification &amp; Training Programs
+                IT Training Institute in Hyderabad
               </h1>
             </div>
 

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { SEO } from "@/components/SEO";
 import { Input } from "@/components/ui/input";
 import { Search, ArrowLeft, PlayCircle, Code, Award, Users, Layers, Workflow, Blocks, Database, Brain, Globe, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -10,6 +9,7 @@ import { categoryConfig, coursesData } from "@/data/categoryCourses";
 import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
 import DemoSidebarCard from "@/components/DemoSidebarCard";
+import { Helmet } from 'react-helmet-async';
 
 const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
     const config = categorySlug ? categoryConfig[categorySlug] : null;
@@ -23,6 +23,9 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
         course.categoryId === categorySlug &&
         course.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+    const siteUrl = "https://nxgentechacademy.com";
+    const pageUrl = `${siteUrl}/courses/${categorySlug}`;
 
     // SAP BTP Specific Architecture Data
     const isBTP = categorySlug === "sap-btp";
@@ -66,15 +69,18 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
 
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
-            <SEO
-                title={`${config.title} - NxGen Tech Academy`}
-                description={config.description}
-                type="website"
-                path={`/courses/${categorySlug}`}
-            />
+            <Helmet>
+                <title>{`${config.title} - SAP Training in Hyderabad | NxGen Tech Academy`}</title>
+                <meta name="description" content={`${config.description} Enroll for the best SAP training in Hyderabad with 100% placement assistance and expert mentors.`} />
+                <link rel="canonical" href={pageUrl} />
+                <meta property="og:title" content={`${config.title} - SAP Training in Hyderabad`} />
+                <meta property="og:description" content={config.description} />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:type" content="website" />
+            </Helmet>
 
             <PageHero
-                title={config.title}
+                title={`SAP Training in Hyderabad - ${config.title}`}
                 description={config.description}
             >
                 <Link to="/courses-menu" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
