@@ -94,7 +94,7 @@ const App = () => (
     <TooltipProvider>
       <div className="min-h-screen text-black bg-white">
         <Helmet>
-          <title>NxGen Tech Academy - Best IT Training & Placement Institute in Pune</title>
+          <title>NxGen Tech Academy - Best IT Training & Placement Institute in Hyderabad</title>
           <meta name="description" content="Join Our 100% Job Guarantee Courses. NxGen Tech Academy offers best IT training in Pune." />
           <meta name="keywords" content={categories.map(c => c.name).join(', ')} />
         </Helmet>

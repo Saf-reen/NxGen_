@@ -122,21 +122,77 @@ const AllCourses = () => {
                     <div className="w-full lg:w-3/4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {(() => {
-                                // 1. Check for Sub-Categories first (e.g. for "SAP Courses")
-                                const subCategories = Object.entries(categoryConfig)
-                                    .filter(([_, config]) => config.parentCategory === selectedCategory)
-                                    .map(([key, config]) => ({ key, ...config }));
+                                let displayList: any[] = [];
 
-                                // If we have multiple sub-categories, show them instead of raw courses
-                                if (subCategories.length > 1) {
-                                    return subCategories.map((subCat) => (
+                                if (selectedCategory === "All Courses") {
+                                    // Group categories to determine which ones have multiple subcategories
+                                    const parentCounts: Record<string, number> = {};
+                                    Object.values(categoryConfig).forEach(c => {
+                                        parentCounts[c.parentCategory] = (parentCounts[c.parentCategory] || 0) + 1;
+                                    });
+
+                                    const multiSubCatParents = Object.keys(parentCounts).filter(p => parentCounts[p] > 1);
+
+                                    // Add the subcategories themselves for grouped parents
+                                    const groupSubCats = Object.entries(categoryConfig)
+                                        .filter(([_, config]) => multiSubCatParents.includes(config.parentCategory))
+                                        .map(([key, config]) => ({ type: 'category', id: key, ...config }));
+
+                                    const filteredGroupSubCats = searchQuery
+                                        ? groupSubCats.filter(cat => cat.title.toLowerCase().includes(searchQuery.toLowerCase()))
+                                        : groupSubCats;
+
+                                    // Add individual courses for non-grouped parents
+                                    const individualCourses = filteredCourses
+                                        .filter(course => {
+                                            const config = categoryConfig[course.categoryId];
+                                            const parentCategory = config ? config.parentCategory : "Other";
+                                            return !multiSubCatParents.includes(parentCategory);
+                                        })
+                                        .map(course => ({ type: 'course', id: course.id, ...course }));
+
+                                    displayList = [...filteredGroupSubCats, ...individualCourses];
+
+                                } else {
+                                    // Specific Category Selected
+                                    const subCategories = Object.entries(categoryConfig)
+                                        .filter(([_, config]) => config.parentCategory === selectedCategory)
+                                        .map(([key, config]) => ({ type: 'category', id: key, ...config }));
+
+                                    if (subCategories.length > 1) {
+                                        displayList = searchQuery
+                                            ? subCategories.filter(cat => cat.title.toLowerCase().includes(searchQuery.toLowerCase()))
+                                            : subCategories;
+                                    } else {
+                                        displayList = filteredCourses.map(course => ({ type: 'course', id: course.id, ...course }));
+                                    }
+                                }
+
+                                if (displayList.length === 0) {
+                                    return (
+                                        <div className="col-span-full text-center py-10 text-gray-500">
+                                            <p className="text-xl">No courses found matching your criteria.</p>
+                                            <Button asChild variant="link" className="mt-2 text-[#000080]">
+                                                <Link to="/contact">Contact us for custom requirements</Link>
+                                            </Button>
+                                        </div>
+                                    );
+                                }
+
+                                return displayList.map((item) => {
+                                    const isSubCat = item.type === 'category';
+                                    const desc = isSubCat
+                                        ? item.description
+                                        : item.description || `Comprehensive training on ${item.title} including real-world projects and certification.`;
+
+                                    return (
                                         <div
-                                            key={subCat.key}
+                                            key={item.id}
                                             className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
                                         >
                                             <div className="mb-4">
                                                 <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                                                    {subCat.title}
+                                                    {item.title}
                                                 </h3>
                                             </div>
 
@@ -144,69 +200,21 @@ const AllCourses = () => {
 
                                             <div className="flex-grow">
                                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                                    {subCat.description}
+                                                    {desc}
                                                 </p>
                                             </div>
 
-                                            <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                            <div className={`pt-4 border-t border-gray-100 flex items-center justify-between ${isSubCat ? 'mt-6' : 'mt-4'}`}>
                                                 <Link
-                                                    to={`/courses/${subCat.key}`}
-                                                    className="text-[#000080] font-semibold text-sm hover:underline"
+                                                    to={`/courses/${item.id}`}
+                                                    className={`text-[#000080] text-sm hover:underline ${isSubCat ? 'font-semibold' : 'font-bold'}`}
                                                 >
                                                     Explore Category
                                                 </Link>
                                             </div>
                                         </div>
-                                    ));
-                                }
-
-                                // 2. Fallback to showing individual courses
-                                if (filteredCourses.length > 0) {
-                                    return filteredCourses.map((course) => {
-                                        // Get the category title for this course
-                                        const config = categoryConfig[course.categoryId];
-                                        const categoryTitle = config ? config.title : "Other";
-                                        return (
-                                            <div
-                                                key={course.id}
-                                                className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
-                                            >
-                                                <div className="mb-4">
-                                                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                                                        {course.title}
-                                                    </h3>
-                                                </div>
-
-                                                <div className="w-full h-px bg-gray-200 mb-4"></div>
-
-                                                <div className="flex-grow">
-                                                    <p className="text-gray-600 text-sm leading-relaxed">
-                                                        {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
-                                                    </p>
-                                                </div>
-
-                                                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
-                                                    <Link
-                                                        to={`/courses/${course.id}`}
-                                                        className="text-[#000080] font-bold text-sm hover:underline"
-                                                    >
-                                                        Explore Category
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        );
-                                    });
-                                }
-
-                                // 3. Empty State
-                                return (
-                                    <div className="col-span-full text-center py-10 text-gray-500">
-                                        <p className="text-xl">No courses found matching your criteria.</p>
-                                        <Button asChild variant="link" className="mt-2 text-[#000080]">
-                                            <Link to="/contact">Contact us for custom requirements</Link>
-                                        </Button>
-                                    </div>
-                                );
+                                    );
+                                });
                             })()}
                         </div>
                     </div>
