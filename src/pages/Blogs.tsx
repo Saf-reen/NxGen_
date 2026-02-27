@@ -1,92 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, User, Clock, ChevronRight, Eye, Share2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHero } from '@/components/PageHero';
+import { blogService, BlogPost } from '@/services/blogService';
+import { toast } from 'sonner';
 
-const blogPosts = [
+const defaultBlogPosts = [
     {
         id: 1,
         title: "SAS Certification Course in Canada (North America)",
+        slug: "sas-certification-course-in-canada-north-america",
         excerpt: "Explore the opportunities of SAS certification in the North American market and how it can boost your data career.",
-        date: "2025-12-12",
-        author: "Admin",
+        created_at: "2025-12-12",
+        author_name: "Admin",
         category: "SAS",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop",
-        readTime: "5 min read",
-        views: "2.4k",
-        comments: 12,
-        shares: 45
+        image_url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop",
     },
     {
         id: 2,
         title: "Get Certified and Advance Your Career with SAS Data & AI Programs",
+        slug: "get-certified-and-advance-your-career-with-sas-data-ai-programs",
         excerpt: "Learn how SAS Data & AI programs are shaping the future of analytics and why you should get certified now.",
-        date: "2025-10-06",
-        author: "Admin",
+        created_at: "2025-10-06",
+        author_name: "Admin",
         category: "Career",
-        image: "https://images.unsplash.com/photo-1599658880436-e252446958d5?q=80&w=600&auto=format&fit=crop",
-        readTime: "7 min read",
-        views: "1.8k",
-        comments: 8,
-        shares: 32
+        image_url: "https://images.unsplash.com/photo-1599658880436-e252446958d5?q=80&w=600&auto=format&fit=crop",
     },
     {
         id: 3,
         title: "What is Data Analytics? Types and Benefits Explained",
+        slug: "what-is-data-analytics-types-and-benefits-explained",
         excerpt: "A comprehensive guide to understanding Data Analytics, its different types, and how it benefits modern businesses.",
-        date: "2025-10-06",
-        author: "Admin",
+        created_at: "2025-10-06",
+        author_name: "Admin",
         category: "Data Analytics",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-        readTime: "6 min read",
-        views: "3.1k",
-        comments: 24,
-        shares: 89
-    },
-    {
-        id: 4,
-        title: "What is SAP S/4HANA? A Complete Guide",
-        excerpt: "Discover the power of SAP S/4HANA, the next-generation ERP business suite.",
-        date: "2025-09-15",
-        author: "Admin",
-        category: "SAP",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-        readTime: "8 min read",
-        views: "4.2k",
-        comments: 18,
-        shares: 56
-    },
-    {
-        id: 5,
-        title: "SuccessFactors Employee Central: Key Features & Benefits",
-        excerpt: "Deep dive into SAP SuccessFactors Employee Central and how it revolutionizes HR operations.",
-        date: "2025-08-22",
-        author: "Admin",
-        category: "SAP SuccessFactors",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop",
-        readTime: "4 min read",
-        views: "1.5k",
-        comments: 6,
-        shares: 21
-    },
-    {
-        id: 6,
-        title: "The Future of Cloud Computing with AWS and Azure",
-        excerpt: "Comparing AWS and Azure: Which cloud platform is right for your career path in 2026?",
-        date: "2025-07-10",
-        author: "Admin",
-        category: "Cloud Computing",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop",
-        readTime: "6 min read",
-        views: "2.8k",
-        comments: 15,
-        shares: 48
+        image_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
     }
 ];
 
 const Blogs = () => {
+    const [blogs, setBlogs] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
+
+    const fetchBlogs = async () => {
+        try {
+            setLoading(true);
+            const data = await blogService.getAllBlogs();
+            const fetched = data?.results || data || [];
+
+            // Only show published blogs
+            const published = fetched.filter((b: any) => b.status === "Published" || !b.status);
+            setBlogs(published.length > 0 ? published : defaultBlogPosts);
+        } catch (error) {
+            console.error("Failed to fetch blogs from API:", error);
+            // Fallback to default blogs
+            setBlogs(defaultBlogPosts);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="min-h-screen font-sans bg-gray-50">
             <SEO
@@ -110,96 +89,84 @@ const Blogs = () => {
             {/* Blog Grid Section */}
             <section className="py-16 lg:py-24">
                 <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post) => (
-                            <article
-                                key={post.id}
-                                className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group flex flex-col h-full"
-                            >
-                                {/* Image Container */}
-                                <div className="relative h-48 overflow-hidden">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute top-4 left-4">
-                                        <span className="bg-[#000080] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                                            {post.category}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
-                                        <span className="flex items-center gap-1">
-                                            <Calendar className="w-3 h-3" />
-                                            {post.date}
-                                        </span>
-                                        <span className="flex items-center gap-1">
-                                            <Clock className="w-3 h-3" />
-                                            {post.readTime}
-                                        </span>
-                                    </div>
-
-                                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-[#000080] transition-colors">
-                                        {post.title}
-                                    </h2>
-
-                                    <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed flex-grow">
-                                        {post.excerpt}
-                                    </p>
-
-                                    {/* Stats */}
-                                    <div className="flex items-center gap-6 text-gray-400 text-xs mb-4 pt-4 border-t border-gray-50">
-                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Views">
-                                            <Eye className="w-4 h-4" />
-                                            <span>{post.views}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Comments">
-                                            <MessageCircle className="w-4 h-4" />
-                                            <span>{post.comments}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1.5 hover:text-[#000080] transition-colors cursor-pointer" title="Shares">
-                                            <Share2 className="w-4 h-4" />
-                                            <span>{post.shares}</span>
+                    {loading ? (
+                        <div className="text-center py-20 text-gray-500">Loading blogs...</div>
+                    ) : (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {blogs.map((post) => (
+                                <article
+                                    key={post.id}
+                                    className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group flex flex-col h-full"
+                                >
+                                    {/* Image Container */}
+                                    <div className="relative h-48 overflow-hidden">
+                                        <img
+                                            src={post.image_url || post.image || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop"}
+                                            alt={post.title}
+                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-[#000080] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md w-max max-w-full">
+                                                {post.category || "General"}
+                                            </span>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
-                                                <User className="w-4 h-4" />
+                                    {/* Content */}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                                            <span className="flex items-center gap-1">
+                                                <Calendar className="w-3 h-3" />
+                                                {post.created_at ? new Date(post.created_at).toLocaleDateString() : (post.date || 'Unknown Date')}
+                                            </span>
+                                            <span className="flex items-center gap-1">
+                                                <Clock className="w-3 h-3" />
+                                                5 min read
+                                            </span>
+                                        </div>
+
+                                        <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-[#000080] transition-colors">
+                                            {post.title}
+                                        </h2>
+
+                                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed flex-grow">
+                                            {post.excerpt}
+                                        </p>
+
+                                        <div className="flex items-center justify-between mt-auto">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
+                                                    <User className="w-4 h-4" />
+                                                </div>
+                                                <span className="text-xs font-medium text-gray-700">By {post.author_name || post.author || "Admin"}</span>
                                             </div>
-                                            <span className="text-xs font-medium text-gray-700">By {post.author}</span>
+                                            <Link
+                                                to={`/blogs/${post.slug || post.id}`}
+                                                className="text-[#000080] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                                            >
+                                                Read More <ArrowRight className="w-4 h-4" />
+                                            </Link>
                                         </div>
-                                        <Link
-                                            to="#"
-                                            className="text-[#000080] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all"
-                                        >
-                                            Read More <ArrowRight className="w-4 h-4" />
-                                        </Link>
                                     </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    )}
 
-                    {!blogPosts.length && (
+                    {!loading && !blogs.length && (
                         <div className="text-center py-20">
                             <p className="text-gray-500 text-lg">No blog posts found.</p>
                         </div>
                     )}
 
                     {/* Pagination Placeholder */}
-                    <div className="mt-16 flex justify-center gap-2">
-                        <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50" disabled>Previous</Button>
-                        <Button className="bg-[#000080] hover:bg-[#000080]/90 text-white">1</Button>
-                        <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">2</Button>
-                        <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">3</Button>
-                        <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">Next</Button>
-                    </div>
+                    {!loading && blogs.length > 0 && (
+                        <div className="mt-16 flex justify-center gap-2">
+                            <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50" disabled>Previous</Button>
+                            <Button className="bg-[#000080] hover:bg-[#000080]/90 text-white">1</Button>
+                            <Button variant="outline" className="border-gray-300 text-gray-600 hover:bg-gray-50">Next</Button>
+                        </div>
+                    )}
                 </div>
             </section>
 

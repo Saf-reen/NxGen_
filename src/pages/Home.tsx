@@ -183,7 +183,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold mb-4 text-primary">Why Do Professionals Choose Our Institution?</h2>
             <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
             <p className="text-gray-600 leading-relaxed">
-              Professionals choose NxGen Tech Academy Institution for their IT education for a multitude of reasons: expert instructors, industry-relevant programs, hands-on training, personalized career support, and a track record of success.
+              Working professionals choose NxGen Tech Academy because we focus on results, relevance, and reliability. We combine academic depth with industry exposure, which strengthens our position among the <b>top software training institutes in Hyderabad with placements.</b>
             </p>
           </div>
 

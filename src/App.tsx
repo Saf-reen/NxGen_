@@ -32,28 +32,31 @@ import StudentLogin from "./pages/Auth/StudentLogin";
 import InstructorLogin from "./pages/Auth/InstructorLogin";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import CourseViewer from "./pages/Dashboard/CourseViewer";
+import AdminLogin from "./pages/Admin/AdminLogin";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+import BlogDetail from "./pages/BlogDetail";
 import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   const location = useLocation();
-  const authPages = ["/register", "/student-login", "/instructor-login"];
+  const authPages = ["/register", "/student-login", "/instructor-login", "/admin-login"];
   const isAuthPage = authPages.includes(location.pathname);
 
   const role = localStorage.getItem("role");
-  const isDashboard = location.pathname.startsWith("/dashboard");
-  const isStudentOrInstructorLoggedIn = !!role && (role === "student" || role === "instructor");
+  const isDashboard = location.pathname.startsWith("/dashboard") || location.pathname.startsWith("/admin");
+  const isStudentOrInstructorLoggedIn = !!role && (role === "student" || role === "instructor" || role === "admin");
 
-  // Hide TopBar and Footer for auth pages OR when a student/instructor is logged in and on a dashboard/auth page
-  const hideComponents = isAuthPage || isStudentOrInstructorLoggedIn;
+  // Hide TopBar, Navbar, and Footer for auth pages OR when logged in on a dashboard/admin page
+  const hideComponents = isAuthPage || isStudentOrInstructorLoggedIn || location.pathname.startsWith("/admin");
 
   return (
     <>
       <GTMPageView />
       <ScrollToTop />
       {!hideComponents && <TopBar />}
-      <Navbar />
+      {!hideComponents && <Navbar />}
       <main>
         <Routes>
           <Route index element={<Home />} />
@@ -76,11 +79,14 @@ const AppContent = () => {
           <Route path="contact" element={<ContactPage />} />
           <Route path="why-choose-us" element={<WhyChooseUs />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:slug" element={<BlogDetail />} />
           <Route path="register" element={<Register />} />
           <Route path="student-login" element={<StudentLogin />} />
           <Route path="instructor-login" element={<InstructorLogin />} />
+          <Route path="admin-login" element={<AdminLogin />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="dashboard/course/:id" element={<CourseViewer />} />
+          <Route path="admin/*" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
