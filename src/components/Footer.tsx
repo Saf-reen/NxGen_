@@ -86,6 +86,11 @@ export const Footer = () => {
                   <span className="w-1.5 h-1.5 bg-[#000080] rounded-full"></span> Data Analytics
                 </Link>
               </li>
+              <li>
+                <Link to="/all-courses?category=Digital Marketing" className="hover:text-white transition-colors flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-[#000080] rounded-full"></span> Digital Marketing
+                </Link>
+              </li>
             </ul>
           </div>
 

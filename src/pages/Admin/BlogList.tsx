@@ -20,14 +20,14 @@ export default function BlogList() {
             const data = await blogService.getAllBlogs();
             // Handle cases where data is paginated or not
             const fetchedBlogs = data?.results || data || [];
-            if (Array.isArray(fetchedBlogs) && fetchedBlogs.length > 0) {
+            if (Array.isArray(fetchedBlogs)) {
                 setBlogs(fetchedBlogs);
             } else {
-                setBlogs(fallbackData);
+                setBlogs([]);
             }
-        } catch (error) {
-            toast.error("Failed to load blogs from API. Using local test data.");
-            setBlogs(fallbackData);
+        } catch (error: any) {
+            toast.error(error.response?.data?.detail || "Failed to load blogs from API.");
+            setBlogs([]);
         } finally {
             setLoading(false);
         }
@@ -44,9 +44,8 @@ export default function BlogList() {
             await blogService.deleteBlog(id);
             toast.success("Blog deleted successfully!");
             fetchBlogs();
-        } catch (error) {
-            toast.success("Blog deleted (Mock update successfully!)");
-            setBlogs(blogs.filter(b => b.id !== id));
+        } catch (error: any) {
+            toast.error(error.response?.data?.detail || "Failed to delete blog. Please try again.");
         }
     };
 
@@ -57,8 +56,8 @@ export default function BlogList() {
     });
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 min-h-[80vh]">
-            <div className="flex justify-between items-center mb-8 border-b border-slate-100 pb-4">
+        <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-100 min-h-[80vh]">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 border-b border-slate-100 pb-4">
                 <h1 className="text-2xl font-bold text-slate-800">Manage Blogs</h1>
                 <Link
                     to="/admin/blogs/create"
@@ -69,7 +68,7 @@ export default function BlogList() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-4 mb-6">
-                <div className="relative flex-1">
+                <div className="relative flex-1 w-full">
                     <Search className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                     <input
                         type="text"
@@ -79,10 +78,10 @@ export default function BlogList() {
                         className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#000080] focus:bg-white transition-all"
                     />
                 </div>
-                <div className="flex gap-2 items-center">
-                    <Filter className="h-4 w-4 text-slate-400" />
+                <div className="flex gap-2 items-center w-full md:w-auto">
+                    <Filter className="h-4 w-4 text-slate-400 shrink-0" />
                     <select
-                        className="border border-slate-200 bg-slate-50 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#000080] focus:bg-white transition-all"
+                        className="w-full md:w-auto border border-slate-200 bg-slate-50 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#000080] focus:bg-white transition-all"
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
                     >

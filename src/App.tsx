@@ -41,15 +41,15 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const location = useLocation();
-  const authPages = ["/register", "/student-login", "/instructor-login", "/admin-login"];
+  const authPages = ["/register", "/student-login", "/instructor-login"];
   const isAuthPage = authPages.includes(location.pathname);
 
   const role = localStorage.getItem("role");
-  const isDashboard = location.pathname.startsWith("/dashboard") || location.pathname.startsWith("/admin");
-  const isStudentOrInstructorLoggedIn = !!role && (role === "student" || role === "instructor" || role === "admin");
+  const isStudentOrInstructorLoggedIn = !!role && (role === "student" || role === "instructor");
+  const isAdminDashboard = location.pathname.startsWith("/admin") && location.pathname !== "/admin-login";
 
-  // Hide TopBar, Navbar, and Footer for auth pages OR when logged in on a dashboard/admin page
-  const hideComponents = isAuthPage || isStudentOrInstructorLoggedIn || location.pathname.startsWith("/admin");
+  // Hide TopBar, Navbar, and Footer for auth pages OR when logged in on a dashboard/admin panel
+  const hideComponents = isAuthPage || isStudentOrInstructorLoggedIn || isAdminDashboard;
 
   return (
     <>

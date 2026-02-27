@@ -18,6 +18,9 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
     const [loading, setLoading] = useState(false);
     const quillRef = useRef<ReactQuill>(null);
 
+    const [imageFile, setImageFile] = useState<File | null>(null);
+    const [videoFile, setVideoFile] = useState<File | null>(null);
+
     const [formData, setFormData] = useState<BlogPost>({
         title: "",
         slug: "",
@@ -55,6 +58,14 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            if (e.target.name === 'imageFile') setImageFile(file);
+            if (e.target.name === 'videoFile') setVideoFile(file);
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!formData.title || !formData.content) {
@@ -64,18 +75,37 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
 
         setLoading(true);
         try {
+            const submitData = new FormData();
+
+            Object.entries(formData).forEach(([key, value]) => {
+                if (key !== 'image_url' && key !== 'video_url' && value !== undefined && value !== null) {
+                    submitData.append(key, String(value));
+                }
+            });
+
+            if (imageFile) {
+                submitData.append('image_url', imageFile);
+            } else if (formData.image_url) {
+                submitData.append('image_url', formData.image_url);
+            }
+
+            if (videoFile) {
+                submitData.append('video_url', videoFile);
+            } else if (formData.video_url) {
+                submitData.append('video_url', formData.video_url);
+            }
+
             if (isEdit && initialData?.id) {
-                await blogService.updateBlog(initialData.id, formData);
+                await blogService.updateBlog(initialData.id, submitData);
                 toast.success("Blog updated successfully!");
             } else {
-                await blogService.createBlog(formData);
+                await blogService.createBlog(submitData);
                 toast.success("Blog created successfully!");
             }
             navigate("/admin/blogs");
-        } catch (error) {
-            console.error(error);
-            toast.success("Blog saved successfully (Mock)");
-            navigate("/admin/blogs");
+        } catch (error: any) {
+            console.error("API Error detailed:", error.response?.data || error.message);
+            toast.error(error.response?.data?.detail || error.message || "Failed to save blog post. Please check your network and API endpoint.");
         } finally {
             setLoading(false);
         }
@@ -115,8 +145,8 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
     }), []);
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-8 bg-white max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <form onSubmit={handleSubmit} className="space-y-8 bg-white max-w-5xl w-full mx-auto md:p-6 p-4 border rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-3">
                     <Label htmlFor="title" className="text-sm font-semibold text-slate-700">Blog Title <span className="text-red-500">*</span></Label>
                     <Input id="title" name="title" value={formData.title} onChange={handleTitleChange} required className="h-12 bg-slate-50 border-slate-200 focus:ring-[#000080]" placeholder="Enter Blog Title" />
@@ -166,12 +196,14 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
                     <Input id="tags" name="tags" value={formData.tags} onChange={handleInputChange} className="h-12 bg-slate-50 border-slate-200" placeholder="e.g. sap, certification, career" />
                 </div>
                 <div className="space-y-3">
-                    <Label htmlFor="image_url" className="text-sm font-semibold text-slate-700">Upload Featured Image (URL)</Label>
-                    <Input id="image_url" name="image_url" value={formData.image_url} onChange={handleInputChange} className="h-12 bg-slate-50 border-slate-200" placeholder="https://..." />
+                    <Label htmlFor="imageFile" className="text-sm font-semibold text-slate-700">Upload Featured Image</Label>
+                    <Input id="imageFile" name="imageFile" type="file" accept="image/*" onChange={handleFileChange} className="h-12 bg-slate-50 border-slate-200 pt-3 cursor-pointer" />
+                    {isEdit && formData.image_url && <p className="text-xs text-slate-500 mt-1">Current image: {formData.image_url}</p>}
                 </div>
                 <div className="space-y-3">
-                    <Label htmlFor="video_url" className="text-sm font-semibold text-slate-700">Upload Video (Optional URL)</Label>
-                    <Input id="video_url" name="video_url" value={formData.video_url} onChange={handleInputChange} className="h-12 bg-slate-50 border-slate-200" placeholder="YouTube or Vimeo Embed URL..." />
+                    <Label htmlFor="videoFile" className="text-sm font-semibold text-slate-700">Upload Video (Optional)</Label>
+                    <Input id="videoFile" name="videoFile" type="file" accept="video/*" onChange={handleFileChange} className="h-12 bg-slate-50 border-slate-200 pt-3 cursor-pointer" />
+                    {isEdit && formData.video_url && <p className="text-xs text-slate-500 mt-1">Current video: {formData.video_url}</p>}
                 </div>
                 <div className="space-y-3">
                     <Label htmlFor="excerpt" className="text-sm font-semibold text-slate-700">Short Description / Excerpt</Label>
@@ -180,8 +212,8 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
             </div>
 
             <div className="space-y-3 border-t border-slate-200 pt-8 mt-8">
-                <div className="flex justify-between items-center mb-2">
-                    <Label className="text-sm font-semibold text-slate-700 text-lg">Blog Content (Rich Text Editor) <span className="text-red-500">*</span></Label>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
+                    <Label className="text-sm font-semibold text-slate-700 sm:text-lg">Blog Content (Rich Text Editor) <span className="text-red-500">*</span></Label>
 
                     {/* Custom Undo Redo actions to satisfy requirements explicitly */}
                     <div className="flex gap-2 bg-slate-100 rounded-md p-1 border">
@@ -203,11 +235,11 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
                 </div>
             </div>
 
-            <div className="flex justify-end pt-8 gap-4 border-t border-slate-200">
-                <Button type="button" variant="outline" onClick={() => navigate("/admin/blogs")} className="h-12 px-8 font-medium">
+            <div className="flex flex-col sm:flex-row justify-end pt-8 gap-4 border-t border-slate-200">
+                <Button type="button" variant="outline" onClick={() => navigate("/admin/blogs")} className="w-full sm:w-auto h-12 px-8 font-medium">
                     Cancel
                 </Button>
-                <Button type="submit" className="bg-[#000080] hover:bg-[#000080]/90 text-white h-12 px-8 font-medium shadow-md" disabled={loading}>
+                <Button type="submit" className="w-full sm:w-auto bg-[#000080] hover:bg-[#000080]/90 text-white h-12 px-8 font-medium shadow-md" disabled={loading}>
                     {loading ? "Submitting..." : "Submit Blog"}
                 </Button>
             </div>

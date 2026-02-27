@@ -218,6 +218,9 @@ export const Navbar = () => {
             <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/blogs">Blogs</Link>
             </Button>
+            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
             {localStorage.getItem("username") ? (
               <>
                 <Button asChild className="bg-secondary hover:bg-secondary/90 text-white font-medium px-2 xl:px-6">
@@ -261,6 +264,9 @@ export const Navbar = () => {
             </Button>
             <Button asChild className="w-full bg-[#000080] text-white">
               <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
+            </Button>
+            <Button asChild className="w-full bg-[#000080] text-white">
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
             </Button>
             {localStorage.getItem("username") ? (
               <>

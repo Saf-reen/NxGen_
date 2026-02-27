@@ -15,19 +15,22 @@ export interface BlogPost {
     author_name?: string;
 }
 
-const getHeaders = () => {
+const getHeaders = (isMultipart = false) => {
     const token = localStorage.getItem("access_token");
-    return {
-        headers: {
-            "Authorization": `Bearer ${token}`
-        }
+    const headers: any = {
+        "Authorization": `Bearer ${token}`
     };
+    if (isMultipart) {
+        headers["Content-Type"] = "multipart/form-data";
+    }
+    return { headers };
 };
 
 export const blogService = {
     getAllBlogs: async (params?: any) => {
         try {
-            const res = await axiosInstance.get('/api/blogs/', { params });
+            const authConfig = getHeaders();
+            const res = await axiosInstance.get('/api/blogs/admin/blogs/', { params, ...authConfig });
             return res.data;
         } catch (error) {
             console.error("Error fetching blogs", error);
@@ -37,7 +40,7 @@ export const blogService = {
 
     getBlogById: async (id: string | number) => {
         try {
-            const res = await axiosInstance.get(`/api/blogs/${id}/`);
+            const res = await axiosInstance.get(`/api/blogs/admin/blogs/${id}/`);
             return res.data;
         } catch (error) {
             console.error("Error fetching blog", error);
@@ -47,7 +50,7 @@ export const blogService = {
 
     getBlogBySlug: async (slug: string) => {
         try {
-            const res = await axiosInstance.get(`/api/blogs/${slug}/`);
+            const res = await axiosInstance.get(`/api/blogs/admin/blogs/${slug}/`);
             return res.data;
         } catch (error) {
             console.error("Error fetching blog by slug", error);
@@ -57,7 +60,8 @@ export const blogService = {
 
     createBlog: async (data: any) => {
         try {
-            const res = await axiosInstance.post('/api/blogs/', data, getHeaders());
+            const isMultipart = data instanceof FormData;
+            const res = await axiosInstance.post('/api/blogs/admin/blogs/', data, getHeaders(isMultipart));
             return res.data;
         } catch (error) {
             console.error("Error creating blog", error);
@@ -67,7 +71,8 @@ export const blogService = {
 
     updateBlog: async (id: string | number, data: any) => {
         try {
-            const res = await axiosInstance.put(`/api/blogs/${id}/`, data, getHeaders());
+            const isMultipart = data instanceof FormData;
+            const res = await axiosInstance.put(`/api/blogs/admin/blogs/${id}/`, data, getHeaders(isMultipart));
             return res.data;
         } catch (error) {
             console.error("Error updating blog", error);
@@ -77,7 +82,7 @@ export const blogService = {
 
     deleteBlog: async (id: string | number) => {
         try {
-            const res = await axiosInstance.delete(`/api/blogs/${id}/`, getHeaders());
+            const res = await axiosInstance.delete(`/api/blogs/admin/blogs/${id}/`, getHeaders());
             return res.data;
         } catch (error) {
             console.error("Error deleting blog", error);

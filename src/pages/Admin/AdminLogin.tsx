@@ -25,7 +25,8 @@ const AdminLogin = () => {
 
         try {
             const response = await axiosInstance.post("/api/auth/admin/login/", {
-                username,
+                username: username, // keeping username locally but sending as username or email depending on what backend wants. Based on the error "Username/Email and password required", probably it expects 'email' or 'username'
+                email: username, // The error says "Username/Email and password required", often Django backends using dj-rest-auth expect `email` and/or `username`. We can send both or just map it.
                 password,
             });
 
@@ -38,12 +39,9 @@ const AdminLogin = () => {
             toast.success("Admin Login successful!");
             navigate("/admin");
         } catch (error: any) {
-            console.error("Login Error:", error);
-            // Mock login for previewing UI if backend is not set up
-            localStorage.setItem("access_token", "fake-admin-token");
-            localStorage.setItem("role", "admin");
-            navigate("/admin");
-            toast.success("Mocked Admin Login Successful (Backend missing or failed)");
+            console.error("Login Error:", error.response?.data || error.message);
+            const errorMsg = error.response?.data?.error || error.response?.data?.detail || error.response?.data?.non_field_errors?.[0] || "Invalid credentials or server error.";
+            toast.error(errorMsg);
         } finally {
             setIsLoading(false);
         }

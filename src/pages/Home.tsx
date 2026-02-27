@@ -7,11 +7,11 @@ import { CourseCarousel } from "@/components/CourseCarousel";
 import { DemoModal } from "@/components/DemoModal";
 
 const sapCategories = [
-  { title: "SAP Technical & Development", hours: "Multiple Courses", link: "/courses/sap-technical" },
-  { title: "SAP Functional Modules", hours: "Multiple Courses", link: "/courses/sap-functional" },
-  { title: "SAP Administration & HR", hours: "Multiple Courses", link: "/courses/sap-admin" },
-  { title: "SAP Business Technology Platform (BTP)", hours: "Multiple Courses", link: "/courses/sap-btp" },
-  { title: "SAP Specialized / Sub Courses", hours: "Multiple Courses", link: "/courses/sap-specialized" },
+  { title: "SAP Technical & Development", hours: "Advanced coding, configuration, and technical architecture modules.", link: "/courses/sap-technical" },
+  { title: "SAP Functional Modules", hours: "Finance, Materials Management, Sales & Distribution, and more.", link: "/courses/sap-functional" },
+  { title: "SAP Administration & HR", hours: "System administration, HR processes, and payroll systems.", link: "/courses/sap-admin" },
+  { title: "SAP Business Technology Platform (BTP)", hours: "Cloud integration and digital transformation modules.", link: "/courses/sap-btp" },
+  { title: "SAP Specialized / Sub Courses", hours: "Focused programs designed for niche skill development.", link: "/courses/sap-specialized" },
 ];
 
 const sapCourses = [
@@ -59,7 +59,7 @@ const Home = () => {
   const siteUrl = "https://nxgentechacademy.com";
 
   return (
-    <div className="min-h-screen font-sans text-gray-800">
+    <div className="min-h-screen font-sans text-gray-800 overflow-x-hidden">
       <Helmet>
         <title>Best IT Training Institute in Hyderabad | NxGen Tech Academy</title>
         <meta name="description" content="NxGen Tech Academy is the leading IT training institute in Hyderabad, offering professional courses in SAP, Python, Data Science, and more with 100% placement assistance." />
@@ -189,12 +189,12 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Expert Instructors (10+ Years Exp)",
-              "Industry-Relevant Programs",
-              "Hands-on Training & Labs",
-              "100% Job Placement Assistance",
-              "Flexible Schedules (Weekend/Weekday)",
-              "Global Certifications"
+              "Expert instructors with 10+ years of industry experience",
+              "Industry-relevant certification programs",
+              "Hands-on labs and real-time project exposure",
+              "100% job placement assistance",
+              "Flexible weekend and weekday schedules",
+              "Global certification guidance"
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-secondary">
                 <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
@@ -216,7 +216,7 @@ const Home = () => {
               <div className="inline-block bg-primary/10 text-primary font-bold px-4 py-1 rounded-full text-sm">Featured Program</div>
               <h2 className="text-3xl lg:text-4xl font-bold text-primary">SAP Academy for Enterprise Solutions</h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                This SAP training prepares you for a career as an SAP Certified Professional, combining structured coursework and hands-on learning in enterprise resource planning, business processes, and real-time data management across industries.
+                Our <b>SAP Academy for Enterprise Solutions</b> prepares professionals to become SAP Certified Experts. The program combines structured coursework with enterprise-level practical implementation.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-gray-700">
