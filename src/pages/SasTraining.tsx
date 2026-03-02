@@ -8,18 +8,18 @@ const SasTraining = () => {
     return (
         <div className="min-h-screen font-sans">
             <SEO
-                title="SAS Training Institute in Pune | SAS Certification Course"
-                description="Best SAS Training Institute in Pune. Learn SAS Programming, Clinical Data Management, and more with 100% placement."
+                title="SAS Training Institute in Hyderabad | SAS Certification Course"
+                description="Best SAS Training Institute in Hyderabad. Learn SAS Programming, Clinical Data Management, and more with 100% placement."
                 type="website"
-                path="/sas-training-institute-in-pune"
+                path="/sas-training-institute-in-Hyderabad"
             />
 
             <PageHero
-                title="SAS Training in Pune Maharashtra"
-                description="Best SAS Training Institute in Pune. Learn SAS Programming, Clinical Data Management, and more with 100% placement."
+                title="SAS Training in Hyderabad Maharashtra"
+                description="Best SAS Training Institute in Hyderabad. Learn SAS Programming, Clinical Data Management, and more with 100% placement."
             >
                 <div className="flex flex-wrap gap-2 text-sm text-white/80">
-                    <span>Home</span> / <span>All Programs</span> / <span>SAS Courses</span> / <span className="text-secondary font-bold">SAS Training Institute in Pune</span>
+                    <span>Home</span> / <span>All Programs</span> / <span>SAS Courses</span> / <span className="text-secondary font-bold">SAS Training Institute in Hyderabad</span>
                 </div>
             </PageHero>
 
@@ -30,12 +30,12 @@ const SasTraining = () => {
 
                         {/* About Section */}
                         <section className="space-y-6">
-                            <h2 className="text-2xl font-bold text-primary border-b pb-2 border-gray-200">About SAS Course in Pune</h2>
+                            <h2 className="text-2xl font-bold text-primary border-b pb-2 border-gray-200">About SAS Course in Hyderabad</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                SAS (Statistical Analysis System) is a command-driven software package used for statistical analysis and data visualization. It is widely used in Clinical Research, Finance, Banking, and other industries for data management and advanced analytics. Our SAS training in Pune is designed to help you master SAS programming and analytics to kickstart your career.
+                                SAS (Statistical Analysis System) is a command-driven software package used for statistical analysis and data visualization. It is widely used in Clinical Research, Finance, Banking, and other industries for data management and advanced analytics. Our SAS training in Hyderabad is designed to help you master SAS programming and analytics to kickstart your career.
                             </p>
                             <p className="text-gray-700 leading-relaxed">
-                                NxGen Tech Academy offers the best SAS training in Pune with expert trainers who have 10+ years of industry experience. We provide 100% placement assistance, hands-on projects, and certification guidance.
+                                NxGen Tech Academy offers the best SAS training in Hyderabad with expert trainers who have 10+ years of industry experience. We provide 100% placement assistance, hands-on projects, and certification guidance.
                             </p>
                         </section>
 
