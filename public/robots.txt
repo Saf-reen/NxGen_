@@ -11,12 +11,16 @@ Crawl-delay: 10
 Allow: /courses/
 Allow: /about/
 Allow: /contact/
-Allow: /blog/
-Allow: /resources/
+Allow: /blogs/
+Allow: /mentors/
+Allow: /why-choose-us/
 
-# Block search engines from crawling these directories
+# Block search engines from crawling these directories/auth pages
 Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
+Disallow: /admin-login/
+Disallow: /dashboard/
+Disallow: /register/
+Disallow: /student-login/
+Disallow: /instructor-login/
 Disallow: /*.pdf$
 Disallow: /*?*
