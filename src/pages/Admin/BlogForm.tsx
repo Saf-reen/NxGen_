@@ -28,7 +28,7 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
         content: "",
         category: "",
         tags: "",
-        status: "Draft",
+        status: "draft",
         image_url: "",
         video_url: "",
     });
@@ -78,10 +78,20 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
             const submitData = new FormData();
 
             Object.entries(formData).forEach(([key, value]) => {
-                if (key !== 'image_url' && key !== 'video_url' && value !== undefined && value !== null) {
+                if (key !== 'image_url' && key !== 'video_url' && key !== 'tags' && value !== undefined && value !== null) {
                     submitData.append(key, String(value));
                 }
             });
+
+            // If tags is a comma-separated list of IDs, we send them individually for many-to-many fields
+            if (formData.tags) {
+                const tagList = formData.tags.split(',').map(tag => tag.trim());
+                // Depending on your backend, you may need to map strings back to IDs if your DRF serializers expect Primary Keys. 
+                // Currently, appending as a list so DRF can read `request.data.getlist('tags')`.
+                tagList.forEach(tag => {
+                    submitData.append('tags', tag);
+                });
+            }
 
             if (imageFile) {
                 submitData.append('image_url', imageFile);
@@ -167,12 +177,15 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
                         required
                     >
                         <option value="">Select Category...</option>
-                        <option value="SAP">SAP</option>
-                        <option value="Data Analytics">Data Analytics</option>
-                        <option value="Python">Python</option>
-                        <option value="AI">AI</option>
-                        <option value="Career">Career Guides</option>
-                        <option value="General">General Technology</option>
+                        {/* UPDATE CAUTION: These values MUST be the integer IDs from your backend Category model. 
+                            E.g. <option value="1">SAP</option> 
+                            I've set them as dummy IDs 1 to 6 below, you must match them with your DB.  */}
+                        <option value="1">SAP</option>
+                        <option value="2">Data Analytics</option>
+                        <option value="3">Python</option>
+                        <option value="4">AI</option>
+                        <option value="5">Career Guides</option>
+                        <option value="6">General Technology</option>
                     </select>
                 </div>
                 <div className="space-y-3">
@@ -184,16 +197,18 @@ export default function BlogForm({ initialData, isEdit }: BlogFormProps) {
                         onChange={handleInputChange}
                         className="w-full h-12 border border-slate-200 bg-slate-50 rounded-lg px-4 focus:outline-none focus:ring-2 focus:ring-[#000080]"
                     >
-                        <option value="Draft">Draft (Save for later)</option>
-                        <option value="Published">Published (Live instantly)</option>
+                        <option value="draft">Draft (Save for later)</option>
+                        <option value="published">Published (Live instantly)</option>
                     </select>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-200 pt-8 mt-8">
                 <div className="space-y-3">
-                    <Label htmlFor="tags" className="text-sm font-semibold text-slate-700">Tags (comma separated)</Label>
-                    <Input id="tags" name="tags" value={formData.tags} onChange={handleInputChange} className="h-12 bg-slate-50 border-slate-200" placeholder="e.g. sap, certification, career" />
+                    <Label htmlFor="tags" className="text-sm font-semibold text-slate-700">Tags (comma separated IDs)</Label>
+                    {/* IMPORTANT: Because your backend expects Primary Keys for tags, you must input integer IDs (e.g. "1, 2, 3"). 
+                        If you want to use strings, you must alter your Django models/serializers. */}
+                    <Input id="tags" name="tags" value={formData.tags} onChange={handleInputChange} className="h-12 bg-slate-50 border-slate-200" placeholder="e.g. 1, 2, 3" />
                 </div>
                 <div className="space-y-3">
                     <Label htmlFor="imageFile" className="text-sm font-semibold text-slate-700">Upload Featured Image</Label>

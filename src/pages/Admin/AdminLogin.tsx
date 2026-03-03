@@ -25,8 +25,7 @@ const AdminLogin = () => {
 
         try {
             const response = await axiosInstance.post("/api/auth/admin/login/", {
-                username: username, // keeping username locally but sending as username or email depending on what backend wants. Based on the error "Username/Email and password required", probably it expects 'email' or 'username'
-                email: username, // The error says "Username/Email and password required", often Django backends using dj-rest-auth expect `email` and/or `username`. We can send both or just map it.
+                username_or_email: username,
                 password,
             });
 
