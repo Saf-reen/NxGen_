@@ -215,9 +215,9 @@ export const Navbar = () => {
             <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/about">About Us</Link>
             </Button>
-            <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
+            {/* <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/blogs">Blogs</Link>
-            </Button>
+            </Button> */}
             <Button asChild className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium px-2 xl:px-6">
               <Link to="/contact">Contact Us</Link>
             </Button>
