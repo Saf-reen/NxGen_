@@ -33,10 +33,10 @@ const SAPCategory = () => {
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
             <SEO
-                title="SAP Courses - NxGen Tech Academy"
-                description="Explore our comprehensive list of SAP courses including ABAP, Fiori, SD, MM, FICO, and more."
+                title="SAP Certification Courses | NxGen Tech Academy"
+                description="SAP Certification Courses at NxGen Tech Academy with expert-led training in SAP ABAP, Fiori, SD, MM, FICO, BTP and more. Learn with real-time projects and placement support."
                 type="website"
-                path="/sap-courses"
+                path="/sap-certification-courses"
             />
 
             <PageHero
