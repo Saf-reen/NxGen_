@@ -1,0 +1,116 @@
+import { SEO } from "@/components/SEO";
+import { Link } from "react-router-dom";
+import { PageHero } from "@/components/PageHero";
+import { Button } from "@/components/ui/button";
+import { coursesData } from "@/data/categoryCourses";
+import { Eye, Clock, Monitor, Star, Users } from "lucide-react";
+
+const SAPCategory = () => {
+    // List of exact course IDs the user wants in this SAP Course page
+    const sapCourseIds = [
+        "sap-abap-s4hana",
+        "sap-abap-rap",
+        "sap-fiori",
+        "sap-fullstack",
+        "sap-sd",
+        "sap-mm",
+        "sap-fico",
+        "sap-pp",
+        "sap-btp-appdev", // Represents SAP BTP in the courses list
+        "sap-pm",
+        "sap-qm",
+        "sap-scm",
+        "sap-ewm",
+        "sap-basis",
+        "sap-hcm-successfactors",
+    ];
+
+    // Filter the coursesData to only include these courses, in the order specified
+    const displayCourses = sapCourseIds
+        .map(id => coursesData.find(c => c.id === id))
+        .filter(c => c !== undefined);
+
+    return (
+        <div className="min-h-screen bg-white font-sans text-gray-700">
+            <SEO
+                title="SAP Courses - NxGen Tech Academy"
+                description="Explore our comprehensive list of SAP courses including ABAP, Fiori, SD, MM, FICO, and more."
+                type="website"
+                path="/sap-courses"
+            />
+
+            <PageHero
+                title="SAP Courses"
+                description="Master top SAP modules and accelerate your career with practical, expert-led training."
+            />
+
+            <div className="container mx-auto px-4 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    {displayCourses.map((course) => (
+                        <div
+                            key={course!.id}
+                            className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                        >
+                            {/* Image Section */}
+                            {course!.image && course!.image !== "code-icon" ? (
+                                <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 p-4">
+                                    <img src={course!.image} alt={course!.title} className="max-h-full max-w-full object-contain" />
+                                </div>
+                            ) : (
+                                <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100">
+                                    <img src="/Logo.png" alt={course!.title} className="h-16 opacity-50" />
+                                </div>
+                            )}
+
+                            <div className="p-6 flex flex-col flex-grow">
+                                <div className="mb-2">
+                                    <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                                        {course!.title}
+                                    </h3>
+                                </div>
+
+                                <div className="flex items-center gap-1 mb-4">
+                                    {[...Array(course!.rating || 5)].map((_, i) => (
+                                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                    ))}
+                                    <span className="text-blue-500 text-sm ml-2">(33 Reviews)</span>
+                                </div>
+
+                                <div className="flex-grow">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                        {course!.description || `Comprehensive training on ${course!.title} including real-world projects and certification.`}
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-col gap-2 mb-6 border-t border-gray-100 pt-4">
+                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                        <Clock className="w-4 h-4 text-green-600" />
+                                        <span>Duration: {course!.duration || "40+ hours"}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                        <Users className="w-4 h-4 text-green-600" />
+                                        <span>Students Enrolled: {course!.enrolled || "1500+"}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                        <Monitor className="w-4 h-4 text-green-600" />
+                                        <span>Mode: {course!.mode || "Online"}</span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-auto flex justify-end">
+                                    <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6 shadow-md">
+                                        <Link to={`/courses/${course!.id}`}>
+                                            <Eye className="w-4 h-4" /> View Course
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default SAPCategory;

@@ -128,7 +128,7 @@ export const Footer = () => {
           </p>
           <p className="text-slate-300 text-sm md:text-lg flex items-center justify-center gap-2">
             <span className="w-8 h-[1px] bg-slate-500"></span>
-            Founded by Sriainfotech Pvt. Ltd.
+            Founded by <a href="https://www.sriainfotech.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer relative z-20"><b>Sriainfotech Pvt. Ltd.</b></a>
             <span className="w-8 h-[1px] bg-slate-500"></span>
           </p>
         </div>

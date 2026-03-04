@@ -7,6 +7,9 @@ export interface CourseData {
     image: string; // "code-icon" or URL
     rating: number;
     price: string;
+    duration?: string;
+    enrolled?: string;
+    mode?: string;
 }
 
 export const categoryConfig: Record<string, { title: string; description: string; parentCategory: string; outcomes: string[] }> = {
@@ -139,7 +142,7 @@ export const coursesData: CourseData[] = [
         title: "SAP ABAP on S/4HANA",
         description: "Modern ABAP development with reports, enhancements, performance tuning, and S/4HANA best practices.",
         categoryId: "sap-technical",
-        image: "code-icon",
+        image: "/sap/sap-abap.png",
         rating: 5,
         price: "₹30,000"
     },
@@ -148,7 +151,7 @@ export const coursesData: CourseData[] = [
         title: "SAP ABAP with CDS, OData & RAP",
         description: "Build next-gen SAP applications using CDS Views, OData services, and the RAP framework.",
         categoryId: "sap-technical",
-        image: "code-icon",
+        image: "/sap/sap-abap-.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -157,7 +160,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Fiori & UI5",
         description: "Front-end SAP application development using Fiori architecture, UI5, MVC, and OData integration.",
         categoryId: "sap-technical",
-        image: "code-icon",
+        image: "/sap/sap-fiori.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -166,7 +169,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Full Stack Development (ABAP + Fiori)",
         description: "End-to-end SAP development covering backend (ABAP, CDS, RAP) and frontend (Fiori, UI5) with real-time projects & internship.",
         categoryId: "sap-technical",
-        image: "code-icon",
+        image: "/sap/sap-fullstack.png",
         rating: 5,
         price: "₹50,000"
     },
@@ -177,7 +180,7 @@ export const coursesData: CourseData[] = [
         title: "SAP CDS Views (Core Data Services)",
         description: "Data modeling with basic, composite, and consumption views, associations, and annotations.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-cds.png",
         rating: 5,
         price: "₹25,000"
     },
@@ -186,7 +189,7 @@ export const coursesData: CourseData[] = [
         title: "SAP OData Services",
         description: "Expose SAP data as REST APIs for Fiori and external integrations.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-odata.png",
         rating: 5,
         price: "₹25,000"
     },
@@ -195,7 +198,7 @@ export const coursesData: CourseData[] = [
         title: "SAP RAP (RESTful ABAP Programming Model)",
         description: "Modern, cloud-ready ABAP development using managed and unmanaged RAP scenarios.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-rap.png",
         rating: 5,
         price: "₹30,000"
     },
@@ -204,7 +207,7 @@ export const coursesData: CourseData[] = [
         title: "SAP ALV & Reports",
         description: "Classical and modern ALV reporting with interactive and performance-optimized layouts.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-alv.png",
         rating: 5,
         price: "₹20,000"
     },
@@ -213,7 +216,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Enhancements & Debugging",
         description: "User exits, BADIs, enhancements, real-time debugging, and performance analysis.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-debug.png",
         rating: 5,
         price: "₹22,000"
     },
@@ -222,7 +225,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Fiori Elements",
         description: "Template-based Fiori app development using CDS annotations for faster delivery.",
         categoryId: "sap-specialized",
-        image: "code-icon",
+        image: "/sap/sap-fiori-elements.png",
         rating: 5,
         price: "₹28,000"
     },
@@ -233,34 +236,43 @@ export const coursesData: CourseData[] = [
         title: "SAP SD (Sales & Distribution)",
         description: "Sales order processing, pricing, delivery, billing, and SD–MM–FICO integration.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-sd.png",
         rating: 5,
-        price: "₹28,000"
+        price: "₹28,000",
+        duration: "40+ hours",
+        enrolled: "1284+",
+        mode: "Online"
     },
     {
         id: "sap-mm",
         title: "SAP MM (Materials Management)",
         description: "Procurement, inventory management, vendor handling, and invoice verification.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-mm.png",
         rating: 5,
-        price: "₹28,000"
+        price: "₹28,000",
+        duration: "40+ hours",
+        enrolled: "1452+",
+        mode: "Online"
     },
     {
         id: "sap-fico",
         title: "SAP FICO (Financial Accounting & Controlling)",
         description: "Financial accounting, cost control, asset accounting, and reporting.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-fico.png",
         rating: 5,
-        price: "₹30,000"
+        price: "₹30,000",
+        duration: "40+ hours",
+        enrolled: "1584+",
+        mode: "Online"
     },
     {
         id: "sap-pp",
         title: "SAP PP (Production Planning)",
         description: "BOM, routing, MRP, production orders, and capacity planning.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-pp.png",
         rating: 5,
         price: "₹30,000"
     },
@@ -269,7 +281,7 @@ export const coursesData: CourseData[] = [
         title: "SAP PM (Plant Maintenance)",
         description: "Equipment maintenance, preventive maintenance, orders, and notifications.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-pm.png",
         rating: 5,
         price: "₹28,000"
     },
@@ -278,7 +290,7 @@ export const coursesData: CourseData[] = [
         title: "SAP QM (Quality Management)",
         description: "Quality planning, inspections, notifications, and compliance management.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-qm.png",
         rating: 5,
         price: "₹28,000"
     },
@@ -287,7 +299,7 @@ export const coursesData: CourseData[] = [
         title: "SAP SCM (Supply Chain Management)",
         description: "End-to-end supply chain planning, demand & distribution optimization.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-scm.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -296,7 +308,7 @@ export const coursesData: CourseData[] = [
         title: "SAP EWM (Extended Warehouse Management)",
         description: "Advanced warehouse operations, picking strategies, RF framework, and labor management.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap/sap-ewm.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -307,7 +319,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Basis",
         description: "SAP system administration, monitoring, transports, authorizations, and S/4HANA basics.",
         categoryId: "sap-admin",
-        image: "code-icon",
+        image: "/sap/sap-basis.png",
         rating: 5,
         price: "₹30,000"
     },
@@ -316,7 +328,7 @@ export const coursesData: CourseData[] = [
         title: "SAP HCM / SuccessFactors",
         description: "HR processes including payroll, recruitment, time management, and talent management.",
         categoryId: "sap-admin",
-        image: "code-icon",
+        image: "/sap/sap-hcm.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -327,7 +339,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP Application Development (CAP & Fiori)",
         description: "Develop enhancements and cloud-native apps. Covers Low-Code (Build Apps), Pro-Code (BAS, CAP Model), and Runtimes (Cloud Foundry, Kyma).",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp.png",
         rating: 5,
         price: "₹40,000"
     },
@@ -336,7 +348,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Build Process Automation (RPA & Workflow)",
         description: "Master SAP Build Process Automation. Learn Workflow Management, Decisions, Rules, RPA, and Process Visibility.",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp.png",
         rating: 5,
         price: "₹35,000"
     },
@@ -345,7 +357,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Integration Suite & Event Mesh",
         description: "Connect processes and data. In-depth training on SAP Integration Suite, API Management, and Advanced Event Mesh.",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp.png",
         rating: 5,
         price: "₹38,000"
     },
@@ -354,7 +366,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP Data & Analytics (HANA Cloud & SAC)",
         description: "Unleash data potential with SAP HANA Cloud, Analytics Cloud (SAC), Datasphere, and Master Data Governance.",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp-data.png",
         rating: 5,
         price: "₹42,000"
     },
@@ -363,7 +375,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Business AI & Core Service",
         description: "Implement intelligent solutions using SAP AI Core, AI Launchpad, and AI Business Services.",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp-ai.png",
         rating: 5,
         price: "₹45,000"
     },
@@ -372,7 +384,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP DevOps & Administration",
         description: "Manage the cloud lifecycle. Covers CICD, Transport Management, Alert Notification, and Automation Pilot.",
         categoryId: "sap-btp",
-        image: "code-icon",
+        image: "/sap/sap-btp-devops.png",
         rating: 5,
         price: "₹30,000"
     },

@@ -89,14 +89,14 @@ const Home = () => {
               SAP | SAS | Data Engineer | Salesforce | Data Science
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2 w-full">
+              <Button asChild size="lg" className="bg-[#000080] hover:bg-[#000080]/90 text-white font-medium text-lg px-8 rounded-md w-full sm:w-auto">
                 <Link to="/all-courses">Explore Courses</Link>
               </Button>
               <Button
                 onClick={() => setIsDemoModalOpen(true)}
                 size="lg"
-                className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 border border-[#000080]/30 font-medium text-lg px-8 rounded-md"
+                className="bg-[#000080]/10 text-[#000080] hover:bg-[#000080]/20 border border-[#000080]/30 font-medium text-lg px-8 rounded-md w-full sm:w-auto"
               >
                 Book a Free Demo Class
               </Button>
@@ -108,27 +108,27 @@ const Home = () => {
             />
 
             <div className="pt-2">
-              <p className="text-lg text-[#000080]">
-                <span className="font-bold text-2xl">Extensive</span>  experience in the IT Training &amp; Placement Industry
+              <p className="text-base sm:text-lg text-[#000080] leading-snug sm:leading-normal">
+                <span className="font-bold text-xl sm:text-2xl block sm:inline mb-1 sm:mb-0">Extensive</span> <span className="opacity-90">experience in the IT Training &amp; Placement Industry</span>
               </p>
               <div className="h-0.5 w-full bg-gray-200 mt-4 max-w-md"></div>
             </div>
 
             <div className="pt-6">
-              <p className="text-gray-600 mb-4 font-medium">Professionals hired by</p>
-              <div className="flex flex-wrap items-center gap-8 opacity-70 grayscale hover:grayscale-0 transition-all">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-6 object-contain" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Cognizant_logo_2022.svg" alt="Cognizant" className="h-6 object-contain" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture" className="h-6 object-contain" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="h-8 object-contain" />
+              <p className="text-gray-600 mb-4 font-medium text-sm sm:text-base">Professionals hired by</p>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8 opacity-70 grayscale hover:grayscale-0 transition-all">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" className="h-4 sm:h-6 object-contain" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Cognizant_logo_2022.svg" alt="Cognizant" className="h-4 sm:h-6 object-contain" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture" className="h-4 sm:h-6 object-contain" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys" className="h-5 sm:h-8 object-contain" />
               </div>
             </div>
           </div>
 
           {/* Right Image Carousel */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
             {/* Carousel Container */}
-            <div className="relative w-full max-w-[600px] h-[600px]">
+            <div className="relative w-full max-w-[600px] h-[300px] sm:h-[400px] lg:h-[600px] mx-auto lg:mx-0">
               {/* Images */}
               {heroImages.map((image, index) => (
                 <img
