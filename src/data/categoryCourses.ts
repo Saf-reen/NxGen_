@@ -7,6 +7,9 @@ export interface CourseData {
     image: string; // "code-icon" or URL
     rating: number;
     price: string;
+    duration?: string;
+    enrolled?: string;
+    mode?: string;
 }
 
 export const categoryConfig: Record<string, { title: string; description: string; parentCategory: string; outcomes: string[] }> = {
@@ -233,27 +236,36 @@ export const coursesData: CourseData[] = [
         title: "SAP SD (Sales & Distribution)",
         description: "Sales order processing, pricing, delivery, billing, and SD–MM–FICO integration.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap-sd.png",
         rating: 5,
-        price: "₹28,000"
+        price: "₹28,000",
+        duration: "40+ hours",
+        enrolled: "1284+",
+        mode: "Online"
     },
     {
         id: "sap-mm",
         title: "SAP MM (Materials Management)",
         description: "Procurement, inventory management, vendor handling, and invoice verification.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap-mm.png",
         rating: 5,
-        price: "₹28,000"
+        price: "₹28,000",
+        duration: "40+ hours",
+        enrolled: "1452+",
+        mode: "Online"
     },
     {
         id: "sap-fico",
         title: "SAP FICO (Financial Accounting & Controlling)",
         description: "Financial accounting, cost control, asset accounting, and reporting.",
         categoryId: "sap-functional",
-        image: "code-icon",
+        image: "/sap-fico.png",
         rating: 5,
-        price: "₹30,000"
+        price: "₹30,000",
+        duration: "40+ hours",
+        enrolled: "1584+",
+        mode: "Online"
     },
     {
         id: "sap-pp",

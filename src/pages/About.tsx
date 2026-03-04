@@ -154,7 +154,7 @@ const About = () => {
                 <div className="inline-flex items-center gap-3 px-5 py-3 bg-green-50 rounded-xl border border-green-100">
                   <span className="w-2.5 h-2.5 bg-[#22c55e] rounded-full animate-pulse shrink-0"></span>
                   <p className="font-semibold text-gray-800 text-base md:text-lg">
-                    A Skill Development Brand Founded by Sriainfotech Pvt. Ltd.
+                    A Skill Development Brand Founded by <a href="https://www.sriainfotech.com/" target="_blank" rel="noopener noreferrer" >Sriainfotech Pvt. Ltd.</a>
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const About = () => {
                 <strong className="text-gray-900 font-bold">NXGenTech Academy</strong> is a career-oriented IT training institute dedicated to building industry-ready professionals through structured, practical, and performance-driven education.
               </p>
               <p className="text-lg leading-relaxed">
-                Founded by <strong className="text-gray-900 font-medium">Sriainfotech Pvt. Ltd.</strong>, NXGenTech Academy was established with a clear vision — to bridge the gap between academic learning and real-world industry requirements. The academy functions as a specialized skill development platform designed to prepare students, graduates, and working professionals for modern technology careers.
+                Founded by <a href="https://www.sriainfotech.com/" target="_blank" rel="noopener noreferrer" ><strong className="text-gray-900 font-medium">Sriainfotech Pvt. Ltd.</strong></a>, NXGenTech Academy was established with a clear vision — to bridge the gap between academic learning and real-world industry requirements. The academy functions as a specialized skill development platform designed to prepare students, graduates, and working professionals for modern technology careers.
               </p>
             </div>
           </motion.div>
@@ -291,7 +291,7 @@ const About = () => {
       </section >
 
       {/* Section 5: Courses We Offer */}
-      < section className="py-20 bg-[#f8fafc]" >
+      <section className="py-20 bg-[#f8fafc]" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Courses We Offer</h2>
@@ -325,10 +325,9 @@ const About = () => {
             <p className="text-gray-700 font-medium">Every course includes structured learning paths, lab sessions, and mentor guidance to ensure job readiness.</p>
           </div>
         </div>
-      </section >
-
+      </section>
       {/* Section 6 & 7: Mentors & Learning Approach - Split View */}
-      < section className="py-20 bg-white" >
+      <section className="py-20 bg-white" >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
 
@@ -404,7 +403,7 @@ const About = () => {
       </section >
 
       {/* Section 8: Why Choose Us (Stats) */}
-      < section className="py-20 bg-[#000080] text-white overflow-hidden relative" >
+      <section className="py-20 bg-[#000080] text-white overflow-hidden relative" >
         <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
@@ -460,7 +459,7 @@ const About = () => {
       </section >
 
       {/* Section 10: FAQs */}
-      < section className="py-20 bg-white" >
+      <section className="py-20 bg-white" >
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
@@ -506,9 +505,9 @@ const About = () => {
       </section >
 
       {/* Section 9: Call to Action */}
-      < section className="py-20 bg-gray-900 text-white relative overflow-hidden" >
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden" >
         {/* Decorative background blobs */}
-        < div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#000080] rounded-full filter blur-[100px] opacity-30 animate-pulse" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#000080] rounded-full filter blur-[100px] opacity-30 animate-pulse" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-green-500 rounded-full filter blur-[100px] opacity-20" />
 
         <div className="container mx-auto px-4 relative z-10">

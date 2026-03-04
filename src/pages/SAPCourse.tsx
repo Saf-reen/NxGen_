@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
-import { Search, ArrowLeft, PlayCircle, Code, Award, Users, Layers, Workflow, Blocks, Database, Brain, Globe, CheckCircle } from "lucide-react";
+import { Search, ArrowLeft, PlayCircle, Code, Award, Users, Layers, Workflow, Blocks, Database, Brain, Globe, CheckCircle, Eye, Clock, Monitor, Star } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
@@ -154,29 +154,64 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                                 filteredCourses.map((course) => (
                                     <div
                                         key={course.id}
-                                        className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                                        className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
                                     >
-                                        <div className="mb-4">
-                                            <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                                                {course.title}
-                                            </h3>
-                                        </div>
-
-                                        <div className="w-full h-px bg-gray-200 mb-4"></div>
-
-                                        <div className="flex-grow">
-                                            <p className="text-gray-600 text-sm leading-relaxed">
-                                                {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
-                                            </p>
-                                        </div>
-
-                                        {detailedCourses[course.id] && (
-                                            <div className="mt-4 pt-4 border-t border-gray-100">
-                                                <Button asChild className="w-full bg-[#000080] hover:bg-[#000080]/90">
-                                                    <Link to={`/courses/${course.id}`}>Know More</Link>
-                                                </Button>
+                                        {/* Image Section */}
+                                        {course.image && course.image !== "code-icon" ? (
+                                            <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 p-4">
+                                                <img src={course.image} alt={course.title} className="max-h-full max-w-full object-contain" />
+                                            </div>
+                                        ) : (
+                                            <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100">
+                                                <img src="/Logo.png" alt={course.title} className="h-16 opacity-50" />
                                             </div>
                                         )}
+
+                                        <div className="p-6 flex flex-col flex-grow">
+                                            <div className="mb-2">
+                                                <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                                                    {course.title}
+                                                </h3>
+                                            </div>
+
+                                            <div className="flex items-center gap-1 mb-4">
+                                                {[...Array(course.rating)].map((_, i) => (
+                                                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                                ))}
+                                                <span className="text-blue-500 text-sm ml-2">(33 Reviews)</span>
+                                            </div>
+
+                                            <div className="flex-grow">
+                                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                                    {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
+                                                </p>
+                                            </div>
+
+                                            <div className="flex flex-col gap-2 mb-6 border-t border-gray-100 pt-4">
+                                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                    <Clock className="w-4 h-4 text-green-600" />
+                                                    <span>Duration: {course.duration || "40+ hours"}</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                    <Users className="w-4 h-4 text-green-600" />
+                                                    <span>Students Enrolled: {course.enrolled || "1500+"}</span>
+                                                </div>
+                                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                    <Monitor className="w-4 h-4 text-green-600" />
+                                                    <span>Mode: {course.mode || "Online"}</span>
+                                                </div>
+                                            </div>
+
+                                            {detailedCourses[course.id] && (
+                                                <div className="mt-auto flex justify-end">
+                                                    <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
+                                                        <Link to={`/courses/${course.id}`}>
+                                                            <Eye className="w-4 h-4" /> View Course
+                                                        </Link>
+                                                    </Button>
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 ))
                             ) : (

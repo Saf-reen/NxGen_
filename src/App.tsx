@@ -24,6 +24,7 @@ import { categories } from './data';
 import AllCourses from "./pages/AllCourses";
 import Blogs from "./pages/Blogs";
 import SAPCourse from "./pages/SAPCourse";
+import SAPCategory from "./pages/SAPCategory";
 import PythonCourse from "./pages/PythonCourse";
 import AIMLCourse from "./pages/AIMLCourse";
 import AICourse from "./pages/AICourse";
@@ -64,6 +65,7 @@ const AppContent = () => {
           <Route path="courses" element={<Courses />} />
           <Route path="/all-courses" element={<AllCourses />} />
           <Route path="courses-menu" element={<AllCourses />} />
+          <Route path="/sap-courses" element={<SAPCategory />} />
           <Route path="courses/sap-technical" element={<SAPCourse categorySlug="sap-technical" />} />
           <Route path="courses/sap-specialized" element={<SAPCourse categorySlug="sap-specialized" />} />
           <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
