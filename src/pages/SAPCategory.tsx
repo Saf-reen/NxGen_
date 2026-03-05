@@ -53,11 +53,11 @@ const SAPCategory = () => {
                         >
                             {/* Image Section */}
                             {course!.image && course!.image !== "code-icon" ? (
-                                <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 p-4">
-                                    <img src={course!.image} alt={course!.title} className="max-h-full max-w-full object-contain" />
+                                <div className="w-full bg-gray-50 border-b border-gray-100 flex-shrink-0">
+                                    <img src={course!.image} alt={course!.title} className="w-full h-auto block" />
                                 </div>
                             ) : (
-                                <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100">
+                                <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100 flex-shrink-0">
                                     <img src="/Logo.png" alt={course!.title} className="h-16 opacity-50" />
                                 </div>
                             )}
@@ -76,8 +76,8 @@ const SAPCategory = () => {
                                     <span className="text-blue-500 text-sm ml-2">(33 Reviews)</span>
                                 </div>
 
-                                <div className="flex-grow">
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                <div>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                         {course!.description || `Comprehensive training on ${course!.title} including real-world projects and certification.`}
                                     </p>
                                 </div>
