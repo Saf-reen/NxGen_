@@ -11,7 +11,6 @@ const sapCategories = [
   { title: "SAP Functional Modules", hours: "Finance, Materials Management, Sales & Distribution, and more.", link: "/courses/sap-functional" },
   { title: "SAP Administration & HR", hours: "System administration, HR processes, and payroll systems.", link: "/courses/sap-admin" },
   { title: "SAP Business Technology Platform (BTP)", hours: "Cloud integration and digital transformation modules.", link: "/courses/sap-btp" },
-  { title: "SAP Specialized / Sub Courses", hours: "Focused programs designed for niche skill development.", link: "/courses/sap-specialized" },
 ];
 
 const sapCourses = [

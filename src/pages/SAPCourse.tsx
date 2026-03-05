@@ -202,15 +202,13 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                                                 </div>
                                             </div>
 
-                                            {detailedCourses[course.id] && (
-                                                <div className="mt-auto flex justify-end">
-                                                    <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
-                                                        <Link to={`/courses/${course.id}`}>
-                                                            <Eye className="w-4 h-4" /> View Course
-                                                        </Link>
-                                                    </Button>
-                                                </div>
-                                            )}
+                                            <div className="mt-auto flex justify-end">
+                                                <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
+                                                    <Link to={`/courses/${course.id}`}>
+                                                        <Eye className="w-4 h-4" /> View Course
+                                                    </Link>
+                                                </Button>
+                                            </div>
                                         </div>
                                     </div>
                                 ))

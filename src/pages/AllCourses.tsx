@@ -204,13 +204,21 @@ const AllCourses = () => {
                                                 </p>
                                             </div>
 
-                                            <div className={`pt-4 border-t border-gray-100 flex items-center justify-between ${isSubCat ? 'mt-6' : 'mt-4'}`}>
-                                                <Link
-                                                    to={`/courses/${item.id}`}
-                                                    className={`text-[#000080] text-sm hover:underline ${isSubCat ? 'font-semibold' : 'font-bold'}`}
-                                                >
-                                                    Explore Category
-                                                </Link>
+                                            <div className={`pt-4 border-t border-gray-100 flex items-center ${isSubCat ? 'justify-between mt-6' : 'justify-end mt-4'}`}>
+                                                {isSubCat ? (
+                                                    <Link
+                                                        to={`/courses/${item.id}`}
+                                                        className={`text-[#000080] text-sm hover:underline font-semibold`}
+                                                    >
+                                                        Explore Category
+                                                    </Link>
+                                                ) : (
+                                                    <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
+                                                        <Link to={`/courses/${item.id}`}>
+                                                            View Course
+                                                        </Link>
+                                                    </Button>
+                                                )}
                                             </div>
                                         </div>
                                     );

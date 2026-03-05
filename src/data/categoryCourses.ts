@@ -25,18 +25,7 @@ export const categoryConfig: Record<string, { title: string; description: string
             "Learn to build modern SAP applications using ABAP on HANA"
         ]
     },
-    "sap-specialized": {
-        title: "SAP Specialized / Sub Courses",
-        description: "Expert niche modules for advanced career growth in SAP.",
-        parentCategory: "SAP Courses",
-        outcomes: [
-            "Deep dive into niche and specialized SAP modules",
-            "Master advanced configuration settings for specific business needs",
-            "Understand integration between specialized modules and core SAP components",
-            "Gain industry-specific knowledge and best practices",
-            "Prepare for specialized SAP certification exams"
-        ]
-    },
+
     "sap-functional": {
         title: "SAP Functional Modules",
         description: "Optimize business processes efficiently with SAP Functional training.",
@@ -174,61 +163,7 @@ export const coursesData: CourseData[] = [
         price: "₹50,000"
     },
 
-    // SAP Specialized - UPDATED CONTENT
-    {
-        id: "sap-cds",
-        title: "SAP CDS Views (Core Data Services)",
-        description: "Data modeling with basic, composite, and consumption views, associations, and annotations.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-cds.png",
-        rating: 5,
-        price: "₹25,000"
-    },
-    {
-        id: "sap-odata",
-        title: "SAP OData Services",
-        description: "Expose SAP data as REST APIs for Fiori and external integrations.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-odata.png",
-        rating: 5,
-        price: "₹25,000"
-    },
-    {
-        id: "sap-rap",
-        title: "SAP RAP (RESTful ABAP Programming Model)",
-        description: "Modern, cloud-ready ABAP development using managed and unmanaged RAP scenarios.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-rap.png",
-        rating: 5,
-        price: "₹30,000"
-    },
-    {
-        id: "sap-alv",
-        title: "SAP ALV & Reports",
-        description: "Classical and modern ALV reporting with interactive and performance-optimized layouts.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-alv.png",
-        rating: 5,
-        price: "₹20,000"
-    },
-    {
-        id: "sap-debug",
-        title: "SAP Enhancements & Debugging",
-        description: "User exits, BADIs, enhancements, real-time debugging, and performance analysis.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-debug.png",
-        rating: 5,
-        price: "₹22,000"
-    },
-    {
-        id: "sap-fiori-elements",
-        title: "SAP Fiori Elements",
-        description: "Template-based Fiori app development using CDS annotations for faster delivery.",
-        categoryId: "sap-specialized",
-        image: "/sap/sap-fiori-elements.png",
-        rating: 5,
-        price: "₹28,000"
-    },
+
 
     // SAP Functional - UPDATED CONTENT
     {
