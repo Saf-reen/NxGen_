@@ -154,16 +154,16 @@ export const coursesData: CourseData[] = [
     },
     // SAP Functional - UPDATED CONTENT
     {
-        id: "sap-sd",
+        id: "sap-sd-course-online-training",
         title: "SAP SD (Sales & Distribution)",
         description: "Sales order processing, pricing, delivery, billing, and SD–MM–FICO integration.",
         categoryId: "sap-functional",
         image: "/sap/sap-sd.png",
         rating: 5,
         price: "₹28,000",
-        duration: "40+ hours",
+        duration: "10-12 weeks",
         enrolled: "1284+",
-        mode: "Online"
+        mode: "Live Training"
     },
     {
         id: "sap-mm",
@@ -175,7 +175,7 @@ export const coursesData: CourseData[] = [
         price: "₹28,000",
         duration: "40+ hours",
         enrolled: "1452+",
-        mode: "Online"
+        mode: "Live Training"
     },
     {
         id: "sap-fico",
@@ -187,7 +187,7 @@ export const coursesData: CourseData[] = [
         price: "₹30,000",
         duration: "40+ hours",
         enrolled: "1584+",
-        mode: "Online"
+        mode: "Live Training"
     },
     {
         id: "sap-pp",

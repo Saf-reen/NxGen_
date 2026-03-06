@@ -141,7 +141,7 @@ export const Navbar = () => {
                         { title: "SAP ABAP on S/4HANA", link: "/courses/sap-abap-s4hana" },
                         { title: "SAP ABAP with CDS, OData & RAP", link: "/courses/sap-abap-rap" },
                         { title: "SAP Fiori & UI5", link: "/courses/sap-fiori" },
-                        { title: "SAP SD", link: "/courses/sap-sd" },
+                        { title: "SAP SD", link: "/courses/sap-sd-course-online-training" },
                         { title: "SAP MM", link: "/courses/sap-mm" },
                         { title: "SAP FICO", link: "/courses/sap-fico" },
                         { title: "SAP PP", link: "/courses/sap-pp" },

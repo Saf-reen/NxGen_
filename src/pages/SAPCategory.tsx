@@ -12,7 +12,7 @@ const SAPCategory = () => {
         "sap-abap-rap",
         "sap-fiori",
         "sap-fullstack",
-        "sap-sd",
+        "sap-sd-course-online-training",
         "sap-mm",
         "sap-fico",
         "sap-pp",

@@ -13,7 +13,8 @@ import { TopBar } from "./components/TopBar"; // New Import
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
-import DataAnalyticsCourse from "./pages/DataAnalyticsCourse";
+import CategoryListing from "./pages/CategoryListing";
+import CourseDetail from "./pages/CourseDetail";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import WhyChooseUs from "./pages/WhyChooseUs";
@@ -23,12 +24,7 @@ import { categories } from './data';
 // New Pages
 import AllCourses from "./pages/AllCourses";
 import Blogs from "./pages/Blogs";
-import SAPCourse from "./pages/SAPCourse";
-import SAPCourseDetail from "./pages/SAPCourseDetail";
 import SAPCategory from "./pages/SAPCategory";
-import PythonCourse from "./pages/PythonCourse";
-import AIMLCourse from "./pages/AIMLCourse";
-import AICourse from "./pages/AICourse";
 import Register from "./pages/Auth/Register";
 import StudentLogin from "./pages/Auth/StudentLogin";
 import InstructorLogin from "./pages/Auth/InstructorLogin";
@@ -41,13 +37,7 @@ import { useLocation, useParams } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
-const CourseDetailDispatcher = () => {
-  const { id } = useParams();
-  if (id?.startsWith("sap-")) {
-    return <SAPCourseDetail />;
-  }
-  return <DataAnalyticsCourse />;
-};
+
 
 const AppContent = () => {
   const location = useLocation();
@@ -75,16 +65,16 @@ const AppContent = () => {
           <Route path="/all-courses" element={<AllCourses />} />
           <Route path="courses-menu" element={<AllCourses />} />
           <Route path="/sap-courses" element={<SAPCategory />} />
-          <Route path="courses/sap-technical" element={<SAPCourse categorySlug="sap-technical" />} />
-          <Route path="courses/sap-functional" element={<SAPCourse categorySlug="sap-functional" />} />
-          <Route path="courses/sap-admin" element={<SAPCourse categorySlug="sap-admin" />} />
-          <Route path="courses/python" element={<PythonCourse />} />
-          <Route path="courses/ai" element={<AICourse />} />
-          <Route path="courses/aiml" element={<AIMLCourse />} />
-          <Route path="courses/power-bi" element={<SAPCourse categorySlug="power-bi" />} />
-          <Route path="courses/digital-marketing" element={<SAPCourse categorySlug="digital-marketing" />} />
-          <Route path="courses/sap-btp" element={<SAPCourse categorySlug="sap-btp" />} />
-          <Route path="courses/:id" element={<CourseDetailDispatcher />} />
+          <Route path="courses/sap-technical" element={<CategoryListing categorySlug="sap-technical" />} />
+          <Route path="courses/sap-functional" element={<CategoryListing categorySlug="sap-functional" />} />
+          <Route path="courses/sap-admin" element={<CategoryListing categorySlug="sap-admin" />} />
+          <Route path="courses/python" element={<CategoryListing categorySlug="python" />} />
+          <Route path="courses/ai" element={<CategoryListing categorySlug="ai" />} />
+          <Route path="courses/aiml" element={<CategoryListing categorySlug="aiml" />} />
+          <Route path="courses/power-bi" element={<CategoryListing categorySlug="power-bi" />} />
+          <Route path="courses/digital-marketing" element={<CategoryListing categorySlug="digital-marketing" />} />
+          <Route path="courses/sap-btp" element={<CategoryListing categorySlug="sap-btp" />} />
+          <Route path="courses/:id" element={<CourseDetail />} />
           <Route path="mentors" element={<Mentors />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="why-choose-us" element={<WhyChooseUs />} />

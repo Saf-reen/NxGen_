@@ -9,91 +9,25 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Preloader } from "@/components/Preloader";
 import { coursesData } from "@/data/categoryCourses";
 import { getSapCourseContent } from "@/data/sapCoursesContent";
+import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
 import DemoSidebarCard from "@/components/DemoSidebarCard";
 import { PageHero } from "@/components/PageHero";
 import { Helmet } from "react-helmet-async";
 
-const content = {
-    whatIs: `
-The SAP SD Course at NXGEN Tech Academy is designed for students and professionals who want to build a successful career in the SAP ecosystem. SAP SD (Sales and Distribution) is one of the most important modules in SAP ERP, helping organizations manage sales operations, customer orders, pricing, delivery, and billing processes.
-
-By enrolling in the SAP SD Course, learners gain practical knowledge of how businesses manage their sales and distribution activities using SAP systems. With companies across the world adopting SAP ERP and SAP S/4HANA, the demand for SAP SD professionals continues to grow rapidly.
-`,
-
-    whyCourse: `
-Choosing the SAP SD Course can significantly improve your career prospects in the ERP industry.
-
-Thousands of companies worldwide rely on SAP systems to manage their business processes. SAP SD professionals are highly valued because they help organizations manage their sales operations efficiently.
-
-Professionals with SAP SD skills often receive attractive salary packages due to their specialized ERP knowledge and business process expertise.
-
-Another advantage of learning SAP SD is understanding how it integrates with other SAP modules such as SAP MM (Materials Management) and SAP FICO (Finance & Controlling). This integration helps learners understand complete business workflows.
-
-Many organizations are upgrading their systems to SAP S/4HANA, creating strong future opportunities for SAP SD professionals.
-`,
-
-    keyBenefits: [
-        "Recognized SAP training certification",
-        "Hands-on SAP system practice",
-        "Strong interview preparation",
-        "Guidance for SAP certification exams",
-        "Real-time business scenario understanding",
-        "Practical experience with order processing and billing",
-        "Knowledge of SAP S/4HANA sales processes",
-        "Skills aligned with modern ERP systems"
-    ],
-
-    whyChooseNxGen: [
-        "Live interactive training sessions",
-        "Real-time projects and case studies",
-        "Updated SAP S/4HANA curriculum",
-        "Expert trainer guidance",
-        "Mock interviews and career support",
-        "Placement assistance",
-        "Affordable course fees",
-        "Hands-on SAP practice system access"
-    ],
-
-    careerOpportunities: [
-        "SAP SD End User",
-        "SAP SD Consultant",
-        "Senior SAP Consultant",
-        "SAP Business Analyst",
-        "Order Management Specialist",
-        "Sales & Distribution Manager",
-        "SAP Project Manager",
-        "SAP Solution Architect"
-    ],
-
-    feesAndDuration: `
-The SAP SD Course typically takes between 10 and 12 weeks depending on the training schedule chosen.
-
-Training options include weekday batches with a duration of 8–10 weeks, weekend batches designed for working professionals, and a fast-track program that can be completed in 4–6 weeks.
-
-Flexible schedules allow students to complete the SAP SD Course while managing work or studies.
-
-The course fee includes complete training sessions, study materials, SAP practice system access, real-time projects, and certification guidance. Flexible payment options are also available.
-`,
-    keyTopics: [
-        "Sales Order Processing",
-        "Pricing and Condition Techniques",
-        "Delivery and Shipping Management",
-        "Billing and Invoice Processing",
-        "Real-time business scenarios"
-    ],
-    metaTitle: "SAP SD Course | Training with Placement – NxGen Tech Academy",
-    metaDescription: "Join SAP SD course at NxGen Tech Academy. Learn sales order processing, billing, pricing, and SAP skills with expert training and placement support"
-};
-
-const SAPCourseDetail = () => {
+const CourseDetail = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<"details" | "curriculum">("curriculum");
+    const [activeTab, setActiveTab] = useState<"details" | "curriculum">("details");
     const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.2);
 
     const basicCourse = coursesData.find(c => c.id === id);
 
+    // Attempt to get specialized SAP content
+    const sapContent = basicCourse ? getSapCourseContent(id || "", basicCourse.title) : null;
+
+    // Attempt to get detailed course data (for non-SAP or detailed SAP)
+    const detailedCourse = id ? detailedCourses[id] : null;
 
     useEffect(() => {
         setIsLoading(true);
@@ -103,7 +37,7 @@ const SAPCourseDetail = () => {
         return () => clearTimeout(timer);
     }, [id]);
 
-    if (!basicCourse || !content) {
+    if (!basicCourse) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center p-4">
                 <h2 className="text-2xl font-bold mb-4">Course not found</h2>
@@ -114,16 +48,51 @@ const SAPCourseDetail = () => {
         );
     }
 
-    const duration = basicCourse.duration || "40+ hours";
-    const enrolled = basicCourse.enrolled || "1500+";
+    // Merge/Normalize content
+    const content = {
+        metaTitle: sapContent?.metaTitle,
+        metaDescription: sapContent?.metaDescription,
+        whatIs: sapContent?.whatIs || detailedCourse?.overview || basicCourse.description,
+        whyCourse: sapContent?.whyCourse || (detailedCourse?.audience ? `This course is ideal for ${detailedCourse.audience.join(", ")}.` : ""),
+        keyBenefits: sapContent?.keyBenefits || detailedCourse?.outcomes || [],
+        whyChooseNxGen: sapContent?.whyChooseNxGen || [
+            "Live interactive training sessions",
+            "Real-time projects and case studies",
+            "Expert trainer guidance",
+            "Placement assistance",
+            "Affordable course fees"
+        ],
+        careerOpportunities: sapContent?.careerOpportunities || [
+            `${basicCourse.title} Professional`,
+            "Industry Consultant",
+            "Solution Architect",
+            "Functional Expert"
+        ],
+        feesAndDuration: sapContent?.feesAndDuration || `Our ${basicCourse.title} course is designed to be highly affordable while delivering world-class education. For specific fee structures and starting dates, please reach out to our admissions team.`,
+        keyTopics: (sapContent?.keyTopics && sapContent.keyTopics.length > 0)
+            ? sapContent.keyTopics
+            : (detailedCourse?.tools && detailedCourse.tools.length > 0)
+                ? detailedCourse.tools.map(t => t.name)
+                : (detailedCourse?.curriculum && detailedCourse.curriculum.length > 0)
+                    ? detailedCourse.curriculum.slice(0, 6).map(m => (m.module || (m as any).title).replace(/^Module \d+: /, ""))
+                    : [
+                        "Comprehensive Module Training",
+                        "Industry Best Practices",
+                        "Real-world Case Studies",
+                        "Hands-on System Practice",
+                        "Certification Preparation",
+                        "Job-ready Skill Development"
+                    ],
+        curriculum: sapContent?.curriculum || detailedCourse?.curriculum || [
+            { module: "Introduction & Fundamentals", topics: ["Overview", "Basic Navigation", "Core Concepts"] },
+            { module: "Core Configuration", topics: ["Master Data Setup", "Standard Business Processes"] },
+            { module: "Advanced Features", topics: ["Integration Scenarios", "Advanced Customizing"] },
+            { module: "Real-time Projects", topics: ["Industry Best Practices", "Live Case Studies"] },
+        ]
+    };
 
-    // Sample Curriculum Data
-    const sampleCurriculum = [
-        { title: "Introduction & Fundamentals", topics: ["Overview of the module", "System Landscape", "Basic Navigation", "Core Concepts"] },
-        { title: "Standard Configuration", topics: ["Organizational Units", "Master Data Setup", "Standard Business Processes", "Customizing Basics"] },
-        { title: "Advanced Features & Tools", topics: ["Reporting Tools", "Integration Scenarios", "Advanced Customizing", "Performance Tuning"] },
-        { title: "Real-time Projects & Case Studies", topics: ["Industry Best Practices", "Live Project Scenarios", "User Acceptance Testing (UAT)", "Go-Live Support"] },
-    ];
+    const duration = basicCourse.duration || detailedCourse?.duration || "40+ hours";
+    const enrolled = basicCourse.enrolled || "1500+";
 
     const toggleTabAndScroll = (tab: "details" | "curriculum") => {
         setActiveTab(tab);
@@ -131,7 +100,6 @@ const SAPCourseDetail = () => {
             document.getElementById('content-area')?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
     };
-
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
@@ -144,19 +112,19 @@ const SAPCourseDetail = () => {
 
             <PageHero
                 title={basicCourse.title}
-                description={basicCourse.description || "Master SAP tools with certified experts and real-world projects."}
+                description={basicCourse.description || "Master industry tools with certified experts and real-world projects."}
             >
                 <div className="flex flex-col sm:flex-row gap-4 mt-6">
                     <Link to="/courses-menu" className="inline-flex items-center text-white/80 hover:text-white transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to All Courses
                     </Link>
 
-                    <Button
+                    {/* <Button
                         onClick={() => toggleTabAndScroll(activeTab === "curriculum" ? "details" : "curriculum")}
                         className="bg-[#10B981] hover:bg-[#059669] text-white px-8 py-6 text-lg rounded-full shadow-lg transition-transform hover:scale-105"
                     >
                         {activeTab === "curriculum" ? "View Details" : "View Course"}
-                    </Button>
+                    </Button> */}
                 </div>
             </PageHero>
 
@@ -204,10 +172,10 @@ const SAPCourseDetail = () => {
                                     </div>
                                 </div>
 
-                                {content.keyTopics && (
+                                {content.keyTopics.length > 0 && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                        <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                            <BookOpen className="w-6 h-6 text-blue-500" /> Key Topics Covered
+                                        <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                            <BookOpen className="w-8 h-8 text-blue-500" /> Key Topics Covered
                                         </h2>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             {content.keyTopics.map((topic, idx) => (
@@ -223,15 +191,15 @@ const SAPCourseDetail = () => {
                                 )}
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-8 flex items-center gap-2">
-                                        <BookOpen className="w-6 h-6 text-blue-600" /> {basicCourse.title} Curriculum
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-10 flex items-center gap-3">
+                                        <BookOpen className="w-8 h-8 text-blue-600" /> {basicCourse.title} Curriculum
                                     </h2>
 
                                     <div className="space-y-4">
-                                        {sampleCurriculum.map((item, index) => (
+                                        {content.curriculum.map((item, index) => (
                                             <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
                                                 <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-100 transition-colors">
-                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.title}</span>
+                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.module || (item as any).title}</span>
                                                     <ChevronDown className="w-5 h-5 text-gray-500" />
                                                 </div>
                                                 <div className="p-6 bg-white">
@@ -262,42 +230,46 @@ const SAPCourseDetail = () => {
                             <div className="space-y-10 animate-in fade-in duration-500">
                                 {/* Descriptive/Marketing Content Moved to Details Tab */}
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
-                                        <BookOpen className="w-6 h-6 text-blue-600" /> What is {basicCourse.title} ?
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                        <BookOpen className="w-8 h-8 text-blue-600" /> What is {basicCourse.title}?
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.whatIs}
                                     </p>
                                 </section>
 
-                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
-                                        <Star className="w-6 h-6 text-yellow-500" /> Why {basicCourse.title} ?
-                                    </h2>
-                                    <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
-                                        {content.whyCourse}
-                                    </p>
-                                </section>
+                                {content.whyCourse && (
+                                    <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
+                                        <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                            <Star className="w-8 h-8 text-yellow-500" /> Why {basicCourse.title}?
+                                        </h2>
+                                        <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
+                                            {content.whyCourse}
+                                        </p>
+                                    </section>
+                                )}
 
-                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                        <Award className="w-6 h-6 text-purple-600" /> Key Benefits
-                                    </h2>
-                                    <div className="grid sm:grid-cols-2 gap-4">
-                                        {content.keyBenefits.map((benefit, idx) => (
-                                            <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
-                                                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5 text-green-600">
-                                                    <CheckCircle className="w-4 h-4" />
+                                {content.keyBenefits.length > 0 && (
+                                    <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
+                                        <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                            <Award className="w-8 h-8 text-purple-600" /> Key Benefits
+                                        </h2>
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            {content.keyBenefits.map((benefit, idx) => (
+                                                <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
+                                                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5 text-green-600">
+                                                        <CheckCircle className="w-4 h-4" />
+                                                    </div>
+                                                    <span className="text-gray-700 font-medium">{benefit}</span>
                                                 </div>
-                                                <span className="text-gray-700 font-medium">{benefit}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
+                                            ))}
+                                        </div>
+                                    </section>
+                                )}
 
-                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                        <CheckCircle className="w-6 h-6 text-[#10B981]" /> Why Choose NXGen {basicCourse.title}
+                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                        <CheckCircle className="w-8 h-8 text-[#10B981]" /> Why Choose NxGen Tech Academy?
                                     </h2>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         {content.whyChooseNxGen.map((reason, idx) => (
@@ -311,9 +283,9 @@ const SAPCourseDetail = () => {
                                     </div>
                                 </section>
 
-                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                        <Briefcase className="w-6 h-6 text-orange-500" /> Career Opportunities After {basicCourse.title} Course
+                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400">
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                        <Briefcase className="w-8 h-8 text-orange-500" /> Career Opportunities
                                     </h2>
                                     <ul className="space-y-4 pl-2">
                                         {content.careerOpportunities.map((career, idx) => (
@@ -326,9 +298,9 @@ const SAPCourseDetail = () => {
                                 </section>
 
 
-                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
-                                        <Clock className="w-6 h-6 text-blue-600" /> {basicCourse.title} Course Fees and Duration
+                                <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                        <Clock className="w-8 h-8 text-blue-600" /> Fees and Duration
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.feesAndDuration}
@@ -388,4 +360,4 @@ const SAPCourseDetail = () => {
     );
 };
 
-export default SAPCourseDetail;
+export default CourseDetail;
