@@ -33,7 +33,7 @@ const courseCategoryToGroup: Record<string, string> = {
   django: "python-ai-dsa",
   ai: "python-ai-dsa",
   dsa: "python-ai-dsa",
-  
+
   powerbi: "powerbi",
   analytics: "powerbi",
   tableau: "powerbi",
@@ -43,12 +43,12 @@ const courseCategoryToGroup: Record<string, string> = {
   machinelearning: "ai-data-science",
   deeplearning: "ai-data-science",
   nlp: "ai-data-science",
-  
+
   testing: "testing",
   selenium: "testing",
   automation: "testing",
   qa: "testing",
-  
+
   security: "cybersecurity",
   pentesting: "cybersecurity",
   ethical: "cybersecurity",

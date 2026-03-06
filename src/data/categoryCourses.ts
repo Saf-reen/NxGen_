@@ -154,7 +154,7 @@ export const coursesData: CourseData[] = [
     },
     // SAP Functional - UPDATED CONTENT
     {
-        id: "sap-sd-course-online-training",
+        id: "sap-sd-course-training",
         title: "SAP SD (Sales & Distribution)",
         description: "Sales order processing, pricing, delivery, billing, and SD–MM–FICO integration.",
         categoryId: "sap-functional",
@@ -166,7 +166,7 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
     {
-        id: "sap-mm",
+        id: "sap-mm-course",
         title: "SAP MM (Materials Management)",
         description: "Procurement, inventory management, vendor handling, and invoice verification.",
         categoryId: "sap-functional",
@@ -178,7 +178,7 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
     {
-        id: "sap-fico-course-online-training",
+        id: "sap-fico-course-training",
         title: "SAP FICO (Financial Accounting & Controlling)",
         description: "Financial accounting, cost control, asset accounting, and reporting.",
         categoryId: "sap-functional",
@@ -190,7 +190,7 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
     {
-        id: "sap-pp-course-online",
+        id: "sap-pp-course",
         title: "SAP PP (Production Planning)",
         description: "BOM, routing, MRP, production orders, and capacity planning.",
         categoryId: "sap-functional",
@@ -203,7 +203,7 @@ export const coursesData: CourseData[] = [
     },
 
     {
-        id: "sap-qm",
+        id: "sap-qm-course",
         title: "SAP QM (Quality Management)",
         description: "Quality planning, inspections, notifications, and compliance management.",
         categoryId: "sap-functional",
