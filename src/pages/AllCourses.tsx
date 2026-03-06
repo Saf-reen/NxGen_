@@ -197,32 +197,7 @@ const AllCourses = () => {
                                 let displayList: any[] = [];
 
                                 if (selectedCategory === "All Courses") {
-
-                                    const parentCounts: Record<string, number> = {};
-                                    Object.values(categoryConfig).forEach(c => {
-                                        parentCounts[c.parentCategory] = (parentCounts[c.parentCategory] || 0) + 1;
-                                    });
-
-                                    const multiSubCatParents = Object.keys(parentCounts).filter(p => parentCounts[p] > 1);
-
-                                    const groupSubCats = Object.entries(categoryConfig)
-                                        .filter(([_, config]) => multiSubCatParents.includes(config.parentCategory))
-                                        .map(([key, config]) => ({ type: 'category', id: key, ...config }));
-
-                                    const filteredGroupSubCats = searchQuery
-                                        ? groupSubCats.filter(cat => cat.title.toLowerCase().includes(searchQuery.toLowerCase()))
-                                        : groupSubCats;
-
-                                    const individualCourses = filteredCourses
-                                        .filter(course => {
-                                            const config = categoryConfig[course.categoryId];
-                                            const parentCategory = config ? config.parentCategory : "Other";
-                                            return !multiSubCatParents.includes(parentCategory);
-                                        })
-                                        .map(course => ({ type: 'course', id: course.id, ...course }));
-
-                                    displayList = [...filteredGroupSubCats, ...individualCourses];
-
+                                    displayList = filteredCourses.map(course => ({ type: 'course', id: course.id, ...course }));
                                 } else {
                                     const subCategories = Object.entries(categoryConfig)
                                         .filter(([_, config]) => config.parentCategory === selectedCategory)
