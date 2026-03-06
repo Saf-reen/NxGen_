@@ -53,8 +53,8 @@ const SAPCategory = () => {
                         >
                             {/* Image Section */}
                             {course!.image && course!.image !== "code-icon" ? (
-                                <div className="w-full bg-gray-50 border-b border-gray-100 flex-shrink-0">
-                                    <img src={course!.image} alt={course!.title} className="w-full h-auto block" />
+                                <div className="w-full h-48 bg-gray-50 border-b border-gray-100 flex-shrink-0 overflow-hidden">
+                                    <img src={course!.image} alt={course!.title} className="w-full h-full object-cover" />
                                 </div>
                             ) : (
                                 <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100 flex-shrink-0">

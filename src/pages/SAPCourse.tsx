@@ -158,8 +158,8 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                                     >
                                         {/* Image Section */}
                                         {course.image && course.image !== "code-icon" ? (
-                                            <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 p-4">
-                                                <img src={course.image} alt={course.title} className="max-h-full max-w-full object-contain" />
+                                            <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 overflow-hidden">
+                                                <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
                                             </div>
                                         ) : (
                                             <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100">

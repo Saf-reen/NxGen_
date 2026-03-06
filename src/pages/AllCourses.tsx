@@ -1,72 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { Search, ArrowLeft } from "lucide-react"; // Import ArrowLeft if needed, though AllCourses is top level
+import { Search, ArrowLeft, Star, Clock, Users, Monitor, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { coursesData, categoryConfig } from "@/data/categoryCourses";
-
-// Helper to get all unique parent categories or just use the config keys
-// The Sidebar in AllCourses used "SAP Courses", "Data Analytics" etc.
-// categoryConfig keys are slugs like "sap-technical", "sap-functional".
-// These map to parentCategory: "SAP Courses".
-
-// Let's build a list of unique Parent Categories for the sidebar
-const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c => c.parentCategory)));
-// Add "All"
-const categoriesList = ["All Courses", ...parentCategories];
-
-
 import { PageHero } from "@/components/PageHero";
 
 const AllCourses = () => {
-    const [searchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const initialCategory = searchParams.get("category") || "All Courses";
-    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+    const initialSubCategory = searchParams.get("sub") || null;
 
-    // Sync state if URL param changes (e.g. navigation from footer)
-    React.useEffect(() => {
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+    const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<string | null>(initialSubCategory);
+
+    // Sync state if URL param changes
+    useEffect(() => {
         const categoryParam = searchParams.get("category");
+        const subParam = searchParams.get("sub");
         if (categoryParam) {
             setSelectedCategory(categoryParam);
         }
+        setSelectedSubCategoryId(subParam);
         window.scrollTo(0, 0);
     }, [searchParams]);
+
     const [searchQuery, setSearchQuery] = useState("");
 
-    // Filter Logic
-    // const filteredCourses = coursesData.filter(course => {
+    const handleSubCategorySelect = (subId: string) => {
+        setSelectedSubCategoryId(subId);
+        setSearchParams({ category: selectedCategory, sub: subId });
+    };
 
-    //     // 1. Search Query
-    //     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const handleBackToCategories = () => {
+        setSelectedSubCategoryId(null);
+        setSearchParams({ category: selectedCategory });
+    };
 
-    //     // 2. Category Filter
-    //     // We need to check if the course's categoryId maps to the selected Parent Category
-    //     const config = categoryConfig[course.categoryId];
-    //     const courseParentCategory = config ? config.parentCategory : "Other";
-
-    //     const matchesCategory = selectedCategory === "All Courses" || courseParentCategory === selectedCategory;
-
-    //     return matchesSearch && matchesCategory;
-    // });
     const filteredCourses = coursesData.filter(course => {
+        const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
 
-        // Search Query
-        const matchesSearch =
-            course.title.toLowerCase().includes(searchQuery.toLowerCase());
+        if (selectedSubCategoryId) {
+            return matchesSearch && course.categoryId === selectedSubCategoryId;
+        }
 
-        // Get Parent Category
-        const parentCategory =
-            categoryConfig[course.categoryId]?.parentCategory || "Other";
-
-        // MAIN CATEGORY FILTER ONLY
-        const matchesCategory =
-            selectedCategory === "All Courses" ||
-            parentCategory === selectedCategory;
+        const parentCategory = categoryConfig[course.categoryId]?.parentCategory || "Other";
+        const matchesCategory = selectedCategory === "All Courses" || parentCategory === selectedCategory;
 
         return matchesSearch && matchesCategory;
     });
-
 
     return (
         <div className="min-h-screen bg-white font-sans text-gray-700">
@@ -78,13 +61,20 @@ const AllCourses = () => {
             />
 
             <PageHero
-                title="Our Course Basket"
-                description="Explore our wide range of industry-leading courses."
-            />
-            {/* Main Content Area */}
-            <div className="container mx-auto px-4 py-12">
+                title={selectedSubCategoryId ? categoryConfig[selectedSubCategoryId]?.title : "Our Course Basket"}
+                description={selectedSubCategoryId ? categoryConfig[selectedSubCategoryId]?.description : "Explore our wide range of industry-leading courses."}
+            >
+                {selectedSubCategoryId && (
+                    <button
+                        onClick={handleBackToCategories}
+                        className="inline-flex items-center text-white/80 hover:text-white transition-colors mt-4"
+                    >
+                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Categories
+                    </button>
+                )}
+            </PageHero>
 
-                {/* Search Bar - Matching CategoryPage Style */}
+            <div className="container mx-auto px-4 py-12">
                 <div className="flex justify-center mb-10">
                     <div className="relative w-full max-w-xl">
                         <Input
@@ -99,36 +89,141 @@ const AllCourses = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Sidebar - Categories */}
-                    <div className="w-full lg:w-1/4 shrink-0">
-                        <h2 className="text-xl font-normal text-gray-700 mb-6 text-center lg:text-left">Categories</h2>
-                        <div className="flex flex-col space-y-3">
-                            {categoriesList.map((category) => (
-                                <button
-                                    key={category}
-                                    onClick={() => setSelectedCategory(category)}
-                                    className={`py-3 px-4 rounded border text-center lg:text-left transition-all duration-200 ${selectedCategory === category
-                                        ? "bg-[#000080] text-white border-[#000080]"
-                                        : "bg-white text-[#000080] border-[#000080] hover:bg-blue-50"
-                                        }`}
-                                >
-                                    {category}
-                                </button>
-                            ))}
+                    {/* Sidebar - Categories (Only visible when no subcategory is selected) */}
+                    {!selectedSubCategoryId && (
+                        <div className="w-full lg:w-1/4 shrink-0">
+                            <h2 className="text-xl font-normal text-gray-700 mb-6 text-center lg:text-left">Categories</h2>
+                            <div className="flex flex-col space-y-3">
+                                {categoriesList.map((category) => (
+                                    <button
+                                        key={category}
+                                        onClick={() => {
+                                            setSelectedCategory(category);
+                                            setSearchParams({ category });
+                                        }}
+                                        className={`py-3 px-4 rounded border text-center lg:text-left transition-all duration-200 ${selectedCategory === category
+                                            ? "bg-[#000080] text-white border-[#000080]"
+                                            : "bg-white text-[#000080] border-[#000080] hover:bg-blue-50"
+                                            }`}
+                                    >
+                                        {category}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    )}
 
-                    {/* Course List - Matching CategoryPage GRID Interface */}
-                    <div className="w-full lg:w-3/4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Content Area */}
+                    <div className={`w-full ${selectedSubCategoryId ? '' : 'lg:w-3/4'}`}>
+                        <div className={`grid grid-cols-1 ${selectedSubCategoryId ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'} gap-8`}>
                             {(() => {
+                                if (selectedSubCategoryId) {
+                                    // Show Courses in the selected SubCategory
+                                    if (filteredCourses.length === 0) {
+                                        return (
+                                            <div className="col-span-full text-center py-10 text-gray-500">
+                                                <p className="text-xl">No courses found in this category.</p>
+                                                <Button onClick={handleBackToCategories} variant="link" className="mt-2 text-[#000080]">
+                                                    Back to categories
+                                                </Button>
+                                            </div>
+                                        );
+                                    }
+
+                                    return filteredCourses.map((course) => (
+                                        <div
+                                            key={course.id}
+                                            className="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                                        >
+                                            {/* Image Section - No Gaps */}
+                                            {course.image && course.image !== "code-icon" ? (
+                                                <div className="w-full h-48 bg-gray-50 flex items-center justify-center border-b border-gray-100 overflow-hidden">
+                                                    <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
+                                                </div>
+                                            ) : (
+                                                <div className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center border-b border-gray-100">
+                                                    <img src="/Logo.png" alt={course.title} className="h-16 opacity-50" />
+                                                </div>
+                                            )}
+
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="mb-2">
+                                                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                        {course.title}
+                                                    </h3>
+                                                </div>
+
+                                                <div className="flex items-center gap-1 mb-4">
+                                                    {[...Array(course.rating || 5)].map((_, i) => (
+                                                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                                    ))}
+                                                    <span className="text-blue-500 text-xs ml-2">(33 Reviews)</span>
+                                                </div>
+
+                                                <div className="flex-grow">
+                                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                                        {course.description || `Comprehensive training on ${course.title} including real-world projects and certification.`}
+                                                    </p>
+                                                </div>
+
+                                                <div className="flex flex-col gap-2 mb-6 border-t border-gray-100 pt-4">
+                                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                        <Clock className="w-4 h-4 text-green-600" />
+                                                        <span>Duration: {course.duration || "40+ hours"}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                        <Users className="w-4 h-4 text-green-600" />
+                                                        <span>Students Enrolled: {course.enrolled || "1500+"}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                                                        <Monitor className="w-4 h-4 text-green-600" />
+                                                        <span>Mode: {course.mode || "Online"}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="mt-auto flex justify-end">
+                                                    <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
+                                                        <Link to={`/courses/${course.id}`}>
+                                                            <Eye className="w-4 h-4" /> View Course
+                                                        </Link>
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ));
+                                }
+
+                                // Default Category/SubCategory Selection View
                                 let displayList: any[] = [];
 
                                 if (selectedCategory === "All Courses") {
-                                    // Direct map for "All Courses" to display individual courses instead of subcategories
-                                    displayList = filteredCourses.map(course => ({ type: 'course', id: course.id, ...course }));
+
+                                    const parentCounts: Record<string, number> = {};
+                                    Object.values(categoryConfig).forEach(c => {
+                                        parentCounts[c.parentCategory] = (parentCounts[c.parentCategory] || 0) + 1;
+                                    });
+
+                                    const multiSubCatParents = Object.keys(parentCounts).filter(p => parentCounts[p] > 1);
+
+                                    const groupSubCats = Object.entries(categoryConfig)
+                                        .filter(([_, config]) => multiSubCatParents.includes(config.parentCategory))
+                                        .map(([key, config]) => ({ type: 'category', id: key, ...config }));
+
+                                    const filteredGroupSubCats = searchQuery
+                                        ? groupSubCats.filter(cat => cat.title.toLowerCase().includes(searchQuery.toLowerCase()))
+                                        : groupSubCats;
+
+                                    const individualCourses = filteredCourses
+                                        .filter(course => {
+                                            const config = categoryConfig[course.categoryId];
+                                            const parentCategory = config ? config.parentCategory : "Other";
+                                            return !multiSubCatParents.includes(parentCategory);
+                                        })
+                                        .map(course => ({ type: 'course', id: course.id, ...course }));
+
+                                    displayList = [...filteredGroupSubCats, ...individualCourses];
+
                                 } else {
-                                    // Specific Category Selected
                                     const subCategories = Object.entries(categoryConfig)
                                         .filter(([_, config]) => config.parentCategory === selectedCategory)
                                         .map(([key, config]) => ({ type: 'category', id: key, ...config }));
@@ -180,12 +275,12 @@ const AllCourses = () => {
 
                                             <div className={`pt-4 border-t border-gray-100 flex items-center ${isSubCat ? 'justify-between mt-6' : 'justify-end mt-4'}`}>
                                                 {isSubCat ? (
-                                                    <Link
-                                                        to={`/courses/${item.id}`}
+                                                    <button
+                                                        onClick={() => handleSubCategorySelect(item.id)}
                                                         className={`text-[#000080] text-sm hover:underline font-semibold`}
                                                     >
                                                         Explore Category
-                                                    </Link>
+                                                    </button>
                                                 ) : (
                                                     <Button asChild className="bg-[#10B981] hover:bg-[#059669] text-white flex items-center gap-2 rounded-md px-6">
                                                         <Link to={`/courses/${item.id}`}>
@@ -205,5 +300,9 @@ const AllCourses = () => {
         </div>
     );
 };
+
+// Helper for unique categories list (need to move it or recalculate it inside)
+const parentCategories = Array.from(new Set(Object.values(categoryConfig).map(c => c.parentCategory)));
+const categoriesList = ["All Courses", ...parentCategories];
 
 export default AllCourses;
