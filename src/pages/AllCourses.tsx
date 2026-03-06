@@ -125,34 +125,8 @@ const AllCourses = () => {
                                 let displayList: any[] = [];
 
                                 if (selectedCategory === "All Courses") {
-                                    // Group categories to determine which ones have multiple subcategories
-                                    const parentCounts: Record<string, number> = {};
-                                    Object.values(categoryConfig).forEach(c => {
-                                        parentCounts[c.parentCategory] = (parentCounts[c.parentCategory] || 0) + 1;
-                                    });
-
-                                    const multiSubCatParents = Object.keys(parentCounts).filter(p => parentCounts[p] > 1);
-
-                                    // Add the subcategories themselves for grouped parents
-                                    const groupSubCats = Object.entries(categoryConfig)
-                                        .filter(([_, config]) => multiSubCatParents.includes(config.parentCategory))
-                                        .map(([key, config]) => ({ type: 'category', id: key, ...config }));
-
-                                    const filteredGroupSubCats = searchQuery
-                                        ? groupSubCats.filter(cat => cat.title.toLowerCase().includes(searchQuery.toLowerCase()))
-                                        : groupSubCats;
-
-                                    // Add individual courses for non-grouped parents
-                                    const individualCourses = filteredCourses
-                                        .filter(course => {
-                                            const config = categoryConfig[course.categoryId];
-                                            const parentCategory = config ? config.parentCategory : "Other";
-                                            return !multiSubCatParents.includes(parentCategory);
-                                        })
-                                        .map(course => ({ type: 'course', id: course.id, ...course }));
-
-                                    displayList = [...filteredGroupSubCats, ...individualCourses];
-
+                                    // Direct map for "All Courses" to display individual courses instead of subcategories
+                                    displayList = filteredCourses.map(course => ({ type: 'course', id: course.id, ...course }));
                                 } else {
                                     // Specific Category Selected
                                     const subCategories = Object.entries(categoryConfig)

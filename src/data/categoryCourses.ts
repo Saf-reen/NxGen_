@@ -39,15 +39,14 @@ export const categoryConfig: Record<string, { title: string; description: string
         ]
     },
     "sap-admin": {
-        title: "SAP Administration & HR",
-        description: "Manage systems and human capital with SAP Admin modules.",
+        title: "SAP Administration",
+        description: "Manage systems with SAP Admin modules.",
         parentCategory: "SAP Courses",
         outcomes: [
             "Perform SAP system installation, configuration, and maintenance",
             "Manage user administration, roles, and authorizations security",
             "Monitor system performance and troubleshoot technical issues",
-            "Handle database administration, backups, and disaster recovery",
-            "configure and manage SAP HCM/SuccessFactors for HR operations"
+            "Handle database administration, backups, and disaster recovery"
         ]
     },
     "python": {
@@ -153,18 +152,6 @@ export const coursesData: CourseData[] = [
         rating: 5,
         price: "₹35,000"
     },
-    {
-        id: "sap-fullstack",
-        title: "SAP Full Stack Development (ABAP + Fiori)",
-        description: "End-to-end SAP development covering backend (ABAP, CDS, RAP) and frontend (Fiori, UI5) with real-time projects & internship.",
-        categoryId: "sap-technical",
-        image: "/sap/sap-fullstack.png",
-        rating: 5,
-        price: "₹50,000"
-    },
-
-
-
     // SAP Functional - UPDATED CONTENT
     {
         id: "sap-sd",
@@ -211,15 +198,7 @@ export const coursesData: CourseData[] = [
         rating: 5,
         price: "₹30,000"
     },
-    {
-        id: "sap-pm",
-        title: "SAP PM (Plant Maintenance)",
-        description: "Equipment maintenance, preventive maintenance, orders, and notifications.",
-        categoryId: "sap-functional",
-        image: "/sap/sap-pm.png",
-        rating: 5,
-        price: "₹28,000"
-    },
+
     {
         id: "sap-qm",
         title: "SAP QM (Quality Management)",
@@ -228,24 +207,6 @@ export const coursesData: CourseData[] = [
         image: "/sap/sap-qm.png",
         rating: 5,
         price: "₹28,000"
-    },
-    {
-        id: "sap-scm",
-        title: "SAP SCM (Supply Chain Management)",
-        description: "End-to-end supply chain planning, demand & distribution optimization.",
-        categoryId: "sap-functional",
-        image: "/sap/sap-scm.png",
-        rating: 5,
-        price: "₹35,000"
-    },
-    {
-        id: "sap-ewm",
-        title: "SAP EWM (Extended Warehouse Management)",
-        description: "Advanced warehouse operations, picking strategies, RF framework, and labor management.",
-        categoryId: "sap-functional",
-        image: "/sap/sap-ewm.png",
-        rating: 5,
-        price: "₹35,000"
     },
 
     // SAP Administration & HR - UPDATED CONTENT
@@ -257,15 +218,6 @@ export const coursesData: CourseData[] = [
         image: "/sap/sap-basis.png",
         rating: 5,
         price: "₹30,000"
-    },
-    {
-        id: "sap-hcm-successfactors",
-        title: "SAP HCM / SuccessFactors",
-        description: "HR processes including payroll, recruitment, time management, and talent management.",
-        categoryId: "sap-admin",
-        image: "/sap/sap-hcm.png",
-        rating: 5,
-        price: "₹35,000"
     },
 
     // SAP BTP - Comprehensive Modules (Based on Architecture)

@@ -141,18 +141,13 @@ export const Navbar = () => {
                         { title: "SAP ABAP on S/4HANA", link: "/courses/sap-abap-s4hana" },
                         { title: "SAP ABAP with CDS, OData & RAP", link: "/courses/sap-abap-rap" },
                         { title: "SAP Fiori & UI5", link: "/courses/sap-fiori" },
-                        { title: "SAP Full Stack Development", link: "/courses/sap-fullstack" },
                         { title: "SAP SD", link: "/courses/sap-sd" },
                         { title: "SAP MM", link: "/courses/sap-mm" },
                         { title: "SAP FICO", link: "/courses/sap-fico" },
                         { title: "SAP PP", link: "/courses/sap-pp" },
                         { title: "SAP BTP", link: "/courses/sap-btp" },
-                        { title: "SAP PM", link: "/courses/sap-pm" },
                         { title: "SAP QM", link: "/courses/sap-qm" },
-                        { title: "SAP SCM", link: "/courses/sap-scm" },
-                        { title: "SAP EWM", link: "/courses/sap-ewm" },
                         { title: "SAP Basis", link: "/courses/sap-basis" },
-                        { title: "SAP HCM", link: "/courses/sap-hcm-successfactors" },
                       ]
                     },
                     {
