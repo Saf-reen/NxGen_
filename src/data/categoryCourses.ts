@@ -55,7 +55,7 @@ export const categoryConfig: Record<string, { title: string; description: string
         parentCategory: "Python",
         outcomes: [
             "Master core Python syntax, data types, and control structures",
-            "Apply Object-Oriented Programming (OOP) principles in Python",
+            "Apply Object-Readiness Programming (OOP) principles in Python",
             "Work with Python libraries and frameworks for various applications",
             "Handle file I/O, exceptions, and database connectivity",
             "Build real-world applications and scripts using Python"

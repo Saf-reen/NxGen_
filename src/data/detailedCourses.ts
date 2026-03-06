@@ -351,7 +351,7 @@ export const detailedCourses: Record<string, DetailedCourse> = {
             { module: "Module 1: Python Fundamentals", topics: ["Variables, loops, functions", "Lists & dictionaries", "File handling"] },
             { module: "Module 2: Data Handling", topics: ["NumPy arrays", "Pandas DataFrames", "Data cleaning"] },
             { module: "Module 3: Data Visualization", topics: ["Matplotlib basics", "Seaborn plots", "EDA techniques"] },
-            { module: "Module 4: Object-Oriented Programming", topics: ["Classes & objects", "Inheritance", "Code structure"] },
+            { module: "Module 4: Object-Readiness Programming", topics: ["Classes & objects", "Inheritance", "Code structure"] },
             { module: "Module 5: Project Practice", topics: ["Mini ML project", "Data preprocessing pipeline", "Visualization dashboard"] }
         ],
         tools: [
@@ -867,7 +867,7 @@ export const detailedCourses: Record<string, DetailedCourse> = {
         lessons: 20,
         projects: 2,
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200",
-        overview: "This course is designed to provide a strong foundation in Python programming. You will learn everything from installation to Object Oriented Programming, enabling you to write logical programs and handle files.",
+        overview: "This course is designed to provide a strong foundation in Python programming. You will learn everything from installation to Object Readiness Programming, enabling you to write logical programs and handle files.",
         outcomes: [
             "Strong foundation in Python programming",
             "Ability to write logical programs",
@@ -882,7 +882,7 @@ export const detailedCourses: Record<string, DetailedCourse> = {
             { module: "Module 3: Control Statements", topics: ["if, elif, else", "Nested Conditions", "For Loop", "While Loop", "Break & Continue", "Pass Statement"] },
             { module: "Module 4: Strings & Collections", topics: ["String Methods", "String Formatting", "Lists & List Methods", "Tuples", "Sets", "Dictionaries & Dictionary Methods"] },
             { module: "Module 5: Functions", topics: ["Defining Functions", "Parameters & Arguments", "Return Statement", "Default Arguments", "Lambda Functions", "Recursion"] },
-            { module: "Module 6: OOP (Object Oriented Programming)", topics: ["Class & Object", "Constructor (init)", "Instance & Class Variables", "Inheritance", "Polymorphism", "Encapsulation", "Abstraction"] },
+            { module: "Module 6: OOP (Object Readiness Programming)", topics: ["Class & Object", "Constructor (init)", "Instance & Class Variables", "Inheritance", "Polymorphism", "Encapsulation", "Abstraction"] },
             { module: "Module 7: Exception Handling", topics: ["Types of Errors", "Try & Except", "Finally Block", "Raising Exceptions", "Custom Exceptions"] },
             { module: "Module 8: File Handling", topics: ["Reading Files", "Writing Files", "Append Mode", "Working with CSV Files"] }
         ],

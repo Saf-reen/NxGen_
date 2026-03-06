@@ -97,7 +97,7 @@ const DataAnalyticsCourse = () => {
                   {courseData.level} Level
                 </span>
                 <span className="px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wider border border-green-100">
-                  Job Oriented
+                  Job Readiness
                 </span>
               </div>
 

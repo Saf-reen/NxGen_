@@ -385,9 +385,9 @@ const About = () => {
                   { title: "Concept Clarity", icon: <Lightbulb className="w-5 h-5" /> },
                   { title: "Practical Implementation", icon: <Briefcase className="w-5 h-5" /> },
                   { title: "Industry Use Cases", icon: <Globe className="w-5 h-5" /> },
-                  { title: "Job Oriented", icon: <Target className="w-5 h-5" /> },
+                  { title: "Job Readiness", icon: <Target className="w-5 h-5" /> },
                   { title: "100% Placements", icon: <Award className="w-5 h-5" /> },
-                  { title: "Skill-Oriented Training", icon: <BookOpen className="w-5 h-5" /> },
+                  { title: "Skill-Readiness Training", icon: <BookOpen className="w-5 h-5" /> },
                 ].map((item, i) => (
                   <div key={i} className="bg-white border border-gray-100 p-4 rounded-lg shadow-sm flex items-center gap-3 hover:border-[#000080] hover:shadow-md transition-all">
                     <div className="p-2 bg-green-50 rounded-full text-[#000080]">
