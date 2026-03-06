@@ -52,7 +52,7 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-gray-900">₹20,000</span>
-                                        <span className="text-gray-500">/ Online</span>
+                                        <span className="text-gray-500">/ Online/ Offline</span>
                                     </div>
                                     <p className="text-sm text-gray-600">Perfect for beginners building strong theoretical knowledge</p>
                                 </div>
@@ -105,7 +105,7 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                                 <div className="relative z-10 text-center">
                                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                                         <Users className="w-24 h-24 text-white mx-auto mb-4" />
-                                        <h3 className="text-3xl font-bold text-white mb-2">Internship</h3>
+                                        <h3 className="text-3xl font-bold text-white mb-2">Industry Rediness</h3>
                                         <p className="text-gray-200 text-lg">Real-World Experience</p>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-gray-900">₹30,000</span>
-                                        <span className="text-gray-500">/ Offline/Hybrid</span>
+                                        <span className="text-gray-500">/ Offline</span>
                                     </div>
                                     <p className="text-sm text-gray-600">For learners who have the basics and need practical exposure</p>
                                 </div>
@@ -159,11 +159,11 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                     </div>
 
                     {/* Master Course Card - Highlighted */}
-                    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all">
+                    {/* <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all">
 
-                        <div className="grid md:grid-cols-2 gap-0">
+                        <div className="grid md:grid-cols-2 gap-0"> */}
                             {/* Left Section - Image/Visual */}
-                            <div className="bg-gradient-to-br from-[#000080] to-blue-900 p-12 flex items-center justify-center relative overflow-hidden">
+                            {/* <div className="bg-gradient-to-br from-[#000080] to-blue-900 p-12 flex items-center justify-center relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-48 h-48 bg-white opacity-5 rounded-full translate-x-1/4 -translate-y-1/4"></div>
                                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-x-1/4 translate-y-1/4"></div>
 
@@ -174,10 +174,10 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                                         <p className="text-gray-200 text-lg">Training + Internship</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Right Section - Details */}
-                            <div className="p-8 md:p-10 flex flex-col">
+                            {/* <div className="p-8 md:p-10 flex flex-col">
                                 <div className="mb-6">
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-[#000080]">₹35,000</span>
@@ -227,7 +227,7 @@ export const CoursePricing = ({ courseTitle }: CoursePricingProps) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

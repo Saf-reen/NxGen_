@@ -42,7 +42,7 @@ const CategoryListing = ({ categorySlug }: { categorySlug: string }) => {
         {
             title: "Application Development",
             icon: Code,
-            color: "text-blue-600",
+            color: "text-[#000080]",
             bg: "bg-blue-50",
             items: ["SAP Build Apps (Low-Code/No-Code)", "SAP Business Application Studio (Pro-Code)", "Cloud Foundry & Kyma Runtimes", "Mobile Services"]
         },
@@ -104,7 +104,7 @@ const CategoryListing = ({ categorySlug }: { categorySlug: string }) => {
                         {isBTP && (
                             <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                                 <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
-                                    <Layers className="w-6 h-6 text-blue-500" /> The SAP BTP Ecosystem
+                                    <Layers className="w-6 h-6 text-[#000080]" /> The SAP BTP Ecosystem
                                 </h2>
                                 <p className="text-gray-600 mb-8 leading-relaxed">
                                     SAP Business Technology Platform is the unified environment for innovation.
@@ -193,11 +193,11 @@ const CategoryListing = ({ categorySlug }: { categorySlug: string }) => {
                                             <div className="mt-auto pt-6 border-t border-gray-50 flex flex-col gap-3">
                                                 <div className="grid grid-cols-2 gap-2 text-xs text-gray-500">
                                                     <div className="flex items-center gap-2">
-                                                        <Clock className="w-4 h-4 text-blue-500" />
+                                                        <Clock className="w-4 h-4 text-[#000080]" />
                                                         <span>{course.duration || "40+ hours"}</span>
                                                     </div>
                                                     <div className="flex items-center gap-2">
-                                                        <Monitor className="w-4 h-4 text-blue-500" />
+                                                        <Monitor className="w-4 h-4 text-[#000080]" />
                                                         <span>{course.mode || "Live Training"}</span>
                                                     </div>
                                                 </div>
@@ -241,7 +241,7 @@ const CategoryListing = ({ categorySlug }: { categorySlug: string }) => {
                             </section>
                         )}
 
-                        <CoursePricing courseTitle={config.title} />
+                        {/* <CoursePricing courseTitle={config.title} /> */}
                     </div>
 
                     {/* RIGHT COLUMN - SIDEBAR */}
@@ -256,25 +256,25 @@ const CategoryListing = ({ categorySlug }: { categorySlug: string }) => {
                                 </h4>
                                 <ul className="space-y-4">
                                     <li className="flex items-center gap-4 text-sm text-gray-600 group">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-[#000080] flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                                             <PlayCircle className="w-5 h-5" />
                                         </div>
                                         <span>Live Sessions & Support</span>
                                     </li>
                                     <li className="flex items-center gap-4 text-sm text-gray-600 group">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-[#000080] flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                                             <Code className="w-5 h-5" />
                                         </div>
                                         <span>Industry Case Studies</span>
                                     </li>
                                     <li className="flex items-center gap-4 text-sm text-gray-600 group">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-[#000080] flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                                             <Award className="w-5 h-5" />
                                         </div>
                                         <span>Recognized Certification</span>
                                     </li>
                                     <li className="flex items-center gap-4 text-sm text-gray-600 group">
-                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 text-[#000080] flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                                             <Users className="w-5 h-5" />
                                         </div>
                                         <span>Lifetime Alumni Access</span>

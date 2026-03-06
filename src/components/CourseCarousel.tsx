@@ -132,7 +132,7 @@ export const CourseCarousel: React.FC<CarouselProps> = ({
                                 // Category card style (from lines 209-224 of Home.tsx)
                                 <div className="bg-white rounded-xl border border-gray-200 overflow-hidden group/card hover:-translate-y-2 transition-transform duration-300 h-full">
                                     <div className="h-40 bg-gray-200 flex items-center justify-center relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-600 opacity-80"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary to-[#000080] opacity-80"></div>
                                         <span className="relative text-white font-bold text-xl px-4 text-center">{item.title}</span>
                                     </div>
                                     <div className="p-6">

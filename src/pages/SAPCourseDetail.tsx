@@ -248,7 +248,7 @@ const SAPCourseDetail = () => {
                                         ))}
                                     </div>
 
-                                    <CoursePricing courseTitle={basicCourse.title} />
+                                    {/* <CoursePricing courseTitle={basicCourse.title} /> */}
                                     <div className="mt-12 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
                                         <h3 className="text-xl font-bold text-[#000080] mb-4">Want the full detailed syllabus?</h3>
                                         <p className="text-gray-600 mb-6">Download the complete PDF brochure for {basicCourse.title} with all technical modules and project details.</p>

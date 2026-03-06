@@ -240,9 +240,9 @@ const SAPCourse = ({ categorySlug }: { categorySlug?: string }) => {
                         )}
 
                         {/* Course Pricing Section */}
-                        <div className="mt-12">
+                        {/* <div className="mt-12">
                             <CoursePricing courseTitle={config.title} />
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* RIGHT COLUMN - SIDEBAR (1/3 width) */}

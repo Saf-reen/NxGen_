@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
     ArrowLeft, Star, Clock, Users, BookOpen,
-    CheckCircle, Briefcase, Award, PlayCircle, Code, ChevronDown
+    CheckCircle, Briefcase, Award, PlayCircle, Code, ChevronDown, IndianRupee, Monitor,
+    Layers, Terminal, Brain, PieChart, Globe, ChevronLeft, ChevronRight
 } from "lucide-react";
+import useEmblaCarousel from 'embla-carousel-react';
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Preloader } from "@/components/Preloader";
-import { coursesData } from "@/data/categoryCourses";
+import { coursesData, categoryConfig } from "@/data/categoryCourses";
 import { getSapCourseContent } from "@/data/sapCoursesContent";
 import { detailedCourses } from "@/data/detailedCourses";
 import { CoursePricing } from "@/components/CoursePricing";
@@ -19,7 +21,14 @@ const CourseDetail = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [activeTab, setActiveTab] = useState<"details" | "curriculum">("details");
+    const [expandedModule, setExpandedModule] = useState<number | null>(null);
+    const [activeSubTab, setActiveSubTab] = useState<"training" | "readiness">("training");
+
     const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.2);
+
+    const toggleModule = (index: number) => {
+        setExpandedModule(expandedModule === index ? null : index);
+    };
 
     const basicCourse = coursesData.find(c => c.id === id);
 
@@ -28,6 +37,27 @@ const CourseDetail = () => {
 
     // Attempt to get detailed course data (for non-SAP or detailed SAP)
     const detailedCourse = id ? detailedCourses[id] : null;
+
+    const initialRelated = basicCourse ? coursesData.filter(c => c.categoryId === basicCourse.categoryId && c.id !== basicCourse.id).slice(0, 10) : [];
+    const isFallback = initialRelated.length === 0;
+    const relatedCourses = isFallback && basicCourse ? coursesData.filter(c => c.id !== basicCourse.id).slice(0, 10) : initialRelated;
+
+    const parentCategory = basicCourse && categoryConfig[basicCourse.categoryId] && !isFallback
+        ? categoryConfig[basicCourse.categoryId].parentCategory
+        : "Our Popular Courses";
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: true,
+        align: 'start',
+        slidesToScroll: 1,
+        breakpoints: {
+            '(min-width: 768px)': { slidesToScroll: 2 },
+            '(min-width: 1024px)': { slidesToScroll: 3 }
+        }
+    });
+
+    const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+    const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
     useEffect(() => {
         setIsLoading(true);
@@ -101,6 +131,47 @@ const CourseDetail = () => {
         }, 100);
     };
 
+    const readinessCurriculum = [
+        {
+            module: "Project Planning & Real-world Implementation",
+            topics: [
+                "Understanding business requirements and scope",
+                "Project timeline and milestone planning",
+                "Agile and Waterfall methodologies in ERP projects",
+                "Client-facing communication and status reporting"
+            ]
+        },
+        {
+            module: "Industry Best Practices & Documentation",
+            topics: [
+                "Technical and Functional specifications (FS/TS)",
+                "Standard operating procedures (SOPs)",
+                "Code optimization and performance tuning",
+                "Quality assurance and peer reviews"
+            ]
+        },
+        {
+            module: "Resume Building & Portfolio Development",
+            topics: [
+                "Drafting a professional SAP/Tech resume",
+                "Highlighting project experience and key skills",
+                "Building a strong LinkedIn presence",
+                "Preparing for industry-standard profile evaluations"
+            ]
+        },
+        {
+            module: "Mock Interviews & Soft Skills",
+            topics: [
+                "Technical round preparation",
+                "Behavioral and scenario-based interview questions",
+                "Communication skills for professional meetings",
+                "Salary negotiation and job search strategies"
+            ]
+        }
+    ];
+
+    const currentCurriculum = activeSubTab === "training" ? content.curriculum : readinessCurriculum;
+
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
             <Helmet>
@@ -170,12 +241,46 @@ const CourseDetail = () => {
                                         <Users className="w-5 h-5 text-gray-400" />
                                         <span>{enrolled} Enrolled</span>
                                     </div>
+                                    <div className="h-4 w-px bg-gray-200 hidden lg:block"></div>
+                                    <div className="flex items-center gap-2">
+                                        <IndianRupee className="w-5 h-5 text-green-500" />
+                                        <span className="font-bold text-gray-900">
+                                            {activeSubTab === "training"
+                                                ? (basicCourse.price || "₹20,000")
+                                                : "₹30,000"}
+                                        </span>
+                                    </div>
+                                    <div className="h-4 w-px bg-gray-200 hidden lg:block"></div>
+                                    <div className="flex items-center gap-2 text-[#000080]">
+                                        <Monitor className="w-5 h-5" />
+                                        <span className="font-medium">
+                                            {activeSubTab === "training"
+                                                ? (basicCourse.mode || "Online / Offline")
+                                                : "Offline"}
+                                        </span>
+                                    </div>
                                 </div>
 
-                                {content.keyTopics.length > 0 && (
+                                {/* Sub-Tabs Switcher for Curriculum */}
+                                <div className="flex p-1 bg-slate-100 rounded-xl w-fit">
+                                    <button
+                                        onClick={() => { setActiveSubTab("training"); setExpandedModule(null); }}
+                                        className={`px-8 py-2.5 rounded-lg text-sm font-bold transition-all ${activeSubTab === "training" ? "bg-white text-[#000080] shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                                    >
+                                        1. Training
+                                    </button>
+                                    <button
+                                        onClick={() => { setActiveSubTab("readiness"); setExpandedModule(null); }}
+                                        className={`px-8 py-2.5 rounded-lg text-sm font-bold transition-all ${activeSubTab === "readiness" ? "bg-white text-[#000080] shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                                    >
+                                        2. Industry Oriented
+                                    </button>
+                                </div>
+
+                                {content.keyTopics.length > 0 && activeSubTab === "training" && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
                                         <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
-                                            <BookOpen className="w-8 h-8 text-blue-500" /> Key Topics Covered
+                                            <BookOpen className="w-8 h-8 text-[#000080]" /> Key Topics Covered
                                         </h2>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             {content.keyTopics.map((topic, idx) => (
@@ -191,32 +296,52 @@ const CourseDetail = () => {
                                 )}
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                                    <h2 className="text-3xl font-bold text-[#000080] mb-10 flex items-center gap-3">
-                                        <BookOpen className="w-8 h-8 text-blue-600" /> {basicCourse.title} Curriculum
+                                    <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                        <BookOpen className="w-8 h-8 text-[#000080]" />
+                                        {activeSubTab === "training" ? `${basicCourse.title} Modules` : "Industry Oriented Program"}
                                     </h2>
+                                    <p className="text-gray-500 mb-8 max-w-2xl">
+                                        {activeSubTab === "training"
+                                            ? "Explore the comprehensive technical modules designed to master the subject from scratch."
+                                            : "Our exclusive program focusing on real-world projects, documentation, and interview preparation to make you job-ready."
+                                        }
+                                    </p>
 
                                     <div className="space-y-4">
-                                        {content.curriculum.map((item, index) => (
-                                            <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
-                                                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-100 transition-colors">
-                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.module || (item as any).title}</span>
-                                                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                                        {currentCurriculum.map((item, index) => {
+                                            const isOpen = expandedModule === index;
+                                            return (
+                                                <div key={index} className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                                                    <div
+                                                        onClick={() => toggleModule(index)}
+                                                        className={`px-6 py-5 flex justify-between items-center cursor-pointer transition-all duration-300 ${isOpen ? 'bg-blue-50 border-b border-gray-200' : 'bg-gray-50 hover:bg-gray-100'}`}
+                                                    >
+                                                        <span className={`font-bold transition-colors ${isOpen ? 'text-[#000080]' : 'text-gray-700'}`}>
+                                                            Module {index + 1}: {item.module || (item as any).title}
+                                                        </span>
+                                                        <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                                                    </div>
+
+                                                    <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                                                        <div className="p-6 bg-white">
+                                                            <ul className="grid sm:grid-cols-2 gap-4">
+                                                                {item.topics.map((topic, tIdx) => (
+                                                                    <li key={tIdx} className="flex items-center gap-3 text-gray-600 group">
+                                                                        <div className="w-6 h-6 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 group-hover:bg-green-100 transition-colors">
+                                                                            <PlayCircle className="w-4 h-4" />
+                                                                        </div>
+                                                                        <span className="text-sm font-medium">{topic}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="p-6 bg-white">
-                                                    <ul className="grid sm:grid-cols-2 gap-4">
-                                                        {item.topics.map((topic, tIdx) => (
-                                                            <li key={tIdx} className="flex items-center gap-3 text-gray-600">
-                                                                <PlayCircle className="w-4 h-4 text-green-500 shrink-0" />
-                                                                <span>{topic}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
 
-                                    <CoursePricing courseTitle={basicCourse.title} />
+                                    {/* <CoursePricing courseTitle={basicCourse.title} /> */}
                                     <div className="mt-12 p-8 bg-blue-50 rounded-2xl border border-blue-100 text-center">
                                         <h3 className="text-xl font-bold text-[#000080] mb-4">Want the full detailed syllabus?</h3>
                                         <p className="text-gray-600 mb-6">Download the complete PDF brochure for {basicCourse.title} with all technical modules and project details.</p>
@@ -231,7 +356,7 @@ const CourseDetail = () => {
                                 {/* Descriptive/Marketing Content Moved to Details Tab */}
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
                                     <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
-                                        <BookOpen className="w-8 h-8 text-blue-600" /> What is {basicCourse.title}?
+                                        <BookOpen className="w-8 h-8 text-[#000080]" /> What is {basicCourse.title}?
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.whatIs}
@@ -300,7 +425,7 @@ const CourseDetail = () => {
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">
                                     <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
-                                        <Clock className="w-8 h-8 text-blue-600" /> Fees and Duration
+                                        <Clock className="w-8 h-8 text-[#000080]" /> Fees and Duration
                                     </h2>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.feesAndDuration}
@@ -353,6 +478,133 @@ const CourseDetail = () => {
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Dynamic Related Courses Section */}
+            <div className="bg-slate-100 py-16 scroll-mt-20">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-[#000080] mb-2 uppercase tracking-wider">Related Courses</h2>
+                        <h3 className="text-gray-500 font-medium">More from {parentCategory}</h3>
+                        <div className="h-1 w-20 bg-[#000080] mx-auto mt-4 rounded-full"></div>
+                    </div>
+
+                    {relatedCourses.length > 0 ? (
+                        relatedCourses.length > 3 ? (
+                            <div className="relative group">
+                                <div className="overflow-hidden" ref={emblaRef}>
+                                    <div className="flex touch-pan-y -ml-4">
+                                        {relatedCourses.map((course) => (
+                                            <div key={course.id} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0 pl-4 pb-4">
+                                                <Link
+                                                    to={`/courses/${course.id}`}
+                                                    className="group block h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-100"
+                                                >
+                                                    <div className="aspect-video overflow-hidden bg-slate-200">
+                                                        <img
+                                                            src={course.image}
+                                                            alt={course.title}
+                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                            onError={(e) => {
+                                                                (e.target as any).src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className="p-6">
+                                                        <div className="flex items-center gap-2 mb-3">
+                                                            <div className="flex text-yellow-500">
+                                                                <Star className="w-4 h-4 fill-current" />
+                                                            </div>
+                                                            <span className="text-sm font-bold text-gray-900">{course.rating}</span>
+                                                        </div>
+                                                        <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#000080] transition-colors line-clamp-1">
+                                                            {course.title}
+                                                        </h4>
+                                                        <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                                                            {course.description}
+                                                        </p>
+                                                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                                                            <span className="text-[#000080] font-bold">{course.price}</span>
+                                                            <div className="flex items-center text-[#000080] font-bold text-sm">
+                                                                View Course <ArrowLeft className="w-3 h-3 ml-1 rotate-180" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={scrollPrev}
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#000080] hover:bg-blue-50 transition-all border border-gray-100 hidden md:flex"
+                                >
+                                    <ChevronLeft className="w-6 h-6" />
+                                </button>
+                                <button
+                                    onClick={scrollNext}
+                                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#000080] hover:bg-blue-50 transition-all border border-gray-100 hidden md:flex"
+                                >
+                                    <ChevronRight className="w-6 h-6" />
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {relatedCourses.map((course) => (
+                                    <Link
+                                        key={course.id}
+                                        to={`/courses/${course.id}`}
+                                        className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-100"
+                                    >
+                                        <div className="aspect-video overflow-hidden bg-slate-200">
+                                            <img
+                                                src={course.image}
+                                                alt={course.title}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                onError={(e) => {
+                                                    (e.target as any).src = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+                                                }}
+                                            />
+                                        </div>
+                                        <div className="p-6">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <div className="flex text-yellow-500">
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                </div>
+                                                <span className="text-sm font-bold text-gray-900">{course.rating}</span>
+                                            </div>
+                                            <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#000080] transition-colors line-clamp-1">
+                                                {course.title}
+                                            </h4>
+                                            <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                                                {course.description}
+                                            </p>
+                                            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                                                <span className="text-[#000080] font-bold">{course.price}</span>
+                                                <div className="flex items-center text-[#000080] font-bold text-sm">
+                                                    View Course <ArrowLeft className="w-3 h-3 ml-1 rotate-180" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )
+                    ) : (
+                        <div className="text-center py-10 bg-white rounded-2xl shadow-sm border border-gray-100">
+                            <p className="text-gray-500 mb-6 font-medium">Check out our other popular categories</p>
+                            <Button asChild className="bg-[#000080] hover:bg-blue-900 text-white px-8 rounded-full">
+                                <Link to="/courses-menu">Explore Main Courses</Link>
+                            </Button>
+                        </div>
+                    )}
+
+                    <div className="mt-12 text-center">
+                        <Button asChild variant="outline" className="border-[#000080] text-[#000080] hover:bg-blue-50 px-8 py-6 rounded-full font-bold">
+                            <Link to="/courses-menu">Browse All Courses</Link>
+                        </Button>
                     </div>
                 </div>
             </div>

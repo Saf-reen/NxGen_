@@ -195,7 +195,7 @@ export const Navbar = () => {
                             ))}
                           </ul>
                           <div className="mt-8 pt-6 border-t border-gray-100 text-center">
-                            <Link to={category.link} className="text-[#4169E1] font-semibold text-sm hover:underline underline-offset-4">
+                            <Link to={category.link} className="text-[#000080] font-semibold text-sm hover:underline underline-offset-4">
                               View All {category.name} Courses
                             </Link>
                           </div>

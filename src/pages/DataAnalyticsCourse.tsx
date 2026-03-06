@@ -214,7 +214,7 @@ const DataAnalyticsCourse = () => {
             </section>
 
             {/* 5. Course Pricing & Modes */}
-            <CoursePricing courseTitle={courseData.title} />
+            {/* <CoursePricing courseTitle={courseData.title} /> */}
 
             {/* 6. Hands-on Project */}
             <section className="bg-gradient-to-br from-[#000080] to-blue-900 rounded-2xl p-8 relative overflow-hidden text-white">
