@@ -14,78 +14,6 @@ import DemoSidebarCard from "@/components/DemoSidebarCard";
 import { PageHero } from "@/components/PageHero";
 import { Helmet } from "react-helmet-async";
 
-const content = {
-    whatIs: `
-The SAP SD Course at NXGEN Tech Academy is designed for students and professionals who want to build a successful career in the SAP ecosystem. SAP SD (Sales and Distribution) is one of the most important modules in SAP ERP, helping organizations manage sales operations, customer orders, pricing, delivery, and billing processes.
-
-By enrolling in the SAP SD Course, learners gain practical knowledge of how businesses manage their sales and distribution activities using SAP systems. With companies across the world adopting SAP ERP and SAP S/4HANA, the demand for SAP SD professionals continues to grow rapidly.
-`,
-
-    whyCourse: `
-Choosing the SAP SD Course can significantly improve your career prospects in the ERP industry.
-
-Thousands of companies worldwide rely on SAP systems to manage their business processes. SAP SD professionals are highly valued because they help organizations manage their sales operations efficiently.
-
-Professionals with SAP SD skills often receive attractive salary packages due to their specialized ERP knowledge and business process expertise.
-
-Another advantage of learning SAP SD is understanding how it integrates with other SAP modules such as SAP MM (Materials Management) and SAP FICO (Finance & Controlling). This integration helps learners understand complete business workflows.
-
-Many organizations are upgrading their systems to SAP S/4HANA, creating strong future opportunities for SAP SD professionals.
-`,
-
-    keyBenefits: [
-        "Recognized SAP training certification",
-        "Hands-on SAP system practice",
-        "Strong interview preparation",
-        "Guidance for SAP certification exams",
-        "Real-time business scenario understanding",
-        "Practical experience with order processing and billing",
-        "Knowledge of SAP S/4HANA sales processes",
-        "Skills aligned with modern ERP systems"
-    ],
-
-    whyChooseNxGen: [
-        "Live interactive training sessions",
-        "Real-time projects and case studies",
-        "Updated SAP S/4HANA curriculum",
-        "Expert trainer guidance",
-        "Mock interviews and career support",
-        "Placement assistance",
-        "Affordable course fees",
-        "Hands-on SAP practice system access"
-    ],
-
-    careerOpportunities: [
-        "SAP SD End User",
-        "SAP SD Consultant",
-        "Senior SAP Consultant",
-        "SAP Business Analyst",
-        "Order Management Specialist",
-        "Sales & Distribution Manager",
-        "SAP Project Manager",
-        "SAP Solution Architect"
-    ],
-
-    feesAndDuration: `
-The SAP SD Course typically takes between 10 and 12 weeks depending on the training schedule chosen.
-
-Training options include weekday batches with a duration of 8–10 weeks, weekend batches designed for working professionals, and a fast-track program that can be completed in 4–6 weeks.
-
-Flexible schedules allow students to complete the SAP SD Course while managing work or studies.
-
-The course fee includes complete training sessions, study materials, SAP practice system access, real-time projects, and certification guidance. Flexible payment options are also available.
-`,
-    keyTopics: [
-        "Sales Order Processing",
-        "Pricing and Condition Techniques",
-        "Delivery and Shipping Management",
-        "Billing and Invoice Processing",
-        "Real-time business scenarios"
-    ],
-    metaTitle: "SAP SD Course | Training with Placement – NxGen Tech Academy",
-    metaDescription: "Join SAP SD course at NxGen Tech Academy. Learn sales order processing, billing, pricing, and SAP skills with expert training and placement support"
-};
-
 const SAPCourseDetail = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
@@ -93,7 +21,7 @@ const SAPCourseDetail = () => {
     const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0.2);
 
     const basicCourse = coursesData.find(c => c.id === id);
-
+    const content = basicCourse ? getSapCourseContent(id || "", basicCourse.title) : null;
 
     useEffect(() => {
         setIsLoading(true);
@@ -117,8 +45,8 @@ const SAPCourseDetail = () => {
     const duration = basicCourse.duration || "40+ hours";
     const enrolled = basicCourse.enrolled || "1500+";
 
-    // Sample Curriculum Data
-    const sampleCurriculum = [
+    // Curriculum Data
+    const actualCurriculum = content?.curriculum || [
         { title: "Introduction & Fundamentals", topics: ["Overview of the module", "System Landscape", "Basic Navigation", "Core Concepts"] },
         { title: "Standard Configuration", topics: ["Organizational Units", "Master Data Setup", "Standard Business Processes", "Customizing Basics"] },
         { title: "Advanced Features & Tools", topics: ["Reporting Tools", "Integration Scenarios", "Advanced Customizing", "Performance Tuning"] },
@@ -228,10 +156,10 @@ const SAPCourseDetail = () => {
                                     </h2>
 
                                     <div className="space-y-4">
-                                        {sampleCurriculum.map((item, index) => (
+                                        {actualCurriculum.map((item: any, index: number) => (
                                             <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
                                                 <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-100 transition-colors">
-                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.title}</span>
+                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.title || item.module}</span>
                                                     <ChevronDown className="w-5 h-5 text-gray-500" />
                                                 </div>
                                                 <div className="p-6 bg-white">

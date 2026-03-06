@@ -178,7 +178,7 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
     {
-        id: "sap-fico",
+        id: "sap-fico-course-online-training",
         title: "SAP FICO (Financial Accounting & Controlling)",
         description: "Financial accounting, cost control, asset accounting, and reporting.",
         categoryId: "sap-functional",
@@ -190,13 +190,16 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
     {
-        id: "sap-pp",
+        id: "sap-pp-course-online",
         title: "SAP PP (Production Planning)",
         description: "BOM, routing, MRP, production orders, and capacity planning.",
         categoryId: "sap-functional",
         image: "/sap/sap-pp.png",
         rating: 5,
-        price: "₹30,000"
+        price: "₹30,000",
+        duration: "40+ hours",
+        enrolled: "1230+",
+        mode: "Live Training"
     },
 
     {
