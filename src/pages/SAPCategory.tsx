@@ -8,7 +8,7 @@ import { Eye, Clock, Monitor, Star, Users } from "lucide-react";
 const SAPCategory = () => {
     // List of exact course IDs the user wants in this SAP Course page
     const sapCourseIds = [
-        "sap-abap-s4hana",
+        "sap-abap-on-hana-course-online",
         "sap-abap-rap",
         "sap-fiori",
         "sap-fullstack",

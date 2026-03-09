@@ -50,7 +50,339 @@ const generateDefaultSAPContent = (title: string, id: string): SAPCourseContent 
 // Define the unique content for each SAP course here. 
 // You can edit the text strings below for each course to completely customize their pages later!
 export const sapCoursesContent: Record<string, SAPCourseContent> = {
-    "sap-abap-s4hana": generateDefaultSAPContent("SAP ABAP on S/4HANA", "sap-abap-s4hana"),
+    "sap-abap-on-hana-course-online": {
+        id: "sap-abap-on-hana-course-online",
+        metaTitle: "SAP ABAP on HANA Course Online with Certification & Placement | NxGen Tech Academy",
+        metaDescription: "Learn SAP ABAP on HANA Course Online at NxGen Tech Academy with real-time projects, certification preparation, and placement support. Master SAP development and build a high-demand career in SAP technologies.",
+        whatIs: `If you want to build a strong career in SAP development, enrolling in an SAP ABAP on HANA course online is an excellent choice. NxGen Tech Academy offers a comprehensive training program designed to help students, freshers, and working professionals master SAP ABAP on HANA development skills.\n\nOur course is designed to be simple, practical, and beginner-friendly, making it ideal even for those who are new to programming. Through structured lessons, real-time projects, and certification preparation, learners gain the skills required to work confidently on SAP HANA-based enterprise applications.\n\nBy completing our SAP ABAP on HANA certification training, you can stand out in the competitive job market and build a rewarding career in SAP technologies.\n\n What is SAP ABAP on HANA Certification?\nSAP is one of the world’s leading enterprise software solutions used by organizations to manage their business processes. ABAP (Advanced Business Application Programming) is the primary programming language used to develop and customize applications within SAP systems. SAP ABAP on HANA is the modern evolution of ABAP designed to work with SAP HANA, a high-performance in-memory database that enables real-time data processing.\n\n With SAP ABAP on HANA, developers can:\n• Build high-performance enterprise applications\n• Work with real-time data processing\n• Develop optimized applications using SAP HANA capabilities\n• Support businesses in managing operations efficiently\n\nEven beginners with minimal programming knowledge can learn ABAP on HANA through structured tutorials, live sessions, and practical projects.\n\n The Future of SAP ABAP in the Cloud \n The IT industry is rapidly moving toward cloud-based solutions, and SAP is leading this transformation with platforms such as SAP Business Technology Platform (SAP BTP).\n\nLearning SAP ABAP on HANA online training prepares you for the future of enterprise development by enabling you to build applications that integrate with SAP’s cloud ecosystem.\n\nAs organizations migrate to SAP S/4HANA and SAP BTP, professionals with ABAP on HANA expertise are becoming increasingly valuable in the global job market.`,
+        whyCourse: `Enrolling in an SAP ABAP on HANA online certification course at NxGen Tech Academy offers several career advantages.\n\n High Demand for SAP Developers\nOrganizations worldwide rely on SAP systems and require skilled ABAP developers to build and maintain applications.\n\n Attractive Salary Packages\nCertified SAP ABAP on HANA professionals often receive competitive salaries in India and internationally.\n\nFuture-Ready Skills\nSAP HANA is the foundation for modern SAP systems, making ABAP on HANA an essential skill for future SAP professionals.\n\n Beginner-Friendly Learning\nOur course includes step-by-step training, practical examples, and real-world projects, making it easy to understand.\n\n Career Advancement Opportunities \nWith ABAP on HANA expertise, professionals can grow into roles such as SAP Consultant, Technical Lead, or SAP Architect.`,
+        keyBenefits: [
+            "Start your career in the IT industry with a high-demand SAP skill",
+            "Upgrade your skills to work on SAP HANA-based enterprise projects",
+            "Learn SAP development from scratch with structured training",
+            "Expand your knowledge by developing applications using SAP HANA databases",
+            "Job-ready with placement support",
+            "Hands-on practical assignments and real-world SAP development scenarios",
+            "Training for SAP ABAP on HANA certification with mock tests and interview preparation"
+        ],
+        whyChooseNxGen: [
+            "Beginner-Friendly Training – Step-by-step lessons designed for freshers and beginners.",
+            "Hands-On Projects – Practical experience by working on real SAP development scenarios.",
+            "Industry-Experienced Trainers – Training delivered by professionals with real-world SAP experience.",
+            "Placement Assistance – Guidance for job opportunities in SAP development roles.",
+            "Certification Support – Preparation for SAP ABAP on HANA certification exams.",
+            "Flexible Learning Options – Choose from live online classes, recorded sessions, or weekend batches.",
+            "Affordable Course Fees – Training programs designed to be accessible and budget-friendly.",
+            "Resume building support and Career mentoring"
+        ],
+        keyTopics: [
+            "Introduction to SAP HANA and ABAP",
+            "ABAP Programming Concepts",
+            "ABAP on HANA Development",
+            "SQL Script and CDS Views",
+            "Working with Tables, Reports, and Forms",
+            "Performance Optimization",
+            "Real-Time Projects and Case Studies",
+            "Certification Preparation"
+        ],
+        careerOpportunities: [
+            "SAP ABAP Developer",
+            "SAP HANA Administrator",
+            "SAP Technical Analyst",
+            "SAP Full Stack Developer",
+            "SAP Project Manager",
+            "SAP HANA Developer",
+            "SAP Technical Consultant",
+            "SAP Integration Developer"
+        ],
+        feesAndDuration: `The SAP ABAP on HANA course fees at NxGen Tech Academy are designed to be affordable while maintaining high-quality training standards.\n\nThe SAP ABAP on HANA online training program is structured to provide both flexibility and comprehensive learning.\n• Standard Track: 8–10 weeks weekday training\n• Weekend Batches: Designed for working professionals\n• Fast-Track Program: Intensive training completed within 4–6 weeks`,
+        conclusion: `The SAP ABAP on HANA online course at NxGen Tech Academy is the perfect choice for anyone who wants to build a successful career in SAP development.\n\nOur training program covers fundamental concepts, advanced development techniques, real-time projects, and certification preparation, ensuring that learners become job-ready SAP professionals.\n\nBy completing this course, you will gain the confidence to work on real SAP projects, achieve SAP certification, and secure opportunities in top IT companies.\n\nBegin your journey today with NxGen Tech Academy’s SAP ABAP on HANA Certification Training and become a skilled SAP ABAP on HANA developer ready for the future of enterprise technology.`,
+        curriculum: [
+            {
+                module: "Introduction to SAP and R/3 Architecture",
+                topics: [
+                    "Understanding ERP and SAP",
+                    "Overview of SAP R/3 Architecture",
+                    "Basics of SAP system landscape",
+                    "Logging into SAP systems",
+                    "Basic navigation in SAP GUI",
+                    "Understanding SAP modules and system components"
+                ]
+            },
+            {
+                module: "ABAP Programming Fundamentals",
+                topics: [
+                    "Introduction to ABAP Programming",
+                    "Types of ABAP/4 programs",
+                    "Creating and executing SAP reports",
+                    "Writing and testing ABAP programs",
+                    "Understanding ABAP language elements",
+                    "Data types and data objects",
+                    "System variables",
+                    "Overview of RICEF Objects"
+                ]
+            },
+            {
+                module: "SAP Data Dictionary and Database Objects",
+                topics: [
+                    "Overview of SAP Data Dictionary",
+                    "Creating and managing database tables",
+                    "Data Elements and Domains",
+                    "Structures",
+                    "Table Types and Line Types",
+                    "Views",
+                    "Search Helps",
+                    "Lock Objects",
+                    "Table Maintenance Generator (TMG)"
+                ]
+            },
+            {
+                module: "Internal Tables in ABAP",
+                topics: [
+                    "Defining and creating internal tables",
+                    "Types of internal tables",
+                    "Adding, updating, reading, and deleting data",
+                    "Sorting internal tables",
+                    "Control break statements",
+                    "Field symbols",
+                    "Debugging with internal tables"
+                ]
+            },
+            {
+                module: "Open SQL Programming",
+                topics: [
+                    "Open SQL statements",
+                    "Data retrieval and manipulation",
+                    "Database joins (Inner & Left Outer Join)",
+                    "Subqueries",
+                    "Nested SELECT statements",
+                    "FOR ALL ENTRIES usage"
+                ]
+            },
+            {
+                module: "Selection Screens",
+                topics: [
+                    "Parameters",
+                    "Select-options",
+                    "Creating dynamic selection screens"
+                ]
+            },
+            {
+                module: "SAP Reporting Techniques",
+                topics: [
+                    "Classical Reports",
+                    "Interactive Reports",
+                    "Event-driven programming",
+                    "Include programs",
+                    "Modularization techniques",
+                    "Subroutines",
+                    "Function Groups",
+                    "Function Modules",
+                    "ABAP debugging techniques"
+                ]
+            },
+            {
+                module: "Module Pool Programming (Dialog Programming)",
+                topics: [
+                    "Introduction to Module Pool Programming",
+                    "Screen Painter",
+                    "Flow Logic",
+                    "Screen events",
+                    "GUI status and messages",
+                    "Screen commands",
+                    "Table controls",
+                    "Tab strips using wizard tools"
+                ]
+            },
+            {
+                module: "Object-Oriented Programming in ABAP",
+                topics: [
+                    "OOP concepts",
+                    "ABAP Objects",
+                    "Classes and Objects",
+                    "Methods",
+                    "Constructors",
+                    "Inheritance",
+                    "Interfaces",
+                    "Events",
+                    "Exception handling"
+                ]
+            },
+            {
+                module: "ALV Reporting and Object-Oriented ALV",
+                topics: [
+                    "ALV Grid",
+                    "Object-Oriented ALV",
+                    "ALV containers",
+                    "Control framework",
+                    "Event-based functionality",
+                    "Non-event-based functionality"
+                ]
+            },
+            {
+                module: "File Handling in ABAP",
+                topics: [
+                    "Introduction to file handling",
+                    "File handling in Presentation Server",
+                    "File handling in Application Server",
+                    "File archiving techniques"
+                ]
+            },
+            {
+                module: "Data Conversion Techniques",
+                topics: [
+                    "Data migration overview",
+                    "Session method",
+                    "Call transaction method",
+                    "Direct input method",
+                    "Background jobs",
+                    "Session method with file handling"
+                ]
+            },
+            {
+                module: "SAP Smart Forms",
+                topics: [
+                    "Smart Forms architecture",
+                    "SAP Form Builder",
+                    "Working with texts, addresses, and graphics",
+                    "Tables and templates",
+                    "Flow control",
+                    "Integration with ABAP programs",
+                    "Fonts and barcodes",
+                    "Output determination"
+                ]
+            },
+            {
+                module: "SAP Adobe Forms",
+                topics: [
+                    "Adobe Forms architecture",
+                    "Form interface and context",
+                    "Layout design",
+                    "Form scripting",
+                    "Integration with ABAP programs"
+                ]
+            },
+            {
+                module: "SAP Enhancements and Modifications",
+                topics: [
+                    "Changing SAP standard programs",
+                    "Personalization techniques",
+                    "User exits",
+                    "Customer exits",
+                    "SAP modifications"
+                ]
+            },
+            {
+                module: "SAP Enhancement Framework",
+                topics: [
+                    "Implicit enhancements",
+                    "Explicit enhancements",
+                    "Enhancement points",
+                    "Enhancement spots"
+                ]
+            },
+            {
+                module: "SAP Transport Management System (TMS)",
+                topics: [
+                    "Transport control basics",
+                    "Import queue",
+                    "Transport requests",
+                    "Mass and single transport imports",
+                    "Transport strategy",
+                    "Transport organizer"
+                ]
+            },
+            {
+                module: "Introduction to SAP HANA",
+                topics: [
+                    "Introduction to SAP HANA",
+                    "Evolution of ABAP for SAP HANA",
+                    "SAP HANA architecture",
+                    "In-memory computing",
+                    "Database concepts",
+                    "Code pushdown techniques",
+                    "Data provisioning",
+                    "Debugging ABAP on HANA using Eclipse"
+                ]
+            },
+            {
+                module: "ABAP on SAP HANA Optimization",
+                topics: [
+                    "Optimizing ABAP programs for SAP HANA",
+                    "Enabling ABAP applications to run on HANA",
+                    "Accessing SAP HANA from ABAP programs",
+                    "Migration of ABAP code to SAP HANA",
+                    "Enhancement packages for SAP NetWeaver"
+                ]
+            },
+            {
+                module: "SAP HANA Studio and Eclipse",
+                topics: [
+                    "SAP HANA Studio basics",
+                    "SAP HANA client",
+                    "System catalog and content",
+                    "Modeler perspective",
+                    "Development perspective",
+                    "Data provisioning editor",
+                    "Administration perspective",
+                    "Security administration",
+                    "Native HANA application development overview"
+                ]
+            },
+            {
+                module: "HANA-Specific Code-to-Data Techniques",
+                topics: [
+                    "Native SQL in SAP HANA",
+                    "ABAP Database Connectivity (ADBC)"
+                ]
+            },
+            {
+                module: "Database-Independent Code-to-Data Techniques",
+                topics: [
+                    "Introduction to Open SQL",
+                    "Features of Open SQL",
+                    "New Open SQL syntax",
+                    "Performance optimization rules",
+                    "Limitations of Open SQL"
+                ]
+            },
+            {
+                module: "OData and SAP Gateway",
+                topics: [
+                    "Introduction to OData services",
+                    "SAP Gateway architecture",
+                    "ALV with Integrated Database Access (ALV IDA)",
+                    "ABAP Managed Database Procedures (AMDP)",
+                    "Debugging AMDP programs"
+                ]
+            },
+            {
+                module: "Core Data Services (CDS)",
+                topics: [
+                    "Introduction to CDS",
+                    "CDS views in ABAP",
+                    "CDS view definition features",
+                    "Practical demonstrations"
+                ]
+            },
+            {
+                module: "ABAP New Syntax (SAP NetWeaver 7.4 and Above)",
+                topics: [
+                    "Inline data declarations",
+                    "Explicit type declarations",
+                    "Internal table declarations",
+                    "Deep structures",
+                    "Table expressions",
+                    "Group by for internal tables",
+                    "Filter expressions",
+                    "Join operations",
+                    "NEW keyword for object creation",
+                    "SWITCH statement",
+                    "Conversion exit functions"
+                ]
+            }
+        ]
+    },
     "sap-abap-rap": generateDefaultSAPContent("SAP ABAP with CDS, OData & RAP", "sap-abap-rap"),
     "sap-fiori": generateDefaultSAPContent("SAP Fiori & UI5", "sap-fiori"),
     "sap-fullstack": generateDefaultSAPContent("SAP Full Stack Development", "sap-fullstack"),

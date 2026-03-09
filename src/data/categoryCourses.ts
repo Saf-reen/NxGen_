@@ -115,8 +115,8 @@ export const categoryConfig: Record<string, { title: string; description: string
 
 export const coursesData: CourseData[] = [
     {
-        id: "sap-abap-s4hana",
-        title: "SAP ABAP on S/4HANA",
+        id: "sap-abap-on-hana-course-online",
+        title: "SAP ABAP on HANA",
         description: "Modern ABAP development with reports, enhancements, performance tuning, and S/4HANA best practices.",
         categoryId: "sap-technical",
         image: "/sap/sap-abap.png",
