@@ -133,7 +133,7 @@ export const coursesData: CourseData[] = [
         price: "₹35,000"
     },
     {
-        id: "sap-fiori",
+        id: "sap-ui5-fiori-training",
         title: "SAP Fiori & UI5",
         description: "Front-end SAP application development using Fiori architecture, UI5, MVC, and OData integration.",
         categoryId: "sap-technical",

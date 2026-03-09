@@ -10,7 +10,7 @@ const SAPCategory = () => {
     const sapCourseIds = [
         "sap-abap-on-hana-course-online",
         "sap-abap-rap",
-        "sap-fiori",
+        "sap-ui5-fiori-training",
         "sap-fullstack",
         "sap-sd-course-training",
         "sap-mm-course",

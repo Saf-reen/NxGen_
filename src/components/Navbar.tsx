@@ -140,7 +140,7 @@ export const Navbar = () => {
                       items: [
                         { title: "SAP ABAP on HANA", link: "/courses/sap-abap-on-hana-course-online" },
                         { title: "SAP ABAP with CDS, OData & RAP", link: "/courses/sap-abap-rap" },
-                        { title: "SAP Fiori & UI5", link: "/courses/sap-fiori" },
+                        { title: "SAP Fiori & UI5", link: "/courses/sap-ui5-fiori-training" },
                         { title: "SAP SD", link: "/courses/sap-sd-course-training" },
                         { title: "SAP MM", link: "/courses/sap-mm-course" },
                         { title: "SAP FICO", link: "/courses/sap-fico-course-training" },

@@ -384,7 +384,266 @@ export const sapCoursesContent: Record<string, SAPCourseContent> = {
         ]
     },
     "sap-abap-rap": generateDefaultSAPContent("SAP ABAP with CDS, OData & RAP", "sap-abap-rap"),
-    "sap-fiori": generateDefaultSAPContent("SAP Fiori & UI5", "sap-fiori"),
+    "sap-ui5-fiori-training": {
+        id: "sap-ui5-fiori-training",
+        metaTitle: "SAP UI5 Fiori Training Online with Certification & Placement | NxGen Tech Academy",
+        metaDescription: "Learn SAP UI5 Fiori Training Online at NxGen Tech Academy. Master SAP UI5 development, OData services, Fiori Launchpad, and responsive UI design with real-time projects and certification support.",
+        whatIs: `The SAP UI5 Fiori Training at NxGen Tech Academy is designed to help learners understand how modern SAP user interfaces are built to deliver a superior user experience. This course focuses on SAP UI5 components, Fiori design principles, responsive layouts, and real-time application development used in enterprise SAP environments.\n\nAs one of the most popular SAP front-end development courses, this program prepares learners to develop modern SAP applications that are intuitive, responsive, and optimized for multiple devices.\n\nThrough hands-on training, real-world projects, and expert guidance, our SAP UI5 Fiori online course equips learners with the practical skills required to become SAP UI5 Fiori developers in today’s digital enterprise landscape.\n\nWhat is SAP UI5 and SAP Fiori?\nSAP UI5 is a JavaScript-based framework used to build enterprise-grade web applications for SAP systems.\nSAP Fiori is SAP’s design system that focuses on creating modern, user-friendly, and responsive interfaces for business applications.\nTogether, SAP UI5 and Fiori enable developers to build applications that provide a consistent and intuitive user experience across multiple devices.\n\nKey features of SAP UI5 and Fiori include:\n• Modern and responsive application development\n• Simplified user experience with intuitive interfaces\n• Cross-device compatibility\n• Integration with SAP backend systems\n• Scalable enterprise application development`,
+        whyCourse: `What You Will Learn in SAP UI5 Fiori Training\nBy enrolling in our SAP UI5 Fiori online course, you will gain practical skills in modern SAP application development.\n• Responsive Application Development: Learn how to design and develop applications that work across desktop, tablet, and mobile devices.\n• SAP Fiori Design Principles: Understand SAP’s design philosophy focused on simplicity, efficiency, and user-centric design.\n• SAP UI5 Components and Libraries: Work with pre-built UI components to create interactive and scalable applications.\n• Cross-Platform Application Development & Integration: Connect SAP UI5 applications with SAP backend systems using OData services and SAP Gateway.\n\nWho Should Enroll?\nThe course is suitable for:\n• SAP Professionals expanding skills into front-end development.\n• Web Developers with HTML, CSS, and JS knowledge transitioning to SAP.\n• System Integrators & IT Consultants offering UI5 Fiori services.\n• Technical Leads seeking modern UI technology understanding.\n\nPrerequisites\n• Basic understanding of SAP systems\n• Knowledge of HTML, CSS, and JavaScript\n• Familiarity with SAP Gateway and OData services\n• Basic programming knowledge and application architecture understanding\n\nResponsibilities of an SAP UI5 Fiori Consultant\nAfter training, professionals can handle requirements gathering, design and prototyping, responsive application development, system integration, and application testing & optimization.`,
+        keyBenefits: [
+            "Instructor-Led Training with 40+ hours of live sessions",
+            "Mock Interview Sessions designed to prepare learners",
+            "Project Work and Practical Exercises on real scenarios",
+            "Flexible Learning Schedule",
+            "Lifetime Support and Course Access",
+            "SAP UI5 Fiori Certification Assistance"
+        ],
+        whyChooseNxGen: [
+            "Better Job Opportunities (SAP UI5, Fiori Developer, Technical Consultant)",
+            "Higher Salary Potential due to specialized expertise",
+            "Improved Development Productivity with advanced tools",
+            "Strong Decision-Making Skills for complex UI challenges",
+            "SAP UI5 Fiori Certification Advantage"
+        ],
+        keyTopics: [
+            "Introduction to SAP UI5 and SAP Fiori",
+            "MVC Architecture in SAP UI5",
+            "Data Binding in SAP UI5",
+            "SAP UI5 Controls and UI Components",
+            "OData Services Integration",
+            "SAP UI5 SDK and Framework Overview",
+            "SAP Fiori Launchpad",
+            "SAP Fiori Elements",
+            "Testing and Debugging",
+            "SAP UI5 Fiori Application Deployment"
+        ],
+        careerOpportunities: [
+            "SAP UI5 Developer",
+            "SAP Fiori Developer",
+            "SAP Technical Consultant",
+            "SAP Front-End Developer"
+        ],
+        feesAndDuration: `The SAP UI5 Fiori online training program provides flexible learning schedules allowing learners to balance training with professional or academic commitments. Beginners with a strong interest in SAP front-end development can easily learn through our structured program. Students receive 24/7 support and lifetime access to training materials. Please contact our admissions team for detailed fee structures.`,
+        conclusion: `Future Scope of SAP UI5 Fiori Developers\nThe demand for SAP UI5 Fiori professionals continues to grow as organizations modernize their SAP systems. Key drivers include widespread adoption of SAP Fiori, continuous evolution of SAP technologies, digital transformation to cloud-based apps, and needs for Custom Application Development & Integration.\n\nStart Your SAP UI5 Fiori Career with NxGen Tech Academy\nThe SAP UI5 Fiori online training at NxGen Tech Academy provides the knowledge and practical skills needed to develop modern SAP applications. Through hands-on projects, real-time exercises, certification preparation, and placement assistance, learners gain the expertise required to work as SAP UI5 Fiori developers in leading IT organizations.\n\nJoin NxGen Tech Academy’s SAP UI5 Fiori Training today and build a successful career in SAP front-end development and enterprise application design.`,
+        curriculum: [
+            {
+                module: "Introduction to SAP UI5 and SAP Fiori",
+                topics: [
+                    "Getting started with SAP UI5",
+                    "Introduction to SAP Fiori",
+                    "Understanding SAP Fiori design principles",
+                    "Overview of SAP UI5 architecture",
+                    "Setting up the development environment",
+                    "Creating your first SAP UI5 application"
+                ]
+            },
+            {
+                module: "MVC Architecture in SAP UI5",
+                topics: [
+                    "Introduction to MVC architecture",
+                    "SAP UI5 MVC implementation",
+                    "SAP Fiori MVC structure",
+                    "Advanced MVC development techniques",
+                    "Converting non-MVC applications to MVC pattern using JavaScript views"
+                ]
+            },
+            {
+                module: "Data Binding in SAP UI5",
+                topics: [
+                    "Introduction to data binding",
+                    "Types of data binding",
+                    "Expression binding",
+                    "Aggregation binding",
+                    "XML views",
+                    "JSON models",
+                    "Resource models",
+                    "Composite binding",
+                    "Custom data binding techniques"
+                ]
+            },
+            {
+                module: "SAP UI5 Controls and UI Components",
+                topics: [
+                    "Introduction to SAP UI5 controls",
+                    "Basic UI controls",
+                    "Complex UI controls",
+                    "Layout controls",
+                    "Formatters",
+                    "Custom controls",
+                    "Responsive design concepts",
+                    "Theming and styling"
+                ]
+            },
+            {
+                module: "OData Services Integration",
+                topics: [
+                    "Introduction to OData services",
+                    "OData service consumption",
+                    "OData model implementation",
+                    "OData annotations",
+                    "CRUD operations",
+                    "Batch requests",
+                    "Filtering and sorting data",
+                    "Error handling techniques"
+                ]
+            },
+            {
+                module: "SAP Gateway",
+                topics: [
+                    "Introduction to SAP Gateway",
+                    "SAP Gateway architecture",
+                    "Service development",
+                    "Service consumption",
+                    "Data mapping",
+                    "Security implementation",
+                    "Performance optimization"
+                ]
+            },
+            {
+                module: "Routing and Navigation",
+                topics: [
+                    "Introduction to routing and navigation",
+                    "Routing configuration",
+                    "Navigation between views",
+                    "Passing data between components",
+                    "Browser history management",
+                    "Deep linking",
+                    "UI state management"
+                ]
+            },
+            {
+                module: "SAP UI5 SDK and Framework Overview",
+                topics: [
+                    "SAP UI5 framework libraries and classes",
+                    "Creating the first SAP UI5 application",
+                    "Browser compatibility and configuration",
+                    "Handling special characters in applications",
+                    "Debugging with Chrome Developer Tools",
+                    "Observing UI5 control classes during debugging"
+                ]
+            },
+            {
+                module: "SAP Fiori Launchpad",
+                topics: [
+                    "Introduction to SAP Fiori Launchpad",
+                    "Launchpad configuration",
+                    "Launchpad customization",
+                    "Application navigation",
+                    "Launchpad security",
+                    "Launchpad extensions",
+                    "Managing Fiori Launchpad applications"
+                ]
+            },
+            {
+                module: "SAP Fiori Elements",
+                topics: [
+                    "Introduction to SAP Fiori Elements",
+                    "OData annotations",
+                    "List report applications",
+                    "Object page applications",
+                    "Overview page development",
+                    "Analytical list pages",
+                    "Smart controls"
+                ]
+            },
+            {
+                module: "Advanced SAP UI5 Development",
+                topics: [
+                    "Responsive design implementation",
+                    "Custom control development",
+                    "Localization and internationalization",
+                    "Performance optimization",
+                    "Debugging techniques",
+                    "Integration with SAP backend systems"
+                ]
+            },
+            {
+                module: "SAP UI5 and SAP Fiori Integration",
+                topics: [
+                    "SAP Fiori Launchpad configuration",
+                    "SAP Fiori theming",
+                    "SAP Fiori Elements integration",
+                    "SAP Fiori extensibility techniques"
+                ]
+            },
+            {
+                module: "Responsive Design for SAP UI5 Applications",
+                topics: [
+                    "Introduction to responsive design",
+                    "CSS Grid and Flexbox",
+                    "Media queries",
+                    "Responsive tables and forms",
+                    "Accessibility standards"
+                ]
+            },
+            {
+                module: "Testing and Debugging",
+                topics: [
+                    "Introduction to testing and debugging",
+                    "Chrome Developer Tools",
+                    "UI5 Inspector",
+                    "QUnit testing framework"
+                ]
+            },
+            {
+                module: "SAP UI5 Fiori Application Deployment",
+                topics: [
+                    "Introduction to application deployment",
+                    "Deployment options and targets",
+                    "Deployment tools",
+                    "Best practices for deployment"
+                ]
+            },
+            {
+                module: "Security and Authorization",
+                topics: [
+                    "Introduction to SAP UI5 security",
+                    "Authentication and authorization",
+                    "Secure coding practices",
+                    "Transport Layer Security (TLS)",
+                    "Security testing and auditing"
+                ]
+            },
+            {
+                module: "Performance Optimization",
+                topics: [
+                    "Performance metrics and monitoring",
+                    "Application optimization techniques",
+                    "Network performance optimization",
+                    "Performance testing strategies"
+                ]
+            },
+            {
+                module: "Application Maintenance and Support",
+                topics: [
+                    "Maintenance strategies",
+                    "Incident management",
+                    "Change management",
+                    "Performance monitoring",
+                    "System administration and monitoring"
+                ]
+            },
+            {
+                module: "SAP UI5 Mobile Application Development",
+                topics: [
+                    "Introduction to SAP UI5 mobile development",
+                    "Mobile application development basics",
+                    "Developing mobile SAP UI5 applications",
+                    "Mobile testing and deployment",
+                    "Mobile application security"
+                ]
+            },
+            {
+                module: "SAP UI5 Theming and Styling",
+                topics: [
+                    "Introduction to UI theming",
+                    "SAP UI5 theming framework",
+                    "Styling SAP UI5 applications",
+                    "Best practices for theming and styling"
+                ]
+            }
+        ]
+    },
     "sap-fullstack": generateDefaultSAPContent("SAP Full Stack Development", "sap-fullstack"),
 
     "sap-sd-course-training": {
@@ -686,7 +945,7 @@ The course fee includes complete training sessions, study materials, SAP practic
         conclusion: `SAP FICO has become one of the most promising career paths in today’s digital economy. As companies continue to adopt SAP systems, the demand for skilled SAP finance professionals is increasing rapidly.\n\nAt NXGEN Tech Academy, our SAP FICO training program combines expert instruction, practical projects, and strong placement assistance to help students build successful careers.\n\nWith affordable course fees, flexible schedules, and industry-focused training, our program provides the ideal pathway to enter the SAP ecosystem. Enroll today in NXGEN Tech Academy’s SAP FICO Course and take the first step toward a successful career in SAP Finance.`,
         curriculum: [
             {
-                module: "1. Introduction to ERP and SAP",
+                module: "Introduction to ERP and SAP",
                 topics: [
                     "Introduction to ERP (Enterprise Resource Planning)",
                     "Benefits of ERP systems in organizations",
@@ -697,7 +956,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "2. Enterprise Structure in SAP",
+                module: "Enterprise Structure in SAP",
                 topics: [
                     "Client structure in SAP",
                     "Company and Company Code configuration",
@@ -707,7 +966,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "3. Financial Accounting Global Settings",
+                module: "Financial Accounting Global Settings",
                 topics: [
                     "Define and Assign Chart of Accounts",
                     "Account Groups and Retained Earnings Account",
@@ -717,7 +976,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "4. General Ledger Accounting (GL)",
+                module: "General Ledger Accounting (GL)",
                 topics: [
                     "Creation of General Ledger accounts",
                     "Posting transactions, document parking, reversal",
@@ -727,7 +986,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "5. Accounts Payable (AP)",
+                module: "Accounts Payable (AP)",
                 topics: [
                     "Vendor account groups and master data",
                     "Vendor invoice and credit memo processing",
@@ -737,7 +996,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "6. Accounts Receivable (AR)",
+                module: "Accounts Receivable (AR)",
                 topics: [
                     "Customer account groups and master data",
                     "Customer invoice and incoming payment processing",
@@ -746,7 +1005,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "7. Asset Accounting (AA)",
+                module: "Asset Accounting (AA)",
                 topics: [
                     "Asset classes and master record creation",
                     "Asset acquisition, depreciation, transfer, retirement",
@@ -754,7 +1013,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "8. Bank Accounting",
+                module: "Bank Accounting",
                 topics: [
                     "Bank master and House bank configuration",
                     "Manual and Electronic bank statement processing",
@@ -762,7 +1021,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "9. Taxes in SAP",
+                module: "Taxes in SAP",
                 topics: [
                     "Tax procedure configuration",
                     "Input tax, output tax, and Tax code creation",
@@ -770,7 +1029,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "10. Introduction to Controlling (CO)",
+                module: "Introduction to Controlling (CO)",
                 topics: [
                     "Overview of SAP Controlling module",
                     "Difference between FI and CO",
@@ -778,14 +1037,14 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "11. Cost Element Accounting",
+                module: "Cost Element Accounting",
                 topics: [
                     "Primary and Secondary cost elements",
                     "Cost element categories"
                 ]
             },
             {
-                module: "12. Cost Center Accounting",
+                module: "Cost Center Accounting",
                 topics: [
                     "Cost center creation and hierarchy",
                     "Cost center planning and Distribution process",
@@ -793,21 +1052,21 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "13. Internal Orders",
+                module: "Internal Orders",
                 topics: [
                     "Internal order types and creation",
                     "Budget planning, settlement, and reporting"
                 ]
             },
             {
-                module: "14. Profit Center Accounting",
+                module: "Profit Center Accounting",
                 topics: [
                     "Profit center creation and hierarchy",
                     "Profit center postings and reporting"
                 ]
             },
             {
-                module: "15. Product Costing",
+                module: "Product Costing",
                 topics: [
                     "Costing variants configuration",
                     "Cost component structure",
@@ -815,7 +1074,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "16. Profitability Analysis (CO-PA)",
+                module: "Profitability Analysis (CO-PA)",
                 topics: [
                     "Operating concern configuration",
                     "Value fields and Characteristics definition",
@@ -823,7 +1082,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "17. Integration with Other SAP Modules",
+                module: "Integration with Other SAP Modules",
                 topics: [
                     "MM–FI integration",
                     "SD–FI integration",
@@ -831,7 +1090,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "18. SAP S/4HANA Finance Innovations",
+                module: "SAP S/4HANA Finance Innovations",
                 topics: [
                     "Universal Journal (ACDOCA) and simplified data model",
                     "Business Partner concept (CVI)",
@@ -840,7 +1099,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "19. S/4HANA Finance Advanced Topics",
+                module: "S/4HANA Finance Advanced Topics",
                 topics: [
                     "S/4HANA Finance migration overview",
                     "Credit and Cash management in S/4HANA (FSCM)",
@@ -848,7 +1107,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "20. Real-Time Business Scenarios",
+                module: "Real-Time Business Scenarios",
                 topics: [
                     "Procure-to-Pay (P2P) process",
                     "Order-to-Cash (O2C) process",
@@ -857,7 +1116,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "21. Training Add-ons and Career Support",
+                module: "Training Add-ons and Career Support",
                 topics: [
                     "Resume and interview preparation",
                     "Real-time project explanation",
@@ -909,7 +1168,7 @@ The course fee includes complete training sessions, study materials, SAP practic
         conclusion: `The SAP PP Course at NXGEN Tech Academy provides the knowledge and practical skills required to manage production planning processes using SAP ERP.\n\nWith experienced trainers, practical learning, flexible schedules, and placement support, our program helps students build successful careers in the SAP ecosystem. Enroll today in NXGEN Tech Academy’s SAP PP Training Program and take the first step toward a successful SAP career.`,
         curriculum: [
             {
-                module: "1. Introduction to SAP PP and SAP S/4HANA Manufacturing",
+                module: "Introduction to SAP PP and SAP S/4HANA Manufacturing",
                 topics: [
                     "Overview of SAP ERP and manufacturing systems",
                     "Introduction to SAP Production Planning (PP) module",
@@ -921,7 +1180,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "2. Master Data in SAP PP",
+                module: "Master Data in SAP PP",
                 topics: [
                     "Material Master configuration for production planning",
                     "Bill of Materials (BOM) creation and configuration",
@@ -932,7 +1191,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "3. Master Planning",
+                module: "Master Planning",
                 topics: [
                     "Sales and Operations Planning (SOP) overview",
                     "Demand Management strategies",
@@ -941,7 +1200,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "4. Sales and Operations Planning (SOP)",
+                module: "Sales and Operations Planning (SOP)",
                 topics: [
                     "Standard planning procedures",
                     "Planning using product groups",
@@ -952,7 +1211,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "5. Material Requirements Planning (MRP)",
+                module: "Material Requirements Planning (MRP)",
                 topics: [
                     "Master Production Scheduling (MPS) procedures",
                     "Consumption-based planning (Reorder point, Forecast, Time-phased)",
@@ -962,7 +1221,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "6. Batch Management in SAP PP",
+                module: "Batch Management in SAP PP",
                 topics: [
                     "Condition tables and access sequences",
                     "Strategy types for batch determination",
@@ -975,7 +1234,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "7. Variant Configuration in BOM and Production Planning",
+                module: "Variant Configuration in BOM and Production Planning",
                 topics: [
                     "Characteristics and class creation",
                     "Classification settings in material master",
@@ -984,7 +1243,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "8. Availability Check and Capacity Planning",
+                module: "Availability Check and Capacity Planning",
                 topics: [
                     "Availability check using ATP (Available to Promise)",
                     "Availability check against planning",
@@ -996,7 +1255,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "9. Production Orders in SAP PP",
+                module: "Production Orders in SAP PP",
                 topics: [
                     "Production order creation and scheduling",
                     "Production order components",
@@ -1006,7 +1265,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "10. Discrete Manufacturing",
+                module: "Discrete Manufacturing",
                 topics: [
                     "Planned order structure",
                     "Production order types",
@@ -1019,7 +1278,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "11. Repetitive Manufacturing",
+                module: "Repetitive Manufacturing",
                 topics: [
                     "Repetitive manufacturing master data",
                     "Planning procedures for repetitive manufacturing",
@@ -1030,7 +1289,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "12. Reporting and Tools in SAP PP",
+                module: "Reporting and Tools in SAP PP",
                 topics: [
                     "Production planning reporting tools",
                     "MRP reporting and analysis",
@@ -1039,7 +1298,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "13. Integration with Other SAP Modules",
+                module: "Integration with Other SAP Modules",
                 topics: [
                     "Integration with SAP MM (Materials Management)",
                     "Integration with SAP SD (Sales and Distribution)",
@@ -1049,7 +1308,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "14. SAP S/4HANA Production Planning Innovations",
+                module: "SAP S/4HANA Production Planning Innovations",
                 topics: [
                     "MRP Live in SAP S/4HANA",
                     "Embedded analytics for production planning",
@@ -1060,7 +1319,7 @@ The course fee includes complete training sessions, study materials, SAP practic
                 ]
             },
             {
-                module: "15. Real-Time Business Scenarios",
+                module: "Real-Time Business Scenarios",
                 topics: [
                     "Production planning lifecycle",
                     "End-to-end manufacturing process",
