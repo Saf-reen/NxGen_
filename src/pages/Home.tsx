@@ -13,14 +13,15 @@ const sapCategories = [
 ];
 
 const sapCourses = [
-  { title: "SAP ABAP", duration: "2 Months", link: "#" },
-  { title: "SAP Basis", duration: "2 Months", link: "#" },
-  { title: "SAP S4 HANA FICO", duration: "2 Months", link: "#" },
-  { title: "SAP S4 HANA MM", duration: "2 Months", link: "#" },
-  { title: "SAP SD", duration: "2 Months", link: "#" },
-  { title: "SAP S4 HANA PP", duration: "2 Months", link: "#" },
-  { title: "SAP HR HCM", duration: "2 Months", link: "#" },
-  { title: "SAP Success Factors", duration: "2 Months", link: "#" },
+  { title: "SAP ABAP on S/4 HANA", duration: "8-10 Weeks", link: "/courses/sap-abap-on-hana-course-online" },
+  { title: "SAP ABAP & CDS", duration: "8-10 Weeks", link: "/courses/sap-abap-rap" },
+  { title: "SAP FIORI UI5", duration: "40+ Hours", link: "/courses/sap-ui5-fiori-training" },
+  { title: "SAP BASIS", duration: "40+ Hours", link: "/courses/sap-basis-s4hana-training" },
+  { title: "SAP FICO On S4 HANA", duration: "2-3 Months", link: "/courses/sap-fico-course-training" },
+  { title: "SAP SD On S4 HANA", duration: "10-12 Weeks", link: "/courses/sap-sd-course-training" },
+  { title: "SAP MM On S4 HANA", duration: "8-10 Weeks", link: "/courses/sap-mm-course" },
+  { title: "SAP PP On S4 HANA", duration: "8-10 Weeks", link: "/courses/sap-pp-course" },
+  { title: "SAP QM On S4 HANA", duration: "8-10 Weeks", link: "/courses/sap-qm-course" },
 ];
 
 const Home = () => {
