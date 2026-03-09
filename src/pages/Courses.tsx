@@ -60,6 +60,9 @@ const Courses = () => {
       {/* Category Filter */}
       <section className="py-8 bg-background border-b">
         <div className="container mx-auto px-4">
+          <h4 className="text-center text-gray-600 mb-6 font-semibold uppercase tracking-wider text-sm">
+            Filter by Course Category
+          </h4>
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
               <Button
@@ -78,6 +81,12 @@ const Courses = () => {
       {/* Courses Grid */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000080] mb-4">
+              Explore Our Professional Courses
+            </h2>
+            <div className="h-1.5 w-24 bg-[#000080] mx-auto rounded-full"></div>
+          </div>
           <div
             ref={ref}
             className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0"
@@ -95,7 +104,7 @@ const Courses = () => {
 
           {filteredCourses.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl text-muted-foreground">No courses found in this category.</p>
+              <h5 className="text-xl text-muted-foreground">No courses found in this category.</h5>
             </div>
           )}
         </div>
@@ -152,7 +161,7 @@ const CourseCard = ({
           <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
             {course.title}
           </h3>
-          <div className="text-base font-semibold text-primary mb-2">{course.price}</div>
+          <h6 className="text-base font-semibold text-primary mb-2 m-0">{course.price}</h6>
           <div className="mt-2 flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary/20 transition">
             <ArrowRight className="w-5 h-5 text-primary group-hover:text-primary-dark transition" />
           </div>

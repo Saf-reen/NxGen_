@@ -117,26 +117,26 @@ const SAPCourseDetail = () => {
                                         <div className="flex text-yellow-500">
                                             <Star className="w-5 h-5 fill-current" />
                                         </div>
-                                        <span className="font-bold text-gray-900">{basicCourse.rating || "5.0"}</span>
+                                        <h6 className="font-bold text-gray-900 m-0 text-base">{basicCourse.rating || "5.0"}</h6>
                                         <span className="text-xs text-gray-500">(Student Reviews)</span>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Clock className="w-5 h-5 text-gray-400" />
-                                        <span>{duration}</span>
+                                        <h6 className="font-medium text-gray-700 m-0 text-base">{duration}</h6>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Users className="w-5 h-5 text-gray-400" />
-                                        <span>{enrolled} Enrolled</span>
+                                        <h6 className="font-medium text-gray-700 m-0 text-base">{enrolled} Enrolled</h6>
                                     </div>
                                 </div>
 
                                 {content.keyTopics && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                        <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
+                                        <h3 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
                                             <BookOpen className="w-6 h-6 text-blue-500" /> Key Topics Covered
-                                        </h2>
+                                        </h3>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             {content.keyTopics.map((topic, idx) => (
                                                 <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-gray-100">
@@ -152,14 +152,14 @@ const SAPCourseDetail = () => {
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                                     <h2 className="text-2xl font-bold text-[#000080] mb-8 flex items-center gap-2">
-                                        <BookOpen className="w-6 h-6 text-blue-600" /> {basicCourse.title} Curriculum
+                                        <BookOpen className="w-6 h-6 text-blue-600" /> {basicCourse.title} Comprehensive Technical Curriculum
                                     </h2>
 
                                     <div className="space-y-4">
                                         {actualCurriculum.map((item: any, index: number) => (
                                             <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
                                                 <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-100 transition-colors">
-                                                    <span className="font-bold text-[#000080]">Module {index + 1}: {item.title || item.module}</span>
+                                                    <h5 className="font-bold text-[#000080] text-base m-0">Module {index + 1}: {item.title || item.module}</h5>
                                                     <ChevronDown className="w-5 h-5 text-gray-500" />
                                                 </div>
                                                 <div className="p-6 bg-white">
@@ -191,26 +191,29 @@ const SAPCourseDetail = () => {
                                 {/* Descriptive/Marketing Content Moved to Details Tab */}
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
                                     <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
-                                        <BookOpen className="w-6 h-6 text-blue-600" /> What is {basicCourse.title} ?
+                                        <BookOpen className="w-6 h-6 text-blue-600" /> Course Overview & Details
                                     </h2>
+                                    <h3 className="text-xl font-bold text-[#000080] mb-4">
+                                        What is {basicCourse.title} ?
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.whatIs}
                                     </p>
                                 </section>
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
                                         <Star className="w-6 h-6 text-yellow-500" /> Why {basicCourse.title} ?
-                                    </h2>
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.whyCourse}
                                     </p>
                                 </section>
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
                                         <Award className="w-6 h-6 text-purple-600" /> Key Benefits
-                                    </h2>
+                                    </h3>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         {content.keyBenefits.map((benefit, idx) => (
                                             <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
@@ -224,9 +227,9 @@ const SAPCourseDetail = () => {
                                 </section>
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
                                         <CheckCircle className="w-6 h-6 text-[#10B981]" /> Why Choose NXGen {basicCourse.title}
-                                    </h2>
+                                    </h3>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         {content.whyChooseNxGen.map((reason, idx) => (
                                             <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
@@ -240,9 +243,9 @@ const SAPCourseDetail = () => {
                                 </section>
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-6 flex items-center gap-2">
                                         <Briefcase className="w-6 h-6 text-orange-500" /> Career Opportunities After {basicCourse.title} Course
-                                    </h2>
+                                    </h3>
                                     <ul className="space-y-4 pl-2">
                                         {content.careerOpportunities.map((career, idx) => (
                                             <li key={idx} className="flex items-center gap-3 text-gray-700">
@@ -255,9 +258,9 @@ const SAPCourseDetail = () => {
 
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                    <h2 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-4 flex items-center gap-2">
                                         <Clock className="w-6 h-6 text-blue-600" /> {basicCourse.title} Course Fees and Duration
-                                    </h2>
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.feesAndDuration}
                                     </p>

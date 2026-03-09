@@ -228,36 +228,36 @@ const CourseDetail = () => {
                                         <div className="flex text-yellow-500">
                                             <Star className="w-5 h-5 fill-current" />
                                         </div>
-                                        <span className="font-bold text-gray-900">{basicCourse.rating || "5.0"}</span>
+                                        <h6 className="font-bold text-gray-900 m-0 text-base">{basicCourse.rating || "5.0"}</h6>
                                         <span className="text-xs text-gray-500">(Student Reviews)</span>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Clock className="w-5 h-5 text-gray-400" />
-                                        <span>{duration}</span>
+                                        <h6 className="font-medium text-gray-700 m-0 text-base">{duration}</h6>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Users className="w-5 h-5 text-gray-400" />
-                                        <span>{enrolled} Enrolled</span>
+                                        <h6 className="font-medium text-gray-700 m-0 text-base">{enrolled} Enrolled</h6>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden lg:block"></div>
                                     <div className="flex items-center gap-2">
                                         <IndianRupee className="w-5 h-5 text-green-500" />
-                                        <span className="font-bold text-gray-900">
+                                        <h6 className="font-bold text-gray-900 m-0 text-base">
                                             {activeSubTab === "training"
                                                 ? (basicCourse.price || "₹20,000")
                                                 : "₹30,000"}
-                                        </span>
+                                        </h6>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden lg:block"></div>
                                     <div className="flex items-center gap-2 text-[#000080]">
                                         <Monitor className="w-5 h-5" />
-                                        <span className="font-medium">
+                                        <h6 className="font-medium m-0 text-base">
                                             {activeSubTab === "training"
                                                 ? (basicCourse.mode || "Online / Offline")
                                                 : "Offline"}
-                                        </span>
+                                        </h6>
                                     </div>
                                 </div>
 
@@ -279,9 +279,9 @@ const CourseDetail = () => {
 
                                 {content.keyTopics.length > 0 && activeSubTab === "training" && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
-                                        <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                        <h3 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
                                             <BookOpen className="w-8 h-8 text-[#000080]" /> Key Topics Covered
-                                        </h2>
+                                        </h3>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             {content.keyTopics.map((topic, idx) => (
                                                 <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-gray-100">
@@ -298,7 +298,7 @@ const CourseDetail = () => {
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                                     <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
                                         <BookOpen className="w-8 h-8 text-[#000080]" />
-                                        {activeSubTab === "training" ? `${basicCourse.title} Modules` : "Industry Readiness Program"}
+                                        {activeSubTab === "training" ? `${basicCourse.title} Comprehensive Modules` : "Industry Readiness Program"}
                                     </h2>
                                     <p className="text-gray-500 mb-8 max-w-2xl">
                                         {activeSubTab === "training"
@@ -316,9 +316,9 @@ const CourseDetail = () => {
                                                         onClick={() => toggleModule(index)}
                                                         className={`px-6 py-5 flex justify-between items-center cursor-pointer transition-all duration-300 ${isOpen ? 'bg-blue-50 border-b border-gray-200' : 'bg-gray-50 hover:bg-gray-100'}`}
                                                     >
-                                                        <span className={`font-bold transition-colors ${isOpen ? 'text-[#000080]' : 'text-gray-700'}`}>
+                                                        <h5 className={`font-bold transition-colors m-0 text-base ${isOpen ? 'text-[#000080]' : 'text-gray-700'}`}>
                                                             Module {index + 1}: {item.module || (item as any).title}
-                                                        </span>
+                                                        </h5>
                                                         <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                                                     </div>
 
@@ -356,8 +356,11 @@ const CourseDetail = () => {
                                 {/* Descriptive/Marketing Content Moved to Details Tab */}
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
                                     <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
-                                        <BookOpen className="w-8 h-8 text-[#000080]" /> What is {basicCourse.title}?
+                                        <BookOpen className="w-8 h-8 text-[#000080]" /> Course Overview & Information
                                     </h2>
+                                    <h3 className="text-2xl font-bold text-[#000080] mb-6">
+                                        What is {basicCourse.title}?
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.whatIs}
                                     </p>
@@ -365,9 +368,9 @@ const CourseDetail = () => {
 
                                 {content.whyCourse && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
-                                        <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                        <h3 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
                                             <Star className="w-8 h-8 text-yellow-500" /> Why {basicCourse.title}?
-                                        </h2>
+                                        </h3>
                                         <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                             {content.whyCourse}
                                         </p>
@@ -376,9 +379,9 @@ const CourseDetail = () => {
 
                                 {content.keyBenefits.length > 0 && (
                                     <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
-                                        <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                        <h3 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
                                             <Award className="w-8 h-8 text-purple-600" /> Key Benefits
-                                        </h2>
+                                        </h3>
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             {content.keyBenefits.map((benefit, idx) => (
                                                 <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
@@ -393,9 +396,9 @@ const CourseDetail = () => {
                                 )}
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
-                                    <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                    <h3 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
                                         <CheckCircle className="w-8 h-8 text-[#10B981]" /> Why Choose NxGen Tech Academy?
-                                    </h2>
+                                    </h3>
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         {content.whyChooseNxGen.map((reason, idx) => (
                                             <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
@@ -409,9 +412,9 @@ const CourseDetail = () => {
                                 </section>
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400">
-                                    <h2 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
+                                    <h3 className="text-3xl font-bold text-[#000080] mb-8 flex items-center gap-3">
                                         <Briefcase className="w-8 h-8 text-orange-500" /> Career Opportunities
-                                    </h2>
+                                    </h3>
                                     <ul className="space-y-4 pl-2">
                                         {content.careerOpportunities.map((career, idx) => (
                                             <li key={idx} className="flex items-center gap-3 text-gray-700">
@@ -424,9 +427,9 @@ const CourseDetail = () => {
 
 
                                 <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-shadow hover:shadow-md animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">
-                                    <h2 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
+                                    <h3 className="text-3xl font-bold text-[#000080] mb-6 flex items-center gap-3">
                                         <Clock className="w-8 h-8 text-[#000080]" /> Fees and Duration
-                                    </h2>
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                         {content.feesAndDuration}
                                     </p>
