@@ -738,10 +738,10 @@ The course fee includes complete training sessions, study materials, SAP practic
     },
 
     "sap-mm-course": {
-                        id: "sap-mm-course",
-                        metaTitle: "SAP MM Course with Placement | SAP MM Training – NXGEN",
-                        metaDescription: "Join SAP MM Course at NXGEN Tech Academy. Learn procurement, inventory management, SAP S/4HANA, and get placement support to start your SAP career.",
-                        whatIs: `
+        id: "sap-mm-course",
+        metaTitle: "SAP MM Course with Placement | SAP MM Training – NXGEN",
+        metaDescription: "Join SAP MM Course at NXGEN Tech Academy. Learn procurement, inventory management, SAP S/4HANA, and get placement support to start your SAP career.",
+        whatIs: `
 If you want to start a successful career in the SAP ecosystem, enrolling in an SAP MM Course is one of the best decisions you can make. SAP MM (Materials Management) is a key module in SAP ERP that helps organizations manage materials, inventory, procurement, and vendor management.
 
 Businesses across industries rely on SAP MM to track materials, control inventory, and manage purchasing activities efficiently.
@@ -752,7 +752,7 @@ What is SAP MM and Why Learn It?
 Every organization needs an efficient system to manage materials, procurement, and inventory. Without proper management, businesses may experience stock shortages, operational delays, or financial losses.
 The SAP MM module helps companies streamline procurement processes, manage inventory effectively, and maintain strong vendor relationships.
 `,
-                        whyCourse: `
+        whyCourse: `
 Reasons to Learn SAP MM:
 • High demand for SAP MM professionals across industries
 • Opportunities in manufacturing, IT, retail, and logistics sectors
@@ -761,40 +761,40 @@ Reasons to Learn SAP MM:
 
 At NXGEN Tech Academy, our SAP MM course is designed for beginners and professionals who want to build a career in SAP.
 `,
-                        keyBenefits: [
-                            "Learn from Anywhere – Attend classes from the comfort of your home",
-                            "Flexible Learning Schedule – Weekday, evening, and weekend batches",
-                            "Practical Learning Approach – Hands-on experience with real-world scenarios",
-                            "Access to Study Materials – Training materials and recorded sessions provided",
-                            "Expert Trainers – Learn from professionals with real industry experience",
-                            "Affordable Course Fees – High-quality training at competitive rates",
-                            "Strong Placement Assistance – Resume prep, mock interviews, and job search support"
-                        ],
-                        whyChooseNxGen: [
-                            "Expert trainers with real industry experience",
-                            "Flexible classes with multiple batch options",
-                            "Practical training with real-time scenarios and system demos",
-                            "Affordable course fees with flexible payment options",
-                            "Strong placement assistance and career guidance",
-                            "Comprehensive curriculum covering SAP ERP and SAP S/4HANA"
-                        ],
-                        keyTopics: [
-                            "Introduction to SAP and the SAP MM module",
-                            "Material Master and Vendor Master Data",
-                            "Procurement and Purchasing Process",
-                            "Inventory Management and Stock Control",
-                            "Invoice Verification and Payment Processing",
-                            "Reporting and Analytics in SAP MM"
-                        ],
-                        careerOpportunities: [
-                            "SAP MM Consultant",
-                            "SAP Procurement Specialist",
-                            "SAP Inventory Manager",
-                            "SAP Functional Analyst",
-                            "Supply Chain Analyst",
-                            "ERP Functional Consultant"
-                        ],
-                        feesAndDuration: `
+        keyBenefits: [
+            "Learn from Anywhere – Attend classes from the comfort of your home",
+            "Flexible Learning Schedule – Weekday, evening, and weekend batches",
+            "Practical Learning Approach – Hands-on experience with real-world scenarios",
+            "Access to Study Materials – Training materials and recorded sessions provided",
+            "Expert Trainers – Learn from professionals with real industry experience",
+            "Affordable Course Fees – High-quality training at competitive rates",
+            "Strong Placement Assistance – Resume prep, mock interviews, and job search support"
+        ],
+        whyChooseNxGen: [
+            "Expert trainers with real industry experience",
+            "Flexible classes with multiple batch options",
+            "Practical training with real-time scenarios and system demos",
+            "Affordable course fees with flexible payment options",
+            "Strong placement assistance and career guidance",
+            "Comprehensive curriculum covering SAP ERP and SAP S/4HANA"
+        ],
+        keyTopics: [
+            "Introduction to SAP and the SAP MM module",
+            "Material Master and Vendor Master Data",
+            "Procurement and Purchasing Process",
+            "Inventory Management and Stock Control",
+            "Invoice Verification and Payment Processing",
+            "Reporting and Analytics in SAP MM"
+        ],
+        careerOpportunities: [
+            "SAP MM Consultant",
+            "SAP Procurement Specialist",
+            "SAP Inventory Manager",
+            "SAP Functional Analyst",
+            "Supply Chain Analyst",
+            "ERP Functional Consultant"
+        ],
+        feesAndDuration: `
 The course typically takes 8 to 12 weeks to complete depending on the learning schedule.
 
 Training Options:
@@ -804,215 +804,215 @@ Training Options:
 
 At NXGEN Tech Academy, we offer affordable SAP MM training fees without compromising on quality. Factors affecting fees include recorded sessions, live interactive classes, placement support, and certification assistance. Flexible payment options and installment plans are available.
 `,
-                        conclusion: `
+        conclusion: `
 If you are planning to build a career in ERP systems, enrolling in an SAP MM Course is a great starting point. Our goal is not only to teach SAP MM concepts but also to help students start successful careers in the SAP ecosystem.
 
 With the right training and guidance, your journey toward becoming an SAP MM professional can begin today. Enroll in the SAP MM Training Program at NXGEN Tech Academy and take the first step toward a successful SAP career.
 `,
-                        curriculum: [
-                            {
-                                module: "Introduction to SAP, SAP MM, and SAP S/4HANA",
-                                topics: [
-                                    "Introduction to ERP (Enterprise Resource Planning)",
-                                    "Overview of SAP ERP and enterprise systems",
-                                    "Introduction to SAP MM module",
-                                    "SAP system architecture and system landscape",
-                                    "Overview of SAP S/4HANA and difference from SAP ECC",
-                                    "Key features of SAP MM in S/4HANA",
-                                    "SAP Fiori overview for procurement users"
-                                ]
-                            },
-                            {
-                                module: "Organizational Structure and Master Data",
-                                topics: [
-                                    "Organizational structure in SAP MM",
-                                    "Plant and storage location configuration",
-                                    "Purchasing organization and purchasing group",
-                                    "Material master creation and maintenance",
-                                    "Vendor master data management",
-                                    "Purchasing info records",
-                                    "Source list and quota arrangement"
-                                ]
-                            },
-                            {
-                                module: "Procurement Process in SAP MM",
-                                topics: [
-                                    "Overview of procurement processes in SAP MM",
-                                    "Purchase requisition creation and management",
-                                    "Request for quotation (RFQ) process",
-                                    "Quotation comparison and vendor selection",
-                                    "Purchase order creation and processing",
-                                    "Goods receipt process",
-                                    "Invoice verification procedures",
-                                    "Document flow and integration with SAP FI and SD"
-                                ]
-                            },
-                            {
-                                module: "Inventory Management",
-                                topics: [
-                                    "Overview of inventory management concept",
-                                    "Material movement types",
-                                    "Stock types and stock management",
-                                    "Batch management and shelf-life expiration",
-                                    "Transfer postings and stock transfers",
-                                    "Inventory valuation and reporting"
-                                ]
-                            },
-                            {
-                                module: "Pricing Procedure and Conditions",
-                                topics: [
-                                    "Introduction to pricing procedures in SAP MM",
-                                    "Condition types and access sequences",
-                                    "Pricing procedure configuration",
-                                    "Maintaining condition records",
-                                    "Calculation schema for procurement pricing"
-                                ]
-                            },
-                            {
-                                module: "Release Procedure and Approval Workflow",
-                                topics: [
-                                    "Release strategies configuration",
-                                    "Release codes and release groups",
-                                    "Purchase requisition release procedures",
-                                    "Purchase order approval workflows",
-                                    "Notification and monitoring settings"
-                                ]
-                            },
-                            {
-                                module: "Material Requirements Planning (MRP)",
-                                topics: [
-                                    "Overview of Material Requirements Planning",
-                                    "MRP types and planning parameters",
-                                    "Running MRP planning cycles",
-                                    "Exception messages and MRP analysis",
-                                    "Integration with SAP Production Planning (PP)"
-                                ]
-                            },
-                            {
-                                module: "Physical Inventory Management",
-                                topics: [
-                                    "Physical inventory process in SAP MM",
-                                    "Creating inventory documents and counting sheets",
-                                    "Performing inventory counts",
-                                    "Reconciliation of inventory differences",
-                                    "Adjusting stock quantities and valuation"
-                                ]
-                            },
-                            {
-                                module: "Reporting and Analytics in SAP MM",
-                                topics: [
-                                    "Standard SAP MM reports",
-                                    "Ad-hoc reporting capabilities",
-                                    "Report customization and configuration",
-                                    "Introduction to SAP Business Intelligence tools"
-                                ]
-                            },
-                            {
-                                module: "Integration with Other SAP Modules",
-                                topics: [
-                                    "Integration with SAP FI (Financial Accounting)",
-                                    "Integration with SAP CO (Controlling)",
-                                    "Integration with SAP SD (Sales and Distribution)",
-                                    "Integration with SAP PP (Production Planning)",
-                                    "Integration with SAP WM (Warehouse Management)"
-                                ]
-                            },
-                            {
-                                module: "Batch Management and Serial Number Management",
-                                topics: [
-                                    "Introduction to batch management",
-                                    "Creating and managing batch numbers",
-                                    "Serial number management",
-                                    "Impact of batch and serial numbers on valuation"
-                                ]
-                            },
-                            {
-                                module: "Vendor Evaluation and Vendor Management",
-                                topics: [
-                                    "Vendor evaluation process in SAP MM",
-                                    "Defining vendor evaluation criteria",
-                                    "Performance measurement and ranking of vendors",
-                                    "Vendor relationship management strategies"
-                                ]
-                            },
-                            {
-                                module: "Contract Management",
-                                topics: [
-                                    "Overview of contract management in SAP MM",
-                                    "Creation and maintenance of procurement contracts",
-                                    "Scheduling agreements",
-                                    "Contract release procedures",
-                                    "Contract monitoring and reporting"
-                                ]
-                            },
-                            {
-                                module: "Logistics Invoice Verification (LIV)",
-                                topics: [
-                                    "Overview of logistics invoice verification",
-                                    "Creation and processing of LIV documents",
-                                    "Three-way match process (PO → GR → Invoice)",
-                                    "Handling invoice discrepancies",
-                                    "Workflow configuration for invoice verification"
-                                ]
-                            },
-                            {
-                                module: "Integration with Supply Chain Management (SCM)",
-                                topics: [
-                                    "Overview of supply chain management processes",
-                                    "Integration with SAP SCM modules",
-                                    "Advanced Planning and Optimization (APO)",
-                                    "Supplier Relationship Management (SRM)"
-                                ]
-                            },
-                            {
-                                module: "SAP S/4HANA Procurement Innovations",
-                                topics: [
-                                    "S/4HANA procurement overview",
-                                    "Business Partner concept for vendors",
-                                    "Simplified data model in S/4HANA",
-                                    "Embedded analytics for procurement",
-                                    "SAP Fiori apps for purchasing",
-                                    "Central procurement overview"
-                                ]
-                            },
-                            {
-                                module: "Advanced Reporting and Analytics",
-                                topics: [
-                                    "Advanced SAP reporting tools",
-                                    "Data visualization techniques",
-                                    "Dashboard design and analytics",
-                                    "SAP HANA and in-memory computing concepts"
-                                ]
-                            },
-                            {
-                                module: "Best Practices and Process Optimization",
-                                topics: [
-                                    "Best practices in SAP MM implementation",
-                                    "Procurement optimization strategies",
-                                    "Process improvement tools",
-                                    "Continuous improvement methodologies"
-                                ]
-                            },
-                            {
-                                module: "Real-Time Business Scenarios",
-                                topics: [
-                                    "Procure-to-Pay (P2P) process",
-                                    "Material procurement lifecycle",
-                                    "Vendor invoice processing",
-                                    "Inventory reconciliation",
-                                    "Procurement reporting and analysis"
+        curriculum: [
+            {
+                module: "Introduction to SAP, SAP MM, and SAP S/4HANA",
+                topics: [
+                    "Introduction to ERP (Enterprise Resource Planning)",
+                    "Overview of SAP ERP and enterprise systems",
+                    "Introduction to SAP MM module",
+                    "SAP system architecture and system landscape",
+                    "Overview of SAP S/4HANA and difference from SAP ECC",
+                    "Key features of SAP MM in S/4HANA",
+                    "SAP Fiori overview for procurement users"
+                ]
+            },
+            {
+                module: "Organizational Structure and Master Data",
+                topics: [
+                    "Organizational structure in SAP MM",
+                    "Plant and storage location configuration",
+                    "Purchasing organization and purchasing group",
+                    "Material master creation and maintenance",
+                    "Vendor master data management",
+                    "Purchasing info records",
+                    "Source list and quota arrangement"
+                ]
+            },
+            {
+                module: "Procurement Process in SAP MM",
+                topics: [
+                    "Overview of procurement processes in SAP MM",
+                    "Purchase requisition creation and management",
+                    "Request for quotation (RFQ) process",
+                    "Quotation comparison and vendor selection",
+                    "Purchase order creation and processing",
+                    "Goods receipt process",
+                    "Invoice verification procedures",
+                    "Document flow and integration with SAP FI and SD"
+                ]
+            },
+            {
+                module: "Inventory Management",
+                topics: [
+                    "Overview of inventory management concept",
+                    "Material movement types",
+                    "Stock types and stock management",
+                    "Batch management and shelf-life expiration",
+                    "Transfer postings and stock transfers",
+                    "Inventory valuation and reporting"
+                ]
+            },
+            {
+                module: "Pricing Procedure and Conditions",
+                topics: [
+                    "Introduction to pricing procedures in SAP MM",
+                    "Condition types and access sequences",
+                    "Pricing procedure configuration",
+                    "Maintaining condition records",
+                    "Calculation schema for procurement pricing"
+                ]
+            },
+            {
+                module: "Release Procedure and Approval Workflow",
+                topics: [
+                    "Release strategies configuration",
+                    "Release codes and release groups",
+                    "Purchase requisition release procedures",
+                    "Purchase order approval workflows",
+                    "Notification and monitoring settings"
+                ]
+            },
+            {
+                module: "Material Requirements Planning (MRP)",
+                topics: [
+                    "Overview of Material Requirements Planning",
+                    "MRP types and planning parameters",
+                    "Running MRP planning cycles",
+                    "Exception messages and MRP analysis",
+                    "Integration with SAP Production Planning (PP)"
+                ]
+            },
+            {
+                module: "Physical Inventory Management",
+                topics: [
+                    "Physical inventory process in SAP MM",
+                    "Creating inventory documents and counting sheets",
+                    "Performing inventory counts",
+                    "Reconciliation of inventory differences",
+                    "Adjusting stock quantities and valuation"
+                ]
+            },
+            {
+                module: "Reporting and Analytics in SAP MM",
+                topics: [
+                    "Standard SAP MM reports",
+                    "Ad-hoc reporting capabilities",
+                    "Report customization and configuration",
+                    "Introduction to SAP Business Intelligence tools"
+                ]
+            },
+            {
+                module: "Integration with Other SAP Modules",
+                topics: [
+                    "Integration with SAP FI (Financial Accounting)",
+                    "Integration with SAP CO (Controlling)",
+                    "Integration with SAP SD (Sales and Distribution)",
+                    "Integration with SAP PP (Production Planning)",
+                    "Integration with SAP WM (Warehouse Management)"
+                ]
+            },
+            {
+                module: "Batch Management and Serial Number Management",
+                topics: [
+                    "Introduction to batch management",
+                    "Creating and managing batch numbers",
+                    "Serial number management",
+                    "Impact of batch and serial numbers on valuation"
+                ]
+            },
+            {
+                module: "Vendor Evaluation and Vendor Management",
+                topics: [
+                    "Vendor evaluation process in SAP MM",
+                    "Defining vendor evaluation criteria",
+                    "Performance measurement and ranking of vendors",
+                    "Vendor relationship management strategies"
+                ]
+            },
+            {
+                module: "Contract Management",
+                topics: [
+                    "Overview of contract management in SAP MM",
+                    "Creation and maintenance of procurement contracts",
+                    "Scheduling agreements",
+                    "Contract release procedures",
+                    "Contract monitoring and reporting"
+                ]
+            },
+            {
+                module: "Logistics Invoice Verification (LIV)",
+                topics: [
+                    "Overview of logistics invoice verification",
+                    "Creation and processing of LIV documents",
+                    "Three-way match process (PO → GR → Invoice)",
+                    "Handling invoice discrepancies",
+                    "Workflow configuration for invoice verification"
+                ]
+            },
+            {
+                module: "Integration with Supply Chain Management (SCM)",
+                topics: [
+                    "Overview of supply chain management processes",
+                    "Integration with SAP SCM modules",
+                    "Advanced Planning and Optimization (APO)",
+                    "Supplier Relationship Management (SRM)"
+                ]
+            },
+            {
+                module: "SAP S/4HANA Procurement Innovations",
+                topics: [
+                    "S/4HANA procurement overview",
+                    "Business Partner concept for vendors",
+                    "Simplified data model in S/4HANA",
+                    "Embedded analytics for procurement",
+                    "SAP Fiori apps for purchasing",
+                    "Central procurement overview"
+                ]
+            },
+            {
+                module: "Advanced Reporting and Analytics",
+                topics: [
+                    "Advanced SAP reporting tools",
+                    "Data visualization techniques",
+                    "Dashboard design and analytics",
+                    "SAP HANA and in-memory computing concepts"
+                ]
+            },
+            {
+                module: "Best Practices and Process Optimization",
+                topics: [
+                    "Best practices in SAP MM implementation",
+                    "Procurement optimization strategies",
+                    "Process improvement tools",
+                    "Continuous improvement methodologies"
+                ]
+            },
+            {
+                module: "Real-Time Business Scenarios",
+                topics: [
+                    "Procure-to-Pay (P2P) process",
+                    "Material procurement lifecycle",
+                    "Vendor invoice processing",
+                    "Inventory reconciliation",
+                    "Procurement reporting and analysis"
 
-                                ]
-                            }
-                        ]
-                    },
+                ]
+            }
+        ]
+    },
 
-                    "sap-pm": generateDefaultSAPContent("SAP PM", "sap-pm"),
-                    "sap-qm-course": {
-                        id: "sap-qm-course",
-                        metaTitle: "SAP QM Course | SAP QM Training with Placement – NXGEN",
-                        metaDescription: "Learn SAP QM Course at NXGEN Tech Academy. Get hands-on SAP training, certification guidance, internship, and 100% job support to build a career in SAP Quality Management.",
-                        whatIs: `
+    "sap-pm": generateDefaultSAPContent("SAP PM", "sap-pm"),
+    "sap-qm-course": {
+        id: "sap-qm-course",
+        metaTitle: "SAP QM Course | SAP QM Training with Placement – NXGEN",
+        metaDescription: "Learn SAP QM Course at NXGEN Tech Academy. Get hands-on SAP training, certification guidance, internship, and 100% job support to build a career in SAP Quality Management.",
+        whatIs: `
 Are you looking to build expertise in SAP Quality Management (SAP QM) and unlock high-paying career opportunities in the SAP ecosystem? The SAP QM Course at NXGEN Tech Academy is designed to help students and professionals gain industry-relevant skills in quality management processes using SAP ERP and SAP S/4HANA.
 
 This comprehensive training program covers inspection planning, quality inspections, quality notifications, quality certificates, and integration with other SAP modules such as SAP MM, SAP PP, and SAP PM.
@@ -1029,7 +1029,7 @@ It enables companies to:
 • Ensure compliance with international standards such as ISO and FDA
 • Improve product quality and operational efficiency
 `,
-                        whyCourse: `
+        whyCourse: `
 Quality management plays a critical role in industries such as manufacturing, pharmaceuticals, automotive, and consumer goods.
 SAP QM enables organizations to maintain consistent product quality by integrating quality checks throughout the production and procurement processes.
 With knowledge gained from the SAP QM training program, professionals can:
@@ -1040,216 +1040,216 @@ With knowledge gained from the SAP QM training program, professionals can:
 
 By enrolling in the SAP QM course, learners develop the ability to manage quality processes effectively, reduce defects, and enhance customer satisfaction.
 `,
-                        keyBenefits: [
-                            "Automate inspection processes and defect tracking",
-                            "Manage quality notifications and root cause analysis",
-                            "Ensure compliance with international standards (ISO, FDA)",
-                            "Improve product quality and operational efficiency",
-                            "Identify and prevent quality issues early in production",
-                            "Enhance customer satisfaction and brand reputation",
-                            "Integrate quality checks across MM, PP, and PM modules"
-                        ],
-                        whyChooseNxGen: [
-                            "Comprehensive Training on Latest SAP S/4HANA Technologies",
-                            "Experienced SAP-Certified Trainers with Industry Experience",
-                            "Course Completion Certification from NXGEN Tech Academy",
-                            "Real-Time Project Implementation and Business Scenarios",
-                            "Flexible Learning with Weekday and Weekend Batches",
-                            "Lifetime Access to LMS (Recorded Lectures & Study Materials)",
-                            "100% Job Support (Resume, Interview Prep, Applications)",
-                            "Free Access to Live SAP Servers for Hands-on Practice",
-                            "Internship Opportunities to Gain Functional Experience"
-                        ],
-                        keyTopics: [
-                            "Material Master – Quality Management View",
-                            "Master Inspection Characteristics (MICs)",
-                            "Sampling Procedures and Sample Determination",
-                            "Defect recording and result recording",
-                            "Usage decision processing",
-                            "Quality Notifications management",
-                            "Quality certificates and COA",
-                            "Integration with SAP MM, PP, and PM",
-                            "Inspection lot creation and processing",
-                            "Incoming, In-process, and Final inspections"
-                        ],
-                        careerOpportunities: [
-                            "SAP QM Consultant",
-                            "Quality Analyst",
-                            "Quality Assurance Specialist",
-                            "SAP Functional Consultant",
-                            "Process Improvement Specialist",
-                            "Quality Management Expert",
-                            "SAP Functional Specialist"
-                        ],
-                        feesAndDuration: `
+        keyBenefits: [
+            "Automate inspection processes and defect tracking",
+            "Manage quality notifications and root cause analysis",
+            "Ensure compliance with international standards (ISO, FDA)",
+            "Improve product quality and operational efficiency",
+            "Identify and prevent quality issues early in production",
+            "Enhance customer satisfaction and brand reputation",
+            "Integrate quality checks across MM, PP, and PM modules"
+        ],
+        whyChooseNxGen: [
+            "Comprehensive Training on Latest SAP S/4HANA Technologies",
+            "Experienced SAP-Certified Trainers with Industry Experience",
+            "Course Completion Certification from NXGEN Tech Academy",
+            "Real-Time Project Implementation and Business Scenarios",
+            "Flexible Learning with Weekday and Weekend Batches",
+            "Lifetime Access to LMS (Recorded Lectures & Study Materials)",
+            "100% Job Support (Resume, Interview Prep, Applications)",
+            "Free Access to Live SAP Servers for Hands-on Practice",
+            "Internship Opportunities to Gain Functional Experience"
+        ],
+        keyTopics: [
+            "Material Master – Quality Management View",
+            "Master Inspection Characteristics (MICs)",
+            "Sampling Procedures and Sample Determination",
+            "Defect recording and result recording",
+            "Usage decision processing",
+            "Quality Notifications management",
+            "Quality certificates and COA",
+            "Integration with SAP MM, PP, and PM",
+            "Inspection lot creation and processing",
+            "Incoming, In-process, and Final inspections"
+        ],
+        careerOpportunities: [
+            "SAP QM Consultant",
+            "Quality Analyst",
+            "Quality Assurance Specialist",
+            "SAP Functional Consultant",
+            "Process Improvement Specialist",
+            "Quality Management Expert",
+            "SAP Functional Specialist"
+        ],
+        feesAndDuration: `
 The SAP QM training program at NXGEN Tech Academy is designed to take learners from beginner level to advanced expertise. Our training methodology focuses on practical learning, real-time scenarios, and hands-on SAP system experience.
 
 We offer flexible learning schedules with weekday and weekend batches suitable for both students and working professionals. Students benefit from training by SAP-certified instructors, practice on live SAP servers, and one-on-one mentoring support.
 
 The course includes lifetime access to our Learning Management System (LMS), which contains recorded lectures, assignments, and updated study materials. After completion, students receive job support including resume preparation and interview guidance.
 `,
-                        conclusion: `
+        conclusion: `
 Quality management plays a vital role in modern businesses, and professionals with SAP QM expertise are highly valued across industries. The SAP QM Course at NXGEN Tech Academy provides practical training, certification guidance, and career support to help learners build successful careers in SAP.
 
 If you want to become a quality management expert and build a global SAP career, enrolling in the SAP QM training program at NXGEN Tech Academy is the right step. Start your SAP journey today and transform your future with NXGEN Tech Academy.
 `,
-                        curriculum: [
-                            {
-                                module: "Introduction to SAP QM",
-                                topics: [
-                                    "Overview of SAP and ERP concepts",
-                                    "Introduction to SAP Quality Management (QM)",
-                                    "Role of QM in manufacturing and service industries",
-                                    "Integration of SAP QM with MM, PP, SD, and PM modules",
-                                    "End-user vs SAP QM consultant responsibilities"
-                                ]
-                            },
-                            {
-                                module: "Organizational Structure and Basic Configuration",
-                                topics: [
-                                    "QM organizational structure (Client, Company Code, Plant)",
-                                    "Assignment of QM to plant",
-                                    "QM control key and plant parameter configuration",
-                                    "Activation of inspection types",
-                                    "Number ranges and basic configuration settings"
-                                ]
-                            },
-                            {
-                                module: "Master Data in SAP QM",
-                                topics: [
-                                    "Material master – QM view configuration",
-                                    "Creating and maintaining Master Inspection Characteristics (MIC)",
-                                    "Qualitative MIC and Quantitative MIC",
-                                    "Catalogs and selected sets configuration",
-                                    "Inspection method creation",
-                                    "Sampling procedures and sample determination",
-                                    "Quality Info Record (QIR)"
-                                ]
-                            },
-                            {
-                                module: "Inspection Planning",
-                                topics: [
-                                    "Inspection plan creation",
-                                    "Routing and task list integration",
-                                    "Assigning MICs to inspection plans",
-                                    "Creating inspection points",
-                                    "Inspection plan status and version control"
-                                ]
-                            },
-                            {
-                                module: "Inspection Processing",
-                                topics: [
-                                    "Inspection lot creation",
-                                    "Goods Receipt (GR) inspection",
-                                    "In-process inspection",
-                                    "Final inspection",
-                                    "Source inspection",
-                                    "Recurring inspection",
-                                    "Result recording and Defect recording",
-                                    "Usage decision",
-                                    "Stock posting after usage decision"
-                                ]
-                            },
-                            {
-                                module: "Quality Notifications",
-                                topics: [
-                                    "Overview of quality notifications",
-                                    "Notification types and configuration",
-                                    "Creating quality notifications",
-                                    "Defect analysis and root cause identification",
-                                    "Corrective and Preventive Actions (CAPA)",
-                                    "Notification processing and closure"
-                                ]
-                            },
-                            {
-                                module: "Certificates and Documentation",
-                                topics: [
-                                    "Quality certificate management",
-                                    "Certificate of Analysis (COA)",
-                                    "Output determination for certificates",
-                                    "Certificate print and email configuration"
-                                ]
-                            },
-                            {
-                                module: "Integration of SAP QM with Other Modules",
-                                topics: [
-                                    "QM integration with SAP MM (Procurement)",
-                                    "QM integration with SAP PP (Production)",
-                                    "QM integration with SAP SD (Sales)",
-                                    "Movement types related to QM",
-                                    "Batch management integration"
-                                ]
-                            },
-                            {
-                                module: "Reporting and Analytics in SAP QM",
-                                topics: [
-                                    "Inspection lot reports",
-                                    "Quality level reports",
-                                    "Defect analysis reports",
-                                    "Vendor evaluation reports",
-                                    "KPI tracking and performance monitoring in SAP QM"
-                                ]
-                            },
-                            {
-                                module: "Real-Time Business Scenarios and Case Studies",
-                                topics: [
-                                    "End-to-end incoming inspection scenario",
-                                    "In-process quality control scenario",
-                                    "Final inspection with usage decision",
-                                    "Vendor quality management scenario",
-                                    "Customer complaint handling process"
-                                ]
-                            },
-                            {
-                                module: "Advanced Topics in SAP QM",
-                                topics: [
-                                    "Dynamic Modification Rule (DMR)",
-                                    "Quality levels management",
-                                    "Skip lot concept",
-                                    "Audit management overview",
-                                    "Introduction to SAP S/4HANA Quality Management"
-                                ]
-                            },
-                            {
-                                module: "Implementation and Interview Preparation",
-                                topics: [
-                                    "SAP QM implementation lifecycle",
-                                    "Configuration vs master data management",
-                                    "Testing phases (Unit Testing, Integration Testing, UAT)",
-                                    "Cutover activities during go-live",
-                                    "Support and issue resolution",
-                                    "Frequently asked SAP QM interview questions"
-                                ]
-                            }
-                        ]
-                    },
-                    "sap-scm": generateDefaultSAPContent("SAP SCM", "sap-scm"),
-                    "sap-ewm": generateDefaultSAPContent("SAP EWM", "sap-ewm"),
+        curriculum: [
+            {
+                module: "Introduction to SAP QM",
+                topics: [
+                    "Overview of SAP and ERP concepts",
+                    "Introduction to SAP Quality Management (QM)",
+                    "Role of QM in manufacturing and service industries",
+                    "Integration of SAP QM with MM, PP, SD, and PM modules",
+                    "End-user vs SAP QM consultant responsibilities"
+                ]
+            },
+            {
+                module: "Organizational Structure and Basic Configuration",
+                topics: [
+                    "QM organizational structure (Client, Company Code, Plant)",
+                    "Assignment of QM to plant",
+                    "QM control key and plant parameter configuration",
+                    "Activation of inspection types",
+                    "Number ranges and basic configuration settings"
+                ]
+            },
+            {
+                module: "Master Data in SAP QM",
+                topics: [
+                    "Material master – QM view configuration",
+                    "Creating and maintaining Master Inspection Characteristics (MIC)",
+                    "Qualitative MIC and Quantitative MIC",
+                    "Catalogs and selected sets configuration",
+                    "Inspection method creation",
+                    "Sampling procedures and sample determination",
+                    "Quality Info Record (QIR)"
+                ]
+            },
+            {
+                module: "Inspection Planning",
+                topics: [
+                    "Inspection plan creation",
+                    "Routing and task list integration",
+                    "Assigning MICs to inspection plans",
+                    "Creating inspection points",
+                    "Inspection plan status and version control"
+                ]
+            },
+            {
+                module: "Inspection Processing",
+                topics: [
+                    "Inspection lot creation",
+                    "Goods Receipt (GR) inspection",
+                    "In-process inspection",
+                    "Final inspection",
+                    "Source inspection",
+                    "Recurring inspection",
+                    "Result recording and Defect recording",
+                    "Usage decision",
+                    "Stock posting after usage decision"
+                ]
+            },
+            {
+                module: "Quality Notifications",
+                topics: [
+                    "Overview of quality notifications",
+                    "Notification types and configuration",
+                    "Creating quality notifications",
+                    "Defect analysis and root cause identification",
+                    "Corrective and Preventive Actions (CAPA)",
+                    "Notification processing and closure"
+                ]
+            },
+            {
+                module: "Certificates and Documentation",
+                topics: [
+                    "Quality certificate management",
+                    "Certificate of Analysis (COA)",
+                    "Output determination for certificates",
+                    "Certificate print and email configuration"
+                ]
+            },
+            {
+                module: "Integration of SAP QM with Other Modules",
+                topics: [
+                    "QM integration with SAP MM (Procurement)",
+                    "QM integration with SAP PP (Production)",
+                    "QM integration with SAP SD (Sales)",
+                    "Movement types related to QM",
+                    "Batch management integration"
+                ]
+            },
+            {
+                module: "Reporting and Analytics in SAP QM",
+                topics: [
+                    "Inspection lot reports",
+                    "Quality level reports",
+                    "Defect analysis reports",
+                    "Vendor evaluation reports",
+                    "KPI tracking and performance monitoring in SAP QM"
+                ]
+            },
+            {
+                module: "Real-Time Business Scenarios and Case Studies",
+                topics: [
+                    "End-to-end incoming inspection scenario",
+                    "In-process quality control scenario",
+                    "Final inspection with usage decision",
+                    "Vendor quality management scenario",
+                    "Customer complaint handling process"
+                ]
+            },
+            {
+                module: "Advanced Topics in SAP QM",
+                topics: [
+                    "Dynamic Modification Rule (DMR)",
+                    "Quality levels management",
+                    "Skip lot concept",
+                    "Audit management overview",
+                    "Introduction to SAP S/4HANA Quality Management"
+                ]
+            },
+            {
+                module: "Implementation and Interview Preparation",
+                topics: [
+                    "SAP QM implementation lifecycle",
+                    "Configuration vs master data management",
+                    "Testing phases (Unit Testing, Integration Testing, UAT)",
+                    "Cutover activities during go-live",
+                    "Support and issue resolution",
+                    "Frequently asked SAP QM interview questions"
+                ]
+            }
+        ]
+    },
+    "sap-scm": generateDefaultSAPContent("SAP SCM", "sap-scm"),
+    "sap-ewm": generateDefaultSAPContent("SAP EWM", "sap-ewm"),
 
-                    "sap-basis": generateDefaultSAPContent("SAP Basis", "sap-basis"),
-                    "sap-hcm-successfactors": generateDefaultSAPContent("SAP HCM/SuccessFactors", "sap-hcm-successfactors"),
+    "sap-basis": generateDefaultSAPContent("SAP Basis", "sap-basis"),
+    "sap-hcm-successfactors": generateDefaultSAPContent("SAP HCM/SuccessFactors", "sap-hcm-successfactors"),
 
-                    // BTP Courses
-                    "sap-btp-appdev": generateDefaultSAPContent("SAP BTP Application Development", "sap-btp-appdev"),
-                    "sap-btp-automation": generateDefaultSAPContent("SAP Build Process Automation", "sap-btp-automation"),
-                    "sap-btp-integration": generateDefaultSAPContent("SAP Integration Suite", "sap-btp-integration"),
-                    "sap-btp-data": generateDefaultSAPContent("SAP BTP Data & Analytics", "sap-btp-data"),
-                    "sap-btp-ai": generateDefaultSAPContent("SAP Business AI", "sap-btp-ai"),
-                    "sap-btp-devops": generateDefaultSAPContent("SAP BTP DevOps", "sap-btp-devops"),
+    // BTP Courses
+    "sap-btp-appdev": generateDefaultSAPContent("SAP BTP Application Development", "sap-btp-appdev"),
+    "sap-btp-automation": generateDefaultSAPContent("SAP Build Process Automation", "sap-btp-automation"),
+    "sap-btp-integration": generateDefaultSAPContent("SAP Integration Suite", "sap-btp-integration"),
+    "sap-btp-data": generateDefaultSAPContent("SAP BTP Data & Analytics", "sap-btp-data"),
+    "sap-btp-ai": generateDefaultSAPContent("SAP Business AI", "sap-btp-ai"),
+    "sap-btp-devops": generateDefaultSAPContent("SAP BTP DevOps", "sap-btp-devops"),
 
-                    // Additional specialized
-                    "sap-cds": generateDefaultSAPContent("SAP CDS Views", "sap-cds"),
-                    "sap-odata": generateDefaultSAPContent("SAP OData Services", "sap-odata"),
-                    "sap-rap": generateDefaultSAPContent("SAP RAP", "sap-rap"),
-                    "sap-alv": generateDefaultSAPContent("SAP ALV & Reports", "sap-alv"),
-                    "sap-debug": generateDefaultSAPContent("SAP Enhancements & Debugging", "sap-debug"),
-                    "sap-fiori-elements": generateDefaultSAPContent("SAP Fiori Elements", "sap-fiori-elements"),
+    // Additional specialized
+    "sap-cds": generateDefaultSAPContent("SAP CDS Views", "sap-cds"),
+    "sap-odata": generateDefaultSAPContent("SAP OData Services", "sap-odata"),
+    "sap-rap": generateDefaultSAPContent("SAP RAP", "sap-rap"),
+    "sap-alv": generateDefaultSAPContent("SAP ALV & Reports", "sap-alv"),
+    "sap-debug": generateDefaultSAPContent("SAP Enhancements & Debugging", "sap-debug"),
+    "sap-fiori-elements": generateDefaultSAPContent("SAP Fiori Elements", "sap-fiori-elements"),
 };
 
-        export const getSapCourseContent = (id: string, title: string): SAPCourseContent => {
-            if (sapCoursesContent[id]) {
-                return sapCoursesContent[id];
-            }
-            // Fallback for any unknown sap course
-            return generateDefaultSAPContent(title, id);
-        };
+export const getSapCourseContent = (id: string, title: string): SAPCourseContent => {
+    if (sapCoursesContent[id]) {
+        return sapCoursesContent[id];
+    }
+    // Fallback for any unknown sap course
+    return generateDefaultSAPContent(title, id);
+};

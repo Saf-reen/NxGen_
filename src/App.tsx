@@ -67,7 +67,6 @@ const AppContent = () => {
           <Route path="/sap-courses" element={<SAPCategory />} />
           <Route path="courses/sap-technical" element={<CategoryListing categorySlug="sap-technical" />} />
           <Route path="courses/sap-functional" element={<CategoryListing categorySlug="sap-functional" />} />
-          <Route path="courses/sap-admin" element={<CategoryListing categorySlug="sap-admin" />} />
           <Route path="courses/python" element={<CategoryListing categorySlug="python" />} />
           <Route path="courses/ai" element={<CategoryListing categorySlug="ai" />} />
           <Route path="courses/aiml" element={<CategoryListing categorySlug="aiml" />} />

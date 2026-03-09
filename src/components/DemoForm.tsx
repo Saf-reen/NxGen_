@@ -20,7 +20,6 @@ interface DemoFormProps {
 const COURSES = [
     "SAP Technical & Development",
     "SAP Functional Modules",
-    "SAP Administration & HR",
     "SAP Business Technology Platform (BTP)",
     "SAP Specialized / Sub Courses",
     "Data Analytics",

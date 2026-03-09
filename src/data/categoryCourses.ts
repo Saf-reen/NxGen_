@@ -38,17 +38,6 @@ export const categoryConfig: Record<string, { title: string; description: string
             "Gain hands-on experience with real-world functional scenarios"
         ]
     },
-    "sap-admin": {
-        title: "SAP Administration",
-        description: "Manage systems with SAP Admin modules.",
-        parentCategory: "SAP Courses",
-        outcomes: [
-            "Perform SAP system installation, configuration, and maintenance",
-            "Manage user administration, roles, and authorizations security",
-            "Monitor system performance and troubleshoot technical issues",
-            "Handle database administration, backups, and disaster recovery"
-        ]
-    },
     "python": {
         title: "Python Programming",
         description: "Learn comprehensive Python coding from basics to advanced.",
@@ -212,12 +201,11 @@ export const coursesData: CourseData[] = [
         price: "₹28,000"
     },
 
-    // SAP Administration & HR - UPDATED CONTENT
     {
         id: "sap-basis",
         title: "SAP Basis",
         description: "SAP system administration, monitoring, transports, authorizations, and S/4HANA basics.",
-        categoryId: "sap-admin",
+        categoryId: "sap-technical",
         image: "/sap/sap-basis.png",
         rating: 5,
         price: "₹30,000"
@@ -232,51 +220,6 @@ export const coursesData: CourseData[] = [
         image: "/sap/sap-btp.png",
         rating: 5,
         price: "₹40,000"
-    },
-    {
-        id: "sap-btp-automation",
-        title: "SAP Build Process Automation (RPA & Workflow)",
-        description: "Master SAP Build Process Automation. Learn Workflow Management, Decisions, Rules, RPA, and Process Visibility.",
-        categoryId: "sap-btp",
-        image: "/sap/sap-btp.png",
-        rating: 5,
-        price: "₹35,000"
-    },
-    {
-        id: "sap-btp-integration",
-        title: "SAP Integration Suite & Event Mesh",
-        description: "Connect processes and data. In-depth training on SAP Integration Suite, API Management, and Advanced Event Mesh.",
-        categoryId: "sap-btp",
-        image: "/sap/sap-btp.png",
-        rating: 5,
-        price: "₹38,000"
-    },
-    {
-        id: "sap-btp-data",
-        title: "SAP BTP Data & Analytics (HANA Cloud & SAC)",
-        description: "Unleash data potential with SAP HANA Cloud, Analytics Cloud (SAC), Datasphere, and Master Data Governance.",
-        categoryId: "sap-btp",
-        image: "/sap/sap-btp-data.png",
-        rating: 5,
-        price: "₹42,000"
-    },
-    {
-        id: "sap-btp-ai",
-        title: "SAP Business AI & Core Service",
-        description: "Implement intelligent solutions using SAP AI Core, AI Launchpad, and AI Business Services.",
-        categoryId: "sap-btp",
-        image: "/sap/sap-btp-ai.png",
-        rating: 5,
-        price: "₹45,000"
-    },
-    {
-        id: "sap-btp-devops",
-        title: "SAP BTP DevOps & Administration",
-        description: "Manage the cloud lifecycle. Covers CICD, Transport Management, Alert Notification, and Automation Pilot.",
-        categoryId: "sap-btp",
-        image: "/sap/sap-btp-devops.png",
-        rating: 5,
-        price: "₹30,000"
     },
 
     // Python - CORE & ADVANCED

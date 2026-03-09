@@ -9,7 +9,6 @@ import { DemoModal } from "@/components/DemoModal";
 const sapCategories = [
   { title: "SAP Technical & Development", hours: "Advanced coding, configuration, and technical architecture modules.", link: "/courses/sap-technical" },
   { title: "SAP Functional Modules", hours: "Finance, Materials Management, Sales & Distribution, and more.", link: "/courses/sap-functional" },
-  { title: "SAP Administration & HR", hours: "System administration, HR processes, and payroll systems.", link: "/courses/sap-admin" },
   { title: "SAP Business Technology Platform (BTP)", hours: "Cloud integration and digital transformation modules.", link: "/courses/sap-btp" },
 ];
 
