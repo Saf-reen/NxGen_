@@ -202,13 +202,16 @@ export const coursesData: CourseData[] = [
     },
 
     {
-        id: "sap-basis",
-        title: "SAP Basis",
-        description: "SAP system administration, monitoring, transports, authorizations, and S/4HANA basics.",
+        id: "sap-basis-s4hana-training",
+        title: "SAP BASIS S/4HANA Training",
+        description: "SAP system administration, monitoring, transports, authorizations, and S/4HANA technical management.",
         categoryId: "sap-technical",
         image: "/sap/sap-basis.png",
         rating: 5,
-        price: "₹30,000"
+        price: "₹30,000",
+        duration: "40+ Hours",
+        enrolled: "1100+",
+        mode: "Live Training"
     },
 
     // SAP BTP - Comprehensive Modules (Based on Architecture)

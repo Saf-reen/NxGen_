@@ -1821,7 +1821,134 @@ If you want to become a quality management expert and build a global SAP career,
     "sap-scm": generateDefaultSAPContent("SAP SCM", "sap-scm"),
     "sap-ewm": generateDefaultSAPContent("SAP EWM", "sap-ewm"),
 
-    "sap-basis": generateDefaultSAPContent("SAP Basis", "sap-basis"),
+    "sap-basis-s4hana-training": {
+        id: "sap-basis-s4hana-training",
+        metaTitle: "SAP BASIS S/4HANA Training Online with Certification & Placement | NxGen Tech Academy",
+        metaDescription: "Learn SAP BASIS S/4HANA Training Online with real-time projects, certification guidance, and placement support at NxGen Tech Academy. Enroll today to become an SAP BASIS administrator.",
+        whatIs: `The SAP BASIS S/4HANA Training at NxGen Tech Academy is designed for professionals who want to manage, administer, and support modern SAP S/4HANA system landscapes. This course focuses on system installation, configuration, monitoring, performance optimization, upgrades, and security management in real SAP environments.\n\nAs one of the most important SAP technical administration courses, this training helps learners develop the expertise required to maintain SAP systems efficiently and ensure smooth business operations. The course provides a strong foundation in SAP BASIS administration, enabling professionals to work with enterprise-level SAP S/4HANA systems.\n\nThrough practical sessions, real-time exercises, and industry-focused training, learners gain hands-on experience in managing SAP system landscapes and preparing for SAP BASIS S/4HANA certification and career opportunities.\n\nWhat is SAP BASIS S/4HANA?\n\nSAP BASIS (Business Application Systems Integrated Solutions) is the technical foundation that supports SAP applications. It manages the technical infrastructure of SAP systems, including installation, configuration, system monitoring, and performance optimization.\n\nSAP S/4HANA is the next-generation ERP system developed by SAP that runs on the SAP HANA in-memory database. It provides real-time analytics, simplified data models, and improved user experiences.\n\nThe SAP BASIS S/4HANA consultant plays a critical role in ensuring that SAP systems operate smoothly. Their responsibilities include system administration, performance monitoring, security management, and maintaining system stability.\n\nSAP BASIS acts as the backbone of SAP S/4HANA environments, helping organizations manage their enterprise applications efficiently and securely.`,
+        whyCourse: `Enrolling in SAP BASIS S/4HANA training at NxGen Tech Academy provides several career advantages.\n\nHigh Job Opportunities\nSAP BASIS consultants are in demand across industries implementing SAP S/4HANA systems.\n\nCareer Growth and Salary Increase\nProfessionals with SAP BASIS expertise often receive promotion opportunities and higher salaries.\n\nIncreased Productivity\nUnderstanding SAP system administration helps organizations run their operations efficiently.\n\nImproved Decision-Making\nReal-time monitoring and analytics capabilities enable better system management decisions.\n\nIn-Demand Technical Skills\nSAP BASIS skills are essential for SAP system management, upgrades, and cloud migrations.\n\nPrerequisites for SAP BASIS S/4HANA Training\n\nThe SAP BASIS S/4HANA course is suitable for learners who have basic technical knowledge.\nRecommended prerequisites include:\n• Basic understanding of SAP systems\n• Technical or IT background\n• Knowledge of databases\n• Basic operating system skills (Linux/Windows)\n• Understanding of networking concepts`,
+        keyBenefits: [
+            "40+ Hours of Instructor-Led Training",
+            "Real-Time Project Work and Practical Exercises",
+            "Mock Interview Preparation",
+            "Flexible Learning Schedule",
+            "24/7 Lifetime Support and Course Access",
+            "Certification Guidance and Job Assistance"
+        ],
+        whyChooseNxGen: [
+            "Comprehensive training on managing modern SAP S/4HANA system landscapes",
+            "Hands-on sessions and real-time exercises for practical experience",
+            "Expert mentorship from industry professionals",
+            "Placement assistance and resume building support",
+            "Certification preparation for SAP BASIS S/4HANA",
+            "24/7 support and access to course materials"
+        ],
+        keyTopics: [
+            "SAP BASIS Fundamentals",
+            "SAP S/4HANA Architecture",
+            "SAP HANA Database Administration",
+            "System Installation and Configuration",
+            "Transport Management System (TMS)",
+            "Monitoring and Performance Optimization",
+            "Backup and Recovery",
+            "Data Migration to S/4HANA"
+        ],
+        careerOpportunities: [
+            "SAP BASIS Consultant",
+            "SAP System Administrator",
+            "SAP HANA Developer",
+            "SAP Technical Lead",
+            "SAP Project Manager",
+            "SAP Cloud Infrastructure Engineer"
+        ],
+        feesAndDuration: `The SAP BASIS S/4HANA course fees at NxGen Tech Academy are designed to be affordable while maintaining high-quality training standards.\n\nThe program includes 40+ hours of instructor-led training with flexible schedules: weekday batches, weekend batches for working professionals, and fast-track options.`,
+        conclusion: `The SAP BASIS S/4HANA certification training at NxGen Tech Academy provides the knowledge and practical skills required to manage modern SAP system landscapes.\n\nOur course includes real-time projects, hands-on practice, certification preparation, and placement support, ensuring that learners are ready to work in SAP technical administration roles.\n\nJoin NxGen Tech Academy’s SAP BASIS S/4HANA Training today and build a successful career in SAP system administration and enterprise technology management.`,
+        curriculum: [
+            {
+                module: "Module 1: SAP BASIS Fundamentals",
+                topics: [
+                    "Introduction to SAP architecture",
+                    "Understanding SAP system landscapes",
+                    "Client administration in SAP",
+                    "User management and authorization concepts",
+                    "Role-based access control",
+                    "Introduction to the Transport Management System (TMS)",
+                    "System monitoring basics",
+                    "Troubleshooting common SAP system issues"
+                ]
+            },
+            {
+                module: "Module 2: Introduction to SAP S/4HANA",
+                topics: [
+                    "Overview of SAP S/4HANA architecture",
+                    "Key features and advantages of SAP S/4HANA",
+                    "Differences between SAP ECC and SAP S/4HANA",
+                    "Business benefits of implementing SAP S/4HANA",
+                    "Understanding SAP Fiori user experience"
+                ]
+            },
+            {
+                module: "Module 3: SAP HANA Database Administration",
+                topics: [
+                    "Introduction to SAP HANA database",
+                    "SAP HANA architecture overview",
+                    "HANA database administration fundamentals",
+                    "Managing database resources",
+                    "Database monitoring and maintenance"
+                ]
+            },
+            {
+                module: "Module 4: SAP S/4HANA System Installation and Architecture",
+                topics: [
+                    "System requirements and prerequisites for SAP S/4HANA",
+                    "Installing SAP S/4HANA systems",
+                    "Configuration of SAP S/4HANA landscapes",
+                    "Understanding system architecture components",
+                    "SAP system landscape design"
+                ]
+            },
+            {
+                module: "Module 5: Transport Management System (TMS)",
+                topics: [
+                    "Overview of SAP Transport Management System",
+                    "Transport routes and configuration",
+                    "Transporting objects between SAP systems",
+                    "Managing transport requests",
+                    "Change and transport management in SAP S/4HANA"
+                ]
+            },
+            {
+                module: "Module 6: System Monitoring and Performance Optimization",
+                topics: [
+                    "SAP system monitoring tools",
+                    "Monitoring SAP S/4HANA environments",
+                    "Performance analysis techniques",
+                    "System performance optimization strategies",
+                    "Identifying and resolving performance bottlenecks"
+                ]
+            },
+            {
+                module: "Module 7: Backup and Recovery Management",
+                topics: [
+                    "SAP system backup strategies",
+                    "Database backup and restore procedures",
+                    "Disaster recovery planning",
+                    "Recovery techniques for SAP S/4HANA systems",
+                    "Best practices for system protection"
+                ]
+            },
+            {
+                module: "Module 8: Data Migration to SAP S/4HANA",
+                topics: [
+                    "Migration strategies from older SAP systems to SAP S/4HANA",
+                    "Tools used for SAP data migration",
+                    "Data load processes",
+                    "Migration best practices",
+                    "Data validation and testing"
+                ]
+            }
+        ]
+    },
     "sap-hcm-successfactors": generateDefaultSAPContent("SAP HCM/SuccessFactors", "sap-hcm-successfactors"),
 
     // BTP Courses

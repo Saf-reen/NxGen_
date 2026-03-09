@@ -21,7 +21,7 @@ const SAPCategory = () => {
         "sap-qm-course",
         "sap-scm",
         "sap-ewm",
-        "sap-basis",
+        "sap-basis-s4hana-training",
         "sap-hcm-successfactors",
     ];
 

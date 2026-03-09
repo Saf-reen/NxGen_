@@ -147,7 +147,7 @@ export const Navbar = () => {
                         { title: "SAP PP", link: "/courses/sap-pp-course" },
                         { title: "SAP BTP", link: "/courses/sap-btp" },
                         { title: "SAP QM", link: "/courses/sap-qm-course" },
-                        { title: "SAP Basis", link: "/courses/sap-basis" },
+                        { title: "SAP BASIS S/4HANA", link: "/courses/sap-basis-s4hana-training" },
                       ]
                     },
                     {
