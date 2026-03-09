@@ -397,7 +397,9 @@ This SAP SD Course Curriculum covers the entire Order-to-Cash (O2C) business cyc
 `,
         whyCourse: `
 The SAP SD Course Curriculum prepares learners for careers as SAP SD consultants, business analysts, and ERP professionals by focusing on real business scenarios and industry best practices.
+
 Thousands of companies worldwide rely on SAP systems to manage their business processes. SAP SD professionals are highly valued because they help organizations manage their sales operations efficiently.
+
 Professionals with SAP SD skills often receive attractive salary packages due to their specialized ERP knowledge and business process expertise.
 `,
         keyBenefits: [
@@ -1080,8 +1082,8 @@ Businesses across industries rely on SAP MM to track materials, control inventor
 
 At NXGEN Tech Academy, we offer a comprehensive SAP MM training program designed for students, fresh graduates, and working professionals. The training is delivered in a simple, structured format so that even beginners can easily understand and master the concepts.
 
-What is SAP MM and Why Learn It?
 Every organization needs an efficient system to manage materials, procurement, and inventory. Without proper management, businesses may experience stock shortages, operational delays, or financial losses.
+
 The SAP MM module helps companies streamline procurement processes, manage inventory effectively, and maintain strong vendor relationships.
 `,
         whyCourse: `
@@ -1354,7 +1356,9 @@ Through hands-on SAP practice, real-time project exposure, and expert trainer gu
 Our SAP QM classes are flexible and accessible from anywhere, enabling students to learn at their own pace while preparing for SAP QM certification.
 
 What is SAP QM and Why Should You Learn It?
+
 SAP QM (Quality Management) is a core module in SAP ERP that helps organizations maintain high product and service quality throughout their business operations.
+
 It enables companies to:
 • Automate inspection processes
 • Manage quality notifications and defect tracking

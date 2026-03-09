@@ -235,12 +235,12 @@ const Home = () => {
       </section>
 
       {/* SAP Courses Grid */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">SAP Categories</h2>
           <CourseCarousel items={sapCategories} type="category" />
         </div>
-      </section>
+      </section> */}
 
       {/* Trending Courses Grid */}
       <section className="py-20">
