@@ -249,26 +249,26 @@ const Home = () => {
           <h2 className="text-3xl font-bold mb-10 text-center text-primary">Trending Courses</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Data Analytics", hours: "70 Hours", link: "/courses/data-analytics" },
+              { title: "Data Analytics", hours: "70 Hours", link: "/courses/power-bi" },
               { title: "Python", hours: "45 Hours", link: "/courses/python" },
               { title: "Digital Marketing", hours: "Multiple Courses", link: "/courses/digital-marketing" },
               { title: "AIML", hours: "80 Hours", link: "/courses/aiml" },
             ].map((course, i) => (
-              <div key={i} className="bg-white border rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300">
-                <div className="h-40 bg-gray-100 flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-gray-100 to-gray-200"></div>
-                  <span className="relative text-gray-800 font-bold text-lg px-4 text-center">{course.title}</span>
+              <Link key={i} to={course.link} className="bg-white border rounded-xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div className="h-40 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-gray-100 to-gray-200 group-hover:scale-110 transition-transform duration-500"></div>
+                  <span className="relative text-gray-800 font-bold text-lg px-4 text-center group-hover:scale-105 transition-transform">{course.title}</span>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <p className="text-gray-500 text-sm mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-500"></span>
                     {course.hours}
                   </p>
-                  <Link to={course.link} className="text-primary font-bold hover:text-secondary flex items-center gap-2">
-                    Read More <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <div className="mt-auto text-primary font-bold group-hover:text-secondary flex items-center gap-2 transition-colors">
+                    Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))
             }
           </div>
