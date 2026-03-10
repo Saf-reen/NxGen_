@@ -125,8 +125,8 @@ export const coursesData: CourseData[] = [
     },
     {
         id: "sap-abap-rap",
-        title: "SAP ABAP with CDS, OData & RAP",
-        description: "Build next-gen SAP applications using CDS Views, OData services, and the RAP framework.",
+        title: "SAP ABAP on HANA (CDS & OData Training)",
+        description: "Advanced upskilling in CDS Views, OData services, and SAP HANA optimized development for S/4HANA.",
         categoryId: "sap-technical",
         image: "/sap/sap-abap-cds.jpg",
         rating: 5,
@@ -234,9 +234,9 @@ export const coursesData: CourseData[] = [
         price: "₹30,000"
     },
     {
-        id: "sap-btp-cpi",
-        title: "SAP BTP CPI",
-        description: "Master SAP Cloud Platform Integration (CPI) within the BTP ecosystem.",
+        id: "sap-cpi-training",
+        title: "SAP CPI Training",
+        description: "Master SAP Cloud Integration (CPI), iFlows, adapters, and security within the SAP BTP ecosystem.",
         categoryId: "sap-btp",
         image: "/sap/sap-btp-cpi.jpg",
         rating: 5,

@@ -383,7 +383,195 @@ export const sapCoursesContent: Record<string, SAPCourseContent> = {
             }
         ]
     },
-    "sap-abap-rap": generateDefaultSAPContent("SAP ABAP with CDS, OData & RAP", "sap-abap-rap"),
+    "sap-abap-rap": {
+        id: "sap-abap-rap",
+        metaTitle: "SAP ABAP on HANA Course Online | CDS Views & OData Training",
+        metaDescription: "Join SAP ABAP on HANA Course Online at NxGen Tech Academy. Learn CDS Views, OData services, SAP HANA optimization, and SAP S/4HANA development with real-time projects.",
+        whatIs: `The SAP ABAP on HANA Upskilling Course at NxGen Tech Academy is designed specifically for ABAP developers who want to upgrade their skills to modern SAP technologies used in SAP S/4HANA environments. This advanced training focuses on Core Data Services (CDS Views) and OData services, which are essential for building high-performance SAP applications and SAP Fiori solutions.
+
+Through hands-on exercises, real-time project implementation, and expert guidance, professionals learn how to transition from traditional ABAP development to SAP HANA optimized development.
+
+What is SAP ABAP on HANA?
+SAP ABAP (Advanced Business Application Programming) is the primary programming language used for developing applications within SAP systems. With the introduction of SAP HANA, SAP evolved ABAP development to support high-performance in-memory computing. This modern development approach is known as SAP ABAP on HANA.
+
+Using SAP ABAP on HANA, developers can:
+• Build high-performance enterprise applications
+• Process real-time data using SAP HANA
+• Develop optimized applications using code pushdown techniques
+• Integrate SAP applications with SAP Fiori and cloud platforms
+
+The SAP ABAP on HANA training program teaches developers how to build scalable and optimized applications for SAP S/4HANA environments.`,
+        whyCourse: `The global IT industry is rapidly transitioning toward cloud-based enterprise solutions. SAP is leading this transformation with platforms such as SAP S/4HANA, SAP Business Technology Platform (SAP BTP), and SAP Fiori Applications. 
+
+As organizations migrate their legacy SAP systems to SAP S/4HANA, professionals with SAP ABAP on HANA expertise are becoming increasingly valuable in the global job market.
+
+Learning SAP ABAP on HANA development prepares you for modern SAP projects and helps you build a future-proof career in SAP technologies. This program focuses on advanced development techniques used in SAP S/4HANA, preparing learners for certification and high-responsibility roles.`,
+        keyBenefits: [
+            "High Demand for SAP Developers in modern enterprises",
+            "Attractive Salary Opportunities in India and international markets",
+            "Future-Ready Development Skills for SAP S/4HANA environments",
+            "Beginner-Friendly Learning Approach with step-by-step lessons",
+            "Career Growth Opportunities into Solution Architect and Lead roles"
+        ],
+        whyChooseNxGen: [
+            "Advanced training focused on CDS Views and OData services",
+            "Hands-on project implementation and real-world scenarios",
+            "Expert guidance for transitioning from traditional ABAP to HANA",
+            "Placement-focused career support including resume building",
+            "Complete technical interview preparation and mock sessions"
+        ],
+        keyTopics: [
+            "Introduction to SAP HANA and ABAP on HANA",
+            "Advanced ABAP Programming Concepts",
+            "ABAP Development on SAP HANA (Code Pushdown)",
+            "SQL Script and Core Data Services (CDS Views)",
+            "OData Service Development and Implementation",
+            "Real-Time Projects and Case Studies",
+            "SAP ABAP on HANA Certification Preparation"
+        ],
+        careerOpportunities: [
+            "SAP ABAP on HANA Developer",
+            "SAP Technical Consultant",
+            "SAP OData Developer",
+            "SAP Fiori Backend Developer",
+            "SAP S/4HANA Technical Consultant",
+            "SAP Solution Architect"
+        ],
+        feesAndDuration: `The SAP ABAP on HANA training program offers flexible learning options to suit both working professionals and students.
+• Total Duration: 8–10 weeks
+• Weekday Batch: 1.5–2 hours per day
+• Weekend Batch: 4–5 hours per session
+For detailed fee structures and upcoming batch schedules, please contact our admissions team.`,
+        conclusion: `The SAP ABAP on HANA Course Online at NxGen Tech Academy is the ideal program for professionals who want to build a successful career in SAP development and enterprise technology. 
+
+Our training program covers fundamental concepts, advanced development techniques, real-time projects, and certification preparation, ensuring that learners become job-ready SAP professionals.
+
+Enroll today in NxGen Tech Academy’s SAP ABAP on HANA Certification Training and become a skilled SAP ABAP on HANA developer ready for modern SAP enterprise projects.`,
+        curriculum: [
+            {
+                module: "Module 1: Introduction to SAP HANA and ABAP on HANA",
+                topics: [
+                    "Overview of SAP HANA architecture",
+                    "Differences between SAP ECC and SAP S/4HANA",
+                    "Code pushdown concept",
+                    "Basics of performance optimization"
+                ]
+            },
+            {
+                module: "Module 2: ABAP Development Tools (ADT) in Eclipse",
+                topics: [
+                    "Introduction to ADT in Eclipse",
+                    "Working with packages and transport requests",
+                    "Creating ABAP classes and development objects",
+                    "Advantages of Eclipse over SE80"
+                ]
+            },
+            {
+                module: "Module 3: Advanced Open SQL",
+                topics: [
+                    "New Open SQL syntax and inline declarations",
+                    "Union and aggregation operations",
+                    "Open SQL performance optimization techniques"
+                ]
+            },
+            {
+                module: "Module 4: Core Data Services (CDS Views)",
+                topics: [
+                    "Introduction to CDS Views",
+                    "Creating CDS views in Eclipse",
+                    "Annotations and associations",
+                    "Joins and aggregations in CDS"
+                ]
+            },
+            {
+                module: "Module 5: CDS Annotations",
+                topics: [
+                    "UI annotations",
+                    "OData annotations",
+                    "Analytics annotations",
+                    "Common CDS annotation usage"
+                ]
+            },
+            {
+                module: "Module 6: CDS Associations and Joins",
+                topics: [
+                    "Association vs Join in CDS",
+                    "Inner Join and Left Outer Join implementation",
+                    "Navigation between CDS views"
+                ]
+            },
+            {
+                module: "Module 7: Analytical CDS Views",
+                topics: [
+                    "Cube views and Dimension views",
+                    "Query views for analytical modeling",
+                    "Reporting with CDS views"
+                ]
+            },
+            {
+                module: "Module 8: Introduction to OData Services",
+                topics: [
+                    "OData architecture and SAP Gateway overview",
+                    "OData communication flow",
+                    "REST principles in SAP OData"
+                ]
+            },
+            {
+                module: "Module 9: OData Service Development",
+                topics: [
+                    "Creating OData services in SEGW",
+                    "Entity types and entity sets",
+                    "Associations and navigation in OData"
+                ]
+            },
+            {
+                module: "Module 10: OData Service Implementation",
+                topics: [
+                    "Implementing GET_ENTITY and GET_ENTITYSET",
+                    "CRUD operations: CREATE_ENTITY, UPDATE_ENTITY, DELETE_ENTITY"
+                ]
+            },
+            {
+                module: "Module 11: CDS-Based OData Services",
+                topics: [
+                    "Publishing CDS using @OData.publish: true",
+                    "Advantages of CDS-based services over SEGW models"
+                ]
+            },
+            {
+                module: "Module 12: SAP Gateway Activation",
+                topics: [
+                    "Service registration and maintenance",
+                    "Using transaction /IWFND/MAINT_SERVICE",
+                    "Testing using SAP Gateway client"
+                ]
+            },
+            {
+                module: "Module 13: Performance Optimization",
+                topics: [
+                    "OData performance best practices",
+                    "Reducing database calls",
+                    "Optimizing queries using CDS views"
+                ]
+            },
+            {
+                module: "Module 14: End-to-End Project",
+                topics: [
+                    "Creating complex CDS data models",
+                    "Exposing CDS views as OData services",
+                    "Implementing functionality and testing in SAP environment"
+                ]
+            },
+            {
+                module: "Module 15: Interview Preparation and Career Guidance",
+                topics: [
+                    "Real-time technical interview questions",
+                    "Mock interview sessions",
+                    "Resume preparation and job role mentoring"
+                ]
+            }
+        ]
+    },
     "sap-ui5-fiori-training": {
         id: "sap-ui5-fiori-training",
         metaTitle: "SAP UI5 Fiori Training Online with Certification & Placement | NxGen Tech Academy",
@@ -1953,6 +2141,7 @@ If you want to become a quality management expert and build a global SAP career,
 
     // BTP Courses
     "sap-btp-appdev": generateDefaultSAPContent("SAP BTP Application Development", "sap-btp-appdev"),
+
     "sap-btp-working-professionals": {
         id: "sap-btp-working-professionals",
         metaTitle: "SAP BTP Course Online | SAP Business Technology Platform Training – NxGen Tech Academy",
@@ -2099,6 +2288,228 @@ If you want to become a quality management expert and build a global SAP career,
                     "Integrating SAP S/4HANA with external applications using SAP API Hub",
                     "Automating workflows using SAP Build Process Automation"
                 ]
+            },
+        ]
+    },
+            "sap-cpi-training": {
+                id: "sap-cpi-training",
+                metaTitle: "SAP CPI Training | SAP Cloud Integration Certification Training",
+                metaDescription: "Join SAP CPI Training at NxGen Tech Academy and learn SAP Cloud Integration, iFlows, adapters, security, and enterprise integrations with hands-on projects and certification guidance.",
+                whatIs: `The SAP CPI Training at NxGen Tech Academy is designed to help professionals gain expertise in SAP Cloud Integration (CPI), a core component of the SAP Integration Suite on SAP Business Technology Platform (BTP). This training program equips learners with the skills required to design, develop, and manage integration scenarios between SAP and non-SAP systems in cloud environments.
+
+Our comprehensive SAP CPI Certification Training ensures that learners develop both theoretical knowledge and practical skills required to work on modern enterprise integration projects.
+
+Through this training, participants will learn how to create integration flows (iFlows), configure adapters, manage security settings, monitor integration processes, and optimize cloud-based integration solutions for enterprise systems.
+
+What is SAP CPI?
+SAP CPI (Cloud Platform Integration) is a cloud-based integration platform that enables organizations to connect SAP and non-SAP applications, cloud services, and on-premise systems.
+
+SAP CPI is part of the SAP Integration Suite, which runs on SAP Business Technology Platform (BTP) and provides capabilities for application integration, API management, and event-driven architectures.
+
+An SAP CPI Consultant is responsible for designing and managing integration processes that ensure seamless communication between enterprise systems.
+
+SAP CPI plays a crucial role in enabling digital transformation by connecting business applications, data sources, and services across hybrid IT landscapes.`,
+        whyCourse: `The SAP Cloud Integration (CPI) with SAP BTP Training at NxGen Tech Academy is designed to provide comprehensive knowledge of SAP Integration Suite and SAP Cloud Integration (CI). This program takes learners from SAP Business Technology Platform fundamentals to advanced integration design, security management, monitoring, and API management.
+
+Through task-based training, hands-on exercises, and real-world integration scenarios, participants will learn how to design, deploy, and manage enterprise integrations using SAP’s modern cloud integration tools.
+
+This course is ideal for professionals who want to become SAP CPI consultants, SAP Integration architects, or SAP middleware specialists.`,
+        keyBenefits: [
+            "Increased job opportunities in SAP integration technologies",
+            "Higher salary potential for SAP CPI consultants",
+            "Development of in-demand cloud integration skills",
+            "Improved problem-solving and system integration capabilities",
+            "Strong foundation in SAP Integration Suite and enterprise middleware solutions"
+        ],
+        whyChooseNxGen: [
+            "30+ Hours of Instructor-Led Training",
+            "Real-Time Integration Projects and Practical Exercises",
+            "Mock Interview Preparation",
+            "Flexible Learning Schedule",
+            "24/7 Lifetime Support and Learning Access",
+            "Certification Guidance and Job Assistance"
+        ],
+        keyTopics: [
+            "Integration Design and Development",
+            "System Connectivity",
+            "Security Configuration",
+            "Monitoring and Troubleshooting",
+            "API and Integration Management",
+            "SAP BTP Fundamentals",
+            "Event-Driven Architectures"
+        ],
+        careerOpportunities: [
+            "SAP CPI Consultant",
+            "SAP Integration Architect",
+            "SAP Middleware Specialist",
+            "SAP BTP Consultant",
+            "Cloud Integration Developer",
+            "API Management Specialist"
+        ],
+        feesAndDuration: `The SAP CPI training program at NxGen Tech Academy includes 30+ hours of instructor-led training with a flexible learning schedule. The course covers real-time integration projects and practical exercises to ensure learners are job-ready. Please contact our admissions team for detailed fee structures and upcoming batch dates.`,
+        conclusion: `At NxGen Tech Academy, we provide industry-oriented SAP CPI Training with real-time integration projects, certification preparation, and placement support to help you build a successful career in SAP integration technologies.
+
+Our training program equips learners with the skills required to design and manage enterprise integration solutions using SAP Cloud Integration and SAP Integration Suite.
+
+Enroll today in NxGen Tech Academy’s SAP CPI Training and become a skilled SAP CPI Consultant ready to work on modern cloud integration projects.`,
+        curriculum: [
+            {
+                module: "Module 1: Introduction to SAP Business Technology Platform (BTP)",
+                topics: [
+                    "Introduction to SAP Business Technology Platform (SAP BTP)",
+                    "Understanding global accounts, regions, and access management",
+                    "SAP BTP administration and environment setup",
+                    "Security and identity management in SAP BTP",
+                    "Workflow services",
+                    "Process visibility and monitoring",
+                    "Business rules management"
+                ]
+            },
+            {
+                module: "Module 2: SAP Integration Suite Overview",
+                topics: [
+                    "Why organizations use cloud middleware",
+                    "Overview of SAP Integration Suite",
+                    "Core cloud middleware concepts",
+                    "Capabilities of SAP Cloud Integration",
+                    "Integration lifecycle: Discover, Design, Deploy, Monitor"
+                ]
+            },
+            {
+                module: "Module 3: SAP Cloud Integration Architecture",
+                topics: [
+                    "Introduction to SAP Cloud Integration (CI)",
+                    "Technical architecture of SAP Cloud Integration",
+                    "SAP data center infrastructure",
+                    "Understanding system connectivity and data flow"
+                ]
+            },
+            {
+                module: "Module 4: Working with Integration Content",
+                topics: [
+                    "Consuming SAP pre-packaged integration content",
+                    "Configuring integration packages",
+                    "Modifying SAP-delivered integration content",
+                    "Creating custom integration content packages"
+                ]
+            },
+            {
+                module: "Module 5: Cloud Integration Design using iFlow Editor",
+                topics: [
+                    "Participants and Process Calls: External call, Request-reply, Content enricher, Poll enrich",
+                    "Events: Timer events, Start/End message events, Error events",
+                    "Message Transformers: Content modifier, Converter, Mapping (Message/XSLT)",
+                    "Encoder/Decoder, Filters, EDI extractor, Message digest"
+                ]
+            },
+            {
+                module: "Module 6: Routing and Flow Control",
+                topics: [
+                    "Message routing patterns",
+                    "Splitter and gather",
+                    "Multicast processing",
+                    "Content-based routing",
+                    "Join and aggregator patterns"
+                ]
+            },
+            {
+                module: "Module 7: Persistence and Data Handling",
+                topics: [
+                    "Message persistence",
+                    "Persist message component",
+                    "Data store operations",
+                    "Variable management and storage"
+                ]
+            },
+            {
+                module: "Module 8: Security Components in Integration Flows",
+                topics: [
+                    "Encryptor and decryptor",
+                    "Digital signers and verifiers",
+                    "Message validators",
+                    "XML and EDI validation"
+                ]
+            },
+            {
+                module: "Module 9: Reusable Integration Artifacts",
+                topics: [
+                    "Value mappings and Mapping collections",
+                    "Script collections",
+                    "Groovy scripting and JavaScript implementation",
+                    "XSLT resources management"
+                ]
+            },
+            {
+                module: "Module 10: Error Handling in SAP Cloud Integration",
+                topics: [
+                    "Global and Local error handling",
+                    "Exception subprocess design",
+                    "Monitoring and troubleshooting errors"
+                ]
+            },
+            {
+                module: "Module 11: SAP Cloud Integration Adapters",
+                topics: [
+                    "Connectivity: OData, SOAP, SFTP, SuccessFactors",
+                    "Core: IDoc, RFC, Mail, HTTP, Disk, Ariba",
+                    "Social media adapters (Facebook, Twitter)"
+                ]
+            },
+            {
+                module: "Module 12: Operations and Monitoring",
+                topics: [
+                    "Monitoring message processing and MPL status",
+                    "Managing security material and certificates",
+                    "Authentication mechanisms and user mappings",
+                    "Monitoring APIs (SF APIs and OData APIs)"
+                ]
+            },
+            {
+                module: "Module 13: Security in SAP Cloud Integration",
+                topics: [
+                    "Transport Layer Security (TLS) and Message-Level Security (MLS)",
+                    "Public/Private key management",
+                    "OAuth authentication",
+                    "Secure data storage",
+                    "User administration and authorization"
+                ]
+            },
+            {
+                module: "Module 14: Additional Integration Topics",
+                topics: [
+                    "Integration content transport",
+                    "B2B integration support",
+                    "Advanced error handling techniques",
+                    "SuccessFactors Integration Center",
+                    "Enterprise deployment scenarios"
+                ]
+            },
+            {
+                module: "Module 15: API Management and Advanced Tools",
+                topics: [
+                    "SAP API Management",
+                    "Integration Advisor",
+                    "Open Connectors",
+                    "Simplified mapping implementation"
+                ]
+            },
+            {
+                module: "Module 16: SAP Event Mesh",
+                topics: [
+                    "Overview of SAP Event Mesh",
+                    "Event-driven integration architecture",
+                    "Event publishing and subscription",
+                    "Messaging patterns"
+                ]
+            },
+            {
+                module: "Module 17: Apache Kafka in SAP Environments",
+                topics: [
+                    "Introduction to Apache Kafka",
+                    "Kafka architecture for real-time data streaming",
+                    "Kafka integration with SAP systems",
+                    "Event streaming and data pipelines"
+                ]
             }
         ]
     },
@@ -2205,7 +2616,7 @@ If you want to become a quality management expert and build a global SAP career,
             }
         ]
     },
-    "sap-btp-cpi": generateDefaultSAPContent("SAP BTP CPI", "sap-btp-cpi"),
+
     "sap-btp-automation": generateDefaultSAPContent("SAP Build Process Automation", "sap-btp-automation"),
     "sap-btp-integration": generateDefaultSAPContent("SAP Integration Suite", "sap-btp-integration"),
     "sap-btp-data": generateDefaultSAPContent("SAP BTP Data & Analytics", "sap-btp-data"),

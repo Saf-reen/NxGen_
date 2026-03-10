@@ -18,7 +18,7 @@ const SAPCategory = () => {
         "sap-pp-course",
         "sap-btp-working-professionals",
         "sap-btp-freshers",
-        "sap-btp-cpi",
+        "sap-cpi-training",
         "sap-pm",
         "sap-qm-course",
         "sap-scm",

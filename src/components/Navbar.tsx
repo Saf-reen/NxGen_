@@ -139,7 +139,7 @@ export const Navbar = () => {
                       link: "/sap-courses",
                       items: [
                         { title: "SAP ABAP on HANA", link: "/courses/sap-abap-on-hana-course-online" },
-                        { title: "SAP ABAP with CDS, OData & RAP", link: "/courses/sap-abap-rap" },
+                        { title: "SAP ABAP on HANA (CDS & OData)", link: "/courses/sap-abap-rap" },
                         { title: "SAP Fiori & UI5", link: "/courses/sap-ui5-fiori-training" },
                         { title: "SAP SD", link: "/courses/sap-sd-course-training" },
                         { title: "SAP MM", link: "/courses/sap-mm-course" },
@@ -147,7 +147,7 @@ export const Navbar = () => {
                         { title: "SAP PP", link: "/courses/sap-pp-course" },
                         { title: "SAP BTP For Working Professionals", link: "/courses/sap-btp-working-professionals" },
                         { title: "SAP BTP For Freshers", link: "/courses/sap-btp-freshers" },
-                        { title: "SAP BTP CPI", link: "/courses/sap-btp-cpi" },
+                        { title: "SAP CPI Training", link: "/courses/sap-cpi-training" },
                         { title: "SAP QM", link: "/courses/sap-qm-course" },
                         { title: "SAP BASIS S/4HANA", link: "/courses/sap-basis-s4hana-training" },
                       ]
