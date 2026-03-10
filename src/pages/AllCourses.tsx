@@ -74,7 +74,7 @@ const AllCourses = () => {
                 )}
             </PageHero>
 
-            <div className="container mx-auto px-4 py-12">
+            <div className="w-full px-4 sm:px-6 lg:px-12 py-12">
                 <div className="flex justify-center mb-10">
                     <div className="relative w-full max-w-xl">
                         <Input

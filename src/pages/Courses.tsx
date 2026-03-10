@@ -59,7 +59,7 @@ const Courses = () => {
 
       {/* Category Filter */}
       <section className="py-8 bg-background border-b">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <h4 className="text-center text-gray-600 mb-6 font-semibold uppercase tracking-wider text-sm">
             Filter by Course Category
           </h4>
@@ -80,7 +80,7 @@ const Courses = () => {
 
       {/* Courses Grid */}
       <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#000080] mb-4">
               Explore Our Professional Courses
