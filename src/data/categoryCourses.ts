@@ -119,7 +119,7 @@ export const coursesData: CourseData[] = [
         title: "SAP ABAP on HANA",
         description: "Modern ABAP development with reports, enhancements, performance tuning, and S/4HANA best practices.",
         categoryId: "sap-technical",
-        image: "/sap/sap-abap.png",
+        image: "/sap/sap-abap.jpeg",
         rating: 5,
         price: "₹30,000"
     },
@@ -128,7 +128,7 @@ export const coursesData: CourseData[] = [
         title: "SAP ABAP with CDS, OData & RAP",
         description: "Build next-gen SAP applications using CDS Views, OData services, and the RAP framework.",
         categoryId: "sap-technical",
-        image: "/sap/sap-abap-.png",
+        image: "/sap/sap-abap-cds.jpg",
         rating: 5,
         price: "₹35,000"
     },
@@ -137,7 +137,7 @@ export const coursesData: CourseData[] = [
         title: "SAP Fiori & UI5",
         description: "Front-end SAP application development using Fiori architecture, UI5, MVC, and OData integration.",
         categoryId: "sap-technical",
-        image: "/sap/sap-fiori.png",
+        image: "/sap/sap-fiori.jpg",
         rating: 5,
         price: "₹35,000"
     },
@@ -147,7 +147,7 @@ export const coursesData: CourseData[] = [
         title: "SAP SD (Sales & Distribution)",
         description: "Sales order processing, pricing, delivery, billing, and SD–MM–FICO integration.",
         categoryId: "sap-functional",
-        image: "/sap/sap-sd.png",
+        image: "/sap/sap-sd.jpg",
         rating: 5,
         price: "₹28,000",
         duration: "10-12 weeks",
@@ -159,7 +159,7 @@ export const coursesData: CourseData[] = [
         title: "SAP MM (Materials Management)",
         description: "Procurement, inventory management, vendor handling, and invoice verification.",
         categoryId: "sap-functional",
-        image: "/sap/sap-mm.png",
+        image: "/sap/sap-mm.jpg",
         rating: 5,
         price: "₹28,000",
         duration: "40+ hours",
@@ -171,7 +171,7 @@ export const coursesData: CourseData[] = [
         title: "SAP FICO (Financial Accounting & Controlling)",
         description: "Financial accounting, cost control, asset accounting, and reporting.",
         categoryId: "sap-functional",
-        image: "/sap/sap-fico.png",
+        image: "/sap/sap-fico.jpg",
         rating: 5,
         price: "₹30,000",
         duration: "40+ hours",
@@ -183,7 +183,7 @@ export const coursesData: CourseData[] = [
         title: "SAP PP (Production Planning)",
         description: "BOM, routing, MRP, production orders, and capacity planning.",
         categoryId: "sap-functional",
-        image: "/sap/sap-pp.png",
+        image: "/sap/sap-pp.jpg",
         rating: 5,
         price: "₹30,000",
         duration: "40+ hours",
@@ -196,7 +196,7 @@ export const coursesData: CourseData[] = [
         title: "SAP QM (Quality Management)",
         description: "Quality planning, inspections, notifications, and compliance management.",
         categoryId: "sap-functional",
-        image: "/sap/sap-qm.png",
+        image: "/sap/sap-qm.jpg",
         rating: 5,
         price: "₹28,000"
     },
@@ -206,7 +206,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BASIS S/4HANA Training",
         description: "SAP system administration, monitoring, transports, authorizations, and S/4HANA technical management.",
         categoryId: "sap-technical",
-        image: "/sap/sap-basis.png",
+        image: "/sap/sap-basis.jpg",
         rating: 5,
         price: "₹30,000",
         duration: "40+ Hours",
@@ -214,15 +214,33 @@ export const coursesData: CourseData[] = [
         mode: "Live Training"
     },
 
-    // SAP BTP - Comprehensive Modules (Based on Architecture)
+    // SAP BTP - Courses
     {
-        id: "sap-btp-appdev",
-        title: "SAP BTP Application Development (CAP & Fiori)",
-        description: "Develop enhancements and cloud-native apps. Covers Low-Code (Build Apps), Pro-Code (BAS, CAP Model), and Runtimes (Cloud Foundry, Kyma).",
+        id: "sap-btp-working-professionals",
+        title: "SAP BTP For Working Professionals",
+        description: "Comprehensive SAP BTP module tailored for experienced working professionals.",
         categoryId: "sap-btp",
         image: "/sap/sap-btp.png",
         rating: 5,
         price: "₹40,000"
+    },
+    {
+        id: "sap-btp-freshers",
+        title: "SAP BTP For Freshers",
+        description: "Foundational SAP BTP training designed specifically for freshers.",
+        categoryId: "sap-btp",
+        image: "/sap/sap-btp.png",
+        rating: 5,
+        price: "₹30,000"
+    },
+    {
+        id: "sap-btp-cpi",
+        title: "SAP BTP CPI",
+        description: "Master SAP Cloud Platform Integration (CPI) within the BTP ecosystem.",
+        categoryId: "sap-btp",
+        image: "/sap/sap-btp.png",
+        rating: 5,
+        price: "₹35,000"
     },
 
     // Python - CORE & ADVANCED

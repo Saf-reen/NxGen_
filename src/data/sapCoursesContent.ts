@@ -1953,6 +1953,9 @@ If you want to become a quality management expert and build a global SAP career,
 
     // BTP Courses
     "sap-btp-appdev": generateDefaultSAPContent("SAP BTP Application Development", "sap-btp-appdev"),
+    "sap-btp-working-professionals": generateDefaultSAPContent("SAP BTP For Working Professionals", "sap-btp-working-professionals"),
+    "sap-btp-freshers": generateDefaultSAPContent("SAP BTP For Freshers", "sap-btp-freshers"),
+    "sap-btp-cpi": generateDefaultSAPContent("SAP BTP CPI", "sap-btp-cpi"),
     "sap-btp-automation": generateDefaultSAPContent("SAP Build Process Automation", "sap-btp-automation"),
     "sap-btp-integration": generateDefaultSAPContent("SAP Integration Suite", "sap-btp-integration"),
     "sap-btp-data": generateDefaultSAPContent("SAP BTP Data & Analytics", "sap-btp-data"),

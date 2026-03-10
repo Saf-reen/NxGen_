@@ -16,7 +16,9 @@ const SAPCategory = () => {
         "sap-mm-course",
         "sap-fico-course-training",
         "sap-pp-course",
-        "sap-btp-appdev", // Represents SAP BTP in the courses list
+        "sap-btp-working-professionals",
+        "sap-btp-freshers",
+        "sap-btp-cpi",
         "sap-pm",
         "sap-qm-course",
         "sap-scm",
