@@ -220,7 +220,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP For Working Professionals",
         description: "Comprehensive SAP BTP module tailored for experienced working professionals.",
         categoryId: "sap-btp",
-        image: "/sap/sap-btp.png",
+        image: "/sap/sap-btp-working.jpg",
         rating: 5,
         price: "₹40,000"
     },
@@ -229,7 +229,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP For Freshers",
         description: "Foundational SAP BTP training designed specifically for freshers.",
         categoryId: "sap-btp",
-        image: "/sap/sap-btp.png",
+        image: "/sap/sap-btp-freshers.jpg",
         rating: 5,
         price: "₹30,000"
     },
@@ -238,7 +238,7 @@ export const coursesData: CourseData[] = [
         title: "SAP BTP CPI",
         description: "Master SAP Cloud Platform Integration (CPI) within the BTP ecosystem.",
         categoryId: "sap-btp",
-        image: "/sap/sap-btp.png",
+        image: "/sap/sap-btp-cpi.jpg",
         rating: 5,
         price: "₹35,000"
     },

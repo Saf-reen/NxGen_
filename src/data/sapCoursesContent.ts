@@ -1953,8 +1953,258 @@ If you want to become a quality management expert and build a global SAP career,
 
     // BTP Courses
     "sap-btp-appdev": generateDefaultSAPContent("SAP BTP Application Development", "sap-btp-appdev"),
-    "sap-btp-working-professionals": generateDefaultSAPContent("SAP BTP For Working Professionals", "sap-btp-working-professionals"),
-    "sap-btp-freshers": generateDefaultSAPContent("SAP BTP For Freshers", "sap-btp-freshers"),
+    "sap-btp-working-professionals": {
+        id: "sap-btp-working-professionals",
+        metaTitle: "SAP BTP Course Online | SAP Business Technology Platform Training – NxGen Tech Academy",
+        metaDescription: "Join the SAP BTP Course Online at NxGen Tech Academy. Learn SAP Business Technology Platform, SAP HANA Cloud, Integration Suite, security, and cloud development with hands-on projects and placement support.",
+        whatIs: `Are you looking to upgrade your SAP skills, build expertise in cloud-based enterprise technologies, and unlock high-paying career opportunities? The SAP BTP Course Online at NxGen Tech Academy is designed to help you achieve these goals.\n\nThis comprehensive training program helps learners master the SAP Business Technology Platform (SAP BTP), including global account management, subaccount creation, entitlement configuration, user role management, and integration with services such as SAP HANA Cloud and SAP Integration Suite.\n\nOur training is delivered by certified SAP professionals with 8–15 years of industry experience, ensuring that learners gain both theoretical knowledge and real-world project experience. Through hands-on practice, live projects, and expert mentorship, NxGen Tech Academy helps transform your SAP knowledge into a competitive professional advantage.\n\nWhat is an SAP BTP Course Online?\nAn SAP BTP course online is a structured learning program designed to help professionals understand and work with the SAP Business Technology Platform, a powerful cloud platform used by enterprises worldwide.\n\nSAP BTP provides organizations with tools for:\n• Application development\n• Data management and analytics\n• Artificial intelligence and machine learning\n• Integration between systems\n• Process automation\n\nIn simple terms, an SAP BTP training course equips developers, consultants, architects, and IT professionals with the skills needed to support organizations in becoming Intelligent Enterprises through digital transformation.`,
+        whyCourse: `Top Industries Hiring SAP BTP Professionals\nAfter completing the SAP BTP course online, learners can explore career opportunities across multiple industries that rely on SAP technologies for digital transformation.\n\nManufacturing and Automotive\nManufacturing companies use SAP BTP to automate processes, integrate cloud systems, and analyze operational data. Organizations like Siemens and Bosch frequently hire SAP BTP developers and integration consultants.\n\nRetail and Consumer Goods\nRetail businesses use SAP BTP to enhance customer experience, manage inventory, and integrate e-commerce platforms. Companies seek professionals capable of extending and developing SAP applications.\n\nOil, Gas, and Energy\nMajor energy companies rely on SAP BTP to connect IoT systems, analyze large data sets, and improve operational efficiency.\n\nIT and Consulting Firms\nLeading consulting firms such as Accenture, Deloitte, IBM, TCS, Capgemini, and Infosys continuously recruit SAP BTP experts for implementing and managing SAP cloud solutions.\n\nTop Companies Hiring SAP BTP Professionals\nProfessionals who complete the SAP BTP training program at NxGen Tech Academy can find opportunities in leading organizations, including Shell, ExxonMobil, Costco, Siemens, Accenture, Deloitte, IBM, and Capgemini.`,
+        keyBenefits: [
+            "SAP BTP account management",
+            "Subaccount configuration",
+            "Connectivity and integration",
+            "Security and user management",
+            "Monitoring and administration",
+            "Preparation for Global SAP Certification"
+        ],
+        whyChooseNxGen: [
+            "Expert Mentorship from SAP-certified professionals with 8-15 years experience",
+            "Lifetime Learning Resources and LMS Access",
+            "Free SAP Practice Lab Access",
+            "Professional Resume Templates",
+            "SAP Global Certification Support",
+            "Job Portal Access and Placement Assistance"
+        ],
+        keyTopics: [
+            "Developing and deploying cloud-native applications",
+            "Integrating SAP and non-SAP systems",
+            "Automating processes using SAP Build Process Automation",
+            "Implementing security and identity management",
+            "Leveraging AI and machine learning capabilities through SAP AI Core",
+            "Managing enterprise data across hybrid and cloud landscapes"
+        ],
+        careerOpportunities: [
+            "SAP BTP Developer",
+            "SAP Integration Consultant",
+            "SAP Cloud Architect",
+            "SAP BTP Administrator"
+        ],
+        feesAndDuration: `Course Title: SAP BTP for Architects (36 Hours)\n\nThe training is ideal for intermediate to senior-level professionals, lead developers, and IT architects who want to transition into SAP BTP architecture and cloud platform roles. It provides a strong foundation in SAP BTP services, application development, integration, security, DevOps, and real-world implementation scenarios.`,
+        conclusion: `Skills You Will Gain from SAP BTP Architect Training\nAfter completing the SAP BTP Architect training at NxGen Tech Academy, learners will be able to design and implement SAP BTP cloud architectures, develop applications using SAP CAP and SAP Business Application Studio, integrate SAP systems using SAP Integration Suite, manage SAP HANA Cloud databases, implement security and identity management strategies, build automated DevOps pipelines, and deploy and manage enterprise applications.\n\nStart Your SAP BTP Career with NxGen Tech Academy\nThe SAP BTP Course Online at NxGen Tech Academy provides the knowledge, practical skills, and certification preparation required to succeed in SAP cloud technologies.\n\nWith expert trainers, hands-on projects, lifetime learning resources, and placement assistance, this program ensures that learners are fully prepared for careers in SAP cloud development, integration, and platform administration.\n\nWhether you are a beginner exploring SAP BTP training or an experienced professional seeking to upgrade your skills, NxGen Tech Academy provides the right learning environment to help you succeed. Enroll today and take the first step toward becoming a certified SAP BTP professional in the global SAP ecosystem.`,
+        curriculum: [
+            {
+                module: "Strategic Overview of SAP BTP Training",
+                topics: [
+                    "Introduction to SAP Intelligent Sustainable Enterprise",
+                    "Overview of SAP Business Technology Platform (SAP BTP)",
+                    "Role of SAP BTP in modern enterprise architecture",
+                    "Understanding SAP cloud services and digital transformation strategies"
+                ]
+            },
+            {
+                module: "Introduction to SAP BTP",
+                topics: [
+                    "What is SAP Business Technology Platform (BTP)?",
+                    "Overview of SAP BTP capabilities",
+                    "SAP BTP architecture and core components",
+                    "Key benefits and real-world use cases"
+                ]
+            },
+            {
+                module: "SAP BTP Account Setup and Landscape",
+                topics: [
+                    "Global account vs subaccount vs space",
+                    "Navigating the SAP BTP Cockpit",
+                    "Setting up SAP BTP trial and enterprise accounts",
+                    "Understanding regions and environment types (Neo, Cloud Foundry, Kyma)"
+                ]
+            },
+            {
+                module: "SAP BTP Core Services Overview",
+                topics: [
+                    "Overview of SAP Extension Suite",
+                    "Introduction to SAP Integration Suite",
+                    "Overview of SAP HANA Cloud",
+                    "Introduction to SAP Business Application Studio"
+                ]
+            },
+            {
+                module: "Application Development on SAP BTP",
+                topics: [
+                    "Developing applications using SAP Business Application Studio (BAS)",
+                    "Overview of SAP Cloud Application Programming Model (CAP)",
+                    "Consuming APIs and OData services",
+                    "Developing Fiori Elements applications on SAP BTP"
+                ]
+            },
+            {
+                module: "SAP HANA Cloud and Database Services",
+                topics: [
+                    "Creating and managing SAP HANA Cloud instances",
+                    "Data modeling and persistence",
+                    "Working with HDI containers",
+                    "Introduction to calculation views"
+                ]
+            },
+            {
+                module: "Integration with SAP BTP",
+                topics: [
+                    "Overview of SAP Integration Suite",
+                    "Introduction to Cloud Integration (CPI)",
+                    "Event Mesh and enterprise messaging",
+                    "Integration architecture and best practices"
+                ]
+            },
+            {
+                module: "SAP Extension Suite",
+                topics: [
+                    "Side-by-side extensions with SAP BTP",
+                    "In-app extension concepts (based on system availability)",
+                    "Extending applications such as SAP S/4HANA and SAP SuccessFactors"
+                ]
+            },
+            {
+                module: "Security and Identity Management",
+                topics: [
+                    "SAP Identity Authentication Service (IAS)",
+                    "SAP Identity Provisioning Service (IPS)",
+                    "Role collections and role mapping",
+                    "OAuth2 authentication and XSUAA security framework",
+                    "Secure application development best practices"
+                ]
+            },
+            {
+                module: "Monitoring, Logging, and DevOps on SAP BTP",
+                topics: [
+                    "Monitoring applications and services",
+                    "Logging with SAP BTP Cockpit and Kibana",
+                    "Implementing CI/CD pipelines for SAP BTP",
+                    "Deployment automation using GitHub integration",
+                    "Managing transports using SAP Cloud Transport Management Service"
+                ]
+            },
+            {
+                module: "Advanced Services on SAP BTP",
+                topics: [
+                    "Overview of SAP AI Core and AI Foundation",
+                    "SAP Build Process Automation",
+                    "SAP Build Work Zone",
+                    "Advanced enterprise automation scenarios"
+                ]
+            },
+            {
+                module: "Real-Time Projects and Case Studies",
+                topics: [
+                    "Building a Fiori application on SAP BTP using CAP and SAP HANA Cloud",
+                    "Integrating SAP S/4HANA with external applications using SAP API Hub",
+                    "Automating workflows using SAP Build Process Automation"
+                ]
+            }
+        ]
+    },
+    "sap-btp-freshers": {
+        id: "sap-btp-freshers",
+        metaTitle: "SAP BTP Courses Online| SAP Business Technology Platform Training",
+        metaDescription: "Explore SAP BTP courses online and learn SAP Business Technology Platform, cloud development, SAP HANA Cloud, integration services, and DevOps with hands-on training and certification support.",
+        whatIs: `Are you looking to upgrade your SAP skills, build expertise in cloud-based enterprise technologies, and unlock high-paying career opportunities? The SAP BTP Course Online at NxGen Tech Academy is designed to help you achieve these goals.\n\nThis comprehensive training program helps learners master the SAP Business Technology Platform (SAP BTP), including global account management, subaccount creation, entitlement configuration, user role management, and integration with services such as SAP HANA Cloud and SAP Integration Suite.\n\nOur training is delivered by certified SAP professionals with 8–15 years of industry experience, ensuring that learners gain both theoretical knowledge and real-world project experience. Through hands-on practice, live projects, and expert mentorship, NxGen Tech Academy helps transform your SAP knowledge into a competitive professional advantage.\n\nWhat is an SAP BTP Course Online?\nAn SAP BTP course online is a structured learning program designed to help professionals understand and work with the SAP Business Technology Platform, a powerful cloud platform used by enterprises worldwide.\n\nSAP BTP provides organizations with tools for:\n• Application development\n• Data management and analytics\n• Artificial intelligence and machine learning\n• Integration between systems\n• Process automation\n\nIn simple terms, an SAP BTP training course equips developers, consultants, architects, and IT professionals with the skills needed to support organizations in becoming Intelligent Enterprises through digital transformation.`,
+        whyCourse: `Top Industries Hiring SAP BTP Professionals\nAfter completing the SAP BTP course online, learners can explore career opportunities across multiple industries that rely on SAP technologies for digital transformation.\n\nManufacturing and Automotive\nManufacturing companies use SAP BTP to automate processes, integrate cloud systems, and analyze operational data. Organizations like Siemens and Bosch frequently hire SAP BTP developers and integration consultants.\n\nRetail and Consumer Goods\nRetail businesses use SAP BTP to enhance customer experience, manage inventory, and integrate e-commerce platforms. Companies seek professionals capable of extending and developing SAP applications.\n\nOil, Gas, and Energy\nMajor energy companies rely on SAP BTP to connect IoT systems, analyze large data sets, and improve operational efficiency.\n\nIT and Consulting Firms\nLeading consulting firms such as Accenture, Deloitte, IBM, TCS, Capgemini, and Infosys continuously recruit SAP BTP experts for implementing and managing SAP cloud solutions.\n\nTop Companies Hiring SAP BTP Professionals\nProfessionals who complete the SAP BTP training program at NxGen Tech Academy can find opportunities in leading organizations, including Shell, ExxonMobil, Costco, Siemens, Accenture, Deloitte, IBM, and Capgemini.`,
+        keyBenefits: [
+            "SAP BTP account management",
+            "Subaccount configuration",
+            "Connectivity and integration",
+            "Security and user management",
+            "Monitoring and administration",
+            "Preparation for Global SAP Certification"
+        ],
+        whyChooseNxGen: [
+            "Expert Mentorship from SAP-certified professionals with extensive industry experience",
+            "Lifetime Learning Resources and LMS Access",
+            "Free SAP Practice Lab Access",
+            "Professional Resume Templates",
+            "SAP Global Certification Support",
+            "Job Portal Access and Placement Assistance"
+        ],
+        keyTopics: [
+            "Developing and deploying cloud-native applications",
+            "Integrating SAP and non-SAP systems",
+            "Automating processes using SAP Build Process Automation",
+            "Implementing security and identity management",
+            "Leveraging AI and machine learning capabilities through SAP AI Core",
+            "Managing enterprise data across hybrid and cloud landscapes"
+        ],
+        careerOpportunities: [
+            "SAP BTP Developer",
+            "SAP Integration Consultant",
+            "SAP Cloud Architect",
+            "SAP BTP Administrator"
+        ],
+        feesAndDuration: `Course Title: SAP BTP Enterprise Developer & DevOps Training (36 Hours)\n\nTarget Audience: Lead Developers and SAP UI5 professionals who want to upgrade their skills to SAP BTP cloud development and DevOps roles.\nThis course focuses on enterprise-level SAP BTP application development, SAP CAP framework, SAP HANA Cloud integration, SAPUI5 development, and DevOps lifecycle management.`,
+        conclusion: `Skills You Will Gain from SAP BTP Enterprise Developer Training\nAfter completing the SAP BTP Enterprise Developer and DevOps course at NxGen Tech Academy, learners will be able to develop cloud-native applications using SAP CAP, manage SAP BTP environments and services, integrate SAP systems with SAP HANA Cloud, build enterprise applications using SAP UI5 and Fiori Elements, implement DevOps pipelines for SAP applications, and configure transport and lifecycle management in SAP BTP.\n\nStart Your SAP BTP Career with NxGen Tech Academy\nNxGen Tech Academy’s SAP BTP Enterprise Developer & DevOps Training is designed to equip professionals with the essential knowledge required to build successful careers in SAP cloud development and enterprise platform operations.\n\nThe program combines practical learning, real-time project experience, certification guidance, and mentorship from industry experts to help learners develop strong technical expertise in SAP cloud technologies.\n\nBy the end of the training, participants will be prepared to design scalable cloud applications and efficiently manage DevOps pipelines within modern SAP environments. Enroll today and take the next step toward becoming a skilled SAP BTP developer in the global SAP ecosystem.`,
+        curriculum: [
+            {
+                module: "Strategic Overview of SAP BTP Training",
+                topics: [
+                    "Introduction to SAP Intelligent Sustainable Enterprise",
+                    "Overview of SAP Business Technology Platform (SAP BTP)",
+                    "Role of SAP BTP in modern enterprise architecture",
+                    "Understanding SAP cloud services and digital transformation strategies"
+                ]
+            },
+            {
+                module: "Prerequisites for SAP BTP Enterprise Developer Training",
+                topics: [
+                    "Web Development: Proficiency in JavaScript (Node.js), HTML5, CSS3",
+                    "Data Modeling and SQL: Relational database concepts, CDS models, basic SQL",
+                    "REST APIs and OData: Basic familiarity with OData protocol and REST APIs",
+                    "SAP BTP Core Knowledge: SAP BTP Cockpit, Cloud Foundry, SAP BAS, Linux CLI",
+                    "DevOps and Version Control Knowledge: Git workflows, CI/CD pipelines"
+                ]
+            },
+            {
+                module: "SAP BTP Environment Setup and Readiness Checklist",
+                topics: [
+                    "SAP BTP Account Provisioning: Trial Account creation",
+                    "Required Entitlements: BAS, HANA Cloud, HDI Containers, Cloud Foundry Runtime, CI/CD, cTMS, Build Work Zone",
+                    "Development Environment Setup: SAP BAS Cloud Application Development Space",
+                    "Local Development Setup (Optional): VS Code extensions (CAP, Fiori Tools, SQLite)",
+                    "Command Line Tools Installation: Cloud Foundry CLI, MBT, Node.js, CAP CLI"
+                ]
+            },
+            {
+                module: "Professional CAP Development",
+                topics: [
+                    "Domain Modeling: Advanced Core Data Services (CDS) modeling, Associations/compositions, Localization support",
+                    "Business Logic Implementation: Node.js service handlers, Draft support for transactions",
+                    "Security Architecture: XSUAA authentication and authorization, Scope management, Role templates, Instance-based authorization"
+                ]
+            },
+            {
+                module: "Database, Connectivity and UI Development",
+                topics: [
+                    "SAP HANA Cloud and Multi-Target Applications: HDI Containers, MD tables/views, mta.yaml configurations",
+                    "Connectivity Services: Destination Service configuration, Cloud Connector, Principal propagation",
+                    "SAPUI5 and SAP Build Work Zone: Deploying to HTML5 repository, Integrating into Build Work Zone"
+                ]
+            },
+            {
+                module: "Professional SAPUI5 and Fiori Elements Development",
+                topics: [
+                    "Fiori Elements and Annotations: OData V4 model, List Reports, Object Pages, metadata annotations",
+                    "UI5 flexibility and adaptation projects",
+                    "Advanced User Interface Development: Custom SAPUI5 applications, Consuming APIs from non-SAP frameworks (Vue.js)"
+                ]
+            },
+            {
+                module: "DevOps and Lifecycle Management",
+                topics: [
+                    "Continuous Integration and Continuous Delivery: SAP CI/CD Service, Automated deployment to Cloud Foundry",
+                    "Cloud Transport Management Service (cTMS): Setting up transport nodes and routes",
+                    "Integrating CI/CD pipelines with Cloud Transport Management",
+                    "Managing landscape-wide releases and monitoring transport processes"
+                ]
+            }
+        ]
+    },
     "sap-btp-cpi": generateDefaultSAPContent("SAP BTP CPI", "sap-btp-cpi"),
     "sap-btp-automation": generateDefaultSAPContent("SAP Build Process Automation", "sap-btp-automation"),
     "sap-btp-integration": generateDefaultSAPContent("SAP Integration Suite", "sap-btp-integration"),
