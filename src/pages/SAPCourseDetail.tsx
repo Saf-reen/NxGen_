@@ -117,18 +117,18 @@ const SAPCourseDetail = () => {
                                         <div className="flex text-yellow-500">
                                             <Star className="w-5 h-5 fill-current" />
                                         </div>
-                                        <h6 className="font-bold text-gray-900 m-0 text-base">{basicCourse.rating || "5.0"}</h6>
+                                        <span className="font-bold text-gray-900 m-0 text-base">{basicCourse.rating || "5.0"}</span>
                                         <span className="text-xs text-gray-500">(Student Reviews)</span>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Clock className="w-5 h-5 text-gray-400" />
-                                        <h6 className="font-medium text-gray-700 m-0 text-base">{duration}</h6>
+                                        <span className="font-medium text-gray-700 m-0 text-base">{duration}</span>
                                     </div>
                                     <div className="h-4 w-px bg-gray-200 hidden sm:block"></div>
                                     <div className="flex items-center gap-2">
                                         <Users className="w-5 h-5 text-gray-400" />
-                                        <h6 className="font-medium text-gray-700 m-0 text-base">{enrolled} Enrolled</h6>
+                                        <span className="font-medium text-gray-700 m-0 text-base">{enrolled} Enrolled</span>
                                     </div>
                                 </div>
 
@@ -159,7 +159,7 @@ const SAPCourseDetail = () => {
                                         {actualCurriculum.map((item: any, index: number) => (
                                             <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
                                                 <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center cursor-pointer hover:bg-gray-100 transition-colors">
-                                                    <h5 className="font-bold text-[#000080] text-base m-0">Module {index + 1}: {item.title || item.module}</h5>
+                                                    <p className="font-bold text-[#000080] text-base m-0">Module {index + 1}: {item.title || item.module}</p>
                                                     <ChevronDown className="w-5 h-5 text-gray-500" />
                                                 </div>
                                                 <div className="p-6 bg-white">
@@ -285,9 +285,9 @@ const SAPCourseDetail = () => {
 
                             {/* Course Highlights Widget */}
                             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 shadow-sm">
-                                <h4 className="font-bold text-[#000080] mb-4 flex items-center gap-2">
+                                <p className="font-bold text-[#000080] mb-4 flex items-center gap-2">
                                     Course Highlights
-                                </h4>
+                                </p>
                                 <ul className="space-y-3">
                                     <li className="flex items-center gap-3 text-sm text-gray-700">
                                         <PlayCircle className="w-4 h-4 text-blue-500" /> 50+ Hours Live Sessions

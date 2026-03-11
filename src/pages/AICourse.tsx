@@ -130,7 +130,7 @@ const AICourse = () => {
 
                             {/* Course Highlights Card */}
                             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                                <h4 className="font-bold text-[#000080] mb-4">Course Highlights</h4>
+                                <p className="font-bold text-[#000080] mb-4">Course Highlights</p>
                                 <ul className="space-y-3">
                                     <li className="flex items-center gap-3 text-sm text-gray-700">
                                         <PlayCircle className="w-4 h-4 text-blue-500" /> 100+ Hours Live Sessions

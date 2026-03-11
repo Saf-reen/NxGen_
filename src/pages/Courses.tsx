@@ -60,9 +60,9 @@ const Courses = () => {
       {/* Category Filter */}
       <section className="py-8 bg-background border-b">
         <div className="w-full px-4 sm:px-6 lg:px-12">
-          <h4 className="text-center text-gray-600 mb-6 font-semibold uppercase tracking-wider text-sm">
+          <p className="text-center text-gray-600 mb-6 font-semibold uppercase tracking-wider text-sm">
             Filter by Course Category
-          </h4>
+          </p>
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
               <Button
@@ -104,7 +104,7 @@ const Courses = () => {
 
           {filteredCourses.length === 0 && (
             <div className="text-center py-20">
-              <h5 className="text-xl text-muted-foreground">No courses found in this category.</h5>
+              <p className="text-xl text-muted-foreground">No courses found in this category.</p>
             </div>
           )}
         </div>
@@ -161,7 +161,7 @@ const CourseCard = ({
           <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
             {course.title}
           </h3>
-          <h6 className="text-base font-semibold text-primary mb-2 m-0">{course.price}</h6>
+          <p className="text-base font-semibold text-primary mb-2 m-0">{course.price}</p>
           <div className="mt-2 flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary/20 transition">
             <ArrowRight className="w-5 h-5 text-primary group-hover:text-primary-dark transition" />
           </div>

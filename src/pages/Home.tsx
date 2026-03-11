@@ -197,7 +197,7 @@ const Home = () => {
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-secondary">
                 <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
-                <h4 className="text-lg font-semibold">{item}</h4>
+                <p className="text-lg font-semibold">{item}</p>
               </div>
             ))}
           </div>

@@ -51,9 +51,9 @@ const SAPCategory = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-[#000080] mb-4">
                         Comprehensive SAP Training & Certification
                     </h2>
-                    <h4 className="text-gray-500 max-w-2xl mx-auto font-medium">
+                    <p className="text-gray-500 max-w-2xl mx-auto font-medium">
                         Accelerate your SAP career by choosing from our wide range of technical and functional modules.
-                    </h4>
+                    </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full">
                     {displayCourses.map((course) => (
@@ -83,7 +83,7 @@ const SAPCategory = () => {
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                     ))}
-                                    <h6 className="text-blue-500 text-sm ml-2 m-0">(33 Reviews)</h6>
+                                    <span className="text-blue-500 text-sm ml-2 m-0">(33 Reviews)</span>
                                 </div>
 
                                 <div>

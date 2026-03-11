@@ -67,7 +67,7 @@ const ContactPage = () => {
             {/* Contact Information (Left Column) */}
             <div className="space-y-10">
               <div>
-                <h3 className="text-sm font-bold text-[#000080] uppercase tracking-wider mb-2">We Accelerate Customer Experiences</h3>
+                <p className="text-sm font-bold text-[#000080] uppercase tracking-wider mb-2">We Accelerate Customer Experiences</p>
                 <h2 className="text-4xl font-bold text-gray-800 mb-6">GET IN TOUCH</h2>
                 <div className="w-16 h-1 bg-[#000080] mb-6"></div>
                 <p className="text-gray-600 leading-relaxed">
@@ -82,7 +82,7 @@ const ContactPage = () => {
                     <MapPin className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Hyderabad (Miyapur)</h4>
+                    <p className="font-bold text-lg mb-2 text-gray-800">Hyderabad (Miyapur)</p>
                     <p className="text-gray-600 text-sm mb-2">
                       First Floor, 1-121/63 Survey No. 63 Part Hotel Sitara Grand Backside, Miyapur, Telangana 500049
                     </p>
@@ -96,7 +96,7 @@ const ContactPage = () => {
                     <Mail className="w-6 h-6 text-[#000080]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">Email Us</h4>
+                    <p className="font-bold text-lg mb-2 text-gray-800">Email Us</p>
                     <p className="text-gray-600 hover:text-[#000080]">nxgentechacademy@gmail.com</p>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const ContactPage = () => {
 
             {/* Contact Form (Right Column) */}
             <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Send us a Message</h3>
+              <p className="text-2xl font-bold mb-6 text-gray-800">Send us a Message</p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">

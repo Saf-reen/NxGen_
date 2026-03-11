@@ -347,7 +347,7 @@ const About = () => {
               </p>
 
               <div className="bg-[#f0f4ff] p-6 rounded-xl">
-                <h4 className="font-bold text-[#000080] mb-4">Why Our Mentors Stand Out</h4>
+                <p className="font-bold text-[#000080] mb-4">Why Our Mentors Stand Out</p>
                 <ul className="space-y-3">
                   {[
                     "50+ industry-experienced trainers",
